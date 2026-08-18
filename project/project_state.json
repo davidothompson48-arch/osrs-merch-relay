@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at_utc": "2026-08-18T04:41:30Z",
+  "updated_at_utc": "2026-08-18T04:46:00Z",
   "project": "OSRS Merch Desk",
   "goal": "Find the best risk-adjusted use of GP using RuneLite/Wiki market data plus catalyst and community intelligence without forcing trades.",
   "repo": "davidothompson48-arch/osrs-merch-relay",
@@ -24,7 +24,16 @@
     "trade_journal": "project/trade_journal.csv",
     "theses": "project/thesis_watchlist.json",
     "verified_catalysts": "project/catalysts_verified.md",
-    "related_universe": "project/related_items.json"
+    "related_universe": "project/related_items.json",
+    "source_registry": "project/source_registry.json",
+    "known_conversions": "project/known_conversions.json",
+    "data_gap_register": "project/data_gap_register.json",
+    "readme": "project/README.md"
+  },
+  "collectors": {
+    "core": "collect.py",
+    "related": "collect_related.py",
+    "history": "archive_snapshot.py"
   },
   "market_source_policy": "ONLY prices.runescape.wiki / RuneLite-fed real-time API. GitHub relay is transport/cache only.",
   "automation": {
@@ -44,6 +53,7 @@
     "A buy/sell offer is not a fill unless the user confirms execution.",
     "Historical research price bands are context only and must never substitute for live market data.",
     "Official proposal language is not the same as poll passage or implementation.",
-    "Community speculation is never promoted to fact without official corroboration."
+    "Community speculation is never promoted to fact without official corroboration.",
+    "Unknown portfolio fields belong in data_gap_register.json rather than being guessed."
   ]
 }
