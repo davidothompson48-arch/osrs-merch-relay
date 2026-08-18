@@ -2,6 +2,11 @@ name: Update OSRS market snapshot
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'collect.py'
+      - '.github/workflows/update-snapshot.yml'
   schedule:
     - cron: '7 * * * *'
 
