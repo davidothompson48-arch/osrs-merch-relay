@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "updated_at_utc": "2026-08-18T04:42:00Z",
+  "market_data": {
+    "policy": "ONLY prices.runescape.wiki / RuneLite-fed real-time API for all current GE market fields.",
+    "base": "https://prices.runescape.wiki/api/v1/osrs",
+    "endpoints": {
+      "latest": "https://prices.runescape.wiki/api/v1/osrs/latest",
+      "5m": "https://prices.runescape.wiki/api/v1/osrs/5m",
+      "1h": "https://prices.runescape.wiki/api/v1/osrs/1h",
+      "6h": "https://prices.runescape.wiki/api/v1/osrs/6h",
+      "24h": "https://prices.runescape.wiki/api/v1/osrs/24h",
+      "mapping": "https://prices.runescape.wiki/api/v1/osrs/mapping",
+      "timeseries": "https://prices.runescape.wiki/api/v1/osrs/timeseries"
+    },
+    "api_documentation": "https://oldschool.runescape.wiki/w/RuneScape:Real-time_Prices",
+    "relay_snapshot": "https://raw.githubusercontent.com/davidothompson48-arch/osrs-merch-relay/main/snapshot.json",
+    "relay_related": "https://raw.githubusercontent.com/davidothompson48-arch/osrs-merch-relay/main/related_watch.json",
+    "relay_recent_history": "https://raw.githubusercontent.com/davidothompson48-arch/osrs-merch-relay/main/history/recent_history.json"
+  },
+  "official_jagex": {
+    "home": "https://oldschool.runescape.com/",
+    "news_archive": "https://secure.runescape.com/m=news/archive?oldschool=1",
+    "polls_2026": "https://oldschool.runescape.com/polls/2026",
+    "fractured_archive_rewards_blog": "https://secure.runescape.com/m=news/the-fractured-archive---rewards-poll-blog?oldschool=1",
+    "winter_summit_poll": "https://oldschool.runescape.com/polls/2026/1717",
+    "cox_summer_sweep_up": "https://secure.runescape.com/m=news/summer-sweep-up---agility--chambers-of-xeric-changes?oldschool=1",
+    "x_oldschool": "https://x.com/OldSchoolRS",
+    "x_jagex": "https://x.com/Jagex/with_replies",
+    "facebook_oldschool": "https://www.facebook.com/OfficialOldSchoolRuneScape"
+  },
+  "community": {
+    "reddit_primary": "https://www.reddit.com/r/2007scape/",
+    "rule": "Community sources are intelligence/speculation only unless corroborated by official Jagex evidence."
+  },
+  "forbidden_current_market_substitutes": ["GE Tracker", "07.gg", "Jagex Grand Exchange guide price", "Wise Old Man", "Google snippets", "cached search results", "third-party merching sites", "remembered prices", "estimates"]
+}
