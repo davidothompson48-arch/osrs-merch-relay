@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at_utc": "2026-08-18T04:42:00Z",
+  "updated_at_utc": "2026-08-18T04:51:00Z",
   "market_data": {
     "policy": "ONLY prices.runescape.wiki / RuneLite-fed real-time API for all current GE market fields.",
     "base": "https://prices.runescape.wiki/api/v1/osrs",
@@ -16,7 +16,10 @@
     "api_documentation": "https://oldschool.runescape.wiki/w/RuneScape:Real-time_Prices",
     "relay_snapshot": "https://raw.githubusercontent.com/davidothompson48-arch/osrs-merch-relay/main/snapshot.json",
     "relay_related": "https://raw.githubusercontent.com/davidothompson48-arch/osrs-merch-relay/main/related_watch.json",
-    "relay_recent_history": "https://raw.githubusercontent.com/davidothompson48-arch/osrs-merch-relay/main/history/recent_history.json"
+    "relay_recent_history": "https://raw.githubusercontent.com/davidothompson48-arch/osrs-merch-relay/main/history/recent_history.json",
+    "relay_full_market_index": "https://raw.githubusercontent.com/davidothompson48-arch/osrs-merch-relay/main/market_universe/index.json",
+    "relay_full_market_shard_pattern": "https://raw.githubusercontent.com/davidothompson48-arch/osrs-merch-relay/main/market_universe/{SHARD}.json",
+    "relay_full_market_shard_rule": "Choose A-Z by exact item-name first character, or 0-9/OTHER as listed in index.json."
   },
   "official_jagex": {
     "home": "https://oldschool.runescape.com/",
