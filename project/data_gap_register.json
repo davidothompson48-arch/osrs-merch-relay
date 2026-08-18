@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "updated_at_utc": "2026-08-18T04:45:00Z",
+  "purpose": "Prevent the desk from silently inventing missing portfolio facts or treating old offers as fills. Resolve these only from a new explicit user statement or reliable evidence.",
+  "open_gaps": [
+    {
+      "priority": "HIGH",
+      "field": "Arcane prayer scroll exact cost basis",
+      "known": "Latest known quantity is 31; several historical purchases/sales are known but not enough to reconstruct the exact remaining basis.",
+      "resolution": "Ask/record exact remaining lots or a user-provided average basis when it becomes relevant."
+    },
+    {
+      "priority": "HIGH",
+      "field": "Dexterous prayer scroll exact remaining basis",
+      "known": "Latest known quantity is 3; historical buys/sales occurred at multiple levels.",
+      "resolution": "Record a new explicit average or remaining lots from the user."
+    },
+    {
+      "priority": "HIGH",
+      "field": "Inquisitor's mace cost basis",
+      "known": "Latest known quantity is 1; basis unresolved.",
+      "resolution": "Record user-confirmed purchase price."
+    },
+    {
+      "priority": "MEDIUM",
+      "field": "Current Inquisitor armour ownership",
+      "known": "An 85m great-helm buy offer existed; no confirmed fill. Hauberk and plateskirt are tracked but ownership is unresolved.",
+      "resolution": "Do not include as held positions until the user confirms fills/ownership."
+    },
+    {
+      "priority": "MEDIUM",
+      "field": "Current Amulet of magic ownership",
+      "known": "Historical offer for 1,998 at 515 gp existed; fill not confirmed.",
+      "resolution": "Treat as watchlist only until user confirms quantity/fill."
+    },
+    {
+      "priority": "MEDIUM",
+      "field": "Current Ancestral robe bottom ownership",
+      "known": "User confirmed selling an Ancestral item for 66m but exact piece was not proven.",
+      "resolution": "Do not assume current bottom quantity."
+    },
+    {
+      "priority": "MEDIUM",
+      "field": "Current Diamond ownership",
+      "known": "Historical screenshot showed approximately 28,271 Diamonds.",
+      "resolution": "Treat as legacy/unresolved until updated by user."
+    },
+    {
+      "priority": "MEDIUM",
+      "field": "Current Diamond bolt tip ownership",
+      "known": "Historical screenshot showed approximately 13,550 Diamond bolt tips.",
+      "resolution": "Treat as legacy/unresolved until updated by user."
+    },
+    {
+      "priority": "LOW",
+      "field": "Dragon bones current quantity and basis",
+      "known": "Tracked thesis and historical buy zones exist, but current position quantity/basis is unresolved.",
+      "resolution": "Only calculate portfolio P/L after user confirms current holdings."
+    },
+    {
+      "priority": "RESEARCH",
+      "field": "Fractured Archive individual reward poll result",
+      "known": "The raid itself passed; a July 30 rewards proposal exists. A previously saved research note claimed all six rewards passed, but no official reward-result page had been verified as of 2026-08-18.",
+      "resolution": "Continue checking official Jagex/OSRS poll-result sources; do not promote rewards to passed until verified."
+    }
+  ],
+  "closed_or_resolved": [
+    {
+      "field": "Wrath rune quantity/basis",
+      "resolution": "185,000 total; approximate combined basis 340.16 gp each from 135k ~338 plus 50k @346."
+    },
+    {
+      "field": "Smoke rune scanner execution",
+      "resolution": "Confirmed buy at 65 and sell at 71; quantity not explicitly confirmed."
+    }
+  ]
+}
