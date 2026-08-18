@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "updated_at_utc": "2026-08-18T04:48:00Z",
+  "purpose": "Store scanner recommendations/outcomes so future ranking can learn execution quality without overfitting to one trade.",
+  "completed": [
+    {
+      "item": "Smoke rune",
+      "entry_gp": 65,
+      "exit_gp": 71,
+      "quantity": null,
+      "result": "WIN",
+      "user_confirmation": true,
+      "lesson": "A low-unit-price spread with fresh prints and enough turnover can execute cleanly. Give credit to executable spread + volume + manageable limit, but never automatically repeat the item."
+    }
+  ],
+  "recommended_but_outcome_unconfirmed": [
+    {
+      "item": "Ruby bolts (e)",
+      "historical_test_entry_zone_gp": "154-156",
+      "historical_target_gp": "164-167",
+      "status": "NO USER EXECUTION CONFIRMED",
+      "rule": "Do not count as win/loss without user-confirmed fill and exit."
+    },
+    {
+      "item": "Demon tear",
+      "historical_test_entry_zone_gp": "255-258",
+      "historical_target_gp": "264-268",
+      "status": "NO USER EXECUTION CONFIRMED",
+      "rule": "Do not count as win/loss without user-confirmed fill and exit."
+    }
+  ],
+  "negative_pattern_examples": [
+    "Large theoretical ROI caused by stale/asynchronous or ultra-thin prints",
+    "5-minute price already sharply above 1-hour level = chase risk",
+    "Wide spread while aggressive flow is overwhelmingly seller-side = possible falling knife",
+    "Tiny unit volume despite large GP spread = exit/trap risk",
+    "One successful historical flip is not evidence the same item is still mispriced"
+  ],
+  "feedback_rule": "Only confirmed executions may change empirical scanner confidence. Keep market-condition features separate from item identity to reduce overfitting."
+}
