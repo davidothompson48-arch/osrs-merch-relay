@@ -1,9 +1,17 @@
 {
   "schema_version": 1,
-  "updated_at_utc": "2026-08-18T04:34:00Z",
+  "updated_at_utc": "2026-08-18T04:41:30Z",
   "project": "OSRS Merch Desk",
   "goal": "Find the best risk-adjusted use of GP using RuneLite/Wiki market data plus catalyst and community intelligence without forcing trades.",
   "repo": "davidothompson48-arch/osrs-merch-relay",
+  "master_prompt_fingerprint": {
+    "source_name": "Pasted text.txt",
+    "sha256": "7e928c7473174f79d74e94dc623eb54bf4092ecd37384a0a4109087ade23a4f0",
+    "bytes": 20347,
+    "lines": 1119,
+    "normalized_persistent_copy": "project/OPERATING_SPEC.md",
+    "note": "OPERATING_SPEC.md preserves the operational requirements in normalized form; this fingerprint identifies the exact user-supplied master prompt version used to build it."
+  },
   "live_files": {
     "core_snapshot": "snapshot.json",
     "related_watch": "related_watch.json",
@@ -23,7 +31,10 @@
     "name": "OSRS Merch Desk",
     "cadence": "hourly",
     "timezone": "America/Chicago",
-    "enabled": true
+    "enabled": true,
+    "reads_persistent_project_memory": true,
+    "reads_related_watch": true,
+    "reads_recent_history": true
   },
   "known_successful_scanner_feedback": [
     {"item": "Smoke rune", "buy_gp": 65, "sell_gp": 71, "quantity": null, "status": "confirmed round trip"}
