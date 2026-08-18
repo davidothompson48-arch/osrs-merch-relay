@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-18T04:48:09.138410Z",
+  "generated_unix": 1787028489,
+  "source": "prices.runescape.wiki OSRS RuneLite real-time API",
+  "source_policy": "All market and static metadata fields in the universe shards originate only from prices.runescape.wiki.",
+  "item_count": 4652,
+  "shards": [
+    {
+      "shard": "0-9",
+      "file": "market_universe/0-9.json",
+      "item_count": 24
+    },
+    {
+      "shard": "A",
+      "file": "market_universe/A.json",
+      "item_count": 389
+    },
+    {
+      "shard": "B",
+      "file": "market_universe/B.json",
+      "item_count": 525
+    },
+    {
+      "shard": "C",
+      "file": "market_universe/C.json",
+      "item_count": 233
+    },
+    {
+      "shard": "D",
+      "file": "market_universe/D.json",
+      "item_count": 278
+    },
+    {
+      "shard": "E",
+      "file": "market_universe/E.json",
+      "item_count": 158
+    },
+    {
+      "shard": "F",
+      "file": "market_universe/F.json",
+      "item_count": 102
+    },
+    {
+      "shard": "G",
+      "file": "market_universe/G.json",
+      "item_count": 234
+    },
+    {
+      "shard": "H",
+      "file": "market_universe/H.json",
+      "item_count": 82
+    },
+    {
+      "shard": "I",
+      "file": "market_universe/I.json",
+      "item_count": 134
+    },
+    {
+      "shard": "J",
+      "file": "market_universe/J.json",
+      "item_count": 45
+    },
+    {
+      "shard": "K",
+      "file": "market_universe/K.json",
+      "item_count": 44
+    },
+    {
+      "shard": "L",
+      "file": "market_universe/L.json",
+      "item_count": 101
+    },
+    {
+      "shard": "M",
+      "file": "market_universe/M.json",
+      "item_count": 321
+    },
+    {
+      "shard": "N",
+      "file": "market_universe/N.json",
+      "item_count": 39
+    },
+    {
+      "shard": "O",
+      "file": "market_universe/O.json",
+      "item_count": 114
+    },
+    {
+      "shard": "P",
+      "file": "market_universe/P.json",
+      "item_count": 166
+    },
+    {
+      "shard": "Q",
+      "file": "market_universe/Q.json",
+      "item_count": 1
+    },
+    {
+      "shard": "R",
+      "file": "market_universe/R.json",
+      "item_count": 368
+    },
+    {
+      "shard": "S",
+      "file": "market_universe/S.json",
+      "item_count": 597
+    },
+    {
+      "shard": "T",
+      "file": "market_universe/T.json",
+      "item_count": 297
+    },
+    {
+      "shard": "U",
+      "file": "market_universe/U.json",
+      "item_count": 57
+    },
+    {
+      "shard": "V",
+      "file": "market_universe/V.json",
+      "item_count": 60
+    },
+    {
+      "shard": "W",
+      "file": "market_universe/W.json",
+      "item_count": 185
+    },
+    {
+      "shard": "X",
+      "file": "market_universe/X.json",
+      "item_count": 4
+    },
+    {
+      "shard": "Y",
+      "file": "market_universe/Y.json",
+      "item_count": 34
+    },
+    {
+      "shard": "Z",
+      "file": "market_universe/Z.json",
+      "item_count": 60
+    }
+  ],
+  "lookup_rule": "Choose the shard by the first character of the exact item name: A-Z, 0-9, or OTHER."
+}
