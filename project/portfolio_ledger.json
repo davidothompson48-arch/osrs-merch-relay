@@ -1,8 +1,15 @@
 {
   "schema_version": 1,
-  "updated_at_utc": "2026-08-18T04:34:00Z",
+  "updated_at_utc": "2026-08-18T04:47:00Z",
   "purpose": "Persistent user portfolio state for the OSRS Merch Desk. Current market prices are never stored here as authoritative; executable prices must come from the fresh Wiki/RuneLite relay snapshot.",
   "source_of_truth_for_market_data": "prices.runescape.wiki via snapshot.json",
+  "account_context": {
+    "historical_bank_value": "1b+ gp reported by user",
+    "historical_cash_snapshot_gp": 131000000,
+    "current_liquid_gp": null,
+    "confidence": "historical only",
+    "rule": "Do not size new trades from the historical bank/cash figures as if they are current. Use them only as broad scale context until the user gives a fresh cash/bank update."
+  },
   "active_positions": [
     {
       "item": "Wrath rune",
@@ -69,5 +76,5 @@
     {"item": "Inquisitor's great helm", "action": "buy offer", "quantity": 1, "price_gp_each": 85000000, "status": "fill unconfirmed"},
     {"item": "Amulet of magic", "action": "buy offer", "quantity": 1998, "price_gp_each": 515, "status": "fill unconfirmed"}
   ],
-  "portfolio_rule": "Whenever the user reports a new purchase, sale, fill, target, or quantity, update this ledger. Prefer the newest explicit user statement over older snapshots. Never infer a fill from an offer alone."
+  "portfolio_rule": "Whenever the user reports a new purchase, sale, fill, target, quantity, current cash, or bank-value update, update this ledger. Prefer the newest explicit user statement over older snapshots. Never infer a fill from an offer alone."
 }
