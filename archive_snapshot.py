@@ -5,7 +5,9 @@ import os
 SNAPSHOT = "snapshot.json"
 RELATED = "related_watch.json"
 OUT = "history/market_history.jsonl"
+RECENT_OUT = "history/recent_history.json"
 MAX_RECORDS = 24 * 120  # roughly 120 days at hourly cadence
+RECENT_RECORDS = 72      # compact last ~3 days for desk comparisons
 
 
 def compact_portfolio(snapshot):
@@ -93,7 +95,17 @@ def main():
         for row in existing:
             f.write(json.dumps(row, separators=(",", ":")) + "\n")
 
-    print(f"Archived market snapshot; retained {len(existing)} records")
+    recent = {
+        "schema_version": 1,
+        "source": "Derived only from this relay's prices.runescape.wiki snapshots",
+        "record_count": min(len(existing), RECENT_RECORDS),
+        "records": existing[-RECENT_RECORDS:],
+    }
+    with open(RECENT_OUT, "w", encoding="utf-8") as f:
+        json.dump(recent, f, indent=2)
+        f.write("\n")
+
+    print(f"Archived market snapshot; retained {len(existing)} records; wrote {RECENT_OUT}")
 
 
 if __name__ == "__main__":
