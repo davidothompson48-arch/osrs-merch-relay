@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "updated_at_utc": "2026-08-18T04:34:00Z",
+  "important_rule": "All price levels in historical_research are stale research notes, not current market data. Current entries/exits must always be recalculated from fresh prices.runescape.wiki relay data.",
+  "theses": [
+    {
+      "theme": "Wrath rune / Breaker charge",
+      "items": ["Wrath rune", "Nature rune", "Soul rune", "Blood rune", "Death rune", "Chaos rune"],
+      "what_we_know": "Jagex's July 30, 2026 Fractured Archive rewards blog says the Breaker will require Ascension Shards plus a rune of some kind and explicitly says the rune had not been decided at that time.",
+      "what_we_think": "Wrath is a plausible candidate because it is a high-level rune with limited current sinks, but there is no official Wrath-specific confirmation.",
+      "failure_modes": ["Jagex chooses another rune", "charging design changes", "release delay", "speculation already priced in", "additional rune supply", "opportunity cost"],
+      "status": "PLAUSIBLE SPECULATION",
+      "catalyst_confidence_0_100": 40
+    },
+    {
+      "theme": "CoX prayer scroll supply reduction",
+      "items": ["Arcane prayer scroll", "Dexterous prayer scroll"],
+      "what_we_know": "Implemented August 12, 2026. Arcane and Dexterous weights changed from 20/69 old weighting to 14/60 regular and 12/56 CM, summarized by Jagex as about 20% less common in regular CoX and 26% less common in CM.",
+      "what_we_think": "Supply is structurally improved for scrolls, but inventories and seller behavior can delay or overpower the fundamental effect.",
+      "failure_modes": ["existing stockpiles", "increased CoX farming", "weak marginal prayer demand", "further reward-table changes", "panic distribution"],
+      "status": "CONFIRMED"
+    },
+    {
+      "theme": "Ancestral supply increase",
+      "items": ["Ancestral hat", "Ancestral robe top", "Ancestral robe bottom"],
+      "what_we_know": "Implemented August 12, 2026. Each Ancestral piece weight changed from 3/69 to 4/60 regular and 4/56 CM; Jagex table describes +53.3% relative weighting regular and +64.3% CM.",
+      "what_we_think": "This is a structural supply headwind even if short-term price can rebound on positioning or future magic demand.",
+      "failure_modes": ["Raids 4 creates stronger magic demand", "new content raises demand faster than supply", "CoX participation declines"],
+      "status": "CONFIRMED"
+    },
+    {
+      "theme": "Inquisitor / Crush sector",
+      "items": ["Inquisitor's great helm", "Inquisitor's hauberk", "Inquisitor's plateskirt", "Inquisitor's mace", "Inquisitor's armour set"],
+      "what_we_know": "The Fractured Archive Breaker proposal is a Crush megarare designed to dominate large Crush-weak targets; Jagex also proposed lowering Nex Crush defence so Breaker becomes BiS there. Rondache is a Crush-based shield-bash off-hand with Avernic-like Strength but no accuracy and Jagex mentioned a possible future combination path with Avernic if needed.",
+      "what_we_think": "Crush relevance can rise while the Inquisitor mace loses relative weapon share. Armor may benefit differently from mace, so the ecosystem must be analyzed piece-by-piece.",
+      "failure_modes": ["Breaker displaces mace", "new armor bypasses Inquisitor", "Nightmare supply rises", "Crush bosses do not use Inquisitor set effectively", "reward redesign"],
+      "status": "MIXED / CATALYST WATCH"
+    },
+    {
+      "theme": "Amulet of magic component speculation",
+      "items": ["Amulet of magic", "Sapphire amulet", "Cosmic rune"],
+      "what_we_know": "No confirmed new sink or upgrade path has been identified. The item has shown thin-market spikes and reversals.",
+      "what_we_think": "Any future magic progression recipe or component requirement could matter because of low unit value, but current thesis is speculative.",
+      "failure_modes": ["no content connection", "tiny buy limit", "normal crafting supply", "merchant-driven spikes", "illiquidity"],
+      "status": "WEAK SPECULATION"
+    },
+    {
+      "theme": "Dragon bones / Prayer progression",
+      "items": ["Dragon bones", "Superior dragon bones"],
+      "what_we_know": "Fractured Archive proposal includes Zeal requiring 84 Prayer plus Piety, 75 Attack and 75 Strength if implemented as proposed. This creates a potential high-level Prayer demand narrative, but it does not itself create a direct bone sink.",
+      "what_we_think": "Prayer training demand can front-run major prayer unlocks, but bone supply and alternative training methods matter.",
+      "failure_modes": ["players already meet Prayer requirement", "Varlamore/alternative methods absorb demand", "PvM/bot supply rises", "Zeal changes or fails"],
+      "status": "PLAUSIBLE CATALYST WATCH"
+    },
+    {
+      "theme": "Diamond / Onyx bolt-tip speculation",
+      "items": ["Diamond bolt tips", "Onyx bolt tips", "Diamond", "Onyx", "Ruby bolts (e)"],
+      "what_we_know": "Jagex's July 30 Fractured Archive proposal says Ascension Crossbows use regular, Diamond, or Onyx Ascension bolts, and Ascension bolts are made from Ascension Shards. The blog does not state that existing Diamond or Onyx bolt tips are ingredients.",
+      "what_we_think": "Existing gem-tip items could benefit only if Jagex uses them in the recipe or if substitution demand emerges. This is not confirmed.",
+      "failure_modes": ["new dedicated raid bolt components", "existing tips excluded", "raid supplies overwhelm demand", "market pre-prices the theory"],
+      "status": "PLAUSIBLE SPECULATION"
+    }
+  ],
+  "historical_research": {
+    "dragon_bones": {"preferred_entry_gp": "3050-3150", "historical_exit_gp": "3400-3550", "stretch_gp": 3650, "note": "Old research band; recalculate from fresh tape."},
+    "superior_dragon_bones": {"preferred_entry_gp": "18800-19500", "historical_exit_gp": "21500-22500", "note": "Old research band; recalculate."},
+    "wrath_runes": {"historical_entry_gp": "310-325", "rumor_exit_gp": "375-400", "confirmation_stretch_gp": "425+", "old_sizing_note": "Prior research suggested <=5% bank before user later increased position; do not treat old sizing as current instruction."},
+    "diamond_bolt_tips": {"historical_entry_gp": "155-162", "layered_plan": "157-159 30%; 153-156 40%; 149-152 30%", "risk_trigger_gp": "149-150", "rumor_exit_gp": "178-185", "recipe_confirmation_upside_gp": "200-250+", "buy_limit": 11000},
+    "arcane_scrolls": {"old_research_add_gp": "5.8m-6.1m", "old_hold_zone_gp": "6.3m-6.6m", "old_partial_exit_gp": "6.8m-7.1m", "note": "Old research referenced 22-scroll position before later accumulation; not current executable levels."}
+  }
+}
