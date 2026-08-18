@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "updated_at_utc": "2026-08-18T04:43:00Z",
+  "rule": "These are static recipe/set relationships only. All input/output market values and ROI must be recalculated from fresh prices.runescape.wiki data on every run.",
+  "conversions": [
+    {
+      "type": "processing",
+      "input": "Diamond",
+      "input_quantity": 1,
+      "output": "Diamond bolt tips",
+      "output_quantity": 12,
+      "requirements": "65 Fletching and a chisel",
+      "xp_per_input": 7,
+      "process_time_seconds_approx": 3,
+      "source": "https://oldschool.runescape.wiki/w/Diamond_bolt_tips",
+      "notes": "Diamond bolt tips item ID 9192; Wiki static page lists GE buy limit 11,000. Current price/volume from the static page must not be used by the desk."
+    },
+    {
+      "type": "processing",
+      "input": "Onyx",
+      "input_quantity": 1,
+      "output": "Onyx bolt tips",
+      "output_quantity": 24,
+      "requirements": "73 Fletching and a chisel",
+      "source": "https://oldschool.runescape.wiki/w/Cutting_onyx",
+      "notes": "Use only fresh Wiki/RuneLite API market prices when evaluating this conversion."
+    }
+  ],
+  "sets": [
+    {
+      "set": "Inquisitor's armour set",
+      "item_id": 24488,
+      "components": ["Inquisitor's great helm", "Inquisitor's hauberk", "Inquisitor's plateskirt"],
+      "source": "https://oldschool.runescape.wiki/w/Exchange:Inquisitor%27s_armour_set",
+      "notes": "Set does not include the Inquisitor's mace. Evaluate set-to-pieces and pieces-to-set pricing from fresh Wiki/RuneLite tape only."
+    }
+  ]
+}
