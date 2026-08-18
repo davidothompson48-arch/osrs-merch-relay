@@ -1,8 +1,14 @@
 {
   "schema_version": 1,
-  "updated_at_utc": "2026-08-18T04:45:00Z",
+  "updated_at_utc": "2026-08-18T04:51:30Z",
   "purpose": "Prevent the desk from silently inventing missing portfolio facts or treating old offers as fills. Resolve these only from a new explicit user statement or reliable evidence.",
   "open_gaps": [
+    {
+      "priority": "HIGH",
+      "field": "Current liquid GP / cash available for new trades",
+      "known": "A historical screenshot showed about 131m GP cash and the user historically described a 1b+ bank, but current liquidity has changed through subsequent buys/sells.",
+      "resolution": "Use conservative trade-sizing language until the user provides a fresh cash figure; never treat the historical 131m as current."
+    },
     {
       "priority": "HIGH",
       "field": "Arcane prayer scroll exact cost basis",
