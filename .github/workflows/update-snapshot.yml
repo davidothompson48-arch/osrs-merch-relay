@@ -15,7 +15,7 @@ on:
       - 'project/related_items.json'
       - '.github/workflows/update-snapshot.yml'
   schedule:
-    - cron: '7 * * * *'
+    - cron: '17,47 * * * *'
 
 permissions:
   contents: write
@@ -23,6 +23,7 @@ permissions:
 jobs:
   update:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -33,13 +34,28 @@ jobs:
           python-version: '3.12'
 
       - name: Fetch core RuneLite/Wiki market data
-        run: python collect.py
+        run: |
+          for attempt in 1 2 3; do
+            python collect.py && break
+            if [ "$attempt" = "3" ]; then exit 1; fi
+            sleep $((attempt * 10))
+          done
 
       - name: Fetch related-sector RuneLite/Wiki market data
-        run: python collect_related.py
+        run: |
+          for attempt in 1 2 3; do
+            python collect_related.py && break
+            if [ "$attempt" = "3" ]; then exit 1; fi
+            sleep $((attempt * 10))
+          done
 
       - name: Fetch readable full-market RuneLite/Wiki universe
-        run: python collect_universe.py
+        run: |
+          for attempt in 1 2 3; do
+            python collect_universe.py && break
+            if [ "$attempt" = "3" ]; then exit 1; fi
+            sleep $((attempt * 10))
+          done
 
       - name: Archive compact market history
         run: python archive_snapshot.py
