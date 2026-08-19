@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at_utc": "2026-08-18T04:43:00Z",
+  "updated_at_utc": "2026-08-19T02:45:00Z",
   "rule": "These are static recipe/set relationships only. All input/output market values and ROI must be recalculated from fresh prices.runescape.wiki data on every run.",
   "conversions": [
     {
@@ -24,6 +24,27 @@
       "requirements": "73 Fletching and a chisel",
       "source": "https://oldschool.runescape.wiki/w/Cutting_onyx",
       "notes": "Use only fresh Wiki/RuneLite API market prices when evaluating this conversion."
+    },
+    {
+      "type": "processing",
+      "inputs": [
+        {"item": "Burnt page", "quantity": 1},
+        {"item": "Sunfire rune", "quantity": 100}
+      ],
+      "output": "Searing page",
+      "output_quantity": 1,
+      "source": "https://oldschool.runescape.wiki/w/Searing_page",
+      "notes": "Each Searing page adds 20 Tome of fire charges. Current conversion value must always be recalculated from fresh Wiki/RuneLite prices."
+    },
+    {
+      "type": "npc_exchange",
+      "input": "Tome of fire (empty)",
+      "input_quantity": 1,
+      "output": "Burnt page",
+      "output_quantity": 250,
+      "npc": "Ignisia",
+      "source": "https://oldschool.runescape.wiki/w/Tome_of_fire",
+      "notes": "One-way exchange from Tome to Burnt pages; this creates a reserve-supply/arbitrage relationship but Burnt pages cannot be exchanged back into a Tome."
     }
   ],
   "sets": [
