@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at_utc": "2026-08-19T03:46:00Z",
+  "updated_at_utc": "2026-08-19T04:56:00Z",
   "purpose": "Persistent user portfolio state for the OSRS Merch Desk. Current market prices are never stored here as authoritative; executable prices must come from the fresh Wiki/RuneLite relay snapshot.",
   "source_of_truth_for_market_data": "prices.runescape.wiki via snapshot.json",
   "account_context": {"historical_bank_value":"1b+ gp reported by user","historical_cash_snapshot_gp":131000000,"current_liquid_gp":null,"confidence":"historical only","rule":"Do not size new trades from historical figures as current."},
@@ -14,10 +14,12 @@
     {"item":"Tome of fire (empty)","item_id":20716,"quantity":7,"cost_basis_gp_each":1490000,"cost_basis_gp_total_approx":10430000,"confidence":"high","note":"Confirmed Fire/Searing thesis basket purchase."}
   ],
   "tracked_positions_quantity_unresolved": [
+    {"item":"Nightmare staff","item_id":24422,"note":"User said they are going to buy one for personal use on 2026-08-18 local time. Treat as pending intent only until actual GE fill and price are confirmed; do not count as owned yet."},
     {"item":"Inquisitor's great helm","item_id":24419,"note":"Historical 85m buy offer existed; fill unconfirmed."},{"item":"Inquisitor's hauberk","item_id":24420},{"item":"Inquisitor's plateskirt","item_id":24421},{"item":"Amulet of magic","item_id":1727,"note":"Historical offer fill unconfirmed."},{"item":"Ancestral robe bottom","item_id":21024,"note":"Current quantity unresolved."},{"item":"Dragon bones","item_id":536}
   ],
   "legacy_or_noncore_positions": [{"item":"Diamond","quantity":28271,"status":"historical; current ownership unresolved"},{"item":"Diamond bolt tips","quantity":13550,"status":"historical; current ownership unresolved"}],
   "historical_transactions_and_offers": [
+    {"item":"Nightmare staff","action":"buy intent","quantity":1,"price_gp_each":null,"status":"pending; fill not yet confirmed"},
     {"item":"Wrath rune","action":"buy","quantity":50000,"price_gp_each":346,"status":"confirmed"},{"item":"Grimy lantadyme","action":"buy","quantity":11000,"price_gp_each":1203,"status":"confirmed"},{"item":"Burnt page","action":"buy","quantity":2300,"price_gp_each":6100,"status":"confirmed"},{"item":"Tome of fire (empty)","action":"buy","quantity":7,"price_gp_each":1490000,"status":"confirmed"}
   ],
   "portfolio_rule":"Whenever the user reports a new purchase, sale, fill, target, quantity, current cash, or bank-value update, update this ledger. Prefer newest explicit user statement. Never infer a fill from an offer alone."
