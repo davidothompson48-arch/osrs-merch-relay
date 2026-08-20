@@ -1,6 +1,6 @@
 # Verified OSRS Catalyst Memory
 
-Updated: 2026-08-18 UTC
+Updated: 2026-08-20 UTC
 
 This file stores catalyst facts separately from live GE data. Market prices/volume remain exclusively sourced from `prices.runescape.wiki` via the relay.
 
@@ -23,13 +23,19 @@ Official rewards poll blog:
 - Ascension Crossbows: rapid-fire Heavy Ranged upgrade using regular, Diamond, or Onyx Ascension bolt variants; Ascension Bolts are made from Ascension Shards obtained from the raid or lobby activity. The blog does NOT state that existing Diamond/Onyx bolt tips are required ingredients.
 - Breaker: Crush megarare; rolls damage twice by default, three times if Crush is the enemy's second-weakest Melee defence, and four times if Crush is weakest. Designed to dominate large Crush-weak targets. Jagex also proposed lowering Nex's Crush defence so Breaker becomes BiS there.
 - Breaker charge requirement: Jagex explicitly said it will use Ascension Shards plus "a rune of some kind" and that the rune had not yet been decided in this blog. This confirms a broad rune catalyst, not Wrath specifically.
-- Blog said Jagex hoped to open the rewards poll on August 3, with a possibility of delay.
 
-### Reward poll result verification status
-
-As of this project's 2026-08-18 verification pass, the official 2026 poll index surfaced polls through the July 21-August 2 Quarterly Survey but did not surface a Fractured Archive rewards result page, and targeted searches for Breaker/Zorya reward-poll results returned no official result.
-
-A prior saved research note claimed "all six rewards passed." Preserve that statement only as UNVERIFIED LEGACY RESEARCH until an official Jagex/Old School poll result page is found. Do not treat the individual rewards as passed based solely on that prior note.
+Official rewards lock-in poll:
+- Source: https://oldschool.runescape.com/polls/2026/1762
+- Poll dates: 3 Aug 2026 - 10 Aug 2026.
+- All six functional reward questions passed:
+  - Elemental Fragments: 85.8% Yes (41,048 Yes / 6,775 No; 1,464 skipped).
+  - Rondache: 80.7% Yes (38,672 Yes / 9,225 No; 1,390 skipped).
+  - Zorya's Tome: 90.4% Yes (43,700 Yes / 4,667 No; 920 skipped).
+  - Zeal: 86.1% Yes (41,707 Yes / 6,747 No; 833 skipped).
+  - Ascension Crossbows: 85.6% Yes (41,500 Yes / 6,971 No; 816 skipped).
+  - Breaker: 88.4% Yes (42,924 Yes / 5,638 No; 725 skipped).
+- Breaker visual ranked-choice result: The Obligator 1st, Titanic Breaker 2nd, TzHaar-Ket Breaker 3rd.
+- These reward results are now CONFIRMED and supersede the older unverified legacy note.
 
 ## Chambers of Xeric Summer Sweep-Up
 
