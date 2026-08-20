@@ -5,21 +5,26 @@ import urllib.request
 from datetime import datetime, timezone
 
 BASE = "https://prices.runescape.wiki/api/v1/osrs"
-USER_AGENT = "osrs-merch-relay-related/1.0 (contact: davidothompson48@gmail.com)"
+USER_AGENT = "osrs-merch-relay-related/1.1 (contact: davidothompson48@gmail.com)"
 UNIVERSE_FILE = "project/related_items.json"
 OUT = "related_watch.json"
 
 
-def fetch_json(path, required=True):
+def fetch_json(path, required=True, retries=3, timeout=20):
     url = f"{BASE}/{path}"
-    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT, "Accept": "application/json"})
-    try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            return json.load(resp)
-    except Exception:
-        if required:
-            raise
-        return {}
+    last_error = None
+    for attempt in range(retries):
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT, "Accept": "application/json"})
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
+                return json.load(resp)
+        except Exception as exc:
+            last_error = f"{type(exc).__name__}: {exc}"
+            if attempt + 1 < retries:
+                time.sleep(1.5 * (attempt + 1))
+    if required:
+        raise RuntimeError(f"Required endpoint failed: {url}: {last_error}")
+    return {"_error": last_error, "_url": url}
 
 
 def normalize(payload):
@@ -41,13 +46,16 @@ def main():
     with open(UNIVERSE_FILE, "r", encoding="utf-8") as f:
         universe = json.load(f)
 
-    mapping_payload = fetch_json("mapping")
+    mapping_payload = fetch_json("mapping", required=True, retries=4)
     mapping_rows = mapping_payload if isinstance(mapping_payload, list) else mapping_payload.get("data", [])
     by_name = {x.get("name"): x for x in mapping_rows if isinstance(x, dict) and x.get("name")}
 
-    latest = normalize(fetch_json("latest"))
-    one_hour = normalize(fetch_json("1h"))
-    day = normalize(fetch_json("24h", required=False))
+    latest = normalize(fetch_json("latest", required=True, retries=4))
+    one_hour = normalize(fetch_json("1h", required=True, retries=4))
+    day = normalize(fetch_json("24h", required=False, retries=2, timeout=15))
+
+    if not latest or not one_hour:
+        raise RuntimeError("Wiki API returned no usable latest/1h data for related watch")
 
     now = int(time.time())
     out_groups = {}
@@ -101,11 +109,12 @@ def main():
         out_groups[group] = rows
 
     output = {
-        "schema_version": 1,
+        "schema_version": 2,
         "generated_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
         "generated_unix": now,
         "source": "prices.runescape.wiki OSRS RuneLite real-time API",
         "source_policy": "All market fields in this file originate only from prices.runescape.wiki.",
+        "freshness_policy": "mapping/latest/1h are required; 24h is fail-soft.",
         "groups": out_groups,
         "unresolved_names": unresolved,
     }
