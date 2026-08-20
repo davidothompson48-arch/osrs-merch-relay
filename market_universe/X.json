@@ -1,9 +1,10 @@
 {
-  "schema_version": 1,
-  "generated_at": "2026-08-20T13:00:25.716946Z",
-  "generated_unix": 1787230825,
+  "schema_version": 2,
+  "generated_at": "2026-08-20T13:00:59.897800Z",
+  "generated_unix": 1787230859,
   "source": "prices.runescape.wiki OSRS RuneLite real-time API",
   "source_policy": "All market and static metadata fields in this file originate only from prices.runescape.wiki.",
+  "freshness_policy": "mapping/latest/1h are required; 5m/24h are fail-soft.",
   "shard": "X",
   "item_count": 4,
   "items": [
@@ -20,8 +21,8 @@
         "low": 1760,
         "highTime": 1787229852,
         "lowTime": 1787230678,
-        "highAgeSeconds": 973,
-        "lowAgeSeconds": 147
+        "highAgeSeconds": 1007,
+        "lowAgeSeconds": 181
       },
       "5m": {
         "avgHighPrice": null,
@@ -55,8 +56,8 @@
         "low": 2811,
         "highTime": 1787230539,
         "lowTime": 1787227645,
-        "highAgeSeconds": 286,
-        "lowAgeSeconds": 3180
+        "highAgeSeconds": 320,
+        "lowAgeSeconds": 3214
       },
       "5m": {
         "avgHighPrice": 5089,
@@ -90,8 +91,8 @@
         "low": 6524,
         "highTime": 1787230646,
         "lowTime": 1787230681,
-        "highAgeSeconds": 179,
-        "lowAgeSeconds": 144
+        "highAgeSeconds": 213,
+        "lowAgeSeconds": 178
       },
       "5m": {
         "avgHighPrice": 8549,
@@ -125,8 +126,8 @@
         "low": 5679,
         "highTime": 1787230610,
         "lowTime": 1787230645,
-        "highAgeSeconds": 215,
-        "lowAgeSeconds": 180
+        "highAgeSeconds": 249,
+        "lowAgeSeconds": 214
       },
       "5m": {
         "avgHighPrice": 6918,

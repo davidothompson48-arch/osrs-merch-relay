@@ -1,9 +1,10 @@
 {
-  "schema_version": 1,
-  "generated_at": "2026-08-20T13:00:25.716946Z",
-  "generated_unix": 1787230825,
+  "schema_version": 2,
+  "generated_at": "2026-08-20T13:00:59.897800Z",
+  "generated_unix": 1787230859,
   "source": "prices.runescape.wiki OSRS RuneLite real-time API",
   "source_policy": "All market and static metadata fields in this file originate only from prices.runescape.wiki.",
+  "freshness_policy": "mapping/latest/1h are required; 5m/24h are fail-soft.",
   "shard": "Q",
   "item_count": 1,
   "items": [
@@ -17,11 +18,11 @@
       "lowalch": 20,
       "current": {
         "high": 2951,
-        "low": 3098,
+        "low": 3000,
         "highTime": 1787230299,
-        "lowTime": 1787230570,
-        "highAgeSeconds": 526,
-        "lowAgeSeconds": 255
+        "lowTime": 1787230818,
+        "highAgeSeconds": 560,
+        "lowAgeSeconds": 41
       },
       "5m": {
         "avgHighPrice": null,
