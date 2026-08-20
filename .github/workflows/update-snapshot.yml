@@ -17,13 +17,17 @@ on:
   schedule:
     - cron: '17,47 * * * *'
 
+concurrency:
+  group: osrs-market-relay
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -35,39 +39,52 @@ jobs:
 
       - name: Fetch core RuneLite/Wiki market data
         run: |
-          for attempt in 1 2 3; do
+          for attempt in 1 2 3 4; do
             python collect.py && break
-            if [ "$attempt" = "3" ]; then exit 1; fi
+            if [ "$attempt" = "4" ]; then exit 1; fi
             sleep $((attempt * 10))
           done
 
+      - name: Commit fresh core tape immediately
+        if: github.event_name != 'pull_request'
+        run: |
+          git config user.name "osrs-merch-relay-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add snapshot.json relay_health.json
+          if git diff --cached --quiet; then
+            echo "No core market-data changes"
+          else
+            git commit -m "Update fresh OSRS core tape"
+            git push
+          fi
+
       - name: Fetch related-sector RuneLite/Wiki market data
+        continue-on-error: true
         run: |
           for attempt in 1 2 3; do
             python collect_related.py && break
             if [ "$attempt" = "3" ]; then exit 1; fi
-            sleep $((attempt * 10))
+            sleep $((attempt * 8))
           done
 
       - name: Fetch readable full-market RuneLite/Wiki universe
+        continue-on-error: true
         run: |
           for attempt in 1 2 3; do
             python collect_universe.py && break
             if [ "$attempt" = "3" ]; then exit 1; fi
-            sleep $((attempt * 10))
+            sleep $((attempt * 8))
           done
 
       - name: Archive compact market history
         run: python archive_snapshot.py
 
-      - name: Commit market data if changed
+      - name: Commit secondary market data if changed
         if: github.event_name != 'pull_request'
         run: |
-          git config user.name "osrs-merch-relay-bot"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add snapshot.json related_watch.json market_universe/ history/market_history.jsonl history/recent_history.json
+          git add snapshot.json relay_health.json related_watch.json market_universe/ history/market_history.jsonl history/recent_history.json
           if git diff --cached --quiet; then
-            echo "No market data changes"
+            echo "No secondary market-data changes"
             exit 0
           fi
           git commit -m "Update OSRS market data and history"
