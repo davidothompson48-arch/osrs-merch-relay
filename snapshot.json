@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-08-20T12:59:57.628597Z",
-  "generated_unix": 1787230797,
+  "generated_at": "2026-08-20T13:00:20.866555Z",
+  "generated_unix": 1787230820,
   "source": "prices.runescape.wiki OSRS RuneLite real-time API",
   "source_policy": "All market prices and volumes in this file originate only from prices.runescape.wiki.",
   "freshness_policy": "mapping/latest/1h are critical; 5m/6h/24h/timeseries are fail-soft and may be empty without blocking fresh current tape.",
@@ -30,8 +30,8 @@
         "low": 343,
         "highTime": 1787230773,
         "lowTime": 1787230621,
-        "highAgeSeconds": 24,
-        "lowAgeSeconds": 176,
+        "highAgeSeconds": 47,
+        "lowAgeSeconds": 199,
         "rawSpread": 11,
         "geTaxAtHigh": 7,
         "afterTaxSpread": 4,
@@ -39,10 +39,10 @@
       },
       "averages": {
         "5m": {
-          "avgHighPrice": 351,
-          "highPriceVolume": 9000,
-          "avgLowPrice": 344,
-          "lowPriceVolume": 9357
+          "avgHighPrice": 353,
+          "highPriceVolume": 9264,
+          "avgLowPrice": 343,
+          "lowPriceVolume": 2597
         },
         "1h": {
           "avgHighPrice": 357,
@@ -97,11 +97,11 @@
       "liquidity": "LIQUID",
       "history_complete": true,
       "previousRelaySnapshot": {
-        "generatedAt": "2026-08-20T11:00:46.183502Z",
-        "high": 355,
-        "low": 345,
-        "highTime": 1787223591,
-        "lowTime": 1787223616
+        "generatedAt": "2026-08-20T12:59:57.628597Z",
+        "high": 354,
+        "low": 343,
+        "highTime": 1787230773,
+        "lowTime": 1787230621
       }
     },
     "21079": {
@@ -114,8 +114,8 @@
         "low": 5423864,
         "highTime": 1787227757,
         "lowTime": 1787229765,
-        "highAgeSeconds": 3040,
-        "lowAgeSeconds": 1032,
+        "highAgeSeconds": 3063,
+        "lowAgeSeconds": 1055,
         "rawSpread": 182770,
         "geTaxAtHigh": 112132,
         "afterTaxSpread": 70638,
@@ -143,32 +143,32 @@
         }
       },
       "movementPct": {
-        "1h": 0.338,
-        "6h": 0.39,
-        "24h": -0.809,
-        "7d": -9.591,
+        "1h": -0.054,
+        "6h": 0.66,
+        "24h": -0.224,
+        "7d": -9.813,
         "30d": 2.042
       },
       "volume": {
         "1h": {
-          "high": 9,
-          "low": 2,
-          "total": 11
+          "high": 6,
+          "low": 9,
+          "total": 15
         },
         "6h": {
-          "high": 29,
-          "low": 47,
-          "total": 76
+          "high": 31,
+          "low": 36,
+          "total": 67
         },
         "24h": {
-          "high": 150,
-          "low": 275,
-          "total": 425
+          "high": 151,
+          "low": 280,
+          "total": 431
         },
         "7d": {
-          "high": 1766,
-          "low": 2422,
-          "total": 4188
+          "high": 1757,
+          "low": 2419,
+          "total": 4176
         },
         "highSideShare1h": 0.8182,
         "estimatedGpTraded1h": 60691196
@@ -176,11 +176,11 @@
       "liquidity": "MODERATE",
       "history_complete": true,
       "previousRelaySnapshot": {
-        "generatedAt": "2026-08-20T11:00:46.183502Z",
-        "high": 5541272,
-        "low": 5422000,
-        "highTime": 1787222334,
-        "lowTime": 1787223076
+        "generatedAt": "2026-08-20T12:59:57.628597Z",
+        "high": 5606634,
+        "low": 5423864,
+        "highTime": 1787227757,
+        "lowTime": 1787229765
       }
     },
     "21034": {
@@ -193,8 +193,8 @@
         "low": 19675520,
         "highTime": 1787228130,
         "lowTime": 1787230154,
-        "highAgeSeconds": 2667,
-        "lowAgeSeconds": 643,
+        "highAgeSeconds": 2690,
+        "lowAgeSeconds": 666,
         "rawSpread": 505224,
         "geTaxAtHigh": 403614,
         "afterTaxSpread": 101610,
@@ -222,32 +222,32 @@
         }
       },
       "movementPct": {
-        "1h": 0.496,
-        "6h": 0.988,
-        "24h": -0.152,
-        "7d": -8.279,
+        "1h": -0.492,
+        "6h": 0.398,
+        "24h": -0.382,
+        "7d": -11.049,
         "30d": 25.086
       },
       "volume": {
         "1h": {
-          "high": 10,
-          "low": 1,
-          "total": 11
+          "high": 2,
+          "low": 10,
+          "total": 12
         },
         "6h": {
           "high": 29,
-          "low": 37,
-          "total": 66
+          "low": 42,
+          "total": 71
         },
         "24h": {
-          "high": 156,
-          "low": 271,
+          "high": 154,
+          "low": 273,
           "total": 427
         },
         "7d": {
-          "high": 1787,
-          "low": 2469,
-          "total": 4256
+          "high": 1775,
+          "low": 2471,
+          "total": 4246
         },
         "highSideShare1h": 0.9091,
         "estimatedGpTraded1h": 220800217
@@ -255,11 +255,11 @@
       "liquidity": "LIQUID",
       "history_complete": true,
       "previousRelaySnapshot": {
-        "generatedAt": "2026-08-20T11:00:46.183502Z",
-        "high": 20259949,
-        "low": 19727782,
-        "highTime": 1787222163,
-        "lowTime": 1787223436
+        "generatedAt": "2026-08-20T12:59:57.628597Z",
+        "high": 20180744,
+        "low": 19675520,
+        "highTime": 1787228130,
+        "lowTime": 1787230154
       }
     },
     "24419": {
@@ -272,8 +272,8 @@
         "low": 86524323,
         "highTime": 1787229828,
         "lowTime": 1787229425,
-        "highAgeSeconds": 969,
-        "lowAgeSeconds": 1372,
+        "highAgeSeconds": 992,
+        "lowAgeSeconds": 1395,
         "rawSpread": 2223042,
         "geTaxAtHigh": 1774947,
         "afterTaxSpread": 448095,
@@ -301,32 +301,32 @@
         }
       },
       "movementPct": {
-        "1h": -0.037,
-        "6h": -0.213,
-        "24h": -1.791,
-        "7d": 1.056,
+        "1h": 0.19,
+        "6h": 0.908,
+        "24h": -2.361,
+        "7d": 1.19,
         "30d": 14.082
       },
       "volume": {
         "1h": {
-          "high": 0,
-          "low": 9,
-          "total": 9
+          "high": 2,
+          "low": 4,
+          "total": 6
         },
         "6h": {
-          "high": 12,
+          "high": 11,
           "low": 18,
-          "total": 30
+          "total": 29
         },
         "24h": {
           "high": 68,
-          "low": 95,
-          "total": 163
+          "low": 93,
+          "total": 161
         },
         "7d": {
-          "high": 553,
-          "low": 840,
-          "total": 1393
+          "high": 552,
+          "low": 837,
+          "total": 1389
         },
         "highSideShare1h": 0.0,
         "estimatedGpTraded1h": 788520483
@@ -334,11 +334,11 @@
       "liquidity": "VERY LIQUID",
       "history_complete": true,
       "previousRelaySnapshot": {
-        "generatedAt": "2026-08-20T11:00:46.183502Z",
-        "high": 88380289,
-        "low": 87000001,
-        "highTime": 1787222151,
-        "lowTime": 1787221726
+        "generatedAt": "2026-08-20T12:59:57.628597Z",
+        "high": 88747365,
+        "low": 86524323,
+        "highTime": 1787229828,
+        "lowTime": 1787229425
       }
     },
     "24420": {
@@ -351,8 +351,8 @@
         "low": 132034826,
         "highTime": 1787229618,
         "lowTime": 1787229432,
-        "highAgeSeconds": 1179,
-        "lowAgeSeconds": 1365,
+        "highAgeSeconds": 1202,
+        "lowAgeSeconds": 1388,
         "rawSpread": 3525879,
         "geTaxAtHigh": 2711214,
         "afterTaxSpread": 814665,
@@ -380,32 +380,32 @@
         }
       },
       "movementPct": {
-        "1h": -0.666,
-        "6h": -1.472,
-        "24h": 1.646,
-        "7d": -0.583,
+        "1h": -0.57,
+        "6h": -1.05,
+        "24h": 0.912,
+        "7d": -1.224,
         "30d": 19.362
       },
       "volume": {
         "1h": {
-          "high": 2,
-          "low": 2,
-          "total": 4
+          "high": 3,
+          "low": 4,
+          "total": 7
         },
         "6h": {
-          "high": 12,
-          "low": 19,
-          "total": 31
+          "high": 15,
+          "low": 17,
+          "total": 32
         },
         "24h": {
-          "high": 77,
+          "high": 78,
           "low": 122,
-          "total": 199
+          "total": 200
         },
         "7d": {
           "high": 558,
-          "low": 906,
-          "total": 1464
+          "low": 908,
+          "total": 1466
         },
         "highSideShare1h": 0.5,
         "estimatedGpTraded1h": 536746576
@@ -413,11 +413,11 @@
       "liquidity": "VERY LIQUID",
       "history_complete": true,
       "previousRelaySnapshot": {
-        "generatedAt": "2026-08-20T11:00:46.183502Z",
-        "high": 133373287,
-        "low": 134000000,
-        "highTime": 1787221667,
-        "lowTime": 1787222839
+        "generatedAt": "2026-08-20T12:59:57.628597Z",
+        "high": 135560705,
+        "low": 132034826,
+        "highTime": 1787229618,
+        "lowTime": 1787229432
       }
     },
     "24421": {
@@ -430,8 +430,8 @@
         "low": 128765000,
         "highTime": 1787229598,
         "lowTime": 1787229437,
-        "highAgeSeconds": 1199,
-        "lowAgeSeconds": 1360,
+        "highAgeSeconds": 1222,
+        "lowAgeSeconds": 1383,
         "rawSpread": 3856082,
         "geTaxAtHigh": 2652421,
         "afterTaxSpread": 1203661,
@@ -459,32 +459,32 @@
         }
       },
       "movementPct": {
-        "1h": -0.269,
-        "6h": 1.078,
-        "24h": 3.468,
-        "7d": 3.164,
+        "1h": -2.709,
+        "6h": -2.468,
+        "24h": 0.673,
+        "7d": 0.676,
         "30d": 5.475
       },
       "volume": {
         "1h": {
-          "high": 3,
-          "low": 8,
-          "total": 11
+          "high": 2,
+          "low": 1,
+          "total": 3
         },
         "6h": {
           "high": 11,
-          "low": 18,
-          "total": 29
+          "low": 19,
+          "total": 30
         },
         "24h": {
-          "high": 82,
-          "low": 120,
-          "total": 202
+          "high": 84,
+          "low": 115,
+          "total": 199
         },
         "7d": {
           "high": 584,
-          "low": 921,
-          "total": 1505
+          "low": 912,
+          "total": 1496
         },
         "highSideShare1h": 0.2727,
         "estimatedGpTraded1h": 1477652605
@@ -492,11 +492,11 @@
       "liquidity": "VERY LIQUID",
       "history_complete": true,
       "previousRelaySnapshot": {
-        "generatedAt": "2026-08-20T11:00:46.183502Z",
-        "high": 135999000,
-        "low": 133045180,
-        "highTime": 1787222902,
-        "lowTime": 1787221664
+        "generatedAt": "2026-08-20T12:59:57.628597Z",
+        "high": 132621082,
+        "low": 128765000,
+        "highTime": 1787229598,
+        "lowTime": 1787229437
       }
     },
     "24417": {
@@ -509,8 +509,8 @@
         "low": 323000000,
         "highTime": 1787230145,
         "lowTime": 1787229069,
-        "highAgeSeconds": 652,
-        "lowAgeSeconds": 1728,
+        "highAgeSeconds": 675,
+        "lowAgeSeconds": 1751,
         "rawSpread": 1416012,
         "geTaxAtHigh": 5000000,
         "afterTaxSpread": -3583988,
@@ -538,32 +538,32 @@
         }
       },
       "movementPct": {
-        "1h": -0.863,
-        "6h": 0.388,
-        "24h": 1.723,
-        "7d": 0.564,
+        "1h": -0.091,
+        "6h": -0.353,
+        "24h": 0.61,
+        "7d": 0.514,
         "30d": -8.553
       },
       "volume": {
         "1h": {
-          "high": 4,
-          "low": 0,
+          "high": 2,
+          "low": 2,
           "total": 4
         },
         "6h": {
           "high": 16,
-          "low": 8,
-          "total": 24
+          "low": 9,
+          "total": 25
         },
         "24h": {
-          "high": 120,
-          "low": 122,
-          "total": 242
+          "high": 115,
+          "low": 117,
+          "total": 232
         },
         "7d": {
-          "high": 1027,
-          "low": 970,
-          "total": 1997
+          "high": 1025,
+          "low": 966,
+          "total": 1991
         },
         "highSideShare1h": 1.0,
         "estimatedGpTraded1h": 1302261524
@@ -571,11 +571,11 @@
       "liquidity": "VERY LIQUID",
       "history_complete": true,
       "previousRelaySnapshot": {
-        "generatedAt": "2026-08-20T11:00:46.183502Z",
-        "high": 328400000,
-        "low": 323133761,
-        "highTime": 1787221807,
-        "lowTime": 1787219965
+        "generatedAt": "2026-08-20T12:59:57.628597Z",
+        "high": 324416012,
+        "low": 323000000,
+        "highTime": 1787230145,
+        "lowTime": 1787229069
       }
     },
     "1727": {
@@ -588,8 +588,8 @@
         "low": 604,
         "highTime": 1787230458,
         "lowTime": 1787230777,
-        "highAgeSeconds": 339,
-        "lowAgeSeconds": 20,
+        "highAgeSeconds": 362,
+        "lowAgeSeconds": 43,
         "rawSpread": 29,
         "geTaxAtHigh": 12,
         "afterTaxSpread": 17,
@@ -597,10 +597,10 @@
       },
       "averages": {
         "5m": {
-          "avgHighPrice": 633,
-          "highPriceVolume": 1,
-          "avgLowPrice": 565,
-          "lowPriceVolume": 3
+          "avgHighPrice": null,
+          "highPriceVolume": 0,
+          "avgLowPrice": 604,
+          "lowPriceVolume": 2
         },
         "1h": {
           "avgHighPrice": 581,
@@ -622,32 +622,32 @@
         }
       },
       "movementPct": {
-        "1h": -4.643,
-        "6h": -13.696,
-        "24h": 7.046,
-        "7d": -2.205,
+        "1h": 1.082,
+        "6h": -24.916,
+        "24h": -15.587,
+        "7d": -17.875,
         "30d": 6.163
       },
       "volume": {
         "1h": {
-          "high": 14,
-          "low": 28,
-          "total": 42
+          "high": 19,
+          "low": 39,
+          "total": 58
         },
         "6h": {
-          "high": 184,
-          "low": 643,
-          "total": 827
+          "high": 197,
+          "low": 570,
+          "total": 767
         },
         "24h": {
-          "high": 1077,
-          "low": 2097,
-          "total": 3174
+          "high": 1091,
+          "low": 2116,
+          "total": 3207
         },
         "7d": {
-          "high": 14933,
-          "low": 16588,
-          "total": 31521
+          "high": 14948,
+          "low": 16510,
+          "total": 31458
         },
         "highSideShare1h": 0.3333,
         "estimatedGpTraded1h": 23289
@@ -655,11 +655,11 @@
       "liquidity": "VERY THIN",
       "history_complete": true,
       "previousRelaySnapshot": {
-        "generatedAt": "2026-08-20T11:00:46.183502Z",
+        "generatedAt": "2026-08-20T12:59:57.628597Z",
         "high": 633,
-        "low": 528,
-        "highTime": 1787222362,
-        "lowTime": 1787223610
+        "low": 604,
+        "highTime": 1787230458,
+        "lowTime": 1787230777
       }
     },
     "21024": {
@@ -672,8 +672,8 @@
         "low": 64777777,
         "highTime": 1787230745,
         "lowTime": 1787230628,
-        "highAgeSeconds": 52,
-        "lowAgeSeconds": 169,
+        "highAgeSeconds": 75,
+        "lowAgeSeconds": 192,
         "rawSpread": 722223,
         "geTaxAtHigh": 1310000,
         "afterTaxSpread": -587777,
@@ -681,10 +681,10 @@
       },
       "averages": {
         "5m": {
-          "avgHighPrice": null,
-          "highPriceVolume": 0,
+          "avgHighPrice": 65361111,
+          "highPriceVolume": 4,
           "avgLowPrice": 64777777,
-          "lowPriceVolume": 2
+          "lowPriceVolume": 1
         },
         "1h": {
           "avgHighPrice": 66356764,
@@ -706,32 +706,32 @@
         }
       },
       "movementPct": {
-        "1h": -0.295,
-        "6h": 0.044,
-        "24h": -2.182,
-        "7d": 15.481,
+        "1h": -0.551,
+        "6h": -0.946,
+        "24h": -3.383,
+        "7d": 13.9,
         "30d": -19.74
       },
       "volume": {
         "1h": {
-          "high": 2,
-          "low": 5,
-          "total": 7
+          "high": 5,
+          "low": 3,
+          "total": 8
         },
         "6h": {
           "high": 22,
-          "low": 29,
-          "total": 51
+          "low": 25,
+          "total": 47
         },
         "24h": {
-          "high": 132,
-          "low": 231,
-          "total": 363
+          "high": 130,
+          "low": 228,
+          "total": 358
         },
         "7d": {
-          "high": 995,
-          "low": 2085,
-          "total": 3080
+          "high": 993,
+          "low": 2077,
+          "total": 3070
         },
         "highSideShare1h": 0.2857,
         "estimatedGpTraded1h": 458630284
@@ -739,11 +739,11 @@
       "liquidity": "LIQUID",
       "history_complete": true,
       "previousRelaySnapshot": {
-        "generatedAt": "2026-08-20T11:00:46.183502Z",
-        "high": 66357415,
-        "low": 65500000,
-        "highTime": 1787222431,
-        "lowTime": 1787221999
+        "generatedAt": "2026-08-20T12:59:57.628597Z",
+        "high": 65500000,
+        "low": 64777777,
+        "highTime": 1787230745,
+        "lowTime": 1787230628
       }
     },
     "536": {
@@ -756,8 +756,8 @@
         "low": 3224,
         "highTime": 1787230269,
         "lowTime": 1787230788,
-        "highAgeSeconds": 528,
-        "lowAgeSeconds": 9,
+        "highAgeSeconds": 551,
+        "lowAgeSeconds": 32,
         "rawSpread": 37,
         "geTaxAtHigh": 65,
         "afterTaxSpread": -28,
@@ -765,10 +765,10 @@
       },
       "averages": {
         "5m": {
-          "avgHighPrice": 3261,
-          "highPriceVolume": 84,
-          "avgLowPrice": 3236,
-          "lowPriceVolume": 9636
+          "avgHighPrice": null,
+          "highPriceVolume": 0,
+          "avgLowPrice": 3224,
+          "lowPriceVolume": 6031
         },
         "1h": {
           "avgHighPrice": 3302,
@@ -790,32 +790,32 @@
         }
       },
       "movementPct": {
-        "1h": 1.352,
-        "6h": 0.323,
-        "24h": 1.21,
-        "7d": 2.338,
+        "1h": -0.598,
+        "6h": 0.185,
+        "24h": 0.84,
+        "7d": 2.482,
         "30d": -2.839
       },
       "volume": {
         "1h": {
-          "high": 44153,
-          "low": 41321,
-          "total": 85474
+          "high": 3661,
+          "low": 50880,
+          "total": 54541
         },
         "6h": {
-          "high": 193442,
-          "low": 229238,
-          "total": 422680
+          "high": 171749,
+          "low": 252983,
+          "total": 424732
         },
         "24h": {
-          "high": 1457236,
-          "low": 1212013,
-          "total": 2669249
+          "high": 1408866,
+          "low": 1226431,
+          "total": 2635297
         },
         "7d": {
-          "high": 9059477,
-          "low": 8654478,
-          "total": 17713955
+          "high": 9029549,
+          "low": 8666520,
+          "total": 17696069
         },
         "highSideShare1h": 0.5166,
         "estimatedGpTraded1h": 278730714
@@ -823,11 +823,11 @@
       "liquidity": "LIQUID",
       "history_complete": true,
       "previousRelaySnapshot": {
-        "generatedAt": "2026-08-20T11:00:46.183502Z",
-        "high": 3312,
-        "low": 3206,
-        "highTime": 1787223628,
-        "lowTime": 1787223627
+        "generatedAt": "2026-08-20T12:59:57.628597Z",
+        "high": 3261,
+        "low": 3224,
+        "highTime": 1787230269,
+        "lowTime": 1787230788
       }
     },
     "25576": {
@@ -840,8 +840,8 @@
         "low": 683599,
         "highTime": 1787230541,
         "lowTime": 1787230678,
-        "highAgeSeconds": 256,
-        "lowAgeSeconds": 119,
+        "highAgeSeconds": 279,
+        "lowAgeSeconds": 142,
         "rawSpread": 32620,
         "geTaxAtHigh": 14324,
         "afterTaxSpread": 18296,
@@ -849,10 +849,10 @@
       },
       "averages": {
         "5m": {
-          "avgHighPrice": 715993,
-          "highPriceVolume": 4,
+          "avgHighPrice": 716219,
+          "highPriceVolume": 2,
           "avgLowPrice": 683599,
-          "lowPriceVolume": 3
+          "lowPriceVolume": 1
         },
         "1h": {
           "avgHighPrice": 716219,
@@ -874,32 +874,32 @@
         }
       },
       "movementPct": {
-        "1h": 0.0,
-        "6h": 1.47,
-        "24h": 2.349,
-        "7d": 11.015,
+        "1h": -0.475,
+        "6h": 0.344,
+        "24h": 2.014,
+        "7d": 7.059,
         "30d": 46.772
       },
       "volume": {
         "1h": {
-          "high": 2,
+          "high": 11,
           "low": 8,
-          "total": 10
+          "total": 19
         },
         "6h": {
-          "high": 20,
-          "low": 31,
-          "total": 51
+          "high": 23,
+          "low": 37,
+          "total": 60
         },
         "24h": {
-          "high": 182,
-          "low": 230,
-          "total": 412
+          "high": 192,
+          "low": 229,
+          "total": 421
         },
         "7d": {
-          "high": 1232,
-          "low": 1413,
-          "total": 2645
+          "high": 1240,
+          "low": 1420,
+          "total": 2660
         },
         "highSideShare1h": 0.2,
         "estimatedGpTraded1h": 7056095
@@ -907,11 +907,11 @@
       "liquidity": "THIN",
       "history_complete": true,
       "previousRelaySnapshot": {
-        "generatedAt": "2026-08-20T11:00:46.183502Z",
-        "high": null,
-        "low": null,
-        "highTime": null,
-        "lowTime": null
+        "generatedAt": "2026-08-20T12:59:57.628597Z",
+        "high": 716219,
+        "low": 683599,
+        "highTime": 1787230541,
+        "lowTime": 1787230678
       }
     },
     "30066": {
@@ -924,8 +924,8 @@
         "low": 723289,
         "highTime": 1787230534,
         "lowTime": 1787230677,
-        "highAgeSeconds": 263,
-        "lowAgeSeconds": 120,
+        "highAgeSeconds": 286,
+        "lowAgeSeconds": 143,
         "rawSpread": 30806,
         "geTaxAtHigh": 15081,
         "afterTaxSpread": 15725,
@@ -933,10 +933,10 @@
       },
       "averages": {
         "5m": {
-          "avgHighPrice": null,
-          "highPriceVolume": 0,
-          "avgLowPrice": 722193,
-          "lowPriceVolume": 3
+          "avgHighPrice": 754095,
+          "highPriceVolume": 2,
+          "avgLowPrice": 723289,
+          "lowPriceVolume": 4
         },
         "1h": {
           "avgHighPrice": 759300,
@@ -958,32 +958,32 @@
         }
       },
       "movementPct": {
-        "1h": 0.003,
-        "6h": 2.859,
-        "24h": 9.63,
-        "7d": -3.701,
+        "1h": -0.008,
+        "6h": 2.428,
+        "24h": 9.268,
+        "7d": -3.804,
         "30d": -4.312
       },
       "volume": {
         "1h": {
-          "high": 4,
-          "low": 2,
-          "total": 6
+          "high": 7,
+          "low": 12,
+          "total": 19
         },
         "6h": {
-          "high": 20,
-          "low": 17,
-          "total": 37
+          "high": 25,
+          "low": 25,
+          "total": 50
         },
         "24h": {
-          "high": 171,
-          "low": 213,
-          "total": 384
+          "high": 177,
+          "low": 222,
+          "total": 399
         },
         "7d": {
-          "high": 1355,
-          "low": 1071,
-          "total": 2426
+          "high": 1360,
+          "low": 1077,
+          "total": 2437
         },
         "highSideShare1h": 0.6667,
         "estimatedGpTraded1h": 4437900
@@ -991,11 +991,11 @@
       "liquidity": "THIN",
       "history_complete": true,
       "previousRelaySnapshot": {
-        "generatedAt": "2026-08-20T11:00:46.183502Z",
-        "high": null,
-        "low": null,
-        "highTime": null,
-        "lowTime": null
+        "generatedAt": "2026-08-20T12:59:57.628597Z",
+        "high": 754095,
+        "low": 723289,
+        "highTime": 1787230534,
+        "lowTime": 1787230677
       }
     }
   },
@@ -1038,7 +1038,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": 291,
         "afterTaxSpreadRoiPct": 10.802,
-        "fiveMinVsOneHourPct": -2.974,
+        "fiveMinVsOneHourPct": -5.191,
         "oneHourVs24hPct": -3.971,
         "screenScore": 89.82
       },
@@ -1058,7 +1058,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 344,
         "afterTaxSpreadRoiPct": 6.442,
-        "fiveMinVsOneHourPct": 7.159,
+        "fiveMinVsOneHourPct": null,
         "oneHourVs24hPct": -4.533,
         "screenScore": 88.94
       },
@@ -1078,7 +1078,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 164,
         "afterTaxSpreadRoiPct": 10.099,
-        "fiveMinVsOneHourPct": 7.15,
+        "fiveMinVsOneHourPct": 0.964,
         "oneHourVs24hPct": 3.674,
         "screenScore": 88.85
       },
@@ -1098,7 +1098,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 134,
         "afterTaxSpreadRoiPct": 6.467,
-        "fiveMinVsOneHourPct": null,
+        "fiveMinVsOneHourPct": -6.688,
         "oneHourVs24hPct": -4.618,
         "screenScore": 88.68
       },
@@ -1158,7 +1158,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": 1,
         "afterTaxSpreadRoiPct": 5.882,
-        "fiveMinVsOneHourPct": 0.0,
+        "fiveMinVsOneHourPct": -2.778,
         "oneHourVs24hPct": 0.0,
         "screenScore": 88.48
       },
@@ -1198,7 +1198,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 1381,
         "afterTaxSpreadRoiPct": 7.193,
-        "fiveMinVsOneHourPct": 1.9,
+        "fiveMinVsOneHourPct": 1.873,
         "oneHourVs24hPct": 1.244,
         "screenScore": 88.33
       },
@@ -1218,7 +1218,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 8,
         "afterTaxSpreadRoiPct": 6.452,
-        "fiveMinVsOneHourPct": 0.784,
+        "fiveMinVsOneHourPct": 1.961,
         "oneHourVs24hPct": 0.394,
         "screenScore": 88.26
       },
@@ -1238,7 +1238,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 53819,
         "afterTaxSpreadRoiPct": 5.937,
-        "fiveMinVsOneHourPct": null,
+        "fiveMinVsOneHourPct": -0.03,
         "oneHourVs24hPct": -2.028,
         "screenScore": 88.12
       },
@@ -1258,7 +1258,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 28626,
         "afterTaxSpreadRoiPct": 8.058,
-        "fiveMinVsOneHourPct": -4.779,
+        "fiveMinVsOneHourPct": -0.562,
         "oneHourVs24hPct": 3.136,
         "screenScore": 87.97
       },
@@ -1278,7 +1278,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 12,
         "afterTaxSpreadRoiPct": 7.273,
-        "fiveMinVsOneHourPct": -1.989,
+        "fiveMinVsOneHourPct": -6.25,
         "oneHourVs24hPct": 2.924,
         "screenScore": 87.85
       },
@@ -1318,7 +1318,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 42408,
         "afterTaxSpreadRoiPct": 6.743,
-        "fiveMinVsOneHourPct": null,
+        "fiveMinVsOneHourPct": -6.361,
         "oneHourVs24hPct": -0.793,
         "screenScore": 87.47
       },
@@ -1338,7 +1338,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 264641,
         "afterTaxSpreadRoiPct": 7.439,
-        "fiveMinVsOneHourPct": 0.416,
+        "fiveMinVsOneHourPct": null,
         "oneHourVs24hPct": 19.342,
         "screenScore": 87.47
       },
@@ -1358,7 +1358,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 21882,
         "afterTaxSpreadRoiPct": 6.193,
-        "fiveMinVsOneHourPct": -5.936,
+        "fiveMinVsOneHourPct": 1.928,
         "oneHourVs24hPct": 5.621,
         "screenScore": 87.41
       },
@@ -1398,7 +1398,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 150,
         "afterTaxSpreadRoiPct": 15.0,
-        "fiveMinVsOneHourPct": 7.904,
+        "fiveMinVsOneHourPct": 7.812,
         "oneHourVs24hPct": -0.183,
         "screenScore": 87.32
       },
@@ -1478,7 +1478,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 7,
         "afterTaxSpreadRoiPct": 11.111,
-        "fiveMinVsOneHourPct": 4.412,
+        "fiveMinVsOneHourPct": 2.941,
         "oneHourVs24hPct": 0.741,
         "screenScore": 86.94
       },
@@ -1498,7 +1498,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 3975,
         "afterTaxSpreadRoiPct": 9.907,
-        "fiveMinVsOneHourPct": -1.792,
+        "fiveMinVsOneHourPct": -3.391,
         "oneHourVs24hPct": 18.417,
         "screenScore": 86.83
       },
@@ -1518,7 +1518,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 136,
         "afterTaxSpreadRoiPct": 7.636,
-        "fiveMinVsOneHourPct": -7.213,
+        "fiveMinVsOneHourPct": -10.48,
         "oneHourVs24hPct": 11.613,
         "screenScore": 86.83
       },
@@ -1538,7 +1538,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 118,
         "afterTaxSpreadRoiPct": 6.293,
-        "fiveMinVsOneHourPct": null,
+        "fiveMinVsOneHourPct": 6.19,
         "oneHourVs24hPct": -3.915,
         "screenScore": 86.61
       },
@@ -1558,7 +1558,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 45075,
         "afterTaxSpreadRoiPct": 7.405,
-        "fiveMinVsOneHourPct": null,
+        "fiveMinVsOneHourPct": -0.766,
         "oneHourVs24hPct": -0.58,
         "screenScore": 86.53
       },
@@ -1578,7 +1578,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 14945,
         "afterTaxSpreadRoiPct": 6.237,
-        "fiveMinVsOneHourPct": 3.045,
+        "fiveMinVsOneHourPct": -4.945,
         "oneHourVs24hPct": -0.968,
         "screenScore": 86.53
       },
@@ -1598,7 +1598,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 987,
         "afterTaxSpreadRoiPct": 5.981,
-        "fiveMinVsOneHourPct": 3.046,
+        "fiveMinVsOneHourPct": -0.832,
         "oneHourVs24hPct": 12.818,
         "screenScore": 86.5
       },
@@ -1638,7 +1638,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 446,
         "afterTaxSpreadRoiPct": 13.118,
-        "fiveMinVsOneHourPct": 1.962,
+        "fiveMinVsOneHourPct": 0.194,
         "oneHourVs24hPct": 2.405,
         "screenScore": 86.36
       },
@@ -1658,7 +1658,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 10120,
         "afterTaxSpreadRoiPct": 7.725,
-        "fiveMinVsOneHourPct": 2.666,
+        "fiveMinVsOneHourPct": -2.187,
         "oneHourVs24hPct": 0.513,
         "screenScore": 86.36
       },
@@ -1678,7 +1678,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 283988,
         "afterTaxSpreadRoiPct": 7.226,
-        "fiveMinVsOneHourPct": 1.84,
+        "fiveMinVsOneHourPct": null,
         "oneHourVs24hPct": -3.32,
         "screenScore": 86.35
       },
@@ -1698,7 +1698,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 6517,
         "afterTaxSpreadRoiPct": 7.948,
-        "fiveMinVsOneHourPct": 2.336,
+        "fiveMinVsOneHourPct": 9.601,
         "oneHourVs24hPct": 0.468,
         "screenScore": 86.31
       },
@@ -1738,7 +1738,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 8688,
         "afterTaxSpreadRoiPct": 6.719,
-        "fiveMinVsOneHourPct": 0.437,
+        "fiveMinVsOneHourPct": -4.621,
         "oneHourVs24hPct": 5.335,
         "screenScore": 86.18
       },
@@ -1818,7 +1818,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 111,
         "afterTaxSpreadRoiPct": 6.465,
-        "fiveMinVsOneHourPct": -2.802,
+        "fiveMinVsOneHourPct": null,
         "oneHourVs24hPct": -7.971,
         "screenScore": 85.93
       },
@@ -1858,7 +1858,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 17202,
         "afterTaxSpreadRoiPct": 5.864,
-        "fiveMinVsOneHourPct": 6.347,
+        "fiveMinVsOneHourPct": -1.553,
         "oneHourVs24hPct": 0.256,
         "screenScore": 85.9
       },
@@ -1878,7 +1878,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 13757,
         "afterTaxSpreadRoiPct": 11.369,
-        "fiveMinVsOneHourPct": -11.082,
+        "fiveMinVsOneHourPct": null,
         "oneHourVs24hPct": 8.029,
         "screenScore": 85.9
       },
@@ -1918,7 +1918,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 14049,
         "afterTaxSpreadRoiPct": 7.855,
-        "fiveMinVsOneHourPct": -3.169,
+        "fiveMinVsOneHourPct": null,
         "oneHourVs24hPct": -1.893,
         "screenScore": 85.88
       },
@@ -1938,7 +1938,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 10055,
         "afterTaxSpreadRoiPct": 5.967,
-        "fiveMinVsOneHourPct": 4.557,
+        "fiveMinVsOneHourPct": -3.303,
         "oneHourVs24hPct": 3.201,
         "screenScore": 85.84
       },
@@ -1958,7 +1958,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 771,
         "afterTaxSpreadRoiPct": 18.957,
-        "fiveMinVsOneHourPct": 21.651,
+        "fiveMinVsOneHourPct": null,
         "oneHourVs24hPct": 4.052,
         "screenScore": 85.84
       },
@@ -2018,7 +2018,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 3636,
         "afterTaxSpreadRoiPct": 8.303,
-        "fiveMinVsOneHourPct": 0.859,
+        "fiveMinVsOneHourPct": -3.795,
         "oneHourVs24hPct": 3.265,
         "screenScore": 85.72
       },
@@ -2038,7 +2038,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 2,
         "afterTaxSpreadRoiPct": 25.0,
-        "fiveMinVsOneHourPct": 5.556,
+        "fiveMinVsOneHourPct": 0.0,
         "oneHourVs24hPct": 12.5,
         "screenScore": 85.72
       },
@@ -2058,7 +2058,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 40,
         "afterTaxSpreadRoiPct": 8.016,
-        "fiveMinVsOneHourPct": 3.337,
+        "fiveMinVsOneHourPct": 4.862,
         "oneHourVs24hPct": 37.484,
         "screenScore": 85.67
       },
@@ -2078,7 +2078,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 2231,
         "afterTaxSpreadRoiPct": 113.077,
-        "fiveMinVsOneHourPct": 2.058,
+        "fiveMinVsOneHourPct": null,
         "oneHourVs24hPct": -1.971,
         "screenScore": 85.66
       },
@@ -2118,7 +2118,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 13,
         "afterTaxSpreadRoiPct": 14.13,
-        "fiveMinVsOneHourPct": -11.009,
+        "fiveMinVsOneHourPct": -7.798,
         "oneHourVs24hPct": -3.111,
         "screenScore": 85.63
       },
@@ -2158,7 +2158,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 170,
         "afterTaxSpreadRoiPct": 16.667,
-        "fiveMinVsOneHourPct": 5.966,
+        "fiveMinVsOneHourPct": 16.726,
         "oneHourVs24hPct": -2.776,
         "screenScore": 85.52
       },
@@ -2178,7 +2178,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 4,
         "afterTaxSpreadRoiPct": 16.0,
-        "fiveMinVsOneHourPct": 3.448,
+        "fiveMinVsOneHourPct": -6.897,
         "oneHourVs24hPct": -7.937,
         "screenScore": 85.5
       },
@@ -2244,6 +2244,26 @@
         "screenScore": 87.23
       },
       {
+        "id": 569,
+        "name": "Fire orb",
+        "high": 1956,
+        "low": 1781,
+        "highTime": 1787230175,
+        "lowTime": 1787230647,
+        "buyLimit": 11000,
+        "oneHourVolume": 2562,
+        "highPriceVolume": 220,
+        "lowPriceVolume": 2342,
+        "highSideShare": 0.0859,
+        "estimatedGpTraded1h": 5097099,
+        "liquidity": "THIN",
+        "afterTaxSpreadGp": 136,
+        "afterTaxSpreadRoiPct": 7.636,
+        "fiveMinVsOneHourPct": -10.48,
+        "oneHourVs24hPct": 11.613,
+        "screenScore": 86.83
+      },
+      {
         "id": 12775,
         "name": "Annakarl teleport (tablet)",
         "high": 3299,
@@ -2264,25 +2284,6 @@
         "screenScore": 87.02
       },
       {
-        "id": 12905,
-        "name": "Anti-venom(4)",
-        "high": 13500,
-        "low": 13477,
-        "highTime": 1787230458,
-        "lowTime": 1787229219,
-        "buyLimit": 2000,
-        "oneHourVolume": 1737,
-        "highPriceVolume": 1596,
-        "lowPriceVolume": 141,
-        "highSideShare": 0.9188,
-        "estimatedGpTraded1h": 21438054,
-        "liquidity": "MODERATE",
-        "afterTaxSpreadGp": -247,
-        "afterTaxSpreadRoiPct": -1.833,
-        "fiveMinVsOneHourPct": 9.277,
-        "oneHourVs24hPct": 6.41
-      },
-      {
         "id": 810,
         "name": "Adamant dart",
         "high": 35,
@@ -2298,7 +2299,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 0,
         "afterTaxSpreadRoiPct": 0.0,
-        "fiveMinVsOneHourPct": 7.937,
+        "fiveMinVsOneHourPct": 9.524,
         "oneHourVs24hPct": 1.613
       },
       {
@@ -2317,9 +2318,28 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 150,
         "afterTaxSpreadRoiPct": 15.0,
-        "fiveMinVsOneHourPct": 7.904,
+        "fiveMinVsOneHourPct": 7.812,
         "oneHourVs24hPct": -0.183,
         "screenScore": 87.32
+      },
+      {
+        "id": 11998,
+        "name": "Smoke battlestaff",
+        "high": 1984961,
+        "low": 2093327,
+        "highTime": 1787229750,
+        "lowTime": 1787230509,
+        "buyLimit": 8,
+        "oneHourVolume": 16,
+        "highPriceVolume": 7,
+        "lowPriceVolume": 9,
+        "highSideShare": 0.4375,
+        "estimatedGpTraded1h": 31158408,
+        "liquidity": "MODERATE",
+        "afterTaxSpreadGp": -148065,
+        "afterTaxSpreadRoiPct": -7.073,
+        "fiveMinVsOneHourPct": 7.493,
+        "oneHourVs24hPct": 2.82
       },
       {
         "id": 30900,
@@ -2342,183 +2362,102 @@
         "screenScore": 82.91
       },
       {
-        "id": 24953,
-        "name": "Waterbirth teleport (tablet)",
-        "high": 1076,
-        "low": 998,
-        "highTime": 1787230756,
-        "lowTime": 1787230489,
+        "id": 395,
+        "name": "Raw sea turtle",
+        "high": 616,
+        "low": 618,
+        "highTime": 1787230361,
+        "lowTime": 1787230772,
+        "buyLimit": 15000,
+        "oneHourVolume": 9156,
+        "highPriceVolume": 1354,
+        "lowPriceVolume": 7802,
+        "highSideShare": 0.1479,
+        "estimatedGpTraded1h": 6065850,
+        "liquidity": "THIN",
+        "afterTaxSpreadGp": -14,
+        "afterTaxSpreadRoiPct": -2.265,
+        "fiveMinVsOneHourPct": -6.717,
+        "oneHourVs24hPct": 5.831
+      },
+      {
+        "id": 32336,
+        "name": "Halibut",
+        "high": 2251,
+        "low": 2072,
+        "highTime": 1787230060,
+        "lowTime": 1787230615,
         "buyLimit": 10000,
-        "oneHourVolume": 8159,
-        "highPriceVolume": 321,
-        "lowPriceVolume": 7838,
-        "highSideShare": 0.0393,
-        "estimatedGpTraded1h": 9121762,
+        "oneHourVolume": 6670,
+        "highPriceVolume": 6646,
+        "lowPriceVolume": 24,
+        "highSideShare": 0.9964,
+        "estimatedGpTraded1h": 14810735,
         "liquidity": "THIN",
-        "afterTaxSpreadGp": 57,
-        "afterTaxSpreadRoiPct": 5.711,
-        "fiveMinVsOneHourPct": -7.245,
-        "oneHourVs24hPct": 1.544,
-        "screenScore": 84.95
+        "afterTaxSpreadGp": 134,
+        "afterTaxSpreadRoiPct": 6.467,
+        "fiveMinVsOneHourPct": -6.688,
+        "oneHourVs24hPct": -4.618,
+        "screenScore": 88.68
       },
       {
-        "id": 569,
-        "name": "Fire orb",
-        "high": 1956,
-        "low": 1781,
-        "highTime": 1787230175,
-        "lowTime": 1787230647,
-        "buyLimit": 11000,
-        "oneHourVolume": 2562,
-        "highPriceVolume": 220,
-        "lowPriceVolume": 2342,
-        "highSideShare": 0.0859,
-        "estimatedGpTraded1h": 5097099,
+        "id": 4698,
+        "name": "Mud rune",
+        "high": 114,
+        "low": 114,
+        "highTime": 1787230767,
+        "lowTime": 1787230005,
+        "buyLimit": 18000,
+        "oneHourVolume": 41951,
+        "highPriceVolume": 21027,
+        "lowPriceVolume": 20924,
+        "highSideShare": 0.5012,
+        "estimatedGpTraded1h": 5118022,
         "liquidity": "THIN",
-        "afterTaxSpreadGp": 136,
-        "afterTaxSpreadRoiPct": 7.636,
-        "fiveMinVsOneHourPct": -7.213,
-        "oneHourVs24hPct": 11.613,
-        "screenScore": 86.83
+        "afterTaxSpreadGp": -2,
+        "afterTaxSpreadRoiPct": -1.754,
+        "fiveMinVsOneHourPct": -6.557,
+        "oneHourVs24hPct": 7.018
       },
       {
-        "id": 30094,
-        "name": "Grimy huasca",
-        "high": 5800,
-        "low": 5340,
-        "highTime": 1787230450,
-        "lowTime": 1787228738,
-        "buyLimit": null,
-        "oneHourVolume": 3182,
-        "highPriceVolume": 1080,
-        "lowPriceVolume": 2102,
-        "highSideShare": 0.3394,
-        "estimatedGpTraded1h": 17222575,
-        "liquidity": "THIN",
-        "afterTaxSpreadGp": 344,
-        "afterTaxSpreadRoiPct": 6.442,
-        "fiveMinVsOneHourPct": 7.159,
-        "oneHourVs24hPct": -4.533,
-        "screenScore": 88.94
-      },
-      {
-        "id": 33625,
-        "name": "Letvek",
-        "high": 1824,
-        "low": 1624,
-        "highTime": 1787230467,
-        "lowTime": 1787230755,
-        "buyLimit": null,
-        "oneHourVolume": 10134,
-        "highPriceVolume": 6965,
-        "lowPriceVolume": 3169,
-        "highSideShare": 0.6873,
-        "estimatedGpTraded1h": 16300539,
-        "liquidity": "THIN",
-        "afterTaxSpreadGp": 164,
-        "afterTaxSpreadRoiPct": 10.099,
-        "fiveMinVsOneHourPct": 7.15,
-        "oneHourVs24hPct": 3.674,
-        "screenScore": 88.85
-      },
-      {
-        "id": 21483,
-        "name": "Ultracompost",
-        "high": 504,
-        "low": 504,
-        "highTime": 1787230442,
-        "lowTime": 1787230740,
-        "buyLimit": 2000,
-        "oneHourVolume": 17939,
-        "highPriceVolume": 10626,
-        "lowPriceVolume": 7313,
-        "highSideShare": 0.5923,
-        "estimatedGpTraded1h": 8601750,
-        "liquidity": "THIN",
-        "afterTaxSpreadGp": -10,
-        "afterTaxSpreadRoiPct": -1.984,
-        "fiveMinVsOneHourPct": 6.361,
-        "oneHourVs24hPct": 2.787
-      },
-      {
-        "id": 20517,
-        "name": "Elder chaos top",
-        "high": 316903,
-        "low": 293363,
-        "highTime": 1787230457,
-        "lowTime": 1787230789,
+        "id": 12873,
+        "name": "Guthan's armour set",
+        "high": 684995,
+        "low": 628888,
+        "highTime": 1787229848,
+        "lowTime": 1787230766,
         "buyLimit": 8,
-        "oneHourVolume": 22,
-        "highPriceVolume": 4,
-        "lowPriceVolume": 18,
-        "highSideShare": 0.1818,
-        "estimatedGpTraded1h": 6555802,
+        "oneHourVolume": 11,
+        "highPriceVolume": 9,
+        "lowPriceVolume": 2,
+        "highSideShare": 0.8182,
+        "estimatedGpTraded1h": 7387693,
         "liquidity": "THIN",
-        "afterTaxSpreadGp": 17202,
-        "afterTaxSpreadRoiPct": 5.864,
-        "fiveMinVsOneHourPct": 6.347,
-        "oneHourVs24hPct": 0.256,
-        "screenScore": 85.9
+        "afterTaxSpreadGp": 42408,
+        "afterTaxSpreadRoiPct": 6.743,
+        "fiveMinVsOneHourPct": -6.361,
+        "oneHourVs24hPct": -0.793,
+        "screenScore": 87.47
       },
       {
-        "id": 21652,
-        "name": "Drift net",
-        "high": 1655,
-        "low": 1588,
-        "highTime": 1787230662,
-        "lowTime": 1787230375,
-        "buyLimit": 600,
-        "oneHourVolume": 4403,
-        "highPriceVolume": 4348,
-        "lowPriceVolume": 55,
-        "highSideShare": 0.9875,
-        "estimatedGpTraded1h": 7438868,
+        "id": 9143,
+        "name": "Adamant bolts",
+        "high": 180,
+        "low": 165,
+        "highTime": 1787230494,
+        "lowTime": 1787230581,
+        "buyLimit": 11000,
+        "oneHourVolume": 51985,
+        "highPriceVolume": 36874,
+        "lowPriceVolume": 15111,
+        "highSideShare": 0.7093,
+        "estimatedGpTraded1h": 9149360,
         "liquidity": "THIN",
-        "afterTaxSpreadGp": 34,
-        "afterTaxSpreadRoiPct": 2.141,
-        "fiveMinVsOneHourPct": -6.008,
-        "oneHourVs24hPct": -4.413,
-        "screenScore": 48.9
-      },
-      {
-        "id": 28988,
-        "name": "Blue moon spear",
-        "high": 382846,
-        "low": 353308,
-        "highTime": 1787230603,
-        "lowTime": 1787230345,
-        "buyLimit": 15,
-        "oneHourVolume": 19,
-        "highPriceVolume": 8,
-        "lowPriceVolume": 11,
-        "highSideShare": 0.4211,
-        "estimatedGpTraded1h": 7136495,
-        "liquidity": "THIN",
-        "afterTaxSpreadGp": 21882,
-        "afterTaxSpreadRoiPct": 6.193,
-        "fiveMinVsOneHourPct": -5.936,
-        "oneHourVs24hPct": 5.621,
-        "screenScore": 87.41
-      },
-      {
-        "id": 9075,
-        "name": "Astral rune",
-        "high": 112,
-        "low": 106,
-        "highTime": 1787230743,
-        "lowTime": 1787230557,
-        "buyLimit": 25000,
-        "oneHourVolume": 497353,
-        "highPriceVolume": 380828,
-        "lowPriceVolume": 116525,
-        "highSideShare": 0.7657,
-        "estimatedGpTraded1h": 52719418,
-        "liquidity": "MODERATE",
-        "afterTaxSpreadGp": 4,
-        "afterTaxSpreadRoiPct": 3.774,
-        "fiveMinVsOneHourPct": 5.66,
-        "oneHourVs24hPct": -5.357,
-        "screenScore": 68.62
+        "afterTaxSpreadGp": 12,
+        "afterTaxSpreadRoiPct": 7.273,
+        "fiveMinVsOneHourPct": -6.25,
+        "oneHourVs24hPct": 2.924,
+        "screenScore": 87.85
       },
       {
         "id": 1434,
@@ -2536,28 +2475,107 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": -482,
         "afterTaxSpreadRoiPct": -1.656,
-        "fiveMinVsOneHourPct": -5.519,
+        "fiveMinVsOneHourPct": -5.763,
         "oneHourVs24hPct": 5.336
       },
       {
-        "id": 22866,
-        "name": "Dragonfruit sapling",
-        "high": 163000,
-        "low": 156972,
-        "highTime": 1787230719,
-        "lowTime": 1787229788,
-        "buyLimit": 200,
-        "oneHourVolume": 197,
-        "highPriceVolume": 85,
-        "lowPriceVolume": 112,
-        "highSideShare": 0.4315,
-        "estimatedGpTraded1h": 30927424,
+        "id": 31961,
+        "name": "Broken dragon hook",
+        "high": 1697992,
+        "low": 1609478,
+        "highTime": 1787230599,
+        "lowTime": 1787230372,
+        "buyLimit": null,
+        "oneHourVolume": 27,
+        "highPriceVolume": 22,
+        "lowPriceVolume": 5,
+        "highSideShare": 0.8148,
+        "estimatedGpTraded1h": 43387231,
         "liquidity": "MODERATE",
-        "afterTaxSpreadGp": 2768,
-        "afterTaxSpreadRoiPct": 1.763,
-        "fiveMinVsOneHourPct": 5.1,
-        "oneHourVs24hPct": 5.31,
-        "screenScore": 47.6
+        "afterTaxSpreadGp": 54555,
+        "afterTaxSpreadRoiPct": 3.39,
+        "fiveMinVsOneHourPct": 5.667,
+        "oneHourVs24hPct": -7.34,
+        "screenScore": 64.45
+      },
+      {
+        "id": 31668,
+        "name": "Umbral potion (unf)",
+        "high": 2349,
+        "low": 2222,
+        "highTime": 1787227359,
+        "lowTime": 1787227907,
+        "buyLimit": null,
+        "oneHourVolume": 3687,
+        "highPriceVolume": 0,
+        "lowPriceVolume": 3687,
+        "highSideShare": 0.0,
+        "estimatedGpTraded1h": 8192514,
+        "liquidity": "THIN",
+        "afterTaxSpreadGp": 81,
+        "afterTaxSpreadRoiPct": 3.645,
+        "fiveMinVsOneHourPct": 5.311,
+        "oneHourVs24hPct": -8.333,
+        "screenScore": 64.11
+      },
+      {
+        "id": 12627,
+        "name": "Stamina potion(3)",
+        "high": 3045,
+        "low": 2694,
+        "highTime": 1787228841,
+        "lowTime": 1787230764,
+        "buyLimit": 2000,
+        "oneHourVolume": 10011,
+        "highPriceVolume": 185,
+        "lowPriceVolume": 9826,
+        "highSideShare": 0.0185,
+        "estimatedGpTraded1h": 28446256,
+        "liquidity": "MODERATE",
+        "afterTaxSpreadGp": 291,
+        "afterTaxSpreadRoiPct": 10.802,
+        "fiveMinVsOneHourPct": -5.191,
+        "oneHourVs24hPct": -3.971,
+        "screenScore": 89.82
+      },
+      {
+        "id": 24635,
+        "name": "Divine bastion potion(4)",
+        "high": 20510,
+        "low": 19124,
+        "highTime": 1787230564,
+        "lowTime": 1787230433,
+        "buyLimit": 2000,
+        "oneHourVolume": 1039,
+        "highPriceVolume": 805,
+        "lowPriceVolume": 234,
+        "highSideShare": 0.7748,
+        "estimatedGpTraded1h": 20265695,
+        "liquidity": "MODERATE",
+        "afterTaxSpreadGp": 976,
+        "afterTaxSpreadRoiPct": 5.104,
+        "fiveMinVsOneHourPct": 5.153,
+        "oneHourVs24hPct": 0.562,
+        "screenScore": 80.26
+      },
+      {
+        "id": 21483,
+        "name": "Ultracompost",
+        "high": 504,
+        "low": 504,
+        "highTime": 1787230442,
+        "lowTime": 1787230740,
+        "buyLimit": 2000,
+        "oneHourVolume": 17939,
+        "highPriceVolume": 10626,
+        "lowPriceVolume": 7313,
+        "highSideShare": 0.5923,
+        "estimatedGpTraded1h": 8601750,
+        "liquidity": "THIN",
+        "afterTaxSpreadGp": -10,
+        "afterTaxSpreadRoiPct": -1.984,
+        "fiveMinVsOneHourPct": 5.109,
+        "oneHourVs24hPct": 2.787
       },
       {
         "id": 1761,
@@ -2579,43 +2597,24 @@
         "oneHourVs24hPct": 5.286
       },
       {
-        "id": 21643,
-        "name": "Granite boots",
-        "high": 391710,
-        "low": 355250,
-        "highTime": 1787230637,
-        "lowTime": 1787230786,
-        "buyLimit": 70,
-        "oneHourVolume": 26,
-        "highPriceVolume": 11,
-        "lowPriceVolume": 15,
-        "highSideShare": 0.4231,
-        "estimatedGpTraded1h": 9802026,
+        "id": 29625,
+        "name": "Armageddon weapon scroll",
+        "high": 15248888,
+        "low": 14560224,
+        "highTime": 1787230689,
+        "lowTime": 1787224039,
+        "buyLimit": 5,
+        "oneHourVolume": 1,
+        "highPriceVolume": 0,
+        "lowPriceVolume": 1,
+        "highSideShare": 0.0,
+        "estimatedGpTraded1h": 14560224,
         "liquidity": "THIN",
-        "afterTaxSpreadGp": 28626,
-        "afterTaxSpreadRoiPct": 8.058,
-        "fiveMinVsOneHourPct": -4.779,
-        "oneHourVs24hPct": 3.136,
-        "screenScore": 87.97
-      },
-      {
-        "id": 892,
-        "name": "Rune arrow",
-        "high": 43,
-        "low": 43,
-        "highTime": 1787230728,
-        "lowTime": 1787230788,
-        "buyLimit": 11000,
-        "oneHourVolume": 274060,
-        "highPriceVolume": 161202,
-        "lowPriceVolume": 112858,
-        "highSideShare": 0.5882,
-        "estimatedGpTraded1h": 11647550,
-        "liquidity": "THIN",
-        "afterTaxSpreadGp": 0,
-        "afterTaxSpreadRoiPct": 0.0,
-        "fiveMinVsOneHourPct": 4.706,
-        "oneHourVs24hPct": 0.0
+        "afterTaxSpreadGp": 383687,
+        "afterTaxSpreadRoiPct": 2.635,
+        "fiveMinVsOneHourPct": 4.73,
+        "oneHourVs24hPct": -3.331,
+        "screenScore": 55.0
       },
       {
         "id": 31432,
@@ -2638,102 +2637,24 @@
         "screenScore": 43.64
       },
       {
-        "id": 27014,
-        "name": "Kovac's grog",
-        "high": 90364,
-        "low": 90364,
-        "highTime": 1787230391,
-        "lowTime": 1787230155,
-        "buyLimit": null,
-        "oneHourVolume": 77,
-        "highPriceVolume": 19,
-        "lowPriceVolume": 58,
-        "highSideShare": 0.2468,
-        "estimatedGpTraded1h": 7292824,
-        "liquidity": "THIN",
-        "afterTaxSpreadGp": -1807,
-        "afterTaxSpreadRoiPct": -2.0,
-        "fiveMinVsOneHourPct": -4.591,
-        "oneHourVs24hPct": 5.913
-      },
-      {
-        "id": 6332,
-        "name": "Mahogany logs",
-        "high": 167,
-        "low": 161,
-        "highTime": 1787230776,
-        "lowTime": 1787230759,
-        "buyLimit": 11000,
-        "oneHourVolume": 363987,
-        "highPriceVolume": 158278,
-        "lowPriceVolume": 205709,
-        "highSideShare": 0.4348,
-        "estimatedGpTraded1h": 60603835,
+        "id": 29449,
+        "name": "Zombie pirate key",
+        "high": 15712,
+        "low": 14956,
+        "highTime": 1787228805,
+        "lowTime": 1787230632,
+        "buyLimit": 250,
+        "oneHourVolume": 2131,
+        "highPriceVolume": 756,
+        "lowPriceVolume": 1375,
+        "highSideShare": 0.3548,
+        "estimatedGpTraded1h": 33349084,
         "liquidity": "MODERATE",
-        "afterTaxSpreadGp": 3,
-        "afterTaxSpreadRoiPct": 1.863,
-        "fiveMinVsOneHourPct": 4.505,
-        "oneHourVs24hPct": -0.299,
-        "screenScore": 49.76
-      },
-      {
-        "id": 5304,
-        "name": "Torstol seed",
-        "high": 16602,
-        "low": 16602,
-        "highTime": 1787230508,
-        "lowTime": 1787230788,
-        "buyLimit": 200,
-        "oneHourVolume": 736,
-        "highPriceVolume": 130,
-        "lowPriceVolume": 606,
-        "highSideShare": 0.1766,
-        "estimatedGpTraded1h": 11708656,
-        "liquidity": "THIN",
-        "afterTaxSpreadGp": -332,
-        "afterTaxSpreadRoiPct": -2.0,
-        "fiveMinVsOneHourPct": 4.438,
-        "oneHourVs24hPct": 0.965
-      },
-      {
-        "id": 567,
-        "name": "Unpowered orb",
-        "high": 71,
-        "low": 63,
-        "highTime": 1787230761,
-        "lowTime": 1787229822,
-        "buyLimit": 10000,
-        "oneHourVolume": 79955,
-        "highPriceVolume": 43261,
-        "lowPriceVolume": 36694,
-        "highSideShare": 0.5411,
-        "estimatedGpTraded1h": 5436940,
-        "liquidity": "THIN",
-        "afterTaxSpreadGp": 7,
-        "afterTaxSpreadRoiPct": 11.111,
-        "fiveMinVsOneHourPct": 4.412,
-        "oneHourVs24hPct": 0.741,
-        "screenScore": 86.94
-      },
-      {
-        "id": 11905,
-        "name": "Trident of the Seas (full)",
-        "high": 921201,
-        "low": 880798,
-        "highTime": 1787230487,
-        "lowTime": 1787229935,
-        "buyLimit": 8,
-        "oneHourVolume": 12,
-        "highPriceVolume": 9,
-        "lowPriceVolume": 3,
-        "highSideShare": 0.75,
-        "estimatedGpTraded1h": 10588236,
-        "liquidity": "THIN",
-        "afterTaxSpreadGp": 21979,
-        "afterTaxSpreadRoiPct": 2.495,
-        "fiveMinVsOneHourPct": 4.403,
-        "oneHourVs24hPct": -1.731,
-        "screenScore": 53.05
+        "afterTaxSpreadGp": 442,
+        "afterTaxSpreadRoiPct": 2.955,
+        "fiveMinVsOneHourPct": -4.431,
+        "oneHourVs24hPct": -1.131,
+        "screenScore": 59.65
       },
       {
         "id": 4695,
@@ -2751,48 +2672,28 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 2,
         "afterTaxSpreadRoiPct": 2.299,
-        "fiveMinVsOneHourPct": -4.396,
+        "fiveMinVsOneHourPct": 4.396,
         "oneHourVs24hPct": -4.211,
         "screenScore": 51.58
       },
       {
-        "id": 29449,
-        "name": "Zombie pirate key",
-        "high": 15712,
-        "low": 14956,
-        "highTime": 1787228805,
-        "lowTime": 1787230632,
-        "buyLimit": 250,
-        "oneHourVolume": 2131,
-        "highPriceVolume": 756,
-        "lowPriceVolume": 1375,
-        "highSideShare": 0.3548,
-        "estimatedGpTraded1h": 33349084,
-        "liquidity": "MODERATE",
-        "afterTaxSpreadGp": 442,
-        "afterTaxSpreadRoiPct": 2.955,
-        "fiveMinVsOneHourPct": -4.323,
-        "oneHourVs24hPct": -1.131,
-        "screenScore": 59.65
-      },
-      {
-        "id": 395,
-        "name": "Raw sea turtle",
-        "high": 616,
-        "low": 618,
-        "highTime": 1787230361,
-        "lowTime": 1787230772,
-        "buyLimit": 15000,
-        "oneHourVolume": 9156,
-        "highPriceVolume": 1354,
-        "lowPriceVolume": 7802,
-        "highSideShare": 0.1479,
-        "estimatedGpTraded1h": 6065850,
+        "id": 5304,
+        "name": "Torstol seed",
+        "high": 16602,
+        "low": 16602,
+        "highTime": 1787230508,
+        "lowTime": 1787230788,
+        "buyLimit": 200,
+        "oneHourVolume": 736,
+        "highPriceVolume": 130,
+        "lowPriceVolume": 606,
+        "highSideShare": 0.1766,
+        "estimatedGpTraded1h": 11708656,
         "liquidity": "THIN",
-        "afterTaxSpreadGp": -14,
-        "afterTaxSpreadRoiPct": -2.265,
-        "fiveMinVsOneHourPct": -4.226,
-        "oneHourVs24hPct": 5.831
+        "afterTaxSpreadGp": -332,
+        "afterTaxSpreadRoiPct": -2.0,
+        "fiveMinVsOneHourPct": 4.359,
+        "oneHourVs24hPct": 0.965
       },
       {
         "id": 30068,
@@ -2810,9 +2711,29 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 106,
         "afterTaxSpreadRoiPct": 3.651,
-        "fiveMinVsOneHourPct": -4.005,
+        "fiveMinVsOneHourPct": -4.302,
         "oneHourVs24hPct": 5.568,
         "screenScore": 64.27
+      },
+      {
+        "id": 29283,
+        "name": "Mixed hide legs",
+        "high": 29500,
+        "low": 28580,
+        "highTime": 1787230020,
+        "lowTime": 1787230789,
+        "buyLimit": 100,
+        "oneHourVolume": 413,
+        "highPriceVolume": 314,
+        "lowPriceVolume": 99,
+        "highSideShare": 0.7603,
+        "estimatedGpTraded1h": 12322061,
+        "liquidity": "THIN",
+        "afterTaxSpreadGp": 330,
+        "afterTaxSpreadRoiPct": 1.155,
+        "fiveMinVsOneHourPct": -4.208,
+        "oneHourVs24hPct": -5.4,
+        "screenScore": 39.91
       },
       {
         "id": 6524,
@@ -2830,48 +2751,147 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": -4641,
         "afterTaxSpreadRoiPct": -1.82,
-        "fiveMinVsOneHourPct": -3.927,
+        "fiveMinVsOneHourPct": -4.015,
         "oneHourVs24hPct": 3.695
       },
       {
-        "id": 25849,
-        "name": "Amethyst dart",
-        "high": 187,
-        "low": 181,
-        "highTime": 1787230779,
-        "lowTime": 1787230286,
-        "buyLimit": 11000,
-        "oneHourVolume": 187327,
-        "highPriceVolume": 81451,
-        "lowPriceVolume": 105876,
-        "highSideShare": 0.4348,
-        "estimatedGpTraded1h": 35873120,
-        "liquidity": "MODERATE",
-        "afterTaxSpreadGp": 3,
-        "afterTaxSpreadRoiPct": 1.657,
-        "fiveMinVsOneHourPct": -3.916,
-        "oneHourVs24hPct": -1.795,
-        "screenScore": 46.79
+        "id": 2351,
+        "name": "Iron bar",
+        "high": 160,
+        "low": 159,
+        "highTime": 1787230734,
+        "lowTime": 1787230723,
+        "buyLimit": 10000,
+        "oneHourVolume": 34404,
+        "highPriceVolume": 28641,
+        "lowPriceVolume": 5763,
+        "highSideShare": 0.8325,
+        "estimatedGpTraded1h": 5263812,
+        "liquidity": "THIN",
+        "afterTaxSpreadGp": -2,
+        "afterTaxSpreadRoiPct": -1.258,
+        "fiveMinVsOneHourPct": 3.922,
+        "oneHourVs24hPct": 3.378
       },
       {
-        "id": 31638,
-        "name": "Extended stamina potion(4)",
-        "high": 8151,
-        "low": 7600,
-        "highTime": 1787230760,
-        "lowTime": 1787230490,
-        "buyLimit": null,
-        "oneHourVolume": 2269,
-        "highPriceVolume": 1925,
-        "lowPriceVolume": 344,
-        "highSideShare": 0.8484,
-        "estimatedGpTraded1h": 18643238,
+        "id": 9144,
+        "name": "Runite bolts",
+        "high": 100,
+        "low": 97,
+        "highTime": 1787230734,
+        "lowTime": 1787230704,
+        "buyLimit": 11000,
+        "oneHourVolume": 80479,
+        "highPriceVolume": 32356,
+        "lowPriceVolume": 48123,
+        "highSideShare": 0.402,
+        "estimatedGpTraded1h": 8289337,
         "liquidity": "THIN",
-        "afterTaxSpreadGp": 388,
-        "afterTaxSpreadRoiPct": 5.105,
-        "fiveMinVsOneHourPct": -3.815,
-        "oneHourVs24hPct": 13.136,
-        "screenScore": 80.13
+        "afterTaxSpreadGp": 1,
+        "afterTaxSpreadRoiPct": 1.031,
+        "fiveMinVsOneHourPct": -3.883,
+        "oneHourVs24hPct": 3.518,
+        "screenScore": 37.98
+      },
+      {
+        "id": 2436,
+        "name": "Super attack(4)",
+        "high": 2299,
+        "low": 2221,
+        "highTime": 1787230625,
+        "lowTime": 1787230370,
+        "buyLimit": 2000,
+        "oneHourVolume": 12360,
+        "highPriceVolume": 4828,
+        "lowPriceVolume": 7532,
+        "highSideShare": 0.3906,
+        "estimatedGpTraded1h": 27358860,
+        "liquidity": "MODERATE",
+        "afterTaxSpreadGp": 33,
+        "afterTaxSpreadRoiPct": 1.486,
+        "fiveMinVsOneHourPct": 3.863,
+        "oneHourVs24hPct": 3.556,
+        "screenScore": 44.61
+      },
+      {
+        "id": 22866,
+        "name": "Dragonfruit sapling",
+        "high": 163000,
+        "low": 156972,
+        "highTime": 1787230719,
+        "lowTime": 1787229788,
+        "buyLimit": 200,
+        "oneHourVolume": 197,
+        "highPriceVolume": 85,
+        "lowPriceVolume": 112,
+        "highSideShare": 0.4315,
+        "estimatedGpTraded1h": 30927424,
+        "liquidity": "MODERATE",
+        "afterTaxSpreadGp": 2768,
+        "afterTaxSpreadRoiPct": 1.763,
+        "fiveMinVsOneHourPct": 3.827,
+        "oneHourVs24hPct": 5.31,
+        "screenScore": 47.6
+      },
+      {
+        "id": 31099,
+        "name": "Mokhaiotl waystone",
+        "high": 41568,
+        "low": 39611,
+        "highTime": 1787230468,
+        "lowTime": 1787230688,
+        "buyLimit": 100,
+        "oneHourVolume": 228,
+        "highPriceVolume": 108,
+        "lowPriceVolume": 120,
+        "highSideShare": 0.4737,
+        "estimatedGpTraded1h": 9389040,
+        "liquidity": "THIN",
+        "afterTaxSpreadGp": 1126,
+        "afterTaxSpreadRoiPct": 2.843,
+        "fiveMinVsOneHourPct": -3.81,
+        "oneHourVs24hPct": -6.292,
+        "screenScore": 56.32
+      },
+      {
+        "id": 24953,
+        "name": "Waterbirth teleport (tablet)",
+        "high": 1076,
+        "low": 998,
+        "highTime": 1787230756,
+        "lowTime": 1787230489,
+        "buyLimit": 10000,
+        "oneHourVolume": 8159,
+        "highPriceVolume": 321,
+        "lowPriceVolume": 7838,
+        "highSideShare": 0.0393,
+        "estimatedGpTraded1h": 9121762,
+        "liquidity": "THIN",
+        "afterTaxSpreadGp": 57,
+        "afterTaxSpreadRoiPct": 5.711,
+        "fiveMinVsOneHourPct": -3.757,
+        "oneHourVs24hPct": 1.544,
+        "screenScore": 84.95
+      },
+      {
+        "id": 29004,
+        "name": "Eclipse moon chestplate",
+        "high": 1450171,
+        "low": 1410688,
+        "highTime": 1787230586,
+        "lowTime": 1787230752,
+        "buyLimit": 15,
+        "oneHourVolume": 13,
+        "highPriceVolume": 7,
+        "lowPriceVolume": 6,
+        "highSideShare": 0.5385,
+        "estimatedGpTraded1h": 17925212,
+        "liquidity": "THIN",
+        "afterTaxSpreadGp": 10480,
+        "afterTaxSpreadRoiPct": 0.743,
+        "fiveMinVsOneHourPct": 3.74,
+        "oneHourVs24hPct": 1.248,
+        "screenScore": 36.44
       },
       {
         "id": 31435,
@@ -2894,61 +2914,43 @@
         "screenScore": 54.06
       },
       {
-        "id": 213,
-        "name": "Grimy kwuarm",
-        "high": 2100,
-        "low": 2085,
-        "highTime": 1787229957,
-        "lowTime": 1787230783,
-        "buyLimit": 13000,
-        "oneHourVolume": 15033,
-        "highPriceVolume": 2460,
-        "lowPriceVolume": 12573,
-        "highSideShare": 0.1636,
-        "estimatedGpTraded1h": 31779762,
+        "id": 2444,
+        "name": "Ranging potion(4)",
+        "high": 2069,
+        "low": 2047,
+        "highTime": 1787230773,
+        "lowTime": 1787230740,
+        "buyLimit": 2000,
+        "oneHourVolume": 5781,
+        "highPriceVolume": 3686,
+        "lowPriceVolume": 2095,
+        "highSideShare": 0.6376,
+        "estimatedGpTraded1h": 11382789,
+        "liquidity": "THIN",
+        "afterTaxSpreadGp": -19,
+        "afterTaxSpreadRoiPct": -0.928,
+        "fiveMinVsOneHourPct": 3.555,
+        "oneHourVs24hPct": 0.742
+      },
+      {
+        "id": 31952,
+        "name": "Swift albatross feather",
+        "high": 370000,
+        "low": 350160,
+        "highTime": 1787227793,
+        "lowTime": 1787230498,
+        "buyLimit": 15,
+        "oneHourVolume": 65,
+        "highPriceVolume": 48,
+        "lowPriceVolume": 17,
+        "highSideShare": 0.7385,
+        "estimatedGpTraded1h": 23586680,
         "liquidity": "MODERATE",
-        "afterTaxSpreadGp": -27,
-        "afterTaxSpreadRoiPct": -1.295,
-        "fiveMinVsOneHourPct": -3.69,
-        "oneHourVs24hPct": 6.903
-      },
-      {
-        "id": 4697,
-        "name": "Smoke rune",
-        "high": 68,
-        "low": 74,
-        "highTime": 1787230620,
-        "lowTime": 1787230749,
-        "buyLimit": 18000,
-        "oneHourVolume": 168568,
-        "highPriceVolume": 41699,
-        "lowPriceVolume": 126869,
-        "highSideShare": 0.2474,
-        "estimatedGpTraded1h": 11546908,
-        "liquidity": "THIN",
-        "afterTaxSpreadGp": -7,
-        "afterTaxSpreadRoiPct": -9.459,
-        "fiveMinVsOneHourPct": -3.65,
-        "oneHourVs24hPct": 0.735
-      },
-      {
-        "id": 1432,
-        "name": "Rune mace",
-        "high": 8439,
-        "low": 8439,
-        "highTime": 1787230704,
-        "lowTime": 1787230733,
-        "buyLimit": 70,
-        "oneHourVolume": 1432,
-        "highPriceVolume": 687,
-        "lowPriceVolume": 745,
-        "highSideShare": 0.4797,
-        "estimatedGpTraded1h": 11598484,
-        "liquidity": "THIN",
-        "afterTaxSpreadGp": -168,
-        "afterTaxSpreadRoiPct": -1.991,
-        "fiveMinVsOneHourPct": -3.618,
-        "oneHourVs24hPct": -1.238
+        "afterTaxSpreadGp": 12440,
+        "afterTaxSpreadRoiPct": 3.553,
+        "fiveMinVsOneHourPct": -3.503,
+        "oneHourVs24hPct": 6.267,
+        "screenScore": 65.02
       },
       {
         "id": 12002,
@@ -2966,29 +2968,29 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": 6986,
         "afterTaxSpreadRoiPct": 2.044,
-        "fiveMinVsOneHourPct": -3.599,
+        "fiveMinVsOneHourPct": -3.448,
         "oneHourVs24hPct": 10.622,
         "screenScore": 50.67
       },
       {
-        "id": 2581,
-        "name": "Robin hood hat",
-        "high": 840000,
-        "low": 802710,
-        "highTime": 1787230211,
-        "lowTime": 1787230786,
-        "buyLimit": 8,
-        "oneHourVolume": 11,
-        "highPriceVolume": 4,
-        "lowPriceVolume": 7,
-        "highSideShare": 0.3636,
-        "estimatedGpTraded1h": 8924245,
+        "id": 1613,
+        "name": "Red topaz",
+        "high": 1882,
+        "low": 1793,
+        "highTime": 1787230088,
+        "lowTime": 1787230574,
+        "buyLimit": 11000,
+        "oneHourVolume": 3039,
+        "highPriceVolume": 1905,
+        "lowPriceVolume": 1134,
+        "highSideShare": 0.6269,
+        "estimatedGpTraded1h": 5643423,
         "liquidity": "THIN",
-        "afterTaxSpreadGp": 20490,
-        "afterTaxSpreadRoiPct": 2.553,
-        "fiveMinVsOneHourPct": 3.538,
-        "oneHourVs24hPct": -1.342,
-        "screenScore": 53.33
+        "afterTaxSpreadGp": 52,
+        "afterTaxSpreadRoiPct": 2.9,
+        "fiveMinVsOneHourPct": -3.446,
+        "oneHourVs24hPct": 4.384,
+        "screenScore": 56.01
       }
     ],
     "oversold_candidates": [
@@ -3048,7 +3050,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 1,
         "afterTaxSpreadRoiPct": 4.348,
-        "fiveMinVsOneHourPct": 0.0,
+        "fiveMinVsOneHourPct": 2.128,
         "oneHourVs24hPct": -17.544,
         "screenScore": 72.03
       },
@@ -3068,7 +3070,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 1,
         "afterTaxSpreadRoiPct": 0.026,
-        "fiveMinVsOneHourPct": 0.05,
+        "fiveMinVsOneHourPct": null,
         "oneHourVs24hPct": -16.456
       },
       {
@@ -3107,7 +3109,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": 5801,
         "afterTaxSpreadRoiPct": 1.125,
-        "fiveMinVsOneHourPct": 1.347,
+        "fiveMinVsOneHourPct": 1.487,
         "oneHourVs24hPct": -13.45,
         "screenScore": 40.97
       },
@@ -3127,7 +3129,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 1,
         "afterTaxSpreadRoiPct": 0.291,
-        "fiveMinVsOneHourPct": null,
+        "fiveMinVsOneHourPct": 2.177,
         "oneHourVs24hPct": -11.78,
         "screenScore": 30.01
       },
@@ -3147,7 +3149,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": -71,
         "afterTaxSpreadRoiPct": -1.871,
-        "fiveMinVsOneHourPct": -0.249,
+        "fiveMinVsOneHourPct": -0.354,
         "oneHourVs24hPct": -10.028
       },
       {
@@ -3166,7 +3168,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": -78,
         "afterTaxSpreadRoiPct": -1.985,
-        "fiveMinVsOneHourPct": 0.574,
+        "fiveMinVsOneHourPct": 0.752,
         "oneHourVs24hPct": -9.92
       },
       {
@@ -3204,7 +3206,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": -4,
         "afterTaxSpreadRoiPct": -1.653,
-        "fiveMinVsOneHourPct": 0.611,
+        "fiveMinVsOneHourPct": -1.426,
         "oneHourVs24hPct": -8.905
       },
       {
@@ -3223,7 +3225,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 2,
         "afterTaxSpreadRoiPct": 0.631,
-        "fiveMinVsOneHourPct": 0.627,
+        "fiveMinVsOneHourPct": 1.254,
         "oneHourVs24hPct": -8.727,
         "screenScore": 35.09
       },
@@ -3243,7 +3245,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": -14095,
         "afterTaxSpreadRoiPct": -0.596,
-        "fiveMinVsOneHourPct": -0.83,
+        "fiveMinVsOneHourPct": null,
         "oneHourVs24hPct": -8.632
       },
       {
@@ -3262,7 +3264,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 81,
         "afterTaxSpreadRoiPct": 3.645,
-        "fiveMinVsOneHourPct": null,
+        "fiveMinVsOneHourPct": 5.311,
         "oneHourVs24hPct": -8.333,
         "screenScore": 64.11
       },
@@ -3282,7 +3284,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": -186,
         "afterTaxSpreadRoiPct": -1.314,
-        "fiveMinVsOneHourPct": 0.54,
+        "fiveMinVsOneHourPct": 0.19,
         "oneHourVs24hPct": -8.316
       },
       {
@@ -3301,7 +3303,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": -10,
         "afterTaxSpreadRoiPct": -1.408,
-        "fiveMinVsOneHourPct": -0.427,
+        "fiveMinVsOneHourPct": 0.711,
         "oneHourVs24hPct": -8.044
       },
       {
@@ -3320,7 +3322,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": 54555,
         "afterTaxSpreadRoiPct": 3.39,
-        "fiveMinVsOneHourPct": 2.912,
+        "fiveMinVsOneHourPct": 5.667,
         "oneHourVs24hPct": -7.34,
         "screenScore": 64.45
       },
@@ -3360,7 +3362,7 @@
         "liquidity": "VERY LIQUID",
         "afterTaxSpreadGp": 3,
         "afterTaxSpreadRoiPct": 0.882,
-        "fiveMinVsOneHourPct": 0.145,
+        "fiveMinVsOneHourPct": 0.436,
         "oneHourVs24hPct": -6.901,
         "screenScore": 44.61
       },
@@ -3400,7 +3402,7 @@
         "liquidity": "LIQUID",
         "afterTaxSpreadGp": 16769,
         "afterTaxSpreadRoiPct": 0.316,
-        "fiveMinVsOneHourPct": 0.037,
+        "fiveMinVsOneHourPct": -1.145,
         "oneHourVs24hPct": -6.477,
         "screenScore": 35.74
       },
@@ -3420,7 +3422,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 1126,
         "afterTaxSpreadRoiPct": 2.843,
-        "fiveMinVsOneHourPct": 0.942,
+        "fiveMinVsOneHourPct": -3.81,
         "oneHourVs24hPct": -6.292,
         "screenScore": 56.32
       },
@@ -3479,7 +3481,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": 3694,
         "afterTaxSpreadRoiPct": 2.183,
-        "fiveMinVsOneHourPct": -0.389,
+        "fiveMinVsOneHourPct": -0.695,
         "oneHourVs24hPct": -6.133,
         "screenScore": 52.13
       },
@@ -3539,7 +3541,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": -2,
         "afterTaxSpreadRoiPct": -1.481,
-        "fiveMinVsOneHourPct": -2.518,
+        "fiveMinVsOneHourPct": -2.878,
         "oneHourVs24hPct": -5.763
       },
       {
@@ -3558,7 +3560,7 @@
         "liquidity": "LIQUID",
         "afterTaxSpreadGp": 21055,
         "afterTaxSpreadRoiPct": 0.49,
-        "fiveMinVsOneHourPct": null,
+        "fiveMinVsOneHourPct": 0.194,
         "oneHourVs24hPct": -5.735,
         "screenScore": 37.04
       },
@@ -3578,7 +3580,7 @@
         "liquidity": "VERY LIQUID",
         "afterTaxSpreadGp": 2939632,
         "afterTaxSpreadRoiPct": 0.645,
-        "fiveMinVsOneHourPct": 0.996,
+        "fiveMinVsOneHourPct": -0.732,
         "oneHourVs24hPct": -5.448,
         "screenScore": 42.3
       },
@@ -3617,7 +3619,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 330,
         "afterTaxSpreadRoiPct": 1.155,
-        "fiveMinVsOneHourPct": null,
+        "fiveMinVsOneHourPct": -4.208,
         "oneHourVs24hPct": -5.4,
         "screenScore": 39.91
       },
@@ -3637,7 +3639,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": 160,
         "afterTaxSpreadRoiPct": 1.379,
-        "fiveMinVsOneHourPct": 0.738,
+        "fiveMinVsOneHourPct": -0.54,
         "oneHourVs24hPct": -5.369,
         "screenScore": 44.39
       },
@@ -3657,7 +3659,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": 4,
         "afterTaxSpreadRoiPct": 3.774,
-        "fiveMinVsOneHourPct": 5.66,
+        "fiveMinVsOneHourPct": 2.83,
         "oneHourVs24hPct": -5.357,
         "screenScore": 68.62
       },
@@ -3677,7 +3679,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": 1,
         "afterTaxSpreadRoiPct": 0.667,
-        "fiveMinVsOneHourPct": 0.673,
+        "fiveMinVsOneHourPct": 1.684,
         "oneHourVs24hPct": -5.112,
         "screenScore": 37.93
       },
@@ -3697,7 +3699,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 57886,
         "afterTaxSpreadRoiPct": 2.76,
-        "fiveMinVsOneHourPct": 3.522,
+        "fiveMinVsOneHourPct": 3.396,
         "oneHourVs24hPct": -5.087,
         "screenScore": 56.02
       },
@@ -3717,7 +3719,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 8,
         "afterTaxSpreadRoiPct": 1.032,
-        "fiveMinVsOneHourPct": 0.64,
+        "fiveMinVsOneHourPct": 1.983,
         "oneHourVs24hPct": -5.043,
         "screenScore": 37.93
       },
@@ -3737,7 +3739,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 25,
         "afterTaxSpreadRoiPct": 4.44,
-        "fiveMinVsOneHourPct": -2.334,
+        "fiveMinVsOneHourPct": 0.519,
         "oneHourVs24hPct": -5.008,
         "screenScore": 72.99
       },
@@ -3757,7 +3759,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": -24882,
         "afterTaxSpreadRoiPct": -1.613,
-        "fiveMinVsOneHourPct": -0.094,
+        "fiveMinVsOneHourPct": -0.487,
         "oneHourVs24hPct": -4.678
       },
       {
@@ -3798,7 +3800,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": -36942,
         "afterTaxSpreadRoiPct": -0.157,
-        "fiveMinVsOneHourPct": -1.783,
+        "fiveMinVsOneHourPct": null,
         "oneHourVs24hPct": 0.502
       },
       {
@@ -3836,7 +3838,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": -538909,
         "afterTaxSpreadRoiPct": -1.518,
-        "fiveMinVsOneHourPct": 2.305,
+        "fiveMinVsOneHourPct": null,
         "oneHourVs24hPct": -2.652
       },
       {
@@ -3855,7 +3857,7 @@
         "liquidity": "LIQUID",
         "afterTaxSpreadGp": -740107,
         "afterTaxSpreadRoiPct": -0.608,
-        "fiveMinVsOneHourPct": null,
+        "fiveMinVsOneHourPct": 0.123,
         "oneHourVs24hPct": 1.737
       },
       {
@@ -3912,7 +3914,7 @@
         "liquidity": "VERY LIQUID",
         "afterTaxSpreadGp": -1200000,
         "afterTaxSpreadRoiPct": -1.101,
-        "fiveMinVsOneHourPct": -0.365,
+        "fiveMinVsOneHourPct": 0.549,
         "oneHourVs24hPct": 0.238
       },
       {
@@ -3950,7 +3952,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": -71,
         "afterTaxSpreadRoiPct": -1.871,
-        "fiveMinVsOneHourPct": -0.249,
+        "fiveMinVsOneHourPct": -0.354,
         "oneHourVs24hPct": -10.028
       },
       {
@@ -3969,7 +3971,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": -168,
         "afterTaxSpreadRoiPct": -1.906,
-        "fiveMinVsOneHourPct": -0.451,
+        "fiveMinVsOneHourPct": -0.525,
         "oneHourVs24hPct": 0.951
       },
       {
@@ -4007,7 +4009,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": 8,
         "afterTaxSpreadRoiPct": 0.222,
-        "fiveMinVsOneHourPct": 1.767,
+        "fiveMinVsOneHourPct": 0.939,
         "oneHourVs24hPct": -0.467,
         "screenScore": 33.0
       },
@@ -4027,7 +4029,7 @@
         "liquidity": "LIQUID",
         "afterTaxSpreadGp": -164,
         "afterTaxSpreadRoiPct": -2.025,
-        "fiveMinVsOneHourPct": 0.191,
+        "fiveMinVsOneHourPct": 0.068,
         "oneHourVs24hPct": 0.297
       },
       {
@@ -4084,7 +4086,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": -53,
         "afterTaxSpreadRoiPct": -0.731,
-        "fiveMinVsOneHourPct": 0.123,
+        "fiveMinVsOneHourPct": -0.671,
         "oneHourVs24hPct": 0.406
       },
       {
@@ -4123,7 +4125,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": -16,
         "afterTaxSpreadRoiPct": -0.974,
-        "fiveMinVsOneHourPct": 0.363,
+        "fiveMinVsOneHourPct": -0.151,
         "oneHourVs24hPct": 0.915
       },
       {
@@ -4142,7 +4144,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": -2573,
         "afterTaxSpreadRoiPct": -1.725,
-        "fiveMinVsOneHourPct": 0.105,
+        "fiveMinVsOneHourPct": -0.08,
         "oneHourVs24hPct": -0.011
       },
       {
@@ -4161,7 +4163,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": -14,
         "afterTaxSpreadRoiPct": -0.523,
-        "fiveMinVsOneHourPct": -0.221,
+        "fiveMinVsOneHourPct": -1.691,
         "oneHourVs24hPct": 2.351
       },
       {
@@ -4199,7 +4201,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": -2233,
         "afterTaxSpreadRoiPct": -1.873,
-        "fiveMinVsOneHourPct": -0.165,
+        "fiveMinVsOneHourPct": 0.15,
         "oneHourVs24hPct": -0.101
       },
       {
@@ -4218,7 +4220,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": -16,
         "afterTaxSpreadRoiPct": -0.639,
-        "fiveMinVsOneHourPct": 0.894,
+        "fiveMinVsOneHourPct": null,
         "oneHourVs24hPct": 4.117
       },
       {
@@ -4237,7 +4239,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": 9,
         "afterTaxSpreadRoiPct": 0.7,
-        "fiveMinVsOneHourPct": -2.461,
+        "fiveMinVsOneHourPct": -2.688,
         "oneHourVs24hPct": 5.979,
         "screenScore": 36.37
       },
@@ -4257,7 +4259,7 @@
         "liquidity": "LIQUID",
         "afterTaxSpreadGp": -35,
         "afterTaxSpreadRoiPct": -0.318,
-        "fiveMinVsOneHourPct": -0.555,
+        "fiveMinVsOneHourPct": 0.294,
         "oneHourVs24hPct": -0.239
       },
       {
@@ -4276,7 +4278,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": 291,
         "afterTaxSpreadRoiPct": 10.802,
-        "fiveMinVsOneHourPct": -2.974,
+        "fiveMinVsOneHourPct": -5.191,
         "oneHourVs24hPct": -3.971,
         "screenScore": 89.82
       },
@@ -4296,7 +4298,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": -586,
         "afterTaxSpreadRoiPct": -1.997,
-        "fiveMinVsOneHourPct": 0.664,
+        "fiveMinVsOneHourPct": -0.38,
         "oneHourVs24hPct": -0.017
       },
       {
@@ -4315,7 +4317,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": -1253,
         "afterTaxSpreadRoiPct": -0.803,
-        "fiveMinVsOneHourPct": 0.833,
+        "fiveMinVsOneHourPct": 0.871,
         "oneHourVs24hPct": 7.704
       },
       {
@@ -4334,7 +4336,7 @@
         "liquidity": "LIQUID",
         "afterTaxSpreadGp": -84,
         "afterTaxSpreadRoiPct": -0.661,
-        "fiveMinVsOneHourPct": -0.117,
+        "fiveMinVsOneHourPct": 0.558,
         "oneHourVs24hPct": -0.481
       },
       {
@@ -4353,7 +4355,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": -628,
         "afterTaxSpreadRoiPct": -1.333,
-        "fiveMinVsOneHourPct": -0.92,
+        "fiveMinVsOneHourPct": -0.98,
         "oneHourVs24hPct": 0.374
       },
       {
@@ -4411,7 +4413,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": 4710,
         "afterTaxSpreadRoiPct": 1.438,
-        "fiveMinVsOneHourPct": -0.483,
+        "fiveMinVsOneHourPct": -2.17,
         "oneHourVs24hPct": 1.416,
         "screenScore": 43.74
       },
@@ -4431,7 +4433,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": -1011,
         "afterTaxSpreadRoiPct": -1.424,
-        "fiveMinVsOneHourPct": 0.2,
+        "fiveMinVsOneHourPct": 0.087,
         "oneHourVs24hPct": -0.431
       },
       {
@@ -4450,7 +4452,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": 12,
         "afterTaxSpreadRoiPct": 0.852,
-        "fiveMinVsOneHourPct": -1.288,
+        "fiveMinVsOneHourPct": -0.348,
         "oneHourVs24hPct": 3.161,
         "screenScore": 39.11
       },
@@ -4470,7 +4472,7 @@
         "liquidity": "LIQUID",
         "afterTaxSpreadGp": 23,
         "afterTaxSpreadRoiPct": 1.02,
-        "fiveMinVsOneHourPct": -3.231,
+        "fiveMinVsOneHourPct": -3.315,
         "oneHourVs24hPct": 2.889,
         "screenScore": 42.44
       },
@@ -4509,7 +4511,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": -52,
         "afterTaxSpreadRoiPct": -1.965,
-        "fiveMinVsOneHourPct": 0.038,
+        "fiveMinVsOneHourPct": -0.681,
         "oneHourVs24hPct": -0.038
       },
       {
@@ -4528,7 +4530,7 @@
         "liquidity": "LIQUID",
         "afterTaxSpreadGp": -51,
         "afterTaxSpreadRoiPct": -0.718,
-        "fiveMinVsOneHourPct": 0.514,
+        "fiveMinVsOneHourPct": 0.88,
         "oneHourVs24hPct": -0.623
       },
       {
@@ -4547,7 +4549,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": -22,
         "afterTaxSpreadRoiPct": -1.27,
-        "fiveMinVsOneHourPct": -0.486,
+        "fiveMinVsOneHourPct": -0.143,
         "oneHourVs24hPct": -2.591
       }
     ]
