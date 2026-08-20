@@ -8,8 +8,9 @@ import urllib.request
 from datetime import datetime, timezone
 
 BASE = "https://prices.runescape.wiki/api/v1/osrs"
-USER_AGENT = "osrs-merch-relay/1.1 (contact: davidothompson48@gmail.com)"
+USER_AGENT = "osrs-merch-relay/1.2 (contact: davidothompson48@gmail.com)"
 OUT = "snapshot.json"
+HEALTH_OUT = "relay_health.json"
 
 TRACKED = {
     21880: "Wrath rune",
@@ -22,12 +23,12 @@ TRACKED = {
     1727: "Amulet of magic",
     21024: "Ancestral robe bottom",
     536: "Dragon bones",
+    25576: "Tome of water (empty)",
+    30066: "Tome of earth (empty)",
 }
 
 TAX_RATE = 0.02
 TAX_CAP = 5_000_000
-# Known GE-tax exemptions. This only matters for the broad scanner; none of the
-# core tracked positions rely on exemption status for the current calculations.
 TAX_EXEMPT = {
     "Old school bond", "Energy potion(1)", "Energy potion(2)", "Energy potion(3)", "Energy potion(4)",
     "Bronze arrow", "Bronze dart", "Iron arrow", "Iron dart", "Mind rune", "Steel arrow", "Steel dart",
@@ -39,8 +40,19 @@ TAX_EXEMPT = {
     "Secateurs", "Seed dibber", "Shears", "Spade", "Watering can(0)",
 }
 
+ENDPOINT_STATUS = {}
+TIMESERIES_STATUS = {
+    "1h": {"success": 0, "failed": 0},
+    "6h": {"success": 0, "failed": 0},
+}
+LAST_GENERATED_AT = None
 
-def fetch_json(path, params=None, required=False, retries=3):
+
+def utc_now():
+    return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+
+
+def fetch_json(path, params=None, required=False, retries=3, timeout=20):
     url = f"{BASE}/{path}"
     if params:
         url += "?" + urllib.parse.urlencode(params)
@@ -51,18 +63,49 @@ def fetch_json(path, params=None, required=False, retries=3):
                 url,
                 headers={"User-Agent": USER_AGENT, "Accept": "application/json"},
             )
-            with urllib.request.urlopen(req, timeout=30) as resp:
-                return json.load(resp)
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
+                payload = json.load(resp)
+            if path == "timeseries":
+                timestep = str((params or {}).get("timestep") or "unknown")
+                bucket = TIMESERIES_STATUS.setdefault(timestep, {"success": 0, "failed": 0})
+                bucket["success"] += 1
+            else:
+                ENDPOINT_STATUS[path] = {"ok": True, "error": None}
+            return payload
         except Exception as exc:
             last_error = f"{type(exc).__name__}: {exc}"
-            time.sleep(1.25 * (attempt + 1))
+            if attempt + 1 < retries:
+                time.sleep(1.5 * (attempt + 1))
+    if path == "timeseries":
+        timestep = str((params or {}).get("timestep") or "unknown")
+        bucket = TIMESERIES_STATUS.setdefault(timestep, {"success": 0, "failed": 0})
+        bucket["failed"] += 1
+    else:
+        ENDPOINT_STATUS[path] = {"ok": False, "error": last_error}
     if required:
         raise RuntimeError(f"Required endpoint failed: {url}: {last_error}")
     return {"_error": last_error, "_url": url}
 
 
+def write_health(success, error=None):
+    payload = {
+        "schema_version": 1,
+        "checked_at": utc_now(),
+        "source": "prices.runescape.wiki OSRS RuneLite real-time API",
+        "success": bool(success),
+        "error": error,
+        "snapshot_generated_at": LAST_GENERATED_AT,
+        "critical_endpoints": ["mapping", "latest", "1h"],
+        "endpoint_status": ENDPOINT_STATUS,
+        "timeseries_status": TIMESERIES_STATUS,
+        "note": "Only mapping/latest/1h are allowed to block the core snapshot. 5m/6h/24h/timeseries are fail-soft.",
+    }
+    with open(HEALTH_OUT, "w", encoding="utf-8") as handle:
+        json.dump(payload, handle, indent=2)
+        handle.write("\n")
+
+
 def normalize_block(payload):
-    """Return {item_id_string: row} for Wiki aggregate/latest responses."""
     if not isinstance(payload, dict):
         return {}
     data = payload.get("data")
@@ -115,16 +158,12 @@ def ge_tax(name, sell_price):
     return min(math.floor(sell_price * TAX_RATE), TAX_CAP)
 
 
-def point_mid(point):
-    return avg_mid(point)
-
-
 def change_from_series(points, lookback_points):
     if len(points) < 2:
         return None
-    newest = point_mid(points[-1])
+    newest = avg_mid(points[-1])
     idx = max(0, len(points) - 1 - lookback_points)
-    older = point_mid(points[idx])
+    older = avg_mid(points[idx])
     return pct_change(newest, older)
 
 
@@ -167,11 +206,13 @@ def load_previous():
 
 
 def main():
+    global LAST_GENERATED_AT
     now = int(time.time())
-    generated_at = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+    generated_at = utc_now()
+    LAST_GENERATED_AT = generated_at
     previous = load_previous()
 
-    mapping_payload = fetch_json("mapping", required=True)
+    mapping_payload = fetch_json("mapping", required=True, retries=4, timeout=20)
     mapping_rows = mapping_payload if isinstance(mapping_payload, list) else mapping_payload.get("data", [])
     meta = {
         row["id"]: row
@@ -179,12 +220,11 @@ def main():
         if isinstance(row, dict) and isinstance(row.get("id"), int)
     }
 
-    # Official Wiki v1 routes are /latest, /5m, /1h, /6h and /24h.
-    latest = normalize_block(fetch_json("latest", required=True))
-    p5m = normalize_block(fetch_json("5m", required=True))
-    p1h = normalize_block(fetch_json("1h", required=True))
-    p6h = normalize_block(fetch_json("6h"))
-    p24h = normalize_block(fetch_json("24h"))
+    latest = normalize_block(fetch_json("latest", required=True, retries=4, timeout=20))
+    p1h = normalize_block(fetch_json("1h", required=True, retries=4, timeout=20))
+    p5m = normalize_block(fetch_json("5m", retries=2, timeout=15))
+    p6h = normalize_block(fetch_json("6h", retries=2, timeout=15))
+    p24h = normalize_block(fetch_json("24h", retries=2, timeout=15))
 
     if not latest or not p1h:
         raise RuntimeError("Wiki API returned no usable latest/1h data")
@@ -199,8 +239,12 @@ def main():
         six = row_for(p6h, item_id)
         day = row_for(p24h, item_id)
 
-        ts1 = timeseries_points(fetch_json("timeseries", {"id": item_id, "timestep": "1h"}, required=True))
-        ts6 = timeseries_points(fetch_json("timeseries", {"id": item_id, "timestep": "6h"}, required=True))
+        ts1 = timeseries_points(fetch_json(
+            "timeseries", {"id": item_id, "timestep": "1h"}, retries=1, timeout=12
+        ))
+        ts6 = timeseries_points(fetch_json(
+            "timeseries", {"id": item_id, "timestep": "6h"}, retries=1, timeout=12
+        ))
 
         high = current.get("high")
         low = current.get("low")
@@ -245,7 +289,7 @@ def main():
                 "30d": change_from_series(ts6, 120),
             },
             "volume": {
-                "1h": sum_volume(ts1, 1),
+                "1h": sum_volume(ts1, 1) if ts1 else {"high": high_volume, "low": low_volume, "total": high_volume + low_volume},
                 "6h": sum_volume(ts1, 6),
                 "24h": sum_volume(ts1, 24),
                 "7d": sum_volume(ts1, 168),
@@ -253,6 +297,7 @@ def main():
                 "estimatedGpTraded1h": gp_traded_1h,
             },
             "liquidity": liquidity_label(gp_traded_1h),
+            "history_complete": bool(ts1 and ts6),
             "previousRelaySnapshot": {
                 "generatedAt": previous.get("generated_at"),
                 "high": previous_current.get("high"),
@@ -262,7 +307,6 @@ def main():
             },
         }
 
-    # Broad machine screen. ChatGPT still has to validate thesis, liquidity and risk.
     spreads = []
     momentum = []
     selloffs = []
@@ -351,11 +395,12 @@ def main():
     extreme_flow.sort(key=lambda x: abs((x.get("highSideShare") or 0.5) - 0.5), reverse=True)
 
     output = {
-        "schema_version": 2,
+        "schema_version": 3,
         "generated_at": generated_at,
         "generated_unix": now,
         "source": "prices.runescape.wiki OSRS RuneLite real-time API",
         "source_policy": "All market prices and volumes in this file originate only from prices.runescape.wiki.",
+        "freshness_policy": "mapping/latest/1h are critical; 5m/6h/24h/timeseries are fail-soft and may be empty without blocking fresh current tape.",
         "source_endpoints": {
             "latest": f"{BASE}/latest",
             "5m": f"{BASE}/5m",
@@ -388,4 +433,9 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+        write_health(True)
+    except Exception as exc:
+        write_health(False, f"{type(exc).__name__}: {exc}")
+        raise
