@@ -1,28 +1,32 @@
 {
   "schema_version": 1,
-  "updated_at_utc": "2026-08-19T13:35:00Z",
+  "updated_at_utc": "2026-08-20T03:29:00Z",
   "purpose": "Prevent the desk from silently inventing missing portfolio facts or treating offers as fills. Resolve only from explicit user statements or reliable evidence.",
   "open_gaps": [
     {"priority":"HIGH","field":"Current liquid GP / cash available for new trades","known":"Current cash has not been reconfirmed after recent purchases and GE offers.","resolution":"Use conservative sizing; never infer current cash from older screenshots."},
-    {"priority":"HIGH","field":"Open GE offer execution status","known":"Unconfirmed offers include 6 Tome of fire (empty) @1.45m, approximately 599 remaining Searing pages @18,111, approximately 231 remaining Amulets of magic @515, and 1,767 Amulets of magic offered for sale @1,250. Remaining Grimy lantadyme and Games necklace sell offers were also last seen unconfirmed.","resolution":"Do not count any unconfirmed order as executed until the user reports a fill/sale."},
+    {"priority":"HIGH","field":"Open GE offer execution status","known":"Current confirmed open offer: 2,000 Amulets of magic @515, no fill confirmed. Older unresolved offers include 6 Tome of fire (empty) @1.45m and approximately 599 remaining Searing pages @18,111. An older 231-unit residual Amulet of magic offer @515 existed before the new 2,000-unit offer; current status is unresolved.","resolution":"Do not count any unconfirmed order as executed or active beyond the newest explicit statement."},
     {"priority":"MEDIUM","field":"Current Inquisitor hauberk/plateskirt ownership","known":"No confirmed ownership.","resolution":"Do not include as held positions without user confirmation."},
     {"priority":"MEDIUM","field":"Current Ancestral robe bottom ownership","known":"No confirmed current quantity.","resolution":"Do not assume a position."},
     {"priority":"MEDIUM","field":"Current Diamond bolt tip ownership","known":"Historical stack existed but current ownership is not confirmed.","resolution":"Treat as unresolved unless user confirms."},
     {"priority":"LOW","field":"Dragon bones current quantity and basis","known":"Historical trading occurred but current position is unresolved.","resolution":"Only calculate P/L after user confirmation."}
   ],
   "closed_or_resolved": [
-    {"field":"Wrath rune quantity/basis","resolution":"237,000 total @340 gp average basis, user confirmed 2026-08-19."},
+    {"field":"Wrath rune quantity/basis","resolution":"262,000 total after confirmed additional 25,000 @335; weighted average basis approximately 339.5229 gp each."},
     {"field":"Arcane prayer scroll quantity/basis","resolution":"32 @5.9m average, user confirmed."},
     {"field":"Dexterous prayer scroll quantity/basis","resolution":"4 @20.8m average, user confirmed."},
     {"field":"Elder maul quantity/basis","resolution":"1 @90m; user intends to retain for Raids 4 use."},
     {"field":"Inquisitor's great helm quantity/basis","resolution":"1 @87m, user confirmed."},
-    {"field":"Amulet of magic quantity/basis","resolution":"1,767 @515 gp; sell offer @1,250 is not yet a confirmed sale."},
+    {"field":"Amulet of magic quantity/basis","resolution":"1,767 @515 gp remain owned; user explicitly confirmed prior 1,250 sell offer did not execute."},
     {"field":"Diamond quantity/basis","resolution":"28,000 @1,700 gp average, user confirmed 2026-08-19."},
     {"field":"Nightmare staff quantity/basis","resolution":"1 @28.7m."},
     {"field":"Kodai wand quantity/basis","resolution":"1 @56m."},
     {"field":"Burnt pages","resolution":"2,300 @6,100."},
     {"field":"Searing pages","resolution":"1,058 @18,111 confirmed filled; remainder of prior order unconfirmed."},
-    {"field":"Tome of fire (empty)","resolution":"7 @1.49m confirmed held; 6 @1.45m remains an unconfirmed buy offer."},
+    {"field":"Tome of fire (empty)","resolution":"7 @1.49m confirmed held; 6 @1.45m remains an older unconfirmed buy offer."},
+    {"field":"Tome of earth (empty)","resolution":"15 @700k each, confirmed purchase."},
+    {"field":"Tome of water (empty)","resolution":"15 @685k each, confirmed purchase."},
+    {"field":"Grimy lantadyme position","resolution":"User explicitly reported position sold; exact execution price not confirmed."},
+    {"field":"Games necklace(8) position","resolution":"User explicitly reported position sold; exact execution price not confirmed."},
     {"field":"Smoke rune scanner execution","resolution":"Confirmed buy 65 and sell 71; quantity unconfirmed."},
     {"field":"Fractured Archive individual reward poll result","resolution":"Official poll 1762 verified all six functional rewards passed; Obligator won the Breaker visual vote."}
   ]
