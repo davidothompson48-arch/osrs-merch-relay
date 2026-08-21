@@ -15,7 +15,7 @@ on:
       - 'project/related_items.json'
       - '.github/workflows/update-snapshot.yml'
   schedule:
-    - cron: '17,47 * * * *'
+    - cron: '*/5 * * * *'
 
 concurrency:
   group: osrs-market-relay
