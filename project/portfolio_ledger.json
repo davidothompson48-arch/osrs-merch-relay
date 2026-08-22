@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at_utc": "2026-08-20T03:29:00Z",
+  "updated_at_utc": "2026-08-22T14:43:44Z",
   "purpose": "Persistent user portfolio state for the OSRS Merch Desk. Current market prices are never stored here as authoritative; executable prices must come from fresh Wiki/RuneLite data.",
   "source_of_truth_for_market_data": "prices.runescape.wiki via fresh relay/direct API",
   "account_context": {
@@ -19,34 +19,27 @@
     {"item":"Nightmare staff","item_id":24422,"quantity":1,"cost_basis_gp_each":28700000,"cost_basis_gp_total_approx":28700000,"confidence":"high"},
     {"item":"Kodai wand","item_id":21006,"quantity":1,"cost_basis_gp_each":56000000,"cost_basis_gp_total_approx":56000000,"confidence":"high"},
     {"item":"Burnt page","item_id":20718,"quantity":2300,"cost_basis_gp_each":6100,"cost_basis_gp_total_approx":14030000,"confidence":"high"},
-    {"item":"Searing page","item_id":28931,"quantity":1058,"cost_basis_gp_each":18111,"cost_basis_gp_total_approx":19161438,"confidence":"high","note":"Confirmed filled quantity from a larger 1,657-unit order; do not infer remaining offer filled."},
+    {"item":"Searing page","item_id":28931,"quantity":1657,"cost_basis_gp_each":18111,"cost_basis_gp_total_approx":30009927,"confidence":"high","note":"User confirmed the remaining 599-unit order filled; full 1,657-page position is owned."},
     {"item":"Tome of fire (empty)","item_id":20716,"quantity":7,"cost_basis_gp_each":1490000,"cost_basis_gp_total_approx":10430000,"confidence":"high"},
-    {"item":"Tome of earth (empty)","item_id":30066,"quantity":15,"cost_basis_gp_each":700000,"cost_basis_gp_total_approx":10500000,"confidence":"high","note":"Confirmed purchase; user referred to Tome of earth."},
-    {"item":"Tome of water (empty)","item_id":25576,"quantity":15,"cost_basis_gp_each":685000,"cost_basis_gp_total_approx":10275000,"confidence":"high","note":"Confirmed purchase; user referred to Tome of water."},
-    {"item":"Amulet of magic","item_id":1727,"quantity":1767,"cost_basis_gp_each":515,"cost_basis_gp_total_approx":910005,"confidence":"high","note":"User explicitly confirmed the prior 1,250 sell offer never sold; all 1,767 remain owned."}
+    {"item":"Tome of earth (empty)","item_id":30066,"quantity":15,"cost_basis_gp_each":700000,"cost_basis_gp_total_approx":10500000,"confidence":"high"},
+    {"item":"Tome of water (empty)","item_id":25576,"quantity":15,"cost_basis_gp_each":685000,"cost_basis_gp_total_approx":10275000,"confidence":"high"},
+    {"item":"Amulet of magic","item_id":1727,"quantity":3000,"cost_basis_gp_each":515,"cost_basis_gp_total_approx":1545000,"confidence":"high","note":"User explicitly confirmed current total quantity is 3,000."}
   ],
-  "open_offers_unconfirmed": [
-    {"item":"Amulet of magic","action":"buy","quantity":2000,"price_gp_each":515,"status":"new explicit buy offer; no fill confirmed"},
-    {"item":"Tome of fire (empty)","action":"buy","remaining_or_offered_quantity":6,"price_gp_each":1450000,"status":"older offer; execution status still unconfirmed"},
-    {"item":"Searing page","action":"buy","remaining_or_offered_quantity":599,"price_gp_each":18111,"status":"older offer; execution status still unconfirmed"}
-  ],
+  "open_offers_unconfirmed": [],
   "historical_or_resolved_positions": [
     {"item":"Grimy lantadyme","status":"sold","execution_price_gp_each":null,"note":"User explicitly reported the grimy position sold; exact execution price not confirmed."},
     {"item":"Games necklace(8)","status":"sold","execution_price_gp_each":null,"note":"User explicitly reported the Games necklace position sold; exact execution price not confirmed."},
-    {"item":"Amulet of magic","status":"prior sell offer did not execute","quantity":1767,"offer_price_gp_each":1250,"note":"Do not treat as a sale."}
+    {"item":"Dragon bones","status":"not owned","note":"User explicitly confirmed no current ownership on 2026-08-22."},
+    {"item":"Diamond bolt tips","status":"not owned","note":"User explicitly confirmed no current ownership on 2026-08-22."},
+    {"item":"Inquisitor's hauberk","status":"not owned","note":"User explicitly confirmed no current ownership on 2026-08-22."},
+    {"item":"Inquisitor's plateskirt","status":"not owned","note":"User explicitly confirmed no current ownership on 2026-08-22."},
+    {"item":"Ancestral robe bottom","status":"not owned","note":"User explicitly confirmed no current ownership on 2026-08-22."}
   ],
-  "tracked_unresolved": [
-    {"item":"Prior residual Amulet of magic buy offer","note":"An older 231-unit residual offer @515 existed before the new explicit 2,000-unit @515 offer; current status of that older residual order is unresolved and must not be counted as filled or active without confirmation."},
-    {"item":"Inquisitor's hauberk","item_id":24420,"note":"No confirmed ownership."},
-    {"item":"Inquisitor's plateskirt","item_id":24421,"note":"No confirmed ownership."},
-    {"item":"Ancestral robe bottom","item_id":21024,"note":"No confirmed current ownership."},
-    {"item":"Dragon bones","item_id":536,"note":"Current quantity/basis unresolved."},
-    {"item":"Diamond bolt tips","item_id":9192,"note":"Historical stack existed; no current ownership confirmation."}
-  ],
+  "tracked_unresolved": [],
   "non_portfolio_gameplay_items": [
     {"item":"Blood rune","note":"Visible stack was user-crafted/runecrafting output, not a merch position."},
     {"item":"Pure essence","note":"Runecrafting supply, not merch unless user says otherwise."}
   ],
-  "portfolio_cost_basis_total_approx_gp": 735561443,
+  "portfolio_cost_basis_total_approx_gp": 747044927,
   "portfolio_rule": "Newest explicit user statement overrides older state. A buy/sell offer is not a fill unless the user confirms execution."
 }
