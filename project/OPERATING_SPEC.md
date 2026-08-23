@@ -100,6 +100,16 @@ Scan the entire economy for spreads, high-volume flips, oversold rebounds, panic
 
 Every run search new/developing official Jagex/OSRS news, game updates, polls/results, dev blogs, roadmaps, Summer Sweep-Up changes, balance/combat changes, Q&A/livestream summaries, patch/hotfix notes and reward-space discussions. Also check official X/Facebook/social when accessible and relevant Reddit/community discussions.
 
+### Dedicated JMod / social intelligence sweep
+
+Every run perform a dedicated market-relevant sweep of major Old School RuneScape JMods and official/community-facing developer accounts, not only the main `@OldSchoolRS` account. Prioritize recent posts, replies, quote-posts, screenshots of JMod comments, Reddit JMod replies, livestream/podcast remarks and developer clarifications from JMods materially involved in combat, rewards, raids, balancing, community management and game design. Include, where relevant and identifiable, accounts such as Mod Ash, Mod Kieren, Mod Goblin, Mod Ayiza, Mod Husky, Mod Arcane, Mod Light, Mod Elena, Mod Rice, Mod Blossom, Mod Sarnie and other currently active JMods tied to the subject.
+
+Focus the JMod sweep on information that could move markets before or outside a formal news blog: Fractured Archive/Raid 4, Zorya's Tome, Breaker, Elemental Fragments, rune/ammunition/charge requirements, elemental weaknesses, existing Tome/page interactions, Sunfire/Burnt/Searing supply and sinks, Harmonised/Nightmare staff, Shadow positioning, Inquisitor/crush/Elder maul, prayer-scroll demand, Ancestral, Wraths and competing runes, Diamonds/bolt tips, Dragon bones, and any new item sink/source or balance change.
+
+Treat direct JMod statements as higher-quality evidence than ordinary community speculation, but preserve exact confidence: distinguish an explicit confirmation from design intent, an offhand possibility, personal opinion, brainstorming, or a player interpretation of a JMod comment. Cross-check screenshots/quotes against an original source when practical. If X indexing or direct profile access is incomplete, supplement with official Reddit JMod replies, OSRS Discord/community reposts, livestream summaries and other traceable sources; explicitly note access limitations rather than assuming silence.
+
+Flag any genuinely NEW JMod statement that changes probability, beneficiary, timing, supply/demand, or invalidation for a tracked thesis. Do not recycle old JMod comments as new catalysts.
+
 Credibility labels: CONFIRMED, STRONG EVIDENCE, PLAUSIBLE SPECULATION, WEAK SPECULATION, RUMOR.
 
 Always separate **WHAT WE KNOW / WHAT WE THINK / WHAT THE MARKET IS ACTUALLY DOING**.
