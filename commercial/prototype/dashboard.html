@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OSRS Merch Desk — Dashboard Prototype</title>
+  <style>
+    :root{--bg:#090d12;--panel:#10161f;--panel2:#151d28;--text:#f4f7f9;--muted:#95a3b3;--line:#24303f;--gold:#e5b85c;--green:#55d187;--red:#ff7373;--blue:#64a8ff}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.app{display:grid;grid-template-columns:220px 1fr;min-height:100vh}.side{border-right:1px solid var(--line);background:#0c1118;padding:20px 14px;position:sticky;top:0;height:100vh}.brand{font-size:17px;font-weight:900;margin:4px 8px 26px}.brand b{color:var(--gold)}.nav a{display:block;color:var(--muted);padding:10px 11px;border-radius:10px;margin:4px 0;text-decoration:none}.nav a.active,.nav a:hover{background:var(--panel2);color:var(--text)}.tier{position:absolute;left:14px;right:14px;bottom:18px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px}.tier strong{display:block}.tier small{color:var(--muted)}main{padding:26px;max-width:1480px;width:100%;margin:auto}.top{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:22px}.top h1{font-size:30px;margin:0;letter-spacing:-.04em}.top p{margin:4px 0 0;color:var(--muted)}.fresh{color:var(--green);font-size:12px;font-weight:800}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:17px}.label{color:var(--muted);font-size:11px;text-transform:uppercase;font-weight:850;letter-spacing:.08em}.big{font-size:26px;font-weight:900;margin-top:4px}.green{color:var(--green)}.red{color:var(--red)}.gold{color:var(--gold)}.mainrow{display:grid;grid-template-columns:1.15fr .85fr;gap:12px;margin-top:12px}.decision{background:linear-gradient(135deg,#121b26,#0d141d);border-color:#34465b}.decision h2{font-size:34px;margin:4px 0 2px;letter-spacing:-.04em}.decision p{color:#aab6c3;margin:0}.rank{margin-top:18px}.rankrow{display:grid;grid-template-columns:34px 1fr auto;gap:10px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}.ranknum{width:26px;height:26px;border-radius:8px;background:var(--panel2);display:grid;place-items:center;color:var(--gold);font-weight:900}.rankrow small{display:block;color:var(--muted)}.badge{font-size:11px;font-weight:900;padding:5px 8px;border-radius:999px;background:#17231d;color:var(--green)}.badge.watch{background:#282313;color:var(--gold)}.alert{padding:12px 0;border-bottom:1px solid var(--line)}.alert:last-child{border:0}.alert strong{display:flex;justify-content:space-between}.alert p{margin:3px 0 0;color:var(--muted)}.section{margin-top:20px}.sectionhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:9px}.sectionhead h2{font-size:18px;margin:0}.sectionhead a{font-size:12px;color:var(--gold);text-decoration:none}.tablewrap{overflow:auto;background:var(--panel);border:1px solid var(--line);border-radius:16px}table{width:100%;border-collapse:collapse;min-width:930px}th,td{text-align:left;padding:13px 14px;border-bottom:1px solid #1e2936}th{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}tr:last-child td{border-bottom:0}.item strong{display:block}.item small{color:var(--muted)}.pill{font-size:10px;font-weight:900;padding:4px 7px;border-radius:999px;background:#14231b;color:var(--green)}.pill.trim{background:#2b1717;color:#ff9b9b}.pill.hold{background:#171f2a;color:#a9c7ee}.pill.watch{background:#2a2417;color:#edca72}.opps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.opp h3{margin:6px 0 4px}.opp p{color:var(--muted);margin:0 0 13px}.oppgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.stat{background:#0c121a;border:1px solid #202b39;padding:9px;border-radius:10px}.stat span{display:block;color:var(--muted);font-size:10px;text-transform:uppercase}.stat strong{font-size:15px}@media(max-width:1000px){.app{grid-template-columns:1fr}.side{display:none}.grid4,.opps{grid-template-columns:1fr 1fr}.mainrow{grid-template-columns:1fr}}@media(max-width:650px){main{padding:16px}.grid4,.opps{grid-template-columns:1fr}.top{display:block}.fresh{display:block;margin-top:8px}}
+  </style>
+</head>
+<body>
+<div class="app">
+  <aside class="side"><div class="brand">OSRS <b>MERCH DESK</b></div><nav class="nav"><a class="active" href="#">Command Center</a><a href="#">Portfolio</a><a href="#">Opportunities</a><a href="#">Catalysts</a><a href="#">Conversions</a><a href="#">Watchlists</a><a href="#">Alerts</a></nav><div class="tier"><strong>Pro</strong><small>Personal portfolio intelligence</small></div></aside>
+  <main>
+    <div class="top"><div><h1>Command Center</h1><p>Your portfolio, tape, catalysts and best capital allocation in one view.</p></div><span class="fresh">● LIVE RELAY • 2m ago</span></div>
+
+    <div class="grid4">
+      <div class="card"><div class="label">Portfolio value</div><div class="big">1.84b</div><small style="color:var(--muted)">Estimated gross mark</small></div>
+      <div class="card"><div class="label">After-tax P/L</div><div class="big green">+84.2m</div><small style="color:var(--muted)">Versus recorded basis</small></div>
+      <div class="card"><div class="label">Largest concentration</div><div class="big">22.4%</div><small style="color:var(--muted)">Elemental / Raid 4 thesis</small></div>
+      <div class="card"><div class="label">Portfolio risk</div><div class="big gold">6.4 / 10</div><small style="color:var(--muted)">Elevated catalyst concentration</small></div>
+    </div>
+
+    <div class="mainrow">
+      <div class="card decision"><div class="label">Best use of fresh GP right now</div><h2 class="green">CASH / DRY POWDER</h2><p>No full-size opportunity currently beats the value of waiting. The strongest existing positions have already repriced, while the best dip has not stabilized.</p><div class="rank">
+        <div class="rankrow"><div class="ranknum">1</div><div><strong>Cash / dry powder</strong><small>Best risk-adjusted allocation</small></div><span class="badge">BEST</span></div>
+        <div class="rankrow"><div class="ranknum">2</div><div><strong>Burnt → Searing conversion</strong><small>Only if Sunfire clears required margin</small></div><span class="badge watch">CONDITIONAL</span></div>
+        <div class="rankrow"><div class="ranknum">3</div><div><strong>Wrath rune</strong><small>Watch 335–340 for buyer stabilization</small></div><span class="badge watch">WAIT</span></div>
+      </div></div>
+      <div class="card"><div class="label">Top alerts</div>
+        <div class="alert"><strong><span>Weekly trend conflict</span><span class="gold">WRATH</span></strong><p>Fresh bounce is not confirmed by the 7-day tape. Do not chase.</p></div>
+        <div class="alert"><strong><span>Capital rotation</span><span class="red">DEX</span></strong><p>If a superior setup appears, this remains the first speculative position to reduce.</p></div>
+        <div class="alert"><strong><span>Catalyst risk</span><span class="gold">PAGES</span></strong><p>More elemental utility can still be offset by new page supply.</p></div>
+      </div>
+    </div>
+
+    <section class="section"><div class="sectionhead"><h2>Portfolio</h2><a href="#">Open full portfolio →</a></div><div class="tablewrap"><table>
+      <thead><tr><th>Item</th><th>High / Low</th><th>1h</th><th>24h</th><th>7d</th><th>Basis</th><th>P/L</th><th>State</th><th>Call</th></tr></thead>
+      <tbody>
+        <tr><td class="item"><strong>Wrath rune</strong><small>262,000 units</small></td><td>349 / 340</td><td class="red">-1.5%</td><td class="red">-1.6%</td><td class="red">-2.9%</td><td>339.52</td><td class="green">+2.5m gross</td><td>Selling pressure</td><td><span class="pill hold">HOLD</span></td></tr>
+        <tr><td class="item"><strong>Nightmare staff</strong><small>1 unit</small></td><td>31.5m / 30.7m</td><td class="green">+1.2%</td><td class="green">+8.0%</td><td class="green">+10.7%</td><td>28.7m</td><td class="green">+2.8m</td><td>Breakout</td><td><span class="pill">STRONG HOLD</span></td></tr>
+        <tr><td class="item"><strong>Arcane prayer scroll</strong><small>32 units</small></td><td>5.20m / 5.11m</td><td class="red">-2.4%</td><td class="green">+1.3%</td><td class="red">-13.6%</td><td>5.90m</td><td class="red">-22.4m</td><td>Strong selling pressure</td><td><span class="pill watch">WATCH</span></td></tr>
+        <tr><td class="item"><strong>Dexterous prayer scroll</strong><small>4 units</small></td><td>18.33m / 17.76m</td><td class="green">+0.4%</td><td class="red">-4.4%</td><td class="red">-19.6%</td><td>20.8m</td><td class="red">-9.9m</td><td>Rebound</td><td><span class="pill trim">TRIM</span></td></tr>
+      </tbody>
+    </table></div></section>
+
+    <section class="section"><div class="sectionhead"><h2>Validated opportunities</h2><a href="#">Open scanner →</a></div><div class="opps">
+      <div class="card opp"><div class="label">Fast flip</div><h3>Smoke rune</h3><p>Small tactical spread only. Countertrend and capacity-limited.</p><div class="oppgrid"><div class="stat"><span>Entry</span><strong>58–59</strong></div><div class="stat"><span>Target</span><strong>63–64</strong></div><div class="stat"><span>Score</span><strong class="gold">71/100</strong></div><div class="stat"><span>Conviction</span><strong>3/5</strong></div></div></div>
+      <div class="card opp"><div class="label">Conversion</div><h3>Burnt → Searing</h3><p>Only deploy when Sunfire acquisition creates enough after-tax edge.</p><div class="oppgrid"><div class="stat"><span>Sunfire max</span><strong>&lt; 118</strong></div><div class="stat"><span>Execution</span><strong>Conditional</strong></div><div class="stat"><span>Liquidity</span><strong>Liquid</strong></div><div class="stat"><span>Risk</span><strong>Input move</strong></div></div></div>
+      <div class="card opp"><div class="label">Swing watch</div><h3>Wrath rune</h3><p>Price is near the accumulation zone, but buyer flow must stabilize first.</p><div class="oppgrid"><div class="stat"><span>Watch zone</span><strong>335–340</strong></div><div class="stat"><span>State</span><strong>Wait</strong></div><div class="stat"><span>7d</span><strong class="red">Negative</strong></div><div class="stat"><span>Trigger</span><strong>Buyer flow</strong></div></div></div>
+    </div></section>
+  </main>
+</div>
+</body>
+</html>
