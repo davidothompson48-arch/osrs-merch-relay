@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at_utc": "2026-08-22T14:43:44Z",
+  "updated_at_utc": "2026-08-23T02:53:30Z",
   "purpose": "Persistent user portfolio state for the OSRS Merch Desk. Current market prices are never stored here as authoritative; executable prices must come from fresh Wiki/RuneLite data.",
   "source_of_truth_for_market_data": "prices.runescape.wiki via fresh relay/direct API",
   "account_context": {
@@ -15,7 +15,7 @@
     {"item":"Arcane prayer scroll","item_id":21079,"quantity":32,"cost_basis_gp_each":5900000,"cost_basis_gp_total_approx":188800000,"confidence":"high"},
     {"item":"Dexterous prayer scroll","item_id":21034,"quantity":4,"cost_basis_gp_each":20800000,"cost_basis_gp_total_approx":83200000,"confidence":"high"},
     {"item":"Elder maul","item_id":21003,"quantity":1,"cost_basis_gp_each":90000000,"cost_basis_gp_total_approx":90000000,"confidence":"high","note":"User intends to keep for Raids 4 use; treat as hybrid use/investment position, not routine profit-taking inventory."},
-    {"item":"Inquisitor's great helm","item_id":24419,"quantity":1,"cost_basis_gp_each":87000000,"cost_basis_gp_total_approx":87000000,"confidence":"high","note":"Confirmed current holding."},
+    {"item":"Inquisitor's great helm","item_id":24419,"quantity":1,"cost_basis_gp_each":87000000,"cost_basis_gp_total_approx":87000000,"confidence":"high","note":"Confirmed current holding; user intends to keep for Raids 4 crush setup."},
     {"item":"Nightmare staff","item_id":24422,"quantity":1,"cost_basis_gp_each":28700000,"cost_basis_gp_total_approx":28700000,"confidence":"high"},
     {"item":"Kodai wand","item_id":21006,"quantity":1,"cost_basis_gp_each":56000000,"cost_basis_gp_total_approx":56000000,"confidence":"high"},
     {"item":"Burnt page","item_id":20718,"quantity":2300,"cost_basis_gp_each":6100,"cost_basis_gp_total_approx":14030000,"confidence":"high"},
@@ -23,7 +23,15 @@
     {"item":"Tome of fire (empty)","item_id":20716,"quantity":7,"cost_basis_gp_each":1490000,"cost_basis_gp_total_approx":10430000,"confidence":"high"},
     {"item":"Tome of earth (empty)","item_id":30066,"quantity":15,"cost_basis_gp_each":700000,"cost_basis_gp_total_approx":10500000,"confidence":"high"},
     {"item":"Tome of water (empty)","item_id":25576,"quantity":15,"cost_basis_gp_each":685000,"cost_basis_gp_total_approx":10275000,"confidence":"high"},
-    {"item":"Amulet of magic","item_id":1727,"quantity":3000,"cost_basis_gp_each":515,"cost_basis_gp_total_approx":1545000,"confidence":"high","note":"User explicitly confirmed current total quantity is 3,000."}
+    {"item":"Amulet of magic","item_id":1727,"quantity":3000,"cost_basis_gp_each":515,"cost_basis_gp_total_approx":1545000,"confidence":"high","note":"User explicitly confirmed current total quantity is 3,000."},
+    {"item":"Torva platelegs","item_id":26386,"quantity":1,"cost_basis_gp_each":110500000,"cost_basis_gp_total_approx":110500000,"confidence":"high","note":"User confirmed purchase on 2026-08-22 local time; permanent/use gear acquisition, not routine merch inventory."}
+  ],
+  "wanted_acquisitions": [
+    {"item":"Torva platebody","item_id":26384,"priority":1,"status":"wanted","note":"Next priority after Torva platelegs."},
+    {"item":"Inquisitor's mace","item_id":24417,"priority":2,"status":"wanted","note":"Wanted as a 1h Crush option for Raids 4 / potential Rondache pairing; monitor Breaker substitution risk."},
+    {"item":"Masori mask (f)","item_id":27235,"priority":3,"status":"watch","note":"Fortified Masori set acquisition watch."},
+    {"item":"Masori body (f)","item_id":27238,"priority":3,"status":"watch","note":"Fortified Masori set acquisition watch."},
+    {"item":"Masori chaps (f)","item_id":27241,"priority":3,"status":"watch","note":"Fortified Masori set acquisition watch."}
   ],
   "open_offers_unconfirmed": [],
   "historical_or_resolved_positions": [
@@ -40,6 +48,6 @@
     {"item":"Blood rune","note":"Visible stack was user-crafted/runecrafting output, not a merch position."},
     {"item":"Pure essence","note":"Runecrafting supply, not merch unless user says otherwise."}
   ],
-  "portfolio_cost_basis_total_approx_gp": 747044927,
+  "portfolio_cost_basis_total_approx_gp": 857544927,
   "portfolio_rule": "Newest explicit user statement overrides older state. A buy/sell offer is not a fill unless the user confirms execution."
 }
