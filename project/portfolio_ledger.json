@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "updated_at_utc": "2026-08-23T15:44:00Z",
+  "updated_at_utc": "2026-08-23T16:01:00Z",
   "purpose": "Persistent user portfolio state for the OSRS Merch Desk. Current market prices are never stored here as authoritative; executable prices must come from fresh Wiki/RuneLite data.",
   "source_of_truth_for_market_data": "prices.runescape.wiki via fresh relay/direct API",
   "account_context": {
     "historical_bank_value": "1b+ gp reported by user",
     "current_liquid_gp": 41000000,
     "confidence": "high - explicitly confirmed by user 2026-08-23",
-    "rule": "Use this cash figure for sizing until superseded by a newer explicit user statement."
+    "rule": "Use this cash figure for sizing until superseded by a newer explicit user statement. Open buy offers are not deducted from cash until the user confirms a fill."
   },
   "active_positions": [
     {"item":"Wrath rune","item_id":21880,"quantity":262000,"cost_basis_gp_each":339.5229,"cost_basis_gp_total_approx":88955000,"confidence":"high","lots":[{"quantity":237000,"price_gp_each":340,"status":"confirmed prior aggregate basis"},{"quantity":25000,"price_gp_each":335,"status":"confirmed purchase 2026-08-19 local / 2026-08-20 UTC"}],"thesis":"Future rune-sink / Breaker candidate speculation.","adversarial_note":"Breaker using Wrath specifically remains unconfirmed."},
@@ -34,11 +34,13 @@
     {"item":"Masori body (f)","item_id":27238,"priority":3,"status":"watch","note":"Fortified Masori set acquisition watch."},
     {"item":"Masori chaps (f)","item_id":27241,"priority":3,"status":"watch","note":"Fortified Masori set acquisition watch."}
   ],
-  "open_offers_unconfirmed": [],
+  "open_offers_unconfirmed": [
+    {"item":"Dragon bones","item_id":536,"side":"buy","quantity":7500,"price_gp_each":3075,"total_gp_if_filled":23062500,"status":"open / unconfirmed fill","note":"User placed one full GE-limit order on 2026-08-23. Do not treat as owned until user confirms fill."}
+  ],
   "historical_or_resolved_positions": [
     {"item":"Grimy lantadyme","status":"sold","execution_price_gp_each":null,"note":"User explicitly reported the grimy position sold; exact execution price not confirmed."},
     {"item":"Games necklace(8)","status":"sold","execution_price_gp_each":null,"note":"User explicitly reported the Games necklace position sold; exact execution price not confirmed."},
-    {"item":"Dragon bones","status":"not owned","note":"User explicitly confirmed no current ownership on 2026-08-22."},
+    {"item":"Dragon bones","status":"not owned before current open order","note":"User explicitly confirmed no ownership on 2026-08-22; a new 7,500 @3,075 buy order is now open but unfilled/unconfirmed."},
     {"item":"Diamond bolt tips","status":"not owned","note":"User explicitly confirmed no current ownership on 2026-08-22."},
     {"item":"Inquisitor's hauberk","status":"not owned","note":"User explicitly confirmed no current ownership on 2026-08-22."},
     {"item":"Inquisitor's plateskirt","status":"not owned","note":"User explicitly confirmed no current ownership on 2026-08-22."},
@@ -52,6 +54,6 @@
     {"item":"Pure essence","note":"Runecrafting supply, not merch unless user says otherwise."}
   ],
   "portfolio_cost_basis_total_approx_gp": 857544927,
-  "portfolio_cost_basis_note": "Excludes Bandos tassets because cost basis is unresolved.",
+  "portfolio_cost_basis_note": "Excludes Bandos tassets because cost basis is unresolved. Excludes the open Dragon bones order until filled.",
   "portfolio_rule": "Newest explicit user statement overrides older state. A buy/sell offer is not a fill unless the user confirms execution."
 }
