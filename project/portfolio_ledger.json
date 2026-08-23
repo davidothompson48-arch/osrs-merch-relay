@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at_utc": "2026-08-23T16:01:00Z",
+  "updated_at_utc": "2026-08-23T16:23:00Z",
   "purpose": "Persistent user portfolio state for the OSRS Merch Desk. Current market prices are never stored here as authoritative; executable prices must come from fresh Wiki/RuneLite data.",
   "source_of_truth_for_market_data": "prices.runescape.wiki via fresh relay/direct API",
   "account_context": {
@@ -17,7 +17,7 @@
     {"item":"Elder maul","item_id":21003,"quantity":1,"cost_basis_gp_each":90000000,"cost_basis_gp_total_approx":90000000,"confidence":"high","note":"User intends to keep for Raids 4 use; treat as hybrid use/investment position, not routine profit-taking inventory."},
     {"item":"Inquisitor's great helm","item_id":24419,"quantity":1,"cost_basis_gp_each":87000000,"cost_basis_gp_total_approx":87000000,"confidence":"high","note":"Confirmed current holding; user intends to keep for Raids 4 crush setup."},
     {"item":"Nightmare staff","item_id":24422,"quantity":1,"cost_basis_gp_each":28700000,"cost_basis_gp_total_approx":28700000,"confidence":"high"},
-    {"item":"Kodai wand","item_id":21006,"quantity":1,"cost_basis_gp_each":56000000,"cost_basis_gp_total_approx":56000000,"confidence":"high"},
+    {"item":"Kodai wand","item_id":21006,"quantity":1,"cost_basis_gp_each":56000000,"cost_basis_gp_total_approx":56000000,"confidence":"high","note":"2026-08-23 thesis revision: treat as EXIT-ON-STRENGTH rather than core Raid 4 elemental exposure. User is willing to exit once approximately +1m net profit after GE tax; at 2% tax this implies roughly 58.16m+ gross sale price, subject to fresh tape. Rationale: Kodai's distinctive value is Ancient Magicks/barrage utility, while Staff of the Dead/Toxic Staff provide much cheaper +15% standard-spell damage exposure and Harmonised setup has the stronger direct elemental-speed interaction."},
     {"item":"Burnt page","item_id":20718,"quantity":2300,"cost_basis_gp_each":6100,"cost_basis_gp_total_approx":14030000,"confidence":"high"},
     {"item":"Searing page","item_id":28931,"quantity":1657,"cost_basis_gp_each":18111,"cost_basis_gp_total_approx":30009927,"confidence":"high","note":"User confirmed the remaining 599-unit order filled; full 1,657-page position is owned."},
     {"item":"Tome of fire (empty)","item_id":20716,"quantity":7,"cost_basis_gp_each":1490000,"cost_basis_gp_total_approx":10430000,"confidence":"high"},
@@ -28,11 +28,13 @@
     {"item":"Bandos tassets","item_id":11834,"quantity":1,"cost_basis_gp_each":null,"cost_basis_gp_total_approx":null,"confidence":"high holding / unknown basis","note":"User explicitly confirmed still owned on 2026-08-23. Treat primarily as use gear unless a superior capital rotation exists; cost basis unresolved."}
   ],
   "wanted_acquisitions": [
-    {"item":"Torva platebody","item_id":26384,"priority":1,"status":"wanted","note":"Next priority after Torva platelegs."},
-    {"item":"Inquisitor's mace","item_id":24417,"priority":2,"status":"wanted","note":"Wanted as a 1h Crush option for Raids 4 / potential Rondache pairing; monitor Breaker substitution risk."},
-    {"item":"Masori mask (f)","item_id":27235,"priority":3,"status":"watch","note":"Fortified Masori set acquisition watch."},
-    {"item":"Masori body (f)","item_id":27238,"priority":3,"status":"watch","note":"Fortified Masori set acquisition watch."},
-    {"item":"Masori chaps (f)","item_id":27241,"priority":3,"status":"watch","note":"Fortified Masori set acquisition watch."}
+    {"item":"Torva platebody","item_id":26384,"priority":1,"status":"wanted","note":"Next priority after Torva platelegs; user is considering reconsolidating capital from Kodai into Torva."},
+    {"item":"Staff of the Dead","item_id":11791,"priority":2,"status":"speculative watch / possible accumulation","note":"Cheap +15% standard-spell damage hardware with 12.5% rune-save passive; compare against Kodai and Toxic Staff for Fractured Archive elemental thesis. Prefer patient entries due thin liquidity."},
+    {"item":"Toxic staff (uncharged)","item_id":12902,"priority":2,"status":"speculative watch","note":"When charged, provides +25 Magic attack, +15% Magic damage, rune saving and venom while autocasting standard spells; closer functional comparator to Kodai for elemental spell use."},
+    {"item":"Inquisitor's mace","item_id":24417,"priority":3,"status":"wanted","note":"Wanted as a 1h Crush option for Raids 4 / potential Rondache pairing; monitor Breaker substitution risk."},
+    {"item":"Masori mask (f)","item_id":27235,"priority":4,"status":"watch","note":"Fortified Masori set acquisition watch."},
+    {"item":"Masori body (f)","item_id":27238,"priority":4,"status":"watch","note":"Fortified Masori set acquisition watch."},
+    {"item":"Masori chaps (f)","item_id":27241,"priority":4,"status":"watch","note":"Fortified Masori set acquisition watch."}
   ],
   "open_offers_unconfirmed": [
     {"item":"Dragon bones","item_id":536,"side":"buy","quantity":7500,"price_gp_each":3075,"total_gp_if_filled":23062500,"status":"open / unconfirmed fill","note":"User placed one full GE-limit order on 2026-08-23. Do not treat as owned until user confirms fill."}
