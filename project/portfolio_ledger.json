@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "updated_at_utc": "2026-08-23T02:53:30Z",
+  "updated_at_utc": "2026-08-23T15:44:00Z",
   "purpose": "Persistent user portfolio state for the OSRS Merch Desk. Current market prices are never stored here as authoritative; executable prices must come from fresh Wiki/RuneLite data.",
   "source_of_truth_for_market_data": "prices.runescape.wiki via fresh relay/direct API",
   "account_context": {
     "historical_bank_value": "1b+ gp reported by user",
-    "current_liquid_gp": null,
-    "confidence": "unknown current cash",
-    "rule": "Do not size new trades from historical cash figures as current."
+    "current_liquid_gp": 41000000,
+    "confidence": "high - explicitly confirmed by user 2026-08-23",
+    "rule": "Use this cash figure for sizing until superseded by a newer explicit user statement."
   },
   "active_positions": [
     {"item":"Wrath rune","item_id":21880,"quantity":262000,"cost_basis_gp_each":339.5229,"cost_basis_gp_total_approx":88955000,"confidence":"high","lots":[{"quantity":237000,"price_gp_each":340,"status":"confirmed prior aggregate basis"},{"quantity":25000,"price_gp_each":335,"status":"confirmed purchase 2026-08-19 local / 2026-08-20 UTC"}],"thesis":"Future rune-sink / Breaker candidate speculation.","adversarial_note":"Breaker using Wrath specifically remains unconfirmed."},
@@ -24,7 +24,8 @@
     {"item":"Tome of earth (empty)","item_id":30066,"quantity":15,"cost_basis_gp_each":700000,"cost_basis_gp_total_approx":10500000,"confidence":"high"},
     {"item":"Tome of water (empty)","item_id":25576,"quantity":15,"cost_basis_gp_each":685000,"cost_basis_gp_total_approx":10275000,"confidence":"high"},
     {"item":"Amulet of magic","item_id":1727,"quantity":3000,"cost_basis_gp_each":515,"cost_basis_gp_total_approx":1545000,"confidence":"high","note":"User explicitly confirmed current total quantity is 3,000."},
-    {"item":"Torva platelegs","item_id":26386,"quantity":1,"cost_basis_gp_each":110500000,"cost_basis_gp_total_approx":110500000,"confidence":"high","note":"User confirmed purchase on 2026-08-22 local time; permanent/use gear acquisition, not routine merch inventory."}
+    {"item":"Torva platelegs","item_id":26386,"quantity":1,"cost_basis_gp_each":110500000,"cost_basis_gp_total_approx":110500000,"confidence":"high","note":"User confirmed purchase on 2026-08-22 local time; permanent/use gear acquisition, not routine merch inventory."},
+    {"item":"Bandos tassets","item_id":11834,"quantity":1,"cost_basis_gp_each":null,"cost_basis_gp_total_approx":null,"confidence":"high holding / unknown basis","note":"User explicitly confirmed still owned on 2026-08-23. Treat primarily as use gear unless a superior capital rotation exists; cost basis unresolved."}
   ],
   "wanted_acquisitions": [
     {"item":"Torva platebody","item_id":26384,"priority":1,"status":"wanted","note":"Next priority after Torva platelegs."},
@@ -43,11 +44,14 @@
     {"item":"Inquisitor's plateskirt","status":"not owned","note":"User explicitly confirmed no current ownership on 2026-08-22."},
     {"item":"Ancestral robe bottom","status":"not owned","note":"User explicitly confirmed no current ownership on 2026-08-22."}
   ],
-  "tracked_unresolved": [],
+  "tracked_unresolved": [
+    {"item":"Bandos tassets","field":"cost_basis","status":"unknown","note":"User confirmed ownership but did not provide purchase price/basis."}
+  ],
   "non_portfolio_gameplay_items": [
     {"item":"Blood rune","note":"Visible stack was user-crafted/runecrafting output, not a merch position."},
     {"item":"Pure essence","note":"Runecrafting supply, not merch unless user says otherwise."}
   ],
   "portfolio_cost_basis_total_approx_gp": 857544927,
+  "portfolio_cost_basis_note": "Excludes Bandos tassets because cost basis is unresolved.",
   "portfolio_rule": "Newest explicit user statement overrides older state. A buy/sell offer is not a fill unless the user confirms execution."
 }
