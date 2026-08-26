@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-08-26T04:17:55.332946Z",
-  "generated_unix": 1787717875,
+  "generated_at": "2026-08-26T04:32:54.491239Z",
+  "generated_unix": 1787718774,
   "source": "prices.runescape.wiki OSRS RuneLite real-time API",
   "source_policy": "All market and static metadata fields in this file originate only from prices.runescape.wiki.",
   "freshness_policy": "mapping/latest/1h are required; 5m/24h are fail-soft.",
@@ -20,14 +20,14 @@
         "high": 1449,
         "low": 222,
         "highTime": 1787717661,
-        "lowTime": 1787707159,
-        "highAgeSeconds": 214,
-        "lowAgeSeconds": 10716
+        "lowTime": 1787717848,
+        "highAgeSeconds": 1113,
+        "lowAgeSeconds": 926
       },
       "5m": {
-        "avgHighPrice": 1449,
+        "avgHighPrice": null,
         "avgLowPrice": null,
-        "highPriceVolume": 2,
+        "highPriceVolume": 0,
         "lowPriceVolume": 0
       },
       "1h": {
@@ -54,16 +54,16 @@
       "current": {
         "high": 8797,
         "low": 8797,
-        "highTime": 1787717710,
-        "lowTime": 1787717744,
-        "highAgeSeconds": 165,
-        "lowAgeSeconds": 131
+        "highTime": 1787718670,
+        "lowTime": 1787718708,
+        "highAgeSeconds": 104,
+        "lowAgeSeconds": 66
       },
       "5m": {
         "avgHighPrice": 8797,
         "avgLowPrice": 8797,
-        "highPriceVolume": 325,
-        "lowPriceVolume": 10
+        "highPriceVolume": 3,
+        "lowPriceVolume": 25
       },
       "1h": {
         "avgHighPrice": 8797,
@@ -90,15 +90,15 @@
         "high": 1584,
         "low": 1300,
         "highTime": 1787715523,
-        "lowTime": 1787716147,
-        "highAgeSeconds": 2352,
-        "lowAgeSeconds": 1728
+        "lowTime": 1787718477,
+        "highAgeSeconds": 3251,
+        "lowAgeSeconds": 297
       },
       "5m": {
         "avgHighPrice": null,
-        "avgLowPrice": null,
+        "avgLowPrice": 1300,
         "highPriceVolume": 0,
-        "lowPriceVolume": 0
+        "lowPriceVolume": 3
       },
       "1h": {
         "avgHighPrice": 1509,
@@ -124,16 +124,16 @@
       "current": {
         "high": 1477,
         "low": 1449,
-        "highTime": 1787717758,
-        "lowTime": 1787717804,
-        "highAgeSeconds": 117,
-        "lowAgeSeconds": 71
+        "highTime": 1787718593,
+        "lowTime": 1787718611,
+        "highAgeSeconds": 181,
+        "lowAgeSeconds": 163
       },
       "5m": {
-        "avgHighPrice": 1487,
-        "avgLowPrice": null,
-        "highPriceVolume": 199,
-        "lowPriceVolume": 0
+        "avgHighPrice": 1477,
+        "avgLowPrice": 1449,
+        "highPriceVolume": 30,
+        "lowPriceVolume": 347
       },
       "1h": {
         "avgHighPrice": 1504,
@@ -158,17 +158,17 @@
       "lowalch": 1,
       "current": {
         "high": 6,
-        "low": 6,
-        "highTime": 1787717800,
-        "lowTime": 1787717736,
-        "highAgeSeconds": 75,
-        "lowAgeSeconds": 139
+        "low": 5,
+        "highTime": 1787718710,
+        "lowTime": 1787718582,
+        "highAgeSeconds": 64,
+        "lowAgeSeconds": 192
       },
       "5m": {
         "avgHighPrice": 6,
-        "avgLowPrice": 6,
-        "highPriceVolume": 8100,
-        "lowPriceVolume": 1000
+        "avgLowPrice": 5,
+        "highPriceVolume": 19020,
+        "lowPriceVolume": 28000
       },
       "1h": {
         "avgHighPrice": 6,
@@ -194,16 +194,16 @@
       "current": {
         "high": 606,
         "low": 600,
-        "highTime": 1787717793,
-        "lowTime": 1787717513,
-        "highAgeSeconds": 82,
-        "lowAgeSeconds": 362
+        "highTime": 1787718426,
+        "lowTime": 1787718495,
+        "highAgeSeconds": 348,
+        "lowAgeSeconds": 279
       },
       "5m": {
         "avgHighPrice": 606,
         "avgLowPrice": 600,
         "highPriceVolume": 1,
-        "lowPriceVolume": 52
+        "lowPriceVolume": 5
       },
       "1h": {
         "avgHighPrice": 606,
@@ -229,10 +229,10 @@
       "current": {
         "high": 19,
         "low": 10,
-        "highTime": 1787717282,
-        "lowTime": 1787714944,
-        "highAgeSeconds": 593,
-        "lowAgeSeconds": 2931
+        "highTime": 1787718704,
+        "lowTime": 1787717895,
+        "highAgeSeconds": 70,
+        "lowAgeSeconds": 879
       },
       "5m": {
         "avgHighPrice": null,
@@ -262,12 +262,12 @@
       "highalch": 18000,
       "lowalch": 12000,
       "current": {
-        "high": 275000,
+        "high": 167000,
         "low": 92698,
-        "highTime": 1787715854,
+        "highTime": 1787717849,
         "lowTime": 1787716709,
-        "highAgeSeconds": 2021,
-        "lowAgeSeconds": 1166
+        "highAgeSeconds": 925,
+        "lowAgeSeconds": 2065
       },
       "5m": {
         "avgHighPrice": null,
@@ -301,8 +301,8 @@
         "low": 5839,
         "highTime": 1787716202,
         "lowTime": 1787717388,
-        "highAgeSeconds": 1673,
-        "lowAgeSeconds": 487
+        "highAgeSeconds": 2572,
+        "lowAgeSeconds": 1386
       },
       "5m": {
         "avgHighPrice": null,
@@ -334,16 +334,16 @@
       "current": {
         "high": 184500,
         "low": 165600,
-        "highTime": 1787716779,
+        "highTime": 1787718561,
         "lowTime": 1787717672,
-        "highAgeSeconds": 1096,
-        "lowAgeSeconds": 203
+        "highAgeSeconds": 213,
+        "lowAgeSeconds": 1102
       },
       "5m": {
-        "avgHighPrice": null,
-        "avgLowPrice": 165600,
-        "highPriceVolume": 0,
-        "lowPriceVolume": 2
+        "avgHighPrice": 184500,
+        "avgLowPrice": null,
+        "highPriceVolume": 2,
+        "lowPriceVolume": 0
       },
       "1h": {
         "avgHighPrice": 182813,
@@ -367,18 +367,18 @@
       "highalch": 90000,
       "lowalch": 60000,
       "current": {
-        "high": 3092876,
-        "low": 3290000,
-        "highTime": 1787717423,
-        "lowTime": 1787717659,
-        "highAgeSeconds": 452,
-        "lowAgeSeconds": 216
+        "high": 3082977,
+        "low": 2906804,
+        "highTime": 1787718208,
+        "lowTime": 1787717833,
+        "highAgeSeconds": 566,
+        "lowAgeSeconds": 941
       },
       "5m": {
-        "avgHighPrice": 3092876,
-        "avgLowPrice": 3290000,
-        "highPriceVolume": 1,
-        "lowPriceVolume": 1
+        "avgHighPrice": null,
+        "avgLowPrice": null,
+        "highPriceVolume": 0,
+        "lowPriceVolume": 0
       },
       "1h": {
         "avgHighPrice": 3155646,
@@ -406,8 +406,8 @@
         "low": 120555,
         "highTime": 1787715582,
         "lowTime": 1787717022,
-        "highAgeSeconds": 2293,
-        "lowAgeSeconds": 853
+        "highAgeSeconds": 3192,
+        "lowAgeSeconds": 1752
       },
       "5m": {
         "avgHighPrice": null,
@@ -441,8 +441,8 @@
         "low": 44000,
         "highTime": 1787705405,
         "lowTime": 1787716755,
-        "highAgeSeconds": 12470,
-        "lowAgeSeconds": 1120
+        "highAgeSeconds": 13369,
+        "lowAgeSeconds": 2019
       },
       "5m": {
         "avgHighPrice": null,
@@ -472,12 +472,12 @@
       "highalch": 3000,
       "lowalch": 2000,
       "current": {
-        "high": 2222222,
+        "high": 2300000,
         "low": 2156142,
-        "highTime": 1787714328,
+        "highTime": 1787718111,
         "lowTime": 1787716114,
-        "highAgeSeconds": 3547,
-        "lowAgeSeconds": 1761
+        "highAgeSeconds": 663,
+        "lowAgeSeconds": 2660
       },
       "5m": {
         "avgHighPrice": null,
@@ -511,8 +511,8 @@
         "low": 912655,
         "highTime": 1787717179,
         "lowTime": 1787713448,
-        "highAgeSeconds": 696,
-        "lowAgeSeconds": 4427
+        "highAgeSeconds": 1595,
+        "lowAgeSeconds": 5326
       },
       "5m": {
         "avgHighPrice": null,
@@ -542,18 +542,18 @@
       "highalch": 30,
       "lowalch": 20,
       "current": {
-        "high": 4615,
+        "high": 4628,
         "low": 4615,
-        "highTime": 1787714223,
-        "lowTime": 1787717420,
-        "highAgeSeconds": 3652,
-        "lowAgeSeconds": 455
+        "highTime": 1787718665,
+        "lowTime": 1787718426,
+        "highAgeSeconds": 109,
+        "lowAgeSeconds": 348
       },
       "5m": {
-        "avgHighPrice": null,
+        "avgHighPrice": 4628,
         "avgLowPrice": 4615,
-        "highPriceVolume": 0,
-        "lowPriceVolume": 109
+        "highPriceVolume": 20,
+        "lowPriceVolume": 139
       },
       "1h": {
         "avgHighPrice": 4618,
@@ -577,18 +577,18 @@
       "highalch": 96000,
       "lowalch": 64000,
       "current": {
-        "high": 750000,
-        "low": 732000,
-        "highTime": 1787717484,
-        "lowTime": 1787717801,
-        "highAgeSeconds": 391,
-        "lowAgeSeconds": 74
+        "high": 739986,
+        "low": 728500,
+        "highTime": 1787718714,
+        "lowTime": 1787718609,
+        "highAgeSeconds": 60,
+        "lowAgeSeconds": 165
       },
       "5m": {
-        "avgHighPrice": 750000,
-        "avgLowPrice": 732000,
-        "highPriceVolume": 1,
-        "lowPriceVolume": 5
+        "avgHighPrice": null,
+        "avgLowPrice": null,
+        "highPriceVolume": 0,
+        "lowPriceVolume": 0
       },
       "1h": {
         "avgHighPrice": 748179,
@@ -613,17 +613,17 @@
       "lowalch": 58000,
       "current": {
         "high": 5999999,
-        "low": 5758206,
-        "highTime": 1787717768,
-        "lowTime": 1787716236,
-        "highAgeSeconds": 107,
-        "lowAgeSeconds": 1639
+        "low": 5663893,
+        "highTime": 1787718289,
+        "lowTime": 1787718332,
+        "highAgeSeconds": 485,
+        "lowAgeSeconds": 442
       },
       "5m": {
-        "avgHighPrice": 5999999,
-        "avgLowPrice": null,
-        "highPriceVolume": 2,
-        "lowPriceVolume": 0
+        "avgHighPrice": null,
+        "avgLowPrice": 5663893,
+        "highPriceVolume": 0,
+        "lowPriceVolume": 1
       },
       "1h": {
         "avgHighPrice": 5981669,
@@ -648,17 +648,17 @@
       "lowalch": 116004,
       "current": {
         "high": 1600000,
-        "low": 1582000,
+        "low": 1577296,
         "highTime": 1787717575,
-        "lowTime": 1787717784,
-        "highAgeSeconds": 300,
-        "lowAgeSeconds": 91
+        "lowTime": 1787718378,
+        "highAgeSeconds": 1199,
+        "lowAgeSeconds": 396
       },
       "5m": {
-        "avgHighPrice": 1600000,
-        "avgLowPrice": null,
-        "highPriceVolume": 1,
-        "lowPriceVolume": 0
+        "avgHighPrice": null,
+        "avgLowPrice": 1577296,
+        "highPriceVolume": 0,
+        "lowPriceVolume": 2
       },
       "1h": {
         "avgHighPrice": 1611250,
@@ -685,15 +685,15 @@
         "high": 750000,
         "low": 750000,
         "highTime": 1787657709,
-        "lowTime": 1787717716,
-        "highAgeSeconds": 60166,
-        "lowAgeSeconds": 159
+        "lowTime": 1787718611,
+        "highAgeSeconds": 61065,
+        "lowAgeSeconds": 163
       },
       "5m": {
         "avgHighPrice": null,
-        "avgLowPrice": 750000,
+        "avgLowPrice": null,
         "highPriceVolume": 0,
-        "lowPriceVolume": 2
+        "lowPriceVolume": 0
       },
       "1h": {
         "avgHighPrice": null,
@@ -718,17 +718,17 @@
       "lowalch": 41200,
       "current": {
         "high": 813887,
-        "low": 820000,
+        "low": 814000,
         "highTime": 1787713384,
-        "lowTime": 1787717769,
-        "highAgeSeconds": 4491,
-        "lowAgeSeconds": 106
+        "lowTime": 1787718376,
+        "highAgeSeconds": 5390,
+        "lowAgeSeconds": 398
       },
       "5m": {
         "avgHighPrice": null,
-        "avgLowPrice": null,
+        "avgLowPrice": 814000,
         "highPriceVolume": 0,
-        "lowPriceVolume": 0
+        "lowPriceVolume": 1
       },
       "1h": {
         "avgHighPrice": 813887,
@@ -755,15 +755,15 @@
         "high": 62321,
         "low": 62001,
         "highTime": 1787705759,
-        "lowTime": 1787717712,
-        "highAgeSeconds": 12116,
-        "lowAgeSeconds": 163
+        "lowTime": 1787718614,
+        "highAgeSeconds": 13015,
+        "lowAgeSeconds": 160
       },
       "5m": {
         "avgHighPrice": null,
-        "avgLowPrice": 62001,
+        "avgLowPrice": null,
         "highPriceVolume": 0,
-        "lowPriceVolume": 2
+        "lowPriceVolume": 0
       },
       "1h": {
         "avgHighPrice": null,
@@ -790,15 +790,15 @@
         "high": 2460000,
         "low": 2387000,
         "highTime": 1787715453,
-        "lowTime": 1787717782,
-        "highAgeSeconds": 2422,
-        "lowAgeSeconds": 93
+        "lowTime": 1787718381,
+        "highAgeSeconds": 3321,
+        "lowAgeSeconds": 393
       },
       "5m": {
         "avgHighPrice": null,
-        "avgLowPrice": null,
+        "avgLowPrice": 2387000,
         "highPriceVolume": 0,
-        "lowPriceVolume": 0
+        "lowPriceVolume": 2
       },
       "1h": {
         "avgHighPrice": 2457479,
@@ -825,15 +825,15 @@
         "high": 1778759,
         "low": 1528605,
         "highTime": 1787674430,
-        "lowTime": 1787717790,
-        "highAgeSeconds": 43445,
-        "lowAgeSeconds": 85
+        "lowTime": 1787718607,
+        "highAgeSeconds": 44344,
+        "lowAgeSeconds": 167
       },
       "5m": {
         "avgHighPrice": null,
-        "avgLowPrice": 1528605,
+        "avgLowPrice": null,
         "highPriceVolume": 0,
-        "lowPriceVolume": 3
+        "lowPriceVolume": 0
       },
       "1h": {
         "avgHighPrice": null,
@@ -861,8 +861,8 @@
         "low": 850,
         "highTime": 1787707092,
         "lowTime": 1787715790,
-        "highAgeSeconds": 10783,
-        "lowAgeSeconds": 2085
+        "highAgeSeconds": 11682,
+        "lowAgeSeconds": 2984
       },
       "5m": {
         "avgHighPrice": null,
@@ -894,15 +894,15 @@
       "current": {
         "high": 17,
         "low": 10,
-        "highTime": 1787717438,
+        "highTime": 1787718440,
         "lowTime": 1787717021,
-        "highAgeSeconds": 437,
-        "lowAgeSeconds": 854
+        "highAgeSeconds": 334,
+        "lowAgeSeconds": 1753
       },
       "5m": {
         "avgHighPrice": 17,
         "avgLowPrice": null,
-        "highPriceVolume": 1,
+        "highPriceVolume": 4,
         "lowPriceVolume": 0
       },
       "1h": {
@@ -929,16 +929,16 @@
       "current": {
         "high": 1907,
         "low": 1861,
-        "highTime": 1787717821,
+        "highTime": 1787718623,
         "lowTime": 1787717616,
-        "highAgeSeconds": 54,
-        "lowAgeSeconds": 259
+        "highAgeSeconds": 151,
+        "lowAgeSeconds": 1158
       },
       "5m": {
         "avgHighPrice": 1907,
-        "avgLowPrice": 1781,
-        "highPriceVolume": 40,
-        "lowPriceVolume": 20
+        "avgLowPrice": null,
+        "highPriceVolume": 20,
+        "lowPriceVolume": 0
       },
       "1h": {
         "avgHighPrice": 1862,
@@ -962,17 +962,17 @@
       "highalch": 6,
       "lowalch": 4,
       "current": {
-        "high": 133,
+        "high": 135,
         "low": 125,
-        "highTime": 1787717763,
+        "highTime": 1787718378,
         "lowTime": 1787716930,
-        "highAgeSeconds": 112,
-        "lowAgeSeconds": 945
+        "highAgeSeconds": 396,
+        "lowAgeSeconds": 1844
       },
       "5m": {
-        "avgHighPrice": 133,
+        "avgHighPrice": 134,
         "avgLowPrice": null,
-        "highPriceVolume": 700,
+        "highPriceVolume": 410,
         "lowPriceVolume": 0
       },
       "1h": {
@@ -998,17 +998,17 @@
       "lowalch": 1,
       "current": {
         "high": 28,
-        "low": 27,
-        "highTime": 1787717765,
-        "lowTime": 1787717575,
-        "highAgeSeconds": 110,
-        "lowAgeSeconds": 300
+        "low": 28,
+        "highTime": 1787718685,
+        "lowTime": 1787717972,
+        "highAgeSeconds": 89,
+        "lowAgeSeconds": 802
       },
       "5m": {
         "avgHighPrice": 28,
-        "avgLowPrice": 27,
-        "highPriceVolume": 1,
-        "lowPriceVolume": 11
+        "avgLowPrice": null,
+        "highPriceVolume": 1003,
+        "lowPriceVolume": 0
       },
       "1h": {
         "avgHighPrice": 28,
@@ -1036,8 +1036,8 @@
         "low": 180,
         "highTime": 1786079874,
         "lowTime": 1786045242,
-        "highAgeSeconds": 1638001,
-        "lowAgeSeconds": 1672633
+        "highAgeSeconds": 1638900,
+        "lowAgeSeconds": 1673532
       },
       "5m": {
         "avgHighPrice": null,
@@ -1070,15 +1070,15 @@
         "high": 255,
         "low": 255,
         "highTime": 1787716835,
-        "lowTime": 1787714786,
-        "highAgeSeconds": 1040,
-        "lowAgeSeconds": 3089
+        "lowTime": 1787718586,
+        "highAgeSeconds": 1939,
+        "lowAgeSeconds": 188
       },
       "5m": {
         "avgHighPrice": null,
-        "avgLowPrice": null,
+        "avgLowPrice": 255,
         "highPriceVolume": 0,
-        "lowPriceVolume": 0
+        "lowPriceVolume": 8
       },
       "1h": {
         "avgHighPrice": 255,
@@ -1106,8 +1106,8 @@
         "low": 242,
         "highTime": 1787586270,
         "lowTime": 1787716107,
-        "highAgeSeconds": 131605,
-        "lowAgeSeconds": 1768
+        "highAgeSeconds": 132504,
+        "lowAgeSeconds": 2667
       },
       "5m": {
         "avgHighPrice": null,
@@ -1137,18 +1137,18 @@
       "highalch": 300,
       "lowalch": 200,
       "current": {
-        "high": 300856,
-        "low": 278670,
-        "highTime": 1787717640,
-        "lowTime": 1787717752,
-        "highAgeSeconds": 235,
-        "lowAgeSeconds": 123
+        "high": 303482,
+        "low": 269524,
+        "highTime": 1787718703,
+        "lowTime": 1787718411,
+        "highAgeSeconds": 71,
+        "lowAgeSeconds": 363
       },
       "5m": {
-        "avgHighPrice": 300856,
-        "avgLowPrice": null,
-        "highPriceVolume": 3,
-        "lowPriceVolume": 0
+        "avgHighPrice": null,
+        "avgLowPrice": 269524,
+        "highPriceVolume": 0,
+        "lowPriceVolume": 2
       },
       "1h": {
         "avgHighPrice": 304258,
@@ -1173,16 +1173,16 @@
       "lowalch": 280,
       "current": {
         "high": 288679,
-        "low": 291565,
-        "highTime": 1787717782,
-        "lowTime": 1787717804,
-        "highAgeSeconds": 93,
-        "lowAgeSeconds": 71
+        "low": 160036,
+        "highTime": 1787718248,
+        "lowTime": 1787718186,
+        "highAgeSeconds": 526,
+        "lowAgeSeconds": 588
       },
       "5m": {
-        "avgHighPrice": 288679,
+        "avgHighPrice": null,
         "avgLowPrice": null,
-        "highPriceVolume": 1,
+        "highPriceVolume": 0,
         "lowPriceVolume": 0
       },
       "1h": {
@@ -1207,17 +1207,17 @@
       "highalch": 480,
       "lowalch": 320,
       "current": {
-        "high": 294575,
+        "high": 279847,
         "low": 275002,
-        "highTime": 1787717650,
-        "lowTime": 1787717783,
-        "highAgeSeconds": 225,
-        "lowAgeSeconds": 92
+        "highTime": 1787717976,
+        "lowTime": 1787718699,
+        "highAgeSeconds": 798,
+        "lowAgeSeconds": 75
       },
       "5m": {
-        "avgHighPrice": 289666,
+        "avgHighPrice": null,
         "avgLowPrice": null,
-        "highPriceVolume": 3,
+        "highPriceVolume": 0,
         "lowPriceVolume": 0
       },
       "1h": {
@@ -1242,18 +1242,18 @@
       "highalch": 300006,
       "lowalch": 200004,
       "current": {
-        "high": 91000000,
-        "low": 92186580,
-        "highTime": 1787717518,
-        "lowTime": 1787717685,
-        "highAgeSeconds": 357,
-        "lowAgeSeconds": 190
+        "high": 92740831,
+        "low": 91250000,
+        "highTime": 1787717953,
+        "lowTime": 1787718706,
+        "highAgeSeconds": 821,
+        "lowAgeSeconds": 68
       },
       "5m": {
-        "avgHighPrice": 91000000,
-        "avgLowPrice": 92186580,
-        "highPriceVolume": 1,
-        "lowPriceVolume": 1
+        "avgHighPrice": null,
+        "avgLowPrice": null,
+        "highPriceVolume": 0,
+        "lowPriceVolume": 0
       },
       "1h": {
         "avgHighPrice": 91000000,
@@ -1278,17 +1278,17 @@
       "lowalch": 1600000,
       "current": {
         "high": 117513424,
-        "low": 114101000,
+        "low": 113400000,
         "highTime": 1787713726,
-        "lowTime": 1787717403,
-        "highAgeSeconds": 4149,
-        "lowAgeSeconds": 472
+        "lowTime": 1787718126,
+        "highAgeSeconds": 5048,
+        "lowAgeSeconds": 648
       },
       "5m": {
         "avgHighPrice": null,
-        "avgLowPrice": 114101000,
+        "avgLowPrice": null,
         "highPriceVolume": 0,
-        "lowPriceVolume": 1
+        "lowPriceVolume": 0
       },
       "1h": {
         "avgHighPrice": 117513424,
@@ -1316,8 +1316,8 @@
         "low": 498,
         "highTime": 1787566479,
         "lowTime": 1787277393,
-        "highAgeSeconds": 151396,
-        "lowAgeSeconds": 440482
+        "highAgeSeconds": 152295,
+        "lowAgeSeconds": 441381
       },
       "5m": {
         "avgHighPrice": null,
@@ -1349,16 +1349,16 @@
       "current": {
         "high": 2999,
         "low": 2487,
-        "highTime": 1787717441,
-        "lowTime": 1787717715,
-        "highAgeSeconds": 434,
-        "lowAgeSeconds": 160
+        "highTime": 1787718621,
+        "lowTime": 1787718711,
+        "highAgeSeconds": 153,
+        "lowAgeSeconds": 63
       },
       "5m": {
         "avgHighPrice": 2999,
-        "avgLowPrice": 2487,
+        "avgLowPrice": null,
         "highPriceVolume": 1,
-        "lowPriceVolume": 2
+        "lowPriceVolume": 0
       },
       "1h": {
         "avgHighPrice": 2999,
@@ -1420,9 +1420,9 @@
         "high": 2650,
         "low": 2722,
         "highTime": 1787716183,
-        "lowTime": 1787717314,
-        "highAgeSeconds": 1692,
-        "lowAgeSeconds": 561
+        "lowTime": 1787718679,
+        "highAgeSeconds": 2591,
+        "lowAgeSeconds": 95
       },
       "5m": {
         "avgHighPrice": null,
@@ -1454,10 +1454,10 @@
       "current": {
         "high": 975,
         "low": 630,
-        "highTime": 1787715124,
+        "highTime": 1787718118,
         "lowTime": 1787705999,
-        "highAgeSeconds": 2751,
-        "lowAgeSeconds": 11876
+        "highAgeSeconds": 656,
+        "lowAgeSeconds": 12775
       },
       "5m": {
         "avgHighPrice": null,
@@ -1487,16 +1487,16 @@
       "highalch": 3000000,
       "lowalch": 2000000,
       "current": {
-        "high": 3857645,
-        "low": 3695873,
-        "highTime": 1787717566,
-        "lowTime": 1787717577,
-        "highAgeSeconds": 309,
-        "lowAgeSeconds": 298
+        "high": 3832148,
+        "low": 3686682,
+        "highTime": 1787718672,
+        "lowTime": 1787718680,
+        "highAgeSeconds": 102,
+        "lowAgeSeconds": 94
       },
       "5m": {
-        "avgHighPrice": 3857645,
-        "avgLowPrice": 3695318,
+        "avgHighPrice": 3823095,
+        "avgLowPrice": 3694058,
         "highPriceVolume": 1,
         "lowPriceVolume": 2
       },
@@ -1526,8 +1526,8 @@
         "low": 1213,
         "highTime": 1787714462,
         "lowTime": 1787715672,
-        "highAgeSeconds": 3413,
-        "lowAgeSeconds": 2203
+        "highAgeSeconds": 4312,
+        "lowAgeSeconds": 3102
       },
       "5m": {
         "avgHighPrice": null,
@@ -1558,17 +1558,17 @@
       "lowalch": 10,
       "current": {
         "high": 131,
-        "low": 128,
-        "highTime": 1787699459,
-        "lowTime": 1787717778,
-        "highAgeSeconds": 18416,
-        "lowAgeSeconds": 97
+        "low": 135,
+        "highTime": 1787718483,
+        "lowTime": 1787718722,
+        "highAgeSeconds": 291,
+        "lowAgeSeconds": 52
       },
       "5m": {
-        "avgHighPrice": null,
+        "avgHighPrice": 130,
         "avgLowPrice": 128,
-        "highPriceVolume": 0,
-        "lowPriceVolume": 14
+        "highPriceVolume": 7,
+        "lowPriceVolume": 2
       },
       "1h": {
         "avgHighPrice": null,
@@ -1596,8 +1596,8 @@
         "low": 1459,
         "highTime": 1787715360,
         "lowTime": 1787688440,
-        "highAgeSeconds": 2515,
-        "lowAgeSeconds": 29435
+        "highAgeSeconds": 3414,
+        "lowAgeSeconds": 30334
       },
       "5m": {
         "avgHighPrice": null,
@@ -1631,8 +1631,8 @@
         "low": 12122,
         "highTime": 1787701740,
         "lowTime": 1787715083,
-        "highAgeSeconds": 16135,
-        "lowAgeSeconds": 2792
+        "highAgeSeconds": 17034,
+        "lowAgeSeconds": 3691
       },
       "5m": {
         "avgHighPrice": null,
@@ -1666,8 +1666,8 @@
         "low": 777,
         "highTime": 1783872838,
         "lowTime": 1787674870,
-        "highAgeSeconds": 3845037,
-        "lowAgeSeconds": 43005
+        "highAgeSeconds": 3845936,
+        "lowAgeSeconds": 43904
       },
       "5m": {
         "avgHighPrice": null,
@@ -1701,8 +1701,8 @@
         "low": 5000,
         "highTime": 1787712007,
         "lowTime": 1787712949,
-        "highAgeSeconds": 5868,
-        "lowAgeSeconds": 4926
+        "highAgeSeconds": 6767,
+        "lowAgeSeconds": 5825
       },
       "5m": {
         "avgHighPrice": null,
@@ -1736,8 +1736,8 @@
         "low": 1000,
         "highTime": 1787715891,
         "lowTime": 1787632266,
-        "highAgeSeconds": 1984,
-        "lowAgeSeconds": 85609
+        "highAgeSeconds": 2883,
+        "lowAgeSeconds": 86508
       },
       "5m": {
         "avgHighPrice": null,
@@ -1771,8 +1771,8 @@
         "low": 1238987,
         "highTime": 1787715900,
         "lowTime": 1787706008,
-        "highAgeSeconds": 1975,
-        "lowAgeSeconds": 11867
+        "highAgeSeconds": 2874,
+        "lowAgeSeconds": 12766
       },
       "5m": {
         "avgHighPrice": null,
@@ -1806,8 +1806,8 @@
         "low": 9851,
         "highTime": 1787715865,
         "lowTime": 1787694429,
-        "highAgeSeconds": 2010,
-        "lowAgeSeconds": 23446
+        "highAgeSeconds": 2909,
+        "lowAgeSeconds": 24345
       },
       "5m": {
         "avgHighPrice": null,
@@ -1841,8 +1841,8 @@
         "low": 7609,
         "highTime": 1787708922,
         "lowTime": 1787704716,
-        "highAgeSeconds": 8953,
-        "lowAgeSeconds": 13159
+        "highAgeSeconds": 9852,
+        "lowAgeSeconds": 14058
       },
       "5m": {
         "avgHighPrice": null,
@@ -1876,8 +1876,8 @@
         "low": 8944,
         "highTime": 1787715854,
         "lowTime": 1787708546,
-        "highAgeSeconds": 2021,
-        "lowAgeSeconds": 9329
+        "highAgeSeconds": 2920,
+        "lowAgeSeconds": 10228
       },
       "5m": {
         "avgHighPrice": null,
@@ -1911,8 +1911,8 @@
         "low": 5000,
         "highTime": 1787715869,
         "lowTime": 1787680316,
-        "highAgeSeconds": 2006,
-        "lowAgeSeconds": 37559
+        "highAgeSeconds": 2905,
+        "lowAgeSeconds": 38458
       },
       "5m": {
         "avgHighPrice": null,
@@ -1946,8 +1946,8 @@
         "low": 34513,
         "highTime": 1787683186,
         "lowTime": 1787619329,
-        "highAgeSeconds": 34689,
-        "lowAgeSeconds": 98546
+        "highAgeSeconds": 35588,
+        "lowAgeSeconds": 99445
       },
       "5m": {
         "avgHighPrice": null,
@@ -1981,8 +1981,8 @@
         "low": 7219,
         "highTime": 1787699752,
         "lowTime": 1787578425,
-        "highAgeSeconds": 18123,
-        "lowAgeSeconds": 139450
+        "highAgeSeconds": 19022,
+        "lowAgeSeconds": 140349
       },
       "5m": {
         "avgHighPrice": null,
@@ -2016,8 +2016,8 @@
         "low": 497345345,
         "highTime": 1787711949,
         "lowTime": 1787520469,
-        "highAgeSeconds": 5926,
-        "lowAgeSeconds": 197406
+        "highAgeSeconds": 6825,
+        "lowAgeSeconds": 198305
       },
       "5m": {
         "avgHighPrice": null,
@@ -2051,8 +2051,8 @@
         "low": 502331477,
         "highTime": 1787716065,
         "lowTime": 1787715132,
-        "highAgeSeconds": 1810,
-        "lowAgeSeconds": 2743
+        "highAgeSeconds": 2709,
+        "lowAgeSeconds": 3642
       },
       "5m": {
         "avgHighPrice": null,
@@ -2082,18 +2082,18 @@
       "highalch": 300,
       "lowalch": 200,
       "current": {
-        "high": 412,
+        "high": 415,
         "low": 410,
-        "highTime": 1787717804,
-        "lowTime": 1787717813,
-        "highAgeSeconds": 71,
-        "lowAgeSeconds": 62
+        "highTime": 1787718508,
+        "lowTime": 1787718677,
+        "highAgeSeconds": 266,
+        "lowAgeSeconds": 97
       },
       "5m": {
-        "avgHighPrice": 417,
-        "avgLowPrice": 413,
-        "highPriceVolume": 1550,
-        "lowPriceVolume": 642
+        "avgHighPrice": 415,
+        "avgLowPrice": 410,
+        "highPriceVolume": 3,
+        "lowPriceVolume": 401
       },
       "1h": {
         "avgHighPrice": 422,
@@ -2120,9 +2120,9 @@
         "high": 729,
         "low": 686,
         "highTime": 1787717042,
-        "lowTime": 1787716907,
-        "highAgeSeconds": 833,
-        "lowAgeSeconds": 968
+        "lowTime": 1787718271,
+        "highAgeSeconds": 1732,
+        "lowAgeSeconds": 503
       },
       "5m": {
         "avgHighPrice": null,
@@ -2152,12 +2152,12 @@
       "highalch": 765,
       "lowalch": 510,
       "current": {
-        "high": 613,
-        "low": 613,
-        "highTime": 1787714079,
-        "lowTime": 1787712055,
-        "highAgeSeconds": 3796,
-        "lowAgeSeconds": 5820
+        "high": 650,
+        "low": 591,
+        "highTime": 1787718263,
+        "lowTime": 1787718269,
+        "highAgeSeconds": 511,
+        "lowAgeSeconds": 505
       },
       "5m": {
         "avgHighPrice": null,
@@ -2190,15 +2190,15 @@
         "high": 49,
         "low": 40,
         "highTime": 1787717098,
-        "lowTime": 1787717745,
-        "highAgeSeconds": 777,
-        "lowAgeSeconds": 130
+        "lowTime": 1787718581,
+        "highAgeSeconds": 1676,
+        "lowAgeSeconds": 193
       },
       "5m": {
         "avgHighPrice": null,
         "avgLowPrice": 40,
         "highPriceVolume": 0,
-        "lowPriceVolume": 65
+        "lowPriceVolume": 132
       },
       "1h": {
         "avgHighPrice": 49,
@@ -2226,13 +2226,13 @@
         "low": 80,
         "highTime": 1787717408,
         "lowTime": 1787717287,
-        "highAgeSeconds": 467,
-        "lowAgeSeconds": 588
+        "highAgeSeconds": 1366,
+        "lowAgeSeconds": 1487
       },
       "5m": {
-        "avgHighPrice": 85,
+        "avgHighPrice": null,
         "avgLowPrice": null,
-        "highPriceVolume": 9000,
+        "highPriceVolume": 0,
         "lowPriceVolume": 0
       },
       "1h": {
@@ -2257,12 +2257,12 @@
       "highalch": 35,
       "lowalch": 23,
       "current": {
-        "high": 12,
-        "low": 13,
-        "highTime": 1787716848,
-        "lowTime": 1787715032,
-        "highAgeSeconds": 1027,
-        "lowAgeSeconds": 2843
+        "high": 14,
+        "low": 11,
+        "highTime": 1787718119,
+        "lowTime": 1787718211,
+        "highAgeSeconds": 655,
+        "lowAgeSeconds": 563
       },
       "5m": {
         "avgHighPrice": null,
@@ -2294,15 +2294,15 @@
       "current": {
         "high": 703,
         "low": 689,
-        "highTime": 1787717120,
+        "highTime": 1787718367,
         "lowTime": 1787715316,
-        "highAgeSeconds": 755,
-        "lowAgeSeconds": 2559
+        "highAgeSeconds": 407,
+        "lowAgeSeconds": 3458
       },
       "5m": {
-        "avgHighPrice": null,
+        "avgHighPrice": 703,
         "avgLowPrice": null,
-        "highPriceVolume": 0,
+        "highPriceVolume": 1,
         "lowPriceVolume": 0
       },
       "1h": {
@@ -2331,8 +2331,8 @@
         "low": 400,
         "highTime": 1787663888,
         "lowTime": 1787499998,
-        "highAgeSeconds": 53987,
-        "lowAgeSeconds": 217877
+        "highAgeSeconds": 54886,
+        "lowAgeSeconds": 218776
       },
       "5m": {
         "avgHighPrice": null,
@@ -2366,8 +2366,8 @@
         "low": 1385,
         "highTime": 1787705881,
         "lowTime": 1787690660,
-        "highAgeSeconds": 11994,
-        "lowAgeSeconds": 27215
+        "highAgeSeconds": 12893,
+        "lowAgeSeconds": 28114
       },
       "5m": {
         "avgHighPrice": null,
@@ -2399,16 +2399,16 @@
       "current": {
         "high": 663,
         "low": 642,
-        "highTime": 1787717673,
+        "highTime": 1787718418,
         "lowTime": 1787717663,
-        "highAgeSeconds": 202,
-        "lowAgeSeconds": 212
+        "highAgeSeconds": 356,
+        "lowAgeSeconds": 1111
       },
       "5m": {
         "avgHighPrice": 663,
-        "avgLowPrice": 644,
-        "highPriceVolume": 1,
-        "lowPriceVolume": 3042
+        "avgLowPrice": null,
+        "highPriceVolume": 750,
+        "lowPriceVolume": 0
       },
       "1h": {
         "avgHighPrice": 662,
@@ -2432,18 +2432,18 @@
       "highalch": 765,
       "lowalch": 510,
       "current": {
-        "high": 640,
-        "low": 635,
-        "highTime": 1787717598,
-        "lowTime": 1787717799,
-        "highAgeSeconds": 277,
-        "lowAgeSeconds": 76
+        "high": 629,
+        "low": 614,
+        "highTime": 1787718514,
+        "lowTime": 1787718607,
+        "highAgeSeconds": 260,
+        "lowAgeSeconds": 167
       },
       "5m": {
-        "avgHighPrice": 640,
-        "avgLowPrice": 635,
-        "highPriceVolume": 11,
-        "lowPriceVolume": 33
+        "avgHighPrice": 629,
+        "avgLowPrice": 614,
+        "highPriceVolume": 5,
+        "lowPriceVolume": 15
       },
       "1h": {
         "avgHighPrice": 627,
@@ -2470,15 +2470,15 @@
         "high": 5,
         "low": 5,
         "highTime": 1787714165,
-        "lowTime": 1787716573,
-        "highAgeSeconds": 3710,
-        "lowAgeSeconds": 1302
+        "lowTime": 1787718658,
+        "highAgeSeconds": 4609,
+        "lowAgeSeconds": 116
       },
       "5m": {
         "avgHighPrice": null,
-        "avgLowPrice": null,
+        "avgLowPrice": 5,
         "highPriceVolume": 0,
-        "lowPriceVolume": 0
+        "lowPriceVolume": 10
       },
       "1h": {
         "avgHighPrice": 5,
@@ -2504,16 +2504,16 @@
       "current": {
         "high": 6,
         "low": 6,
-        "highTime": 1787717582,
+        "highTime": 1787718232,
         "lowTime": 1787717581,
-        "highAgeSeconds": 293,
-        "lowAgeSeconds": 294
+        "highAgeSeconds": 542,
+        "lowAgeSeconds": 1193
       },
       "5m": {
-        "avgHighPrice": 6,
-        "avgLowPrice": 6,
-        "highPriceVolume": 10,
-        "lowPriceVolume": 100
+        "avgHighPrice": null,
+        "avgLowPrice": null,
+        "highPriceVolume": 0,
+        "lowPriceVolume": 0
       },
       "1h": {
         "avgHighPrice": 6,
@@ -2537,17 +2537,17 @@
       "highalch": 1,
       "lowalch": 1,
       "current": {
-        "high": 92,
+        "high": 51,
         "low": 72,
-        "highTime": 1787717759,
+        "highTime": 1787718468,
         "lowTime": 1787715323,
-        "highAgeSeconds": 116,
-        "lowAgeSeconds": 2552
+        "highAgeSeconds": 306,
+        "lowAgeSeconds": 3451
       },
       "5m": {
-        "avgHighPrice": null,
+        "avgHighPrice": 51,
         "avgLowPrice": null,
-        "highPriceVolume": 0,
+        "highPriceVolume": 218,
         "lowPriceVolume": 0
       },
       "1h": {
@@ -2575,9 +2575,9 @@
         "high": 18,
         "low": 5,
         "highTime": 1787698831,
-        "lowTime": 1787717052,
-        "highAgeSeconds": 19044,
-        "lowAgeSeconds": 823
+        "lowTime": 1787718065,
+        "highAgeSeconds": 19943,
+        "lowAgeSeconds": 709
       },
       "5m": {
         "avgHighPrice": null,
@@ -2611,8 +2611,8 @@
         "low": 2000,
         "highTime": 1787698867,
         "lowTime": 1787619418,
-        "highAgeSeconds": 19008,
-        "lowAgeSeconds": 98457
+        "highAgeSeconds": 19907,
+        "lowAgeSeconds": 99356
       },
       "5m": {
         "avgHighPrice": null,
@@ -2645,15 +2645,15 @@
         "high": 9,
         "low": 10,
         "highTime": 1787716596,
-        "lowTime": 1787717670,
-        "highAgeSeconds": 1279,
-        "lowAgeSeconds": 205
+        "lowTime": 1787718584,
+        "highAgeSeconds": 2178,
+        "lowAgeSeconds": 190
       },
       "5m": {
         "avgHighPrice": null,
-        "avgLowPrice": 11,
+        "avgLowPrice": 10,
         "highPriceVolume": 0,
-        "lowPriceVolume": 53
+        "lowPriceVolume": 180
       },
       "1h": {
         "avgHighPrice": 4,
@@ -2679,16 +2679,16 @@
       "current": {
         "high": 3,
         "low": 3,
-        "highTime": 1787717790,
-        "lowTime": 1787717465,
-        "highAgeSeconds": 85,
-        "lowAgeSeconds": 410
+        "highTime": 1787718629,
+        "lowTime": 1787718710,
+        "highAgeSeconds": 145,
+        "lowAgeSeconds": 64
       },
       "5m": {
-        "avgHighPrice": null,
-        "avgLowPrice": 3,
-        "highPriceVolume": 0,
-        "lowPriceVolume": 1
+        "avgHighPrice": 2,
+        "avgLowPrice": null,
+        "highPriceVolume": 2673,
+        "lowPriceVolume": 0
       },
       "1h": {
         "avgHighPrice": 3,
@@ -2716,8 +2716,8 @@
         "low": 400,
         "highTime": 1787682837,
         "lowTime": 1787682865,
-        "highAgeSeconds": 35038,
-        "lowAgeSeconds": 35010
+        "highAgeSeconds": 35937,
+        "lowAgeSeconds": 35909
       },
       "5m": {
         "avgHighPrice": null,
@@ -2751,8 +2751,8 @@
         "low": 5,
         "highTime": 1787701027,
         "lowTime": 1787689157,
-        "highAgeSeconds": 16848,
-        "lowAgeSeconds": 28718
+        "highAgeSeconds": 17747,
+        "lowAgeSeconds": 29617
       },
       "5m": {
         "avgHighPrice": null,
@@ -2786,8 +2786,8 @@
         "low": 2,
         "highTime": 1787716887,
         "lowTime": 1787229358,
-        "highAgeSeconds": 988,
-        "lowAgeSeconds": 488517
+        "highAgeSeconds": 1887,
+        "lowAgeSeconds": 489416
       },
       "5m": {
         "avgHighPrice": null,
@@ -2821,8 +2821,8 @@
         "low": 99,
         "highTime": 1787684829,
         "lowTime": 1787523389,
-        "highAgeSeconds": 33046,
-        "lowAgeSeconds": 194486
+        "highAgeSeconds": 33945,
+        "lowAgeSeconds": 195385
       },
       "5m": {
         "avgHighPrice": null,
@@ -2854,15 +2854,15 @@
       "current": {
         "high": 720,
         "low": 720,
-        "highTime": 1787717703,
+        "highTime": 1787717883,
         "lowTime": 1787714654,
-        "highAgeSeconds": 172,
-        "lowAgeSeconds": 3221
+        "highAgeSeconds": 891,
+        "lowAgeSeconds": 4120
       },
       "5m": {
-        "avgHighPrice": 720,
+        "avgHighPrice": null,
         "avgLowPrice": null,
-        "highPriceVolume": 2,
+        "highPriceVolume": 0,
         "lowPriceVolume": 0
       },
       "1h": {
@@ -2891,8 +2891,8 @@
         "low": 20,
         "highTime": 1787705690,
         "lowTime": 1787495419,
-        "highAgeSeconds": 12185,
-        "lowAgeSeconds": 222456
+        "highAgeSeconds": 13084,
+        "lowAgeSeconds": 223355
       },
       "5m": {
         "avgHighPrice": null,
@@ -2926,8 +2926,8 @@
         "low": 8125,
         "highTime": 1787702897,
         "lowTime": 1787715620,
-        "highAgeSeconds": 14978,
-        "lowAgeSeconds": 2255
+        "highAgeSeconds": 15877,
+        "lowAgeSeconds": 3154
       },
       "5m": {
         "avgHighPrice": null,
@@ -2958,17 +2958,17 @@
       "lowalch": 32000,
       "current": {
         "high": 55400,
-        "low": 50003,
+        "low": 55000,
         "highTime": 1787717565,
-        "lowTime": 1787715868,
-        "highAgeSeconds": 310,
-        "lowAgeSeconds": 2007
+        "lowTime": 1787718378,
+        "highAgeSeconds": 1209,
+        "lowAgeSeconds": 396
       },
       "5m": {
-        "avgHighPrice": 55400,
-        "avgLowPrice": null,
-        "highPriceVolume": 8,
-        "lowPriceVolume": 0
+        "avgHighPrice": null,
+        "avgLowPrice": 55000,
+        "highPriceVolume": 0,
+        "lowPriceVolume": 1
       },
       "1h": {
         "avgHighPrice": 55400,
@@ -2993,16 +2993,16 @@
       "lowalch": 48000,
       "current": {
         "high": 81000,
-        "low": 73004,
+        "low": 80000,
         "highTime": 1787717624,
-        "lowTime": 1787714962,
-        "highAgeSeconds": 251,
-        "lowAgeSeconds": 2913
+        "lowTime": 1787718080,
+        "highAgeSeconds": 1150,
+        "lowAgeSeconds": 694
       },
       "5m": {
-        "avgHighPrice": 81000,
+        "avgHighPrice": null,
         "avgLowPrice": null,
-        "highPriceVolume": 12,
+        "highPriceVolume": 0,
         "lowPriceVolume": 0
       },
       "1h": {
@@ -3031,8 +3031,8 @@
         "low": 290,
         "highTime": 1786165166,
         "lowTime": 1779331042,
-        "highAgeSeconds": 1552709,
-        "lowAgeSeconds": 8386833
+        "highAgeSeconds": 1553608,
+        "lowAgeSeconds": 8387732
       },
       "5m": {
         "avgHighPrice": null,
@@ -3066,8 +3066,8 @@
         "low": 120,
         "highTime": 1787708547,
         "lowTime": 1787351451,
-        "highAgeSeconds": 9328,
-        "lowAgeSeconds": 366424
+        "highAgeSeconds": 10227,
+        "lowAgeSeconds": 367323
       },
       "5m": {
         "avgHighPrice": null,
@@ -3100,15 +3100,15 @@
         "high": 40,
         "low": 32,
         "highTime": 1787708859,
-        "lowTime": 1787715195,
-        "highAgeSeconds": 9016,
-        "lowAgeSeconds": 2680
+        "lowTime": 1787718470,
+        "highAgeSeconds": 9915,
+        "lowAgeSeconds": 304
       },
       "5m": {
         "avgHighPrice": null,
-        "avgLowPrice": null,
+        "avgLowPrice": 32,
         "highPriceVolume": 0,
-        "lowPriceVolume": 0
+        "lowPriceVolume": 1
       },
       "1h": {
         "avgHighPrice": null,
@@ -3135,15 +3135,15 @@
         "high": 81,
         "low": 81,
         "highTime": 1787700544,
-        "lowTime": 1787716888,
-        "highAgeSeconds": 17331,
-        "lowAgeSeconds": 987
+        "lowTime": 1787718536,
+        "highAgeSeconds": 18230,
+        "lowAgeSeconds": 238
       },
       "5m": {
         "avgHighPrice": null,
-        "avgLowPrice": null,
+        "avgLowPrice": 81,
         "highPriceVolume": 0,
-        "lowPriceVolume": 0
+        "lowPriceVolume": 6
       },
       "1h": {
         "avgHighPrice": null,
@@ -3169,10 +3169,10 @@
       "current": {
         "high": 126,
         "low": 126,
-        "highTime": 1787715960,
-        "lowTime": 1787716994,
-        "highAgeSeconds": 1915,
-        "lowAgeSeconds": 881
+        "highTime": 1787718663,
+        "lowTime": 1787717948,
+        "highAgeSeconds": 111,
+        "lowAgeSeconds": 826
       },
       "5m": {
         "avgHighPrice": null,
@@ -3203,17 +3203,17 @@
       "lowalch": 58,
       "current": {
         "high": 190,
-        "low": 183,
-        "highTime": 1787717805,
-        "lowTime": 1787717089,
-        "highAgeSeconds": 70,
-        "lowAgeSeconds": 786
+        "low": 180,
+        "highTime": 1787718699,
+        "lowTime": 1787718616,
+        "highAgeSeconds": 75,
+        "lowAgeSeconds": 158
       },
       "5m": {
-        "avgHighPrice": 190,
-        "avgLowPrice": null,
-        "highPriceVolume": 40,
-        "lowPriceVolume": 0
+        "avgHighPrice": 188,
+        "avgLowPrice": 180,
+        "highPriceVolume": 35,
+        "lowPriceVolume": 1045
       },
       "1h": {
         "avgHighPrice": 189,
@@ -3237,18 +3237,18 @@
       "highalch": 60000,
       "lowalch": 40000,
       "current": {
-        "high": 3321499,
-        "low": 3223682,
-        "highTime": 1787717707,
-        "lowTime": 1787717704,
-        "highAgeSeconds": 168,
-        "lowAgeSeconds": 171
+        "high": 3299999,
+        "low": 3224650,
+        "highTime": 1787717903,
+        "lowTime": 1787718661,
+        "highAgeSeconds": 871,
+        "lowAgeSeconds": 113
       },
       "5m": {
-        "avgHighPrice": 3308756,
-        "avgLowPrice": 3223781,
-        "highPriceVolume": 3,
-        "lowPriceVolume": 7
+        "avgHighPrice": null,
+        "avgLowPrice": 3223682,
+        "highPriceVolume": 0,
+        "lowPriceVolume": 33
       },
       "1h": {
         "avgHighPrice": 3299885,
@@ -3272,12 +3272,12 @@
       "highalch": 300000,
       "lowalch": 200000,
       "current": {
-        "high": 118999994,
+        "high": 118580962,
         "low": 115000000,
-        "highTime": 1787711733,
+        "highTime": 1787718078,
         "lowTime": 1787715327,
-        "highAgeSeconds": 6142,
-        "lowAgeSeconds": 2548
+        "highAgeSeconds": 696,
+        "lowAgeSeconds": 3447
       },
       "5m": {
         "avgHighPrice": null,
@@ -3310,15 +3310,15 @@
         "high": 42417,
         "low": 33000,
         "highTime": 1787716792,
-        "lowTime": 1787716174,
-        "highAgeSeconds": 1083,
-        "lowAgeSeconds": 1701
+        "lowTime": 1787718345,
+        "highAgeSeconds": 1982,
+        "lowAgeSeconds": 429
       },
       "5m": {
         "avgHighPrice": null,
-        "avgLowPrice": null,
+        "avgLowPrice": 33000,
         "highPriceVolume": 0,
-        "lowPriceVolume": 0
+        "lowPriceVolume": 1
       },
       "1h": {
         "avgHighPrice": 44138,
@@ -3342,18 +3342,18 @@
       "highalch": 351,
       "lowalch": 234,
       "current": {
-        "high": 3260,
+        "high": 3038,
         "low": 3038,
-        "highTime": 1787717780,
-        "lowTime": 1787717441,
-        "highAgeSeconds": 95,
-        "lowAgeSeconds": 434
+        "highTime": 1787718705,
+        "lowTime": 1787718475,
+        "highAgeSeconds": 69,
+        "lowAgeSeconds": 299
       },
       "5m": {
         "avgHighPrice": 3038,
         "avgLowPrice": 3038,
-        "highPriceVolume": 7,
-        "lowPriceVolume": 16
+        "highPriceVolume": 133,
+        "lowPriceVolume": 12
       },
       "1h": {
         "avgHighPrice": 3052,
@@ -3381,8 +3381,8 @@
         "low": 1500,
         "highTime": 1787667519,
         "lowTime": 1787698621,
-        "highAgeSeconds": 50356,
-        "lowAgeSeconds": 19254
+        "highAgeSeconds": 51255,
+        "lowAgeSeconds": 20153
       },
       "5m": {
         "avgHighPrice": null,
@@ -3416,8 +3416,8 @@
         "low": 659,
         "highTime": 1787701943,
         "lowTime": 1787687921,
-        "highAgeSeconds": 15932,
-        "lowAgeSeconds": 29954
+        "highAgeSeconds": 16831,
+        "lowAgeSeconds": 30853
       },
       "5m": {
         "avgHighPrice": null,
@@ -3448,17 +3448,17 @@
       "lowalch": 197,
       "current": {
         "high": 1944,
-        "low": 2031,
+        "low": 1776,
         "highTime": 1787717411,
-        "lowTime": 1787716451,
-        "highAgeSeconds": 464,
-        "lowAgeSeconds": 1424
+        "lowTime": 1787718592,
+        "highAgeSeconds": 1363,
+        "lowAgeSeconds": 182
       },
       "5m": {
-        "avgHighPrice": 1855,
-        "avgLowPrice": null,
-        "highPriceVolume": 12,
-        "lowPriceVolume": 0
+        "avgHighPrice": null,
+        "avgLowPrice": 1776,
+        "highPriceVolume": 0,
+        "lowPriceVolume": 11
       },
       "1h": {
         "avgHighPrice": 2037,
@@ -3486,8 +3486,8 @@
         "low": 637,
         "highTime": 1787707044,
         "lowTime": 1787717113,
-        "highAgeSeconds": 10831,
-        "lowAgeSeconds": 762
+        "highAgeSeconds": 11730,
+        "lowAgeSeconds": 1661
       },
       "5m": {
         "avgHighPrice": null,
@@ -3520,15 +3520,15 @@
         "high": 1287,
         "low": 1339,
         "highTime": 1787689316,
-        "lowTime": 1787717352,
-        "highAgeSeconds": 28559,
-        "lowAgeSeconds": 523
+        "lowTime": 1787718601,
+        "highAgeSeconds": 29458,
+        "lowAgeSeconds": 173
       },
       "5m": {
         "avgHighPrice": null,
-        "avgLowPrice": null,
+        "avgLowPrice": 1339,
         "highPriceVolume": 0,
-        "lowPriceVolume": 0
+        "lowPriceVolume": 2
       },
       "1h": {
         "avgHighPrice": null,
@@ -3552,18 +3552,18 @@
       "highalch": 316,
       "lowalch": 210,
       "current": {
-        "high": 2998,
+        "high": 3149,
         "low": 2900,
-        "highTime": 1787710782,
-        "lowTime": 1787717674,
-        "highAgeSeconds": 7093,
-        "lowAgeSeconds": 201
+        "highTime": 1787718702,
+        "lowTime": 1787718608,
+        "highAgeSeconds": 72,
+        "lowAgeSeconds": 166
       },
       "5m": {
         "avgHighPrice": null,
         "avgLowPrice": 2900,
         "highPriceVolume": 0,
-        "lowPriceVolume": 17
+        "lowPriceVolume": 137
       },
       "1h": {
         "avgHighPrice": null,
@@ -3591,8 +3591,8 @@
         "low": 1207,
         "highTime": 1787706261,
         "lowTime": 1787715049,
-        "highAgeSeconds": 11614,
-        "lowAgeSeconds": 2826
+        "highAgeSeconds": 12513,
+        "lowAgeSeconds": 3725
       },
       "5m": {
         "avgHighPrice": null,
@@ -3622,18 +3622,18 @@
       "highalch": 390,
       "lowalch": 260,
       "current": {
-        "high": 6135,
+        "high": 6042,
         "low": 6042,
-        "highTime": 1787716740,
-        "lowTime": 1787717569,
-        "highAgeSeconds": 1135,
-        "lowAgeSeconds": 306
+        "highTime": 1787718695,
+        "lowTime": 1787718400,
+        "highAgeSeconds": 79,
+        "lowAgeSeconds": 374
       },
       "5m": {
-        "avgHighPrice": null,
+        "avgHighPrice": 6042,
         "avgLowPrice": 6042,
-        "highPriceVolume": 0,
-        "lowPriceVolume": 5
+        "highPriceVolume": 19,
+        "lowPriceVolume": 1
       },
       "1h": {
         "avgHighPrice": 6135,
@@ -3660,15 +3660,15 @@
         "high": 1568,
         "low": 1568,
         "highTime": 1787717709,
-        "lowTime": 1787717108,
-        "highAgeSeconds": 166,
-        "lowAgeSeconds": 767
+        "lowTime": 1787718489,
+        "highAgeSeconds": 1065,
+        "lowAgeSeconds": 285
       },
       "5m": {
         "avgHighPrice": null,
-        "avgLowPrice": null,
+        "avgLowPrice": 1568,
         "highPriceVolume": 0,
-        "lowPriceVolume": 0
+        "lowPriceVolume": 1
       },
       "1h": {
         "avgHighPrice": null,
@@ -3695,15 +3695,15 @@
         "high": 516,
         "low": 375,
         "highTime": 1787708724,
-        "lowTime": 1787716952,
-        "highAgeSeconds": 9151,
-        "lowAgeSeconds": 923
+        "lowTime": 1787718551,
+        "highAgeSeconds": 10050,
+        "lowAgeSeconds": 223
       },
       "5m": {
         "avgHighPrice": null,
-        "avgLowPrice": null,
+        "avgLowPrice": 375,
         "highPriceVolume": 0,
-        "lowPriceVolume": 0
+        "lowPriceVolume": 25
       },
       "1h": {
         "avgHighPrice": null,
@@ -3731,8 +3731,8 @@
         "low": 154,
         "highTime": 1787714723,
         "lowTime": 1787717703,
-        "highAgeSeconds": 3152,
-        "lowAgeSeconds": 172
+        "highAgeSeconds": 4051,
+        "lowAgeSeconds": 1071
       },
       "5m": {
         "avgHighPrice": null,
@@ -3765,15 +3765,15 @@
         "high": 3788,
         "low": 3788,
         "highTime": 1787715930,
-        "lowTime": 1787717650,
-        "highAgeSeconds": 1945,
-        "lowAgeSeconds": 225
+        "lowTime": 1787718652,
+        "highAgeSeconds": 2844,
+        "lowAgeSeconds": 122
       },
       "5m": {
         "avgHighPrice": null,
         "avgLowPrice": 3788,
         "highPriceVolume": 0,
-        "lowPriceVolume": 23
+        "lowPriceVolume": 108
       },
       "1h": {
         "avgHighPrice": 3788,
@@ -3798,17 +3798,17 @@
       "lowalch": 161,
       "current": {
         "high": 1270,
-        "low": 1333,
+        "low": 1361,
         "highTime": 1787713312,
-        "lowTime": 1787716951,
-        "highAgeSeconds": 4563,
-        "lowAgeSeconds": 924
+        "lowTime": 1787718356,
+        "highAgeSeconds": 5462,
+        "lowAgeSeconds": 418
       },
       "5m": {
         "avgHighPrice": null,
-        "avgLowPrice": null,
+        "avgLowPrice": 1361,
         "highPriceVolume": 0,
-        "lowPriceVolume": 0
+        "lowPriceVolume": 2
       },
       "1h": {
         "avgHighPrice": 1239,
@@ -3836,14 +3836,14 @@
         "low": 1010,
         "highTime": 1787663541,
         "lowTime": 1787717755,
-        "highAgeSeconds": 54334,
-        "lowAgeSeconds": 120
+        "highAgeSeconds": 55233,
+        "lowAgeSeconds": 1019
       },
       "5m": {
         "avgHighPrice": null,
-        "avgLowPrice": 1010,
+        "avgLowPrice": null,
         "highPriceVolume": 0,
-        "lowPriceVolume": 1
+        "lowPriceVolume": 0
       },
       "1h": {
         "avgHighPrice": null,
@@ -3870,15 +3870,15 @@
         "high": 1100,
         "low": 1139,
         "highTime": 1787680214,
-        "lowTime": 1787717175,
-        "highAgeSeconds": 37661,
-        "lowAgeSeconds": 700
+        "lowTime": 1787718475,
+        "highAgeSeconds": 38560,
+        "lowAgeSeconds": 299
       },
       "5m": {
         "avgHighPrice": null,
-        "avgLowPrice": null,
+        "avgLowPrice": 1139,
         "highPriceVolume": 0,
-        "lowPriceVolume": 0
+        "lowPriceVolume": 5
       },
       "1h": {
         "avgHighPrice": null,
@@ -3906,14 +3906,14 @@
         "low": 640,
         "highTime": 1787716885,
         "lowTime": 1787717610,
-        "highAgeSeconds": 990,
-        "lowAgeSeconds": 265
+        "highAgeSeconds": 1889,
+        "lowAgeSeconds": 1164
       },
       "5m": {
         "avgHighPrice": null,
-        "avgLowPrice": 640,
+        "avgLowPrice": null,
         "highPriceVolume": 0,
-        "lowPriceVolume": 1
+        "lowPriceVolume": 0
       },
       "1h": {
         "avgHighPrice": null,
@@ -3941,8 +3941,8 @@
         "low": 563,
         "highTime": 1787663527,
         "lowTime": 1787715824,
-        "highAgeSeconds": 54348,
-        "lowAgeSeconds": 2051
+        "highAgeSeconds": 55247,
+        "lowAgeSeconds": 2950
       },
       "5m": {
         "avgHighPrice": null,
@@ -3976,8 +3976,8 @@
         "low": 700,
         "highTime": 1787709851,
         "lowTime": 1787711486,
-        "highAgeSeconds": 8024,
-        "lowAgeSeconds": 6389
+        "highAgeSeconds": 8923,
+        "lowAgeSeconds": 7288
       },
       "5m": {
         "avgHighPrice": null,
@@ -4010,9 +4010,9 @@
         "high": 782,
         "low": 572,
         "highTime": 1787703775,
-        "lowTime": 1787716337,
-        "highAgeSeconds": 14100,
-        "lowAgeSeconds": 1538
+        "lowTime": 1787718271,
+        "highAgeSeconds": 14999,
+        "lowAgeSeconds": 503
       },
       "5m": {
         "avgHighPrice": null,
@@ -4045,15 +4045,15 @@
         "high": 911,
         "low": 886,
         "highTime": 1787714716,
-        "lowTime": 1787717765,
-        "highAgeSeconds": 3159,
-        "lowAgeSeconds": 110
+        "lowTime": 1787718564,
+        "highAgeSeconds": 4058,
+        "lowAgeSeconds": 210
       },
       "5m": {
         "avgHighPrice": null,
-        "avgLowPrice": null,
+        "avgLowPrice": 886,
         "highPriceVolume": 0,
-        "lowPriceVolume": 0
+        "lowPriceVolume": 12
       },
       "1h": {
         "avgHighPrice": 911,
@@ -4080,15 +4080,15 @@
         "high": 2231,
         "low": 2271,
         "highTime": 1787408016,
-        "lowTime": 1787714714,
-        "highAgeSeconds": 309859,
-        "lowAgeSeconds": 3161
+        "lowTime": 1787718486,
+        "highAgeSeconds": 310758,
+        "lowAgeSeconds": 288
       },
       "5m": {
         "avgHighPrice": null,
-        "avgLowPrice": null,
+        "avgLowPrice": 2271,
         "highPriceVolume": 0,
-        "lowPriceVolume": 0
+        "lowPriceVolume": 8
       },
       "1h": {
         "avgHighPrice": null,
@@ -4116,8 +4116,8 @@
         "low": 494,
         "highTime": 1787663614,
         "lowTime": 1787601495,
-        "highAgeSeconds": 54261,
-        "lowAgeSeconds": 116380
+        "highAgeSeconds": 55160,
+        "lowAgeSeconds": 117279
       },
       "5m": {
         "avgHighPrice": null,
@@ -4149,16 +4149,16 @@
       "current": {
         "high": 4341,
         "low": 4300,
-        "highTime": 1787717656,
-        "lowTime": 1787717797,
-        "highAgeSeconds": 219,
-        "lowAgeSeconds": 78
+        "highTime": 1787718189,
+        "lowTime": 1787718492,
+        "highAgeSeconds": 585,
+        "lowAgeSeconds": 282
       },
       "5m": {
-        "avgHighPrice": 4341,
-        "avgLowPrice": 4144,
-        "highPriceVolume": 1,
-        "lowPriceVolume": 22
+        "avgHighPrice": null,
+        "avgLowPrice": 4300,
+        "highPriceVolume": 0,
+        "lowPriceVolume": 6
       },
       "1h": {
         "avgHighPrice": null,
@@ -4184,10 +4184,10 @@
       "current": {
         "high": 198,
         "low": 157,
-        "highTime": 1787717158,
+        "highTime": 1787718054,
         "lowTime": 1787712224,
-        "highAgeSeconds": 717,
-        "lowAgeSeconds": 5651
+        "highAgeSeconds": 720,
+        "lowAgeSeconds": 6550
       },
       "5m": {
         "avgHighPrice": null,
@@ -4220,15 +4220,15 @@
         "high": 2493,
         "low": 2355,
         "highTime": 1787716859,
-        "lowTime": 1787716093,
-        "highAgeSeconds": 1016,
-        "lowAgeSeconds": 1782
+        "lowTime": 1787718440,
+        "highAgeSeconds": 1915,
+        "lowAgeSeconds": 334
       },
       "5m": {
         "avgHighPrice": null,
-        "avgLowPrice": null,
+        "avgLowPrice": 2355,
         "highPriceVolume": 0,
-        "lowPriceVolume": 0
+        "lowPriceVolume": 4
       },
       "1h": {
         "avgHighPrice": 2411,
@@ -4253,11 +4253,11 @@
       "lowalch": 80000,
       "current": {
         "high": 30900000,
-        "low": 30001000,
+        "low": 30600000,
         "highTime": 1787715456,
-        "lowTime": 1787714383,
-        "highAgeSeconds": 2419,
-        "lowAgeSeconds": 3492
+        "lowTime": 1787717852,
+        "highAgeSeconds": 3318,
+        "lowAgeSeconds": 922
       },
       "5m": {
         "avgHighPrice": null,
@@ -4288,11 +4288,11 @@
       "lowalch": 80000,
       "current": {
         "high": 130000000,
-        "low": 128025000,
+        "low": 128500001,
         "highTime": 1787716664,
-        "lowTime": 1787716238,
-        "highAgeSeconds": 1211,
-        "lowAgeSeconds": 1637
+        "lowTime": 1787718186,
+        "highAgeSeconds": 2110,
+        "lowAgeSeconds": 588
       },
       "5m": {
         "avgHighPrice": null,
@@ -4322,17 +4322,17 @@
       "highalch": 45000,
       "lowalch": 30000,
       "current": {
-        "high": 4179828,
-        "low": 4042805,
-        "highTime": 1787717678,
-        "lowTime": 1787717821,
-        "highAgeSeconds": 197,
-        "lowAgeSeconds": 54
+        "high": 4167337,
+        "low": 4063020,
+        "highTime": 1787718618,
+        "lowTime": 1787718335,
+        "highAgeSeconds": 156,
+        "lowAgeSeconds": 439
       },
       "5m": {
-        "avgHighPrice": 4179828,
-        "avgLowPrice": 4039683,
-        "highPriceVolume": 3,
+        "avgHighPrice": 4089068,
+        "avgLowPrice": 4063020,
+        "highPriceVolume": 1,
         "lowPriceVolume": 1
       },
       "1h": {
@@ -4360,9 +4360,9 @@
         "high": 3125000,
         "low": 3083000,
         "highTime": 1787713897,
-        "lowTime": 1787716431,
-        "highAgeSeconds": 3978,
-        "lowAgeSeconds": 1444
+        "lowTime": 1787718089,
+        "highAgeSeconds": 4877,
+        "lowAgeSeconds": 685
       },
       "5m": {
         "avgHighPrice": null,
@@ -4393,11 +4393,11 @@
       "lowalch": 3800,
       "current": {
         "high": 10122248,
-        "low": 9793211,
+        "low": 9700000,
         "highTime": 1787717158,
-        "lowTime": 1787714347,
-        "highAgeSeconds": 717,
-        "lowAgeSeconds": 3528
+        "lowTime": 1787717876,
+        "highAgeSeconds": 1616,
+        "lowAgeSeconds": 898
       },
       "5m": {
         "avgHighPrice": null,
@@ -4431,8 +4431,8 @@
         "low": 177316,
         "highTime": 1787713346,
         "lowTime": 1787693729,
-        "highAgeSeconds": 4529,
-        "lowAgeSeconds": 24146
+        "highAgeSeconds": 5428,
+        "lowAgeSeconds": 25045
       },
       "5m": {
         "avgHighPrice": null,
@@ -4466,8 +4466,8 @@
         "low": 175000,
         "highTime": 1787713354,
         "lowTime": 1787717066,
-        "highAgeSeconds": 4521,
-        "lowAgeSeconds": 809
+        "highAgeSeconds": 5420,
+        "lowAgeSeconds": 1708
       },
       "5m": {
         "avgHighPrice": null,
@@ -4501,8 +4501,8 @@
         "low": 255909,
         "highTime": 1787713360,
         "lowTime": 1787707980,
-        "highAgeSeconds": 4515,
-        "lowAgeSeconds": 9895
+        "highAgeSeconds": 5414,
+        "lowAgeSeconds": 10794
       },
       "5m": {
         "avgHighPrice": null,
@@ -4536,8 +4536,8 @@
         "low": 60000,
         "highTime": 1787713405,
         "lowTime": 1787705878,
-        "highAgeSeconds": 4470,
-        "lowAgeSeconds": 11997
+        "highAgeSeconds": 5369,
+        "lowAgeSeconds": 12896
       },
       "5m": {
         "avgHighPrice": null,
@@ -4567,17 +4567,17 @@
       "highalch": 690,
       "lowalch": 460,
       "current": {
-        "high": 815,
+        "high": 809,
         "low": 753,
-        "highTime": 1787717564,
+        "highTime": 1787718445,
         "lowTime": 1787717757,
-        "highAgeSeconds": 311,
-        "lowAgeSeconds": 118
+        "highAgeSeconds": 329,
+        "lowAgeSeconds": 1017
       },
       "5m": {
-        "avgHighPrice": 815,
+        "avgHighPrice": 809,
         "avgLowPrice": null,
-        "highPriceVolume": 20,
+        "highPriceVolume": 200,
         "lowPriceVolume": 0
       },
       "1h": {
@@ -4606,8 +4606,8 @@
         "low": 20000,
         "highTime": 1787671823,
         "lowTime": 1787712821,
-        "highAgeSeconds": 46052,
-        "lowAgeSeconds": 5054
+        "highAgeSeconds": 46951,
+        "lowAgeSeconds": 5953
       },
       "5m": {
         "avgHighPrice": null,
@@ -4639,15 +4639,15 @@
       "current": {
         "high": 5138,
         "low": 4781,
-        "highTime": 1787716843,
+        "highTime": 1787718324,
         "lowTime": 1787716486,
-        "highAgeSeconds": 1032,
-        "lowAgeSeconds": 1389
+        "highAgeSeconds": 450,
+        "lowAgeSeconds": 2288
       },
       "5m": {
-        "avgHighPrice": null,
+        "avgHighPrice": 5138,
         "avgLowPrice": null,
-        "highPriceVolume": 0,
+        "highPriceVolume": 40,
         "lowPriceVolume": 0
       },
       "1h": {
@@ -4676,14 +4676,14 @@
         "low": 11188,
         "highTime": 1787716473,
         "lowTime": 1787717578,
-        "highAgeSeconds": 1402,
-        "lowAgeSeconds": 297
+        "highAgeSeconds": 2301,
+        "lowAgeSeconds": 1196
       },
       "5m": {
         "avgHighPrice": null,
-        "avgLowPrice": 11188,
+        "avgLowPrice": null,
         "highPriceVolume": 0,
-        "lowPriceVolume": 2
+        "lowPriceVolume": 0
       },
       "1h": {
         "avgHighPrice": 10149,
@@ -4711,13 +4711,13 @@
         "low": 14823,
         "highTime": 1787717638,
         "lowTime": 1787716255,
-        "highAgeSeconds": 237,
-        "lowAgeSeconds": 1620
+        "highAgeSeconds": 1136,
+        "lowAgeSeconds": 2519
       },
       "5m": {
-        "avgHighPrice": 15397,
+        "avgHighPrice": null,
         "avgLowPrice": null,
-        "highPriceVolume": 1,
+        "highPriceVolume": 0,
         "lowPriceVolume": 0
       },
       "1h": {
@@ -4744,15 +4744,15 @@
       "current": {
         "high": 19300,
         "low": 18950,
-        "highTime": 1787717783,
-        "lowTime": 1787716772,
-        "highAgeSeconds": 92,
-        "lowAgeSeconds": 1103
+        "highTime": 1787718683,
+        "lowTime": 1787718131,
+        "highAgeSeconds": 91,
+        "lowAgeSeconds": 643
       },
       "5m": {
-        "avgHighPrice": 19078,
+        "avgHighPrice": 19300,
         "avgLowPrice": null,
-        "highPriceVolume": 200,
+        "highPriceVolume": 127,
         "lowPriceVolume": 0
       },
       "1h": {
@@ -4781,8 +4781,8 @@
         "low": 311,
         "highTime": 1787701248,
         "lowTime": 1787411536,
-        "highAgeSeconds": 16627,
-        "lowAgeSeconds": 306339
+        "highAgeSeconds": 17526,
+        "lowAgeSeconds": 307238
       },
       "5m": {
         "avgHighPrice": null,
@@ -4816,8 +4816,8 @@
         "low": 244,
         "highTime": 1787702751,
         "lowTime": 1787696013,
-        "highAgeSeconds": 15124,
-        "lowAgeSeconds": 21862
+        "highAgeSeconds": 16023,
+        "lowAgeSeconds": 22761
       },
       "5m": {
         "avgHighPrice": null,
@@ -4849,16 +4849,16 @@
       "current": {
         "high": 86,
         "low": 75,
-        "highTime": 1787715992,
-        "lowTime": 1787715423,
-        "highAgeSeconds": 1883,
-        "lowAgeSeconds": 2452
+        "highTime": 1787718076,
+        "lowTime": 1787718461,
+        "highAgeSeconds": 698,
+        "lowAgeSeconds": 313
       },
       "5m": {
         "avgHighPrice": null,
-        "avgLowPrice": null,
+        "avgLowPrice": 75,
         "highPriceVolume": 0,
-        "lowPriceVolume": 0
+        "lowPriceVolume": 1
       },
       "1h": {
         "avgHighPrice": 86,
@@ -4884,15 +4884,15 @@
       "current": {
         "high": 190,
         "low": 68,
-        "highTime": 1787717487,
+        "highTime": 1787718513,
         "lowTime": 1787716783,
-        "highAgeSeconds": 388,
-        "lowAgeSeconds": 1092
+        "highAgeSeconds": 261,
+        "lowAgeSeconds": 1991
       },
       "5m": {
         "avgHighPrice": 190,
         "avgLowPrice": null,
-        "highPriceVolume": 50,
+        "highPriceVolume": 350,
         "lowPriceVolume": 0
       },
       "1h": {
@@ -4921,8 +4921,8 @@
         "low": 164,
         "highTime": 1787711355,
         "lowTime": 1787715900,
-        "highAgeSeconds": 6520,
-        "lowAgeSeconds": 1975
+        "highAgeSeconds": 7419,
+        "lowAgeSeconds": 2874
       },
       "5m": {
         "avgHighPrice": null,
@@ -4953,17 +4953,17 @@
       "lowalch": 176,
       "current": {
         "high": 307,
-        "low": 299,
-        "highTime": 1787717336,
-        "lowTime": 1787717636,
-        "highAgeSeconds": 539,
-        "lowAgeSeconds": 239
+        "low": 290,
+        "highTime": 1787718590,
+        "lowTime": 1787718456,
+        "highAgeSeconds": 184,
+        "lowAgeSeconds": 318
       },
       "5m": {
-        "avgHighPrice": null,
-        "avgLowPrice": 299,
-        "highPriceVolume": 0,
-        "lowPriceVolume": 194
+        "avgHighPrice": 307,
+        "avgLowPrice": 290,
+        "highPriceVolume": 200,
+        "lowPriceVolume": 5
       },
       "1h": {
         "avgHighPrice": 307,
@@ -4991,13 +4991,13 @@
         "low": 2001,
         "highTime": 1787717633,
         "lowTime": 1787716943,
-        "highAgeSeconds": 242,
-        "lowAgeSeconds": 932
+        "highAgeSeconds": 1141,
+        "lowAgeSeconds": 1831
       },
       "5m": {
-        "avgHighPrice": 2201,
+        "avgHighPrice": null,
         "avgLowPrice": null,
-        "highPriceVolume": 1,
+        "highPriceVolume": 0,
         "lowPriceVolume": 0
       },
       "1h": {
@@ -5022,18 +5022,18 @@
       "highalch": 54,
       "lowalch": 36,
       "current": {
-        "high": 3726,
-        "low": 3400,
-        "highTime": 1787717306,
-        "lowTime": 1787716876,
-        "highAgeSeconds": 569,
-        "lowAgeSeconds": 999
+        "high": 4274,
+        "low": 3726,
+        "highTime": 1787718039,
+        "lowTime": 1787718588,
+        "highAgeSeconds": 735,
+        "lowAgeSeconds": 186
       },
       "5m": {
         "avgHighPrice": null,
-        "avgLowPrice": null,
+        "avgLowPrice": 3726,
         "highPriceVolume": 0,
-        "lowPriceVolume": 0
+        "lowPriceVolume": 3
       },
       "1h": {
         "avgHighPrice": 3453,
@@ -5061,8 +5061,8 @@
         "low": 5200,
         "highTime": 1787714398,
         "lowTime": 1787716722,
-        "highAgeSeconds": 3477,
-        "lowAgeSeconds": 1153
+        "highAgeSeconds": 4376,
+        "lowAgeSeconds": 2052
       },
       "5m": {
         "avgHighPrice": null,
@@ -5093,17 +5093,17 @@
       "lowalch": 100,
       "current": {
         "high": 8153,
-        "low": 7608,
-        "highTime": 1787717821,
-        "lowTime": 1787717629,
-        "highAgeSeconds": 54,
-        "lowAgeSeconds": 246
+        "low": 7807,
+        "highTime": 1787718702,
+        "lowTime": 1787718596,
+        "highAgeSeconds": 72,
+        "lowAgeSeconds": 178
       },
       "5m": {
         "avgHighPrice": 8153,
-        "avgLowPrice": 7706,
-        "highPriceVolume": 77,
-        "lowPriceVolume": 64
+        "avgLowPrice": 7920,
+        "highPriceVolume": 241,
+        "lowPriceVolume": 1
       },
       "1h": {
         "avgHighPrice": 7821,
@@ -5131,8 +5131,8 @@
         "low": 3000,
         "highTime": 1786147211,
         "lowTime": 1786868248,
-        "highAgeSeconds": 1570664,
-        "lowAgeSeconds": 849627
+        "highAgeSeconds": 1571563,
+        "lowAgeSeconds": 850526
       },
       "5m": {
         "avgHighPrice": null,
@@ -5166,8 +5166,8 @@
         "low": 9000,
         "highTime": 1787691889,
         "lowTime": 1787374386,
-        "highAgeSeconds": 25986,
-        "lowAgeSeconds": 343489
+        "highAgeSeconds": 26885,
+        "lowAgeSeconds": 344388
       },
       "5m": {
         "avgHighPrice": null,
@@ -5201,8 +5201,8 @@
         "low": 4376,
         "highTime": 1787710780,
         "lowTime": 1787717080,
-        "highAgeSeconds": 7095,
-        "lowAgeSeconds": 795
+        "highAgeSeconds": 7994,
+        "lowAgeSeconds": 1694
       },
       "5m": {
         "avgHighPrice": null,
@@ -5234,10 +5234,10 @@
       "current": {
         "high": 8900,
         "low": 8800,
-        "highTime": 1787717603,
-        "lowTime": 1787716893,
-        "highAgeSeconds": 272,
-        "lowAgeSeconds": 982
+        "highTime": 1787718512,
+        "lowTime": 1787718056,
+        "highAgeSeconds": 262,
+        "lowAgeSeconds": 718
       },
       "5m": {
         "avgHighPrice": 8900,
@@ -5271,14 +5271,14 @@
         "low": 13950,
         "highTime": 1787716929,
         "lowTime": 1787717709,
-        "highAgeSeconds": 946,
-        "lowAgeSeconds": 166
+        "highAgeSeconds": 1845,
+        "lowAgeSeconds": 1065
       },
       "5m": {
         "avgHighPrice": null,
-        "avgLowPrice": 14300,
+        "avgLowPrice": null,
         "highPriceVolume": 0,
-        "lowPriceVolume": 1
+        "lowPriceVolume": 0
       },
       "1h": {
         "avgHighPrice": 14300,
@@ -5303,17 +5303,17 @@
       "lowalch": 320,
       "current": {
         "high": 18955,
-        "low": 18402,
-        "highTime": 1787717800,
-        "lowTime": 1787717789,
-        "highAgeSeconds": 75,
-        "lowAgeSeconds": 86
+        "low": 18843,
+        "highTime": 1787718620,
+        "lowTime": 1787718714,
+        "highAgeSeconds": 154,
+        "lowAgeSeconds": 60
       },
       "5m": {
-        "avgHighPrice": 18481,
-        "avgLowPrice": 18481,
-        "highPriceVolume": 103,
-        "lowPriceVolume": 7
+        "avgHighPrice": 18955,
+        "avgLowPrice": 18843,
+        "highPriceVolume": 89,
+        "lowPriceVolume": 1
       },
       "1h": {
         "avgHighPrice": 18948,
@@ -5341,8 +5341,8 @@
         "low": 321,
         "highTime": 1787623958,
         "lowTime": 1787697490,
-        "highAgeSeconds": 93917,
-        "lowAgeSeconds": 20385
+        "highAgeSeconds": 94816,
+        "lowAgeSeconds": 21284
       },
       "5m": {
         "avgHighPrice": null,
@@ -5376,8 +5376,8 @@
         "low": 600,
         "highTime": 1787623838,
         "lowTime": 1787684793,
-        "highAgeSeconds": 94037,
-        "lowAgeSeconds": 33082
+        "highAgeSeconds": 94936,
+        "lowAgeSeconds": 33981
       },
       "5m": {
         "avgHighPrice": null,
@@ -5411,8 +5411,8 @@
         "low": 1001,
         "highTime": 1787698302,
         "lowTime": 1787717232,
-        "highAgeSeconds": 19573,
-        "lowAgeSeconds": 643
+        "highAgeSeconds": 20472,
+        "lowAgeSeconds": 1542
       },
       "5m": {
         "avgHighPrice": null,
@@ -5446,8 +5446,8 @@
         "low": 2182,
         "highTime": 1787716991,
         "lowTime": 1787714522,
-        "highAgeSeconds": 884,
-        "lowAgeSeconds": 3353
+        "highAgeSeconds": 1783,
+        "lowAgeSeconds": 4252
       },
       "5m": {
         "avgHighPrice": null,
@@ -5477,18 +5477,18 @@
       "highalch": 3600000,
       "lowalch": 2400000,
       "current": {
-        "high": 41000000,
-        "low": 40312381,
-        "highTime": 1787717154,
-        "lowTime": 1787717778,
-        "highAgeSeconds": 721,
-        "lowAgeSeconds": 97
+        "high": 40350000,
+        "low": 39995334,
+        "highTime": 1787718389,
+        "lowTime": 1787718717,
+        "highAgeSeconds": 385,
+        "lowAgeSeconds": 57
       },
       "5m": {
-        "avgHighPrice": null,
-        "avgLowPrice": 40585652,
-        "highPriceVolume": 0,
-        "lowPriceVolume": 3
+        "avgHighPrice": 40350000,
+        "avgLowPrice": 39678004,
+        "highPriceVolume": 1,
+        "lowPriceVolume": 1
       },
       "1h": {
         "avgHighPrice": 40660317,
@@ -5513,17 +5513,17 @@
       "lowalch": 1,
       "current": {
         "high": 5,
-        "low": 5,
-        "highTime": 1787717807,
-        "lowTime": 1787717796,
-        "highAgeSeconds": 68,
-        "lowAgeSeconds": 79
+        "low": 4,
+        "highTime": 1787718632,
+        "lowTime": 1787718613,
+        "highAgeSeconds": 142,
+        "lowAgeSeconds": 161
       },
       "5m": {
-        "avgHighPrice": 4,
-        "avgLowPrice": null,
-        "highPriceVolume": 48300,
-        "lowPriceVolume": 0
+        "avgHighPrice": 5,
+        "avgLowPrice": 5,
+        "highPriceVolume": 337,
+        "lowPriceVolume": 2
       },
       "1h": {
         "avgHighPrice": 4,
