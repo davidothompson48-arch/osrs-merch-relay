@@ -1,103 +1,157 @@
 {
   "schema_version": 1,
-  "updated_at_utc": "2026-08-27T01:00:00Z",
+  "updated_at_utc": "2026-08-27T05:04:00Z",
   "purpose": "Store explicit scenario trees for catalyst/speculative theses. Probabilities are research estimates, not facts, and must be revised when evidence changes.",
   "models": [
     {
       "id": "breaker_charge_rune",
       "theme": "Breaker charge rune",
-      "confidence": "LOW-MODERATE",
+      "confidence": "MODERATE",
       "scenarios": [
         {
           "name": "Wrath rune selected",
           "probability_pct": 40,
-          "beneficiaries": ["Wrath rune"],
+          "beneficiaries": [
+            "Wrath rune"
+          ],
           "expected_return_if_triggered": "Recalculate from live tape and current pre-positioning; do not reuse stale historical targets.",
-          "evidence": "Wrath is thematically plausible and has limited existing sinks, but Jagex has not confirmed the rune.",
+          "evidence": "Breaker itself passed the lock-in poll as described, materially lowering reward-cancellation risk; Wrath remains only a thematic candidate and is not named by Jagex.",
           "invalidation": "Official statement or implementation selects a different rune or removes the rune requirement."
         },
         {
           "name": "Another existing rune selected",
-          "probability_pct": 45,
-          "beneficiaries": ["Nature rune", "Soul rune", "Blood rune", "Death rune", "Chaos rune", "Other existing rune"],
+          "probability_pct": 55,
+          "beneficiaries": [
+            "Nature rune",
+            "Soul rune",
+            "Blood rune",
+            "Death rune",
+            "Chaos rune",
+            "Other existing rune"
+          ],
           "expected_return_if_triggered": "Wrath likely loses catalyst premium; selected rune reprices depending on supply and consumption rate.",
-          "evidence": "The proposal only states a rune of some kind; several rune markets are plausible candidates.",
+          "evidence": "Breaker passed as described with an existing rune requirement still unspecified; several existing runes remain plausible candidates.",
           "invalidation": "Official Wrath confirmation."
         },
         {
           "name": "Charge design materially changes / new resource dominates",
-          "probability_pct": 15,
-          "beneficiaries": ["Ascension Shards", "Unknown/new resource"],
+          "probability_pct": 5,
+          "beneficiaries": [
+            "Ascension Shards",
+            "Unknown/new resource"
+          ],
           "expected_return_if_triggered": "Existing rune speculation loses value; exact impact depends on redesign.",
-          "evidence": "Reward design can change before implementation.",
+          "evidence": "A late redesign remains possible, but the reward passed the lock-in poll as described, reducing the probability of removing the existing-rune requirement entirely.",
           "invalidation": "Final implementation preserves a meaningful existing-rune sink."
         }
       ],
-      "review_triggers": ["JMod statement naming or narrowing the rune", "reward blog revision", "poll or beta mechanics", "sector-specific rune accumulation unexplained by broader rune movement"]
+      "review_triggers": [
+        "JMod statement naming or narrowing the rune",
+        "reward blog revision",
+        "poll or beta mechanics",
+        "sector-specific rune accumulation unexplained by broader rune movement"
+      ]
     },
     {
       "id": "legacy_elemental_hardware",
       "theme": "Legacy elemental hardware benefits from Raid 4 / elemental systems",
-      "confidence": "MODERATE",
+      "confidence": "MODERATE-HIGH",
       "scenarios": [
         {
           "name": "Legacy elemental gear gains major Raid 4 utility",
-          "probability_pct": 45,
-          "beneficiaries": ["Staff of the dead", "Toxic staff of the dead", "Nightmare staff", "Harmonised nightmare staff", "Tome of fire", "Water tome", "Earth tome", "Searing page", "Burnt page"],
+          "probability_pct": 50,
+          "beneficiaries": [
+            "Staff of the dead",
+            "Toxic staff of the dead",
+            "Nightmare staff",
+            "Harmonised nightmare staff",
+            "Tome of fire",
+            "Water tome",
+            "Earth tome",
+            "Searing page",
+            "Burnt page"
+          ],
           "expected_return_if_triggered": "Recalculate item-by-item; lower-priced hardware may have greater percentage convexity than already-expensive gear.",
-          "evidence": "Elemental reward design and weakness mechanics can increase relevance of existing elemental spellcasting infrastructure.",
+          "evidence": "Elemental Fragments and Zorya's Tome both passed the Raid 4 rewards lock-in poll, materially de-risking continued endgame investment in elemental Magic systems; exact legacy-item interaction remains unresolved.",
           "invalidation": "Raid mechanics heavily favor new rewards or non-elemental meta with little legacy interaction."
         },
         {
           "name": "Mixed utility / only selected legacy pieces benefit",
           "probability_pct": 40,
-          "beneficiaries": ["Subset determined by exact spell, off-hand and special-attack mechanics"],
+          "beneficiaries": [
+            "Subset determined by exact spell, off-hand and special-attack mechanics"
+          ],
           "expected_return_if_triggered": "Sector dispersion; relative-value analysis is more important than broad basket exposure.",
           "evidence": "Different staffs/tomes interact differently with off-hands, spell damage, specials and weakness systems.",
           "invalidation": "Broad explicit compatibility or incompatibility is confirmed."
         },
         {
           "name": "New Raid 4 rewards displace legacy elemental hardware",
-          "probability_pct": 15,
-          "beneficiaries": ["New Raid 4 magic rewards"],
+          "probability_pct": 10,
+          "beneficiaries": [
+            "New Raid 4 magic rewards"
+          ],
           "expected_return_if_triggered": "Legacy speculative premium can unwind sharply.",
-          "evidence": "New endgame rewards can cannibalize older niches.",
+          "evidence": "New rewards can still cannibalize legacy niches, but confirmed passage of Elemental Fragments strengthens the broader elemental ecosystem rather than replacing it outright.",
           "invalidation": "Official mechanics clearly preserve or enhance legacy gear roles."
         }
       ],
-      "review_triggers": ["Zorya mechanics clarification", "elemental weakness changes", "new amulet recipe/effect", "tome/page compatibility statement", "Raid 4 beta or encounter mechanics"]
+      "review_triggers": [
+        "Zorya mechanics clarification",
+        "elemental weakness changes",
+        "new amulet recipe/effect",
+        "tome/page compatibility statement",
+        "Raid 4 beta or encounter mechanics"
+      ]
     },
     {
       "id": "inquisitor_crush_demand",
       "theme": "Inquisitor benefits from increased Crush relevance",
-      "confidence": "MODERATE",
+      "confidence": "MODERATE-HIGH",
       "scenarios": [
         {
           "name": "Raid 4 materially increases demand for Inquisitor armour",
-          "probability_pct": 40,
-          "beneficiaries": ["Inquisitor's great helm", "Inquisitor's hauberk", "Inquisitor's plateskirt"],
+          "probability_pct": 45,
+          "beneficiaries": [
+            "Inquisitor's great helm",
+            "Inquisitor's hauberk",
+            "Inquisitor's plateskirt"
+          ],
           "expected_return_if_triggered": "Recalculate from live tape and supply conditions.",
-          "evidence": "Crush-focused reward/encounter direction can increase value of Crush accuracy/damage setups.",
+          "evidence": "Breaker and Rondache both passed the Raid 4 reward poll, confirming continued top-end design emphasis on Crush; whether that converts into Inquisitor armour demand still depends on encounter defence and gear interactions.",
           "invalidation": "Encounter design or gear progression bypasses Inquisitor."
         },
         {
           "name": "Crush becomes important but Breaker/new off-hands reduce legacy weapon demand",
           "probability_pct": 45,
-          "beneficiaries": ["Inquisitor armour", "Elder maul", "Breaker", "Rondache"],
+          "beneficiaries": [
+            "Inquisitor armour",
+            "Elder maul",
+            "Breaker",
+            "Rondache"
+          ],
           "expected_return_if_triggered": "Armour may outperform Inquisitor mace; analyze pieces separately.",
-          "evidence": "Breaker can increase Crush relevance while simultaneously displacing some legacy weapons.",
+          "evidence": "Breaker and Rondache are now poll-confirmed, making a Crush-relevant meta more likely while preserving the risk that new rewards displace the Inquisitor mace or other legacy weapons.",
           "invalidation": "Final mechanics make Inquisitor set bonus/mace uniquely valuable together."
         },
         {
           "name": "Crush relevance does not translate into Inquisitor demand",
-          "probability_pct": 15,
-          "beneficiaries": ["Alternative gear"],
+          "probability_pct": 10,
+          "beneficiaries": [
+            "Alternative gear"
+          ],
           "expected_return_if_triggered": "Inquisitor catalyst premium fades and supply dominates.",
           "evidence": "Boss stats, accuracy requirements, new gear or set incompatibility can break the assumed link.",
           "invalidation": "Strong live usage evidence or explicit encounter design supports Inquisitor."
         }
       ],
-      "review_triggers": ["Raid 4 defence tables", "Breaker mechanics", "Rondache mechanics", "Inquisitor-specific JMod comments", "Nightmare supply changes"]
+      "review_triggers": [
+        "Raid 4 defence tables",
+        "Breaker mechanics",
+        "Rondache mechanics",
+        "Inquisitor-specific JMod comments",
+        "Nightmare supply changes"
+      ]
     },
     {
       "id": "cox_scroll_recovery",
@@ -107,7 +161,10 @@
         {
           "name": "Supply reduction eventually dominates and scrolls recover",
           "probability_pct": 45,
-          "beneficiaries": ["Arcane prayer scroll", "Dexterous prayer scroll"],
+          "beneficiaries": [
+            "Arcane prayer scroll",
+            "Dexterous prayer scroll"
+          ],
           "expected_return_if_triggered": "Recovery magnitude depends on inventories and marginal demand; recalculate from live trend.",
           "evidence": "Implemented drop-weight changes reduce new scroll supply.",
           "invalidation": "Persistent selling and weak demand absorb the structural supply change for an extended period."
@@ -115,7 +172,9 @@
         {
           "name": "Prices stabilize but remain range-bound",
           "probability_pct": 35,
-          "beneficiaries": ["Existing holders only modestly"],
+          "beneficiaries": [
+            "Existing holders only modestly"
+          ],
           "expected_return_if_triggered": "Low opportunity-adjusted return; cash or other trades may dominate.",
           "evidence": "Stockpiles and existing ownership can delay repricing.",
           "invalidation": "Sustained breakout or renewed breakdown."
@@ -123,13 +182,20 @@
         {
           "name": "Demand weakness / inventory overhang causes further downside",
           "probability_pct": 20,
-          "beneficiaries": ["Cash / lower future entries"],
+          "beneficiaries": [
+            "Cash / lower future entries"
+          ],
           "expected_return_if_triggered": "Further drawdown despite improved supply fundamentals.",
           "evidence": "Current tape may remain distribution-heavy after the update.",
           "invalidation": "Multi-window accumulation and relative-strength reversal."
         }
       ],
-      "review_triggers": ["multi-day trend reversal", "CoX participation shift", "prayer-demand catalyst", "new scroll sink/use case"]
+      "review_triggers": [
+        "multi-day trend reversal",
+        "CoX participation shift",
+        "prayer-demand catalyst",
+        "new scroll sink/use case"
+      ]
     }
   ],
   "rules": {
