@@ -1,7 +1,7 @@
 {
-  "schema_version": 2,
-  "updated_at_utc": "2026-08-27T01:00:00Z",
-  "purpose": "Normalize trade-engine scoring and rank incremental GP across cash, existing positions, new trades, conversions and rotations.",
+  "schema_version": 3,
+  "updated_at_utc": "2026-08-27T03:30:00Z",
+  "purpose": "Normalize trade-engine scoring and rank incremental GP across cash, existing positions, new trades, conversions, evergreen mean-reversion and rotations.",
   "cash_is_candidate": true,
   "engine_thresholds": {
     "recommend": 70,
@@ -24,7 +24,25 @@
     "fast_flip": ["executable_after_tax_spread", "freshness", "fill_probability", "exit_probability", "roi_per_hour", "gp_throughput"],
     "swing": ["multi_window_momentum", "abnormal_volume", "reversal_quality", "relative_strength", "roi_per_day", "liquidity"],
     "catalyst": ["scenario_expected_value", "catalyst_confidence", "beneficiary_certainty", "timing", "priced_in_risk", "downside_if_wrong"],
-    "conversion_relative_value": ["hard_economic_relationship", "after_tax_margin", "input_output_liquidity", "conversion_friction", "mean_reversion_pressure"]
+    "conversion_relative_value": ["hard_economic_relationship", "after_tax_margin", "input_output_liquidity", "conversion_friction", "mean_reversion_pressure"],
+    "evergreen_staple_reversion": ["persistent_consumption", "discount_to_7d_and_30d_normal", "30d_percentile", "24h_volume_and_gp_turnover", "stabilization_before_entry", "after_tax_rebound_room", "structural_supply_demand_bear_check"]
+  },
+  "evergreen_staple_reversion": {
+    "goal": "Find liquid items with durable recurring consumption that are temporarily depressed versus their own recent trading range, especially where demand remains healthy and the selloff begins to stabilize.",
+    "data_file": "staples_watch.json",
+    "universe_file": "project/evergreen_staples.json",
+    "preferred_setup": {
+      "discount_to_30d_median_pct": -5.0,
+      "30d_percentile_max": 35,
+      "minimum_24h_gp_traded": 10000000,
+      "fresh_prints_required": true,
+      "stabilization_required_for_buy": true
+    },
+    "setup_labels": ["BUY_ZONE_CANDIDATE", "WATCH_REVERSAL", "FALLING_KNIFE", "NOT_OVERSOLD"],
+    "entry_principle": "Do not buy merely because a staple is down. Prefer a meaningful discount plus healthy persistent turnover plus stabilization/absorption. Falling knives remain watches until order flow or short-window price action improves.",
+    "structural_bear_check": "Before recommending any mean-reversion buy, search for permanent supply increases, drop-table changes, substitutes, activity/bot changes, training-method shifts, balance changes or new content that could make the old price range irrelevant.",
+    "typical_target": "Mean reversion toward the 7d/30d median or another clearly supported resistance zone, with after-tax ROI and time stop calculated from live tape.",
+    "portfolio_role": "Prefer these trades when they diversify away from concentrated catalyst exposure and can recycle GP faster than long-duration speculation."
   },
   "risk_budget": {
     "theme_concentration_soft_warning_pct_known_merch_basis": 35,
@@ -58,6 +76,7 @@
     "top_deployment_candidates": 5,
     "max_fast_flips": 3,
     "max_swings": 3,
+    "max_staple_rebounds": 5,
     "max_catalyst_trades": 3,
     "max_conversions": 3,
     "max_radar_alerts": 5,
