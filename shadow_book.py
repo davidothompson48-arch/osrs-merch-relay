@@ -255,12 +255,18 @@ def main():
             continue
         item_id = row.get("id")
         cur = row.get("current") or {}
-        add_signal(signals, {"engine": "evergreen", "key": f"{item_id}:{row.get('status')}", "item_id": item_id, "item": row.get("name"), "direction": "LONG", "signal_mid": cur.get("mid") or midpoint(cur.get("high"), cur.get("low")), "entry_low": cur.get("low"), "features": {"initial_roi_pct": None, "high_side_share": (row.get("demand") or {}).get("highSideShare1h"), "liquidity": None, "discount_30d_pct": (row.get("range") or {}).get("discountTo30dMedianPct"), "percentile_30d": (row.get("range") or {}).get("thirtyDayPercentile"), "status": row.get("status")}}, now, float(cooldown.get("evergreen", 24)))
+        add_signal(signals, {"engine": "evergreen", "key": f"{item_id}", "item_id": item_id, "item": row.get("name"), "direction": "LONG", "signal_mid": cur.get("mid") or midpoint(cur.get("high"), cur.get("low")), "entry_low": cur.get("low"), "features": {"initial_roi_pct": None, "high_side_share": (row.get("demand") or {}).get("highSideShare1h"), "liquidity": None, "discount_30d_pct": (row.get("range") or {}).get("discountTo30dMedianPct"), "percentile_30d": (row.get("range") or {}).get("thirtyDayPercentile"), "status": row.get("status")}}, now, float(cooldown.get("evergreen", 24)))
 
     for row in (engines.get("conversions") or [])[:6]:
         patient = row.get("patient") or {}
+        immediate = row.get("immediate") or {}
         roi = patient.get("roi_pct")
         if not isinstance(roi, (int, float)) or roi <= 0:
+            continue
+        freshness = row.get("freshness") or []
+        if any(q not in ("FRESH", "USABLE") for q in freshness):
+            continue
+        if roi > 25 and not (isinstance(immediate.get("roi_pct"), (int, float)) and immediate.get("roi_pct") > 0):
             continue
         inputs = row.get("inputs") or []
         strategy_key = "+".join(f"{x.get('quantity',1)}x{x.get('item')}" for x in inputs) + f"->{row.get('output')}"
