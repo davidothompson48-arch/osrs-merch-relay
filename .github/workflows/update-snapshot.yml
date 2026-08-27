@@ -120,9 +120,6 @@ jobs:
             fi
           }
 
-          # Keep a watchdog alive for ~5.5 hours. Each cycle publishes an
-          # ultra-compact routine packet first; deeper monthly/universe research
-          # updates afterward without blocking fresh execution data.
           for cycle in $(seq 1 66); do
             cycle_started=$(date +%s)
             echo "=== Relay cycle $cycle started $(date -u +%FT%TZ) ==="
@@ -139,7 +136,7 @@ jobs:
 
             build_packet || true
             commit_and_push "Update fast OSRS profit desk packet" \
-              snapshot.json relay_health.json related_watch.json desk_packet.json desk_packet_lite.json \
+              snapshot.json relay_health.json related_watch.json desk_packet.json desk_packet_lite.json profit_snapshot.json \
               shadow_book.json shadow_book_summary.json || true
 
             if [ "$cycle" -eq 1 ] || [ $((cycle % 12)) -eq 0 ]; then
@@ -163,7 +160,7 @@ jobs:
 
             build_packet || true
             commit_and_push "Update OSRS profit research packet and history" \
-              staples_watch.json portfolio_history.json market_universe/ desk_packet.json desk_packet_lite.json \
+              staples_watch.json portfolio_history.json market_universe/ desk_packet.json desk_packet_lite.json profit_snapshot.json \
               shadow_book.json shadow_book_summary.json history/market_history.jsonl history/recent_history.json || true
 
             cycle_finished=$(date +%s)
