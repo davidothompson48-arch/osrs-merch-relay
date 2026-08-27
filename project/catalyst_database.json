@@ -1,17 +1,39 @@
 {
   "schema_version": 1,
-  "updated_at_utc": "2026-08-27T01:00:00Z",
+  "updated_at_utc": "2026-08-27T05:04:00Z",
   "purpose": "Structured register of material OSRS market catalysts so hourly runs distinguish genuinely new evidence from recycled information.",
-  "status_values": ["NEW", "DEVELOPING", "CONFIRMED", "WEAKENING", "DISPROVEN", "UNCHANGED"],
-  "credibility_values": ["CONFIRMED", "STRONG EVIDENCE", "PLAUSIBLE SPECULATION", "WEAK SPECULATION", "RUMOR"],
+  "status_values": [
+    "NEW",
+    "DEVELOPING",
+    "CONFIRMED",
+    "WEAKENING",
+    "DISPROVEN",
+    "UNCHANGED"
+  ],
+  "credibility_values": [
+    "CONFIRMED",
+    "STRONG EVIDENCE",
+    "PLAUSIBLE SPECULATION",
+    "WEAK SPECULATION",
+    "RUMOR"
+  ],
   "records": [
     {
       "id": "fractured_archive_breaker_unspecified_rune",
       "first_seen": "2026-07-30",
       "latest_evidence_date": "2026-07-30",
       "source_attribution": "Jagex Fractured Archive rewards proposal",
-      "affected_theses": ["breaker_charge_rune"],
-      "affected_items": ["Wrath rune", "Nature rune", "Soul rune", "Blood rune", "Death rune", "Chaos rune"],
+      "affected_theses": [
+        "breaker_charge_rune"
+      ],
+      "affected_items": [
+        "Wrath rune",
+        "Nature rune",
+        "Soul rune",
+        "Blood rune",
+        "Death rune",
+        "Chaos rune"
+      ],
       "credibility": "CONFIRMED",
       "status": "UNCHANGED",
       "confidence_0_100": 95,
@@ -26,8 +48,16 @@
       "first_seen": "2026-08-12",
       "latest_evidence_date": "2026-08-12",
       "source_attribution": "Jagex implemented CoX reward weighting changes",
-      "affected_theses": ["cox_scroll_recovery"],
-      "affected_items": ["Arcane prayer scroll", "Dexterous prayer scroll", "Ancestral hat", "Ancestral robe top", "Ancestral robe bottom"],
+      "affected_theses": [
+        "cox_scroll_recovery"
+      ],
+      "affected_items": [
+        "Arcane prayer scroll",
+        "Dexterous prayer scroll",
+        "Ancestral hat",
+        "Ancestral robe top",
+        "Ancestral robe bottom"
+      ],
       "credibility": "CONFIRMED",
       "status": "CONFIRMED",
       "confidence_0_100": 100,
@@ -36,6 +66,54 @@
       "summary": "Prayer scroll supply weights were reduced while Ancestral relative weighting increased.",
       "market_pricing_assessment": "Fundamental supply changes are confirmed, but subsequent price direction must be read from live tape rather than assumed.",
       "what_changed_since_prior": "Baseline record only."
+    },
+    {
+      "id": "fractured_archive_rewards_poll_passed_aug10",
+      "first_seen": "2026-08-27",
+      "latest_evidence_date": "2026-08-10",
+      "source_attribution": "Official Old School RuneScape poll result: The Fractured Archive - Rewards Lock-in Poll (03 Aug 2026 - 10 Aug 2026), https://oldschool.runescape.com/polls/2026/1762",
+      "evidence_class": "CONFIRMED poll result",
+      "affected_theses": [
+        "breaker_charge_rune",
+        "legacy_elemental_hardware",
+        "inquisitor_crush_demand"
+      ],
+      "affected_items": [
+        "Breaker",
+        "Elemental Fragments",
+        "Rondache",
+        "Zorya's Tome",
+        "Zeal",
+        "Ascension Crossbows",
+        "Wrath rune",
+        "Nature rune",
+        "Soul rune",
+        "Blood rune",
+        "Death rune",
+        "Chaos rune",
+        "Staff of the dead",
+        "Toxic staff of the dead",
+        "Nightmare staff",
+        "Harmonised nightmare staff",
+        "Tome of fire",
+        "Water tome",
+        "Earth tome",
+        "Searing page",
+        "Burnt page",
+        "Inquisitor's great helm",
+        "Inquisitor's hauberk",
+        "Inquisitor's plateskirt",
+        "Inquisitor's mace",
+        "Elder maul"
+      ],
+      "credibility": "CONFIRMED",
+      "status": "NEW",
+      "confidence_0_100": 100,
+      "impact": "High",
+      "direction": "Mixed but materially de-risks Raid 4 reward existence",
+      "summary": "All six proposed Fractured Archive rewards passed: Elemental Fragments 85.8%, Rondache 80.7%, Zorya's Tome 90.4%, Zeal 86.1%, Ascension Crossbows 85.6%, Breaker 88.4%. The Obligator won the Breaker visual poll.",
+      "market_pricing_assessment": "Existence risk for the proposed reward set is sharply reduced. Legacy elemental and Crush beneficiaries gain catalyst credibility, but exact encounter utility is still unconfirmed. Breaker's specific charge rune remains unknown, so Wrath-specific conviction should not be upgraded on beneficiary selection alone.",
+      "what_changed_since_prior": "Previously the repository treated individual reward passage as unverified. The official result page now verifies passage of every proposed reward."
     }
   ],
   "record_rules": {
