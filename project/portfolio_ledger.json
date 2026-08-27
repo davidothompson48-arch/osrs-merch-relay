@@ -1,12 +1,12 @@
 {
   "schema_version": 2,
-  "updated_at_utc": "2026-08-27T01:45:00Z",
+  "updated_at_utc": "2026-08-27T01:55:34Z",
   "purpose": "Persistent user portfolio state for the OSRS Merch Desk. Current market prices are never stored here as authoritative; executable prices must come from fresh Wiki/RuneLite data.",
   "source_of_truth_for_market_data": "prices.runescape.wiki via fresh relay/direct API",
   "account_context": {
     "historical_bank_value": "1b+ gp reported by user",
     "current_liquid_gp": null,
-    "confidence": "unknown current cash after later confirmed Kodai sale and SOTD fills",
+    "confidence": "unknown current cash after later confirmed Kodai sale, SOTD fills, and Toxic SOTD fill",
     "rule": "Do not infer exact current cash from older snapshots or proceeds. Size only from explicitly confirmed available cash when known. Open buy offers are not holdings until the user confirms a fill."
   },
   "active_positions": [
@@ -18,6 +18,7 @@
     {"item":"Inquisitor's great helm","item_id":24419,"quantity":1,"cost_basis_gp_each":87000000,"cost_basis_gp_total_approx":87000000,"confidence":"high","note":"Confirmed current holding; user intends to keep for Raids 4 crush setup."},
     {"item":"Nightmare staff","item_id":24422,"quantity":1,"cost_basis_gp_each":28700000,"cost_basis_gp_total_approx":28700000,"confidence":"high"},
     {"item":"Staff of the dead","item_id":11791,"quantity":2,"cost_basis_gp_each":5750000,"cost_basis_gp_total_approx":11500000,"confidence":"high","note":"Two buy offers at 5.75m each were explicitly confirmed filled on 2026-08-25."},
+    {"item":"Toxic staff of the dead (uncharged)","item_id":12902,"quantity":1,"cost_basis_gp_each":9000000,"cost_basis_gp_total_approx":9000000,"confidence":"high","note":"User explicitly confirmed the 9.0m buy offer filled on 2026-08-26."},
     {"item":"Burnt page","item_id":20718,"quantity":2300,"cost_basis_gp_each":6100,"cost_basis_gp_total_approx":14030000,"confidence":"high"},
     {"item":"Searing page","item_id":28931,"quantity":1657,"cost_basis_gp_each":18111,"cost_basis_gp_total_approx":30009927,"confidence":"high","note":"User confirmed the remaining 599-unit order filled; full 1,657-page position is owned."},
     {"item":"Tome of fire (empty)","item_id":20716,"quantity":7,"cost_basis_gp_each":1490000,"cost_basis_gp_total_approx":10430000,"confidence":"high"},
@@ -35,8 +36,7 @@
     {"item":"Masori chaps (f)","item_id":27241,"priority":4,"status":"watch","note":"Fortified Masori set acquisition watch."}
   ],
   "open_offers_unconfirmed": [
-    {"item":"Dragon bones","item_id":536,"side":"buy","quantity":7500,"price_gp_each":3075,"total_gp_if_filled":23062500,"status":"open / unconfirmed fill","note":"User placed one full GE-limit order on 2026-08-23. Do not treat as owned until user confirms fill or cancellation."},
-    {"item":"Toxic staff of the dead (uncharged)","item_id":12902,"side":"buy","quantity":1,"price_gp_each":9000000,"total_gp_if_filled":9000000,"status":"open / unconfirmed fill","note":"User reported a 9.0m buy offer; no later fill confirmation has been provided."}
+    {"item":"Dragon bones","item_id":536,"side":"buy","quantity":7500,"price_gp_each":3075,"total_gp_if_filled":23062500,"status":"open / unconfirmed fill","note":"User placed one full GE-limit order on 2026-08-23. Do not treat as owned until user confirms fill or cancellation."}
   ],
   "historical_or_resolved_positions": [
     {"item":"Kodai wand","item_id":21006,"status":"sold","execution_price_gp_each":58000000,"quantity":1,"note":"User explicitly confirmed exit at 58.0m. Remove from active holdings."},
@@ -50,13 +50,13 @@
   ],
   "tracked_unresolved": [
     {"item":"Bandos tassets","field":"cost_basis","status":"unknown","note":"User confirmed ownership but did not provide purchase price/basis."},
-    {"item":"current_liquid_gp","field":"cash","status":"unknown","note":"Prior 41m snapshot is stale after confirmed Kodai sale and SOTD fills; do not guess current cash."}
+    {"item":"current_liquid_gp","field":"cash","status":"unknown","note":"Prior 41m snapshot is stale after confirmed Kodai sale, SOTD fills, and Toxic SOTD fill; do not guess current cash."}
   ],
   "non_portfolio_gameplay_items": [
     {"item":"Blood rune","note":"Visible stack was user-crafted/runecrafting output, not a merch position."},
     {"item":"Pure essence","note":"Runecrafting supply, not merch unless user says otherwise."}
   ],
-  "portfolio_cost_basis_total_approx_gp": 813044927,
-  "portfolio_cost_basis_note": "Excludes Bandos tassets because cost basis is unresolved. Excludes open Dragon bones and Toxic staff offers until filled. Includes the two confirmed SOTD fills and excludes sold Kodai.",
+  "portfolio_cost_basis_total_approx_gp": 822044927,
+  "portfolio_cost_basis_note": "Excludes Bandos tassets because cost basis is unresolved. Excludes open Dragon bones until filled. Includes confirmed SOTD and Toxic SOTD fills and excludes sold Kodai.",
   "portfolio_rule": "Newest explicit user statement overrides older state. A buy/sell offer is not a fill unless the user confirms execution."
 }
