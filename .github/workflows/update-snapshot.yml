@@ -8,14 +8,18 @@ on:
       - 'collect.py'
       - 'collect_related.py'
       - 'collect_staples.py'
+      - 'collect_portfolio_history.py'
       - 'collect_universe.py'
+      - 'build_desk_packet.py'
       - 'archive_snapshot.py'
       - 'project/related_items.json'
       - 'project/evergreen_staples.json'
+      - 'project/portfolio_ledger.json'
+      - 'project/known_conversions.json'
+      - 'project/tax_policy.json'
+      - 'project/desk_runtime_state.json'
       - '.github/workflows/update-snapshot.yml'
   schedule:
-    # GitHub's scheduler is best-effort. These staggered watchdog starts are
-    # intentionally less frequent; each started job maintains a 5-minute loop.
     - cron: '7,37 * * * *'
 
 concurrency:
@@ -28,7 +32,6 @@ permissions:
 jobs:
   update:
     runs-on: ubuntu-latest
-    # A running watchdog keeps refreshing even when GitHub delays later cron events.
     timeout-minutes: 350
     steps:
       - name: Checkout
@@ -59,7 +62,7 @@ jobs:
               if [ "$n" -ge "$attempts" ]; then
                 return 1
               fi
-              sleep $((n * 8))
+              sleep $((n * 6))
               n=$((n + 1))
             done
           }
@@ -67,8 +70,14 @@ jobs:
           commit_and_push() {
             local message="$1"
             shift
-            git add -- "$@"
-            if git diff --cached --quiet; then
+            local added=0
+            for path in "$@"; do
+              if [ -e "$path" ]; then
+                git add -- "$path"
+                added=1
+              fi
+            done
+            if [ "$added" -eq 0 ] || git diff --cached --quiet; then
               return 0
             fi
             git commit -m "$message"
@@ -77,48 +86,55 @@ jobs:
                 return 0
               fi
               git pull --rebase origin main
-              sleep $((push_attempt * 5))
+              sleep $((push_attempt * 4))
             done
             return 1
           }
 
-          # 66 cycles ~= 5.5 hours. Normal :07/:37 watchdog starts replace this
-          # job, but if GitHub skips a scheduled start the existing job keeps going.
+          # Keep a watchdog alive for ~5.5 hours. Each cycle publishes a fast
+          # one-file desk packet first; slower monthly/universe research updates
+          # afterward without blocking access to fresh core tape.
           for cycle in $(seq 1 66); do
             cycle_started=$(date +%s)
             echo "=== Relay cycle $cycle started $(date -u +%FT%TZ) ==="
 
-            # Begin each cycle from current main so project-state edits and other
-            # legitimate commits do not make the relay push non-fast-forward.
             git reset --hard HEAD
             git pull --rebase origin main
 
-            # Core tape is the execution-critical feed and refreshes every cycle.
             if ! retry 4 python collect.py; then
               echo "Core RuneLite/Wiki collection failed this cycle"
-            else
-              commit_and_push "Update fresh OSRS core tape" snapshot.json relay_health.json || true
             fi
-
-            # Sector watch also refreshes every five minutes.
             if ! retry 3 python collect_related.py; then
               echo "Related-sector collection failed this cycle; retaining prior file"
             fi
 
-            # Evergreen consumables are a slower mean-reversion scan. Run on cycle
-            # 1 and every 12th cycle (~hourly) so 30d timeseries checks do not hammer
-            # the Wiki API while still matching the hourly merch-desk cadence.
+            # FAST PATH: build immediately from fresh core/sector tape plus the
+            # most recent slow-history files. The ChatGPT desk normally needs only
+            # this one file, so manual and hourly runs no longer read 20+ files.
+            if ! python build_desk_packet.py; then
+              echo "Fast desk packet build failed"
+            fi
+            commit_and_push "Update fast OSRS desk packet" \
+              snapshot.json relay_health.json related_watch.json desk_packet.json || true
+
+            # Slow history is hourly and internally parallelized. These values do
+            # not need five-minute refreshes; current HIGH/LOW still comes from the
+            # fast core feed above.
             if [ "$cycle" -eq 1 ] || [ $((cycle % 12)) -eq 0 ]; then
               if ! retry 2 python collect_staples.py; then
-                echo "Evergreen-staple collection failed this cycle; retaining prior file"
+                echo "Evergreen-staple collection failed; retaining prior file"
+              fi
+              if ! retry 2 python collect_portfolio_history.py; then
+                echo "Portfolio history collection failed; retaining prior file"
               fi
             fi
 
-            # The full 4.6k-item universe is heavier. Refresh it on cycle 1 and
-            # every third cycle (~15m); current holdings/sectors remain 5m fresh.
+            # Full universe refreshes every ~15 minutes. Candidate generation from
+            # snapshot.json is already five-minute fresh; shards are mainly for
+            # exact-item validation and fallback coverage.
             if [ "$cycle" -eq 1 ] || [ $((cycle % 3)) -eq 0 ]; then
               if ! retry 3 python collect_universe.py; then
-                echo "Full-universe collection failed this cycle; retaining prior shards"
+                echo "Full-universe collection failed; retaining prior shards"
               fi
             fi
 
@@ -126,8 +142,14 @@ jobs:
               echo "History archive failed this cycle"
             fi
 
-            commit_and_push "Update OSRS market data and history" \
-              snapshot.json relay_health.json related_watch.json staples_watch.json market_universe/ \
+            # Rebuild after slow research so the same single packet contains the
+            # newest 30d staple and full-portfolio history when available.
+            if ! python build_desk_packet.py; then
+              echo "Final desk packet build failed"
+            fi
+
+            commit_and_push "Update OSRS research packet and history" \
+              staples_watch.json portfolio_history.json market_universe/ desk_packet.json \
               history/market_history.jsonl history/recent_history.json || true
 
             cycle_finished=$(date +%s)
