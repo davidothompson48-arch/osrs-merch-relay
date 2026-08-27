@@ -7,9 +7,11 @@ on:
     paths:
       - 'collect.py'
       - 'collect_related.py'
+      - 'collect_staples.py'
       - 'collect_universe.py'
       - 'archive_snapshot.py'
       - 'project/related_items.json'
+      - 'project/evergreen_staples.json'
       - '.github/workflows/update-snapshot.yml'
   schedule:
     # GitHub's scheduler is best-effort. These staggered watchdog starts are
@@ -103,6 +105,15 @@ jobs:
               echo "Related-sector collection failed this cycle; retaining prior file"
             fi
 
+            # Evergreen consumables are a slower mean-reversion scan. Run on cycle
+            # 1 and every 12th cycle (~hourly) so 30d timeseries checks do not hammer
+            # the Wiki API while still matching the hourly merch-desk cadence.
+            if [ "$cycle" -eq 1 ] || [ $((cycle % 12)) -eq 0 ]; then
+              if ! retry 2 python collect_staples.py; then
+                echo "Evergreen-staple collection failed this cycle; retaining prior file"
+              fi
+            fi
+
             # The full 4.6k-item universe is heavier. Refresh it on cycle 1 and
             # every third cycle (~15m); current holdings/sectors remain 5m fresh.
             if [ "$cycle" -eq 1 ] || [ $((cycle % 3)) -eq 0 ]; then
@@ -116,7 +127,7 @@ jobs:
             fi
 
             commit_and_push "Update OSRS market data and history" \
-              snapshot.json relay_health.json related_watch.json market_universe/ \
+              snapshot.json relay_health.json related_watch.json staples_watch.json market_universe/ \
               history/market_history.jsonl history/recent_history.json || true
 
             cycle_finished=$(date +%s)
