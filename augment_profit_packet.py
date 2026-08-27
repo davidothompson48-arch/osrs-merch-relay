@@ -153,14 +153,29 @@ def fast_profit_rows(packet, cfg, shadow, now):
         exit_fill = clamp(0.22 + 1.00 * high_share, 0.18, 0.94)
         fresh = freshness_from_times(x, now)
         fresh_factor = float(fresh_factor_map.get(fresh, 0.45))
-        execution = clamp(entry_fill * exit_fill * fresh_factor, 0, 0.9)
+        instability = 1.0
+        day_move = x.get("oneHourVs24hPct")
+        short_move = x.get("fiveMinVsOneHourPct")
+        if isinstance(day_move, (int, float)):
+            if abs(day_move) >= 10:
+                instability *= 0.55
+            elif abs(day_move) >= 5:
+                instability *= 0.78
+        if isinstance(short_move, (int, float)):
+            if abs(short_move) >= 10:
+                instability *= 0.65
+            elif abs(short_move) >= 5:
+                instability *= 0.82
+        if isinstance(roi, (int, float)) and roi >= 10 and vol < 1000:
+            instability *= 0.65
+        execution = clamp(entry_fill * exit_fill * fresh_factor * instability, 0, 0.9)
         theoretical_profit = edge * units
         expected_profit = theoretical_profit * execution
         expected_gph = expected_profit / max(base_hold, 0.25)
         expected_roi = expected_profit / cap_gp * 100 if cap_gp else None
         learn = learning_adjustment(shadow, "fast_flip")
         score = profit_score(expected_gph, roi, cap_gp, execution, 1.0, learn)
-        rows.append({"engine":"fast_flip","id":x.get("id"),"name":x.get("name"),"current_high":high,"current_low":low,"raw_after_tax_roi_pct":roi,"modeled_capacity_units":units,"capacity_gp":int(cap_gp),"market_participation_pct_1h":round(participation_pct,2),"slippage_risk":slippage_label(participation_pct,cfg),"modeled_entry_fill_factor":round(entry_fill,3),"modeled_exit_factor":round(exit_fill,3),"freshness":fresh,"execution_probability_heuristic":round(execution,3),"theoretical_profit_at_capacity_gp":int(theoretical_profit),"expected_profit_at_capacity_gp":int(expected_profit),"expected_after_tax_roi_pct":round(expected_roi,3) if expected_roi is not None else None,"expected_hold_hours":base_hold,"expected_gp_per_hour":int(expected_gph),"slot_efficiency_gp_per_hour":int(expected_gph),"player_time_hours":0,"player_time_adjusted_profit_gp":int(expected_profit),"learning_adjustment_points":learn,"profit_efficiency_score":score,"source_candidate":x})
+        rows.append({"engine":"fast_flip","id":x.get("id"),"name":x.get("name"),"current_high":high,"current_low":low,"raw_after_tax_roi_pct":roi,"modeled_capacity_units":units,"capacity_gp":int(cap_gp),"market_participation_pct_1h":round(participation_pct,2),"slippage_risk":slippage_label(participation_pct,cfg),"modeled_entry_fill_factor":round(entry_fill,3),"modeled_exit_factor":round(exit_fill,3),"freshness":fresh,"tape_instability_factor":round(instability,3),"execution_probability_heuristic":round(execution,3),"theoretical_profit_at_capacity_gp":int(theoretical_profit),"expected_profit_at_capacity_gp":int(expected_profit),"expected_after_tax_roi_pct":round(expected_roi,3) if expected_roi is not None else None,"expected_hold_hours":base_hold,"expected_gp_per_hour":int(expected_gph),"slot_efficiency_gp_per_hour":int(expected_gph),"player_time_hours":0,"player_time_adjusted_profit_gp":int(expected_profit),"learning_adjustment_points":learn,"profit_efficiency_score":score,"source_candidate":x})
     rows.sort(key=lambda r: (r["profit_efficiency_score"], r["expected_gp_per_hour"]), reverse=True)
     return rows
 
@@ -297,6 +312,8 @@ def conversion_profit_rows(packet, cfg, shadow, by_name):
         adjusted_roi = adjusted / capacity_gp * 100 if capacity_gp else None
         learn = learning_adjustment(shadow, "conversion")
         score = profit_score(max(0,gph), max(0,adjusted_roi or 0), capacity_gp, execution, 1-attention_factor, learn)
+        if validation_flag == "ANOMALOUS_PATIENT_MARGIN_REQUIRES_VALIDATION":
+            score = min(score, 30.0)
         rows.append({"engine":"conversion","strategy":key,"type":x.get("type"),"output":output,"ranking_mode":mode,"patient_roi_pct":patient_roi,"immediate_roi_pct":immediate_roi,"freshness":freshness,"output_one_hour_volume":out_vol1h,"validation_flag":validation_flag,"modeled_capacity_conversion_units":capacity_units,"capacity_gp":int(capacity_gp),"raw_profit_at_capacity_gp":int(raw_profit),"execution_probability_heuristic":execution,"expected_profit_before_player_time_gp":int(expected_raw),"player_time_attention":attention,"player_time_hours":round(active_hours,3),"player_time_shadow_cost_gp":int(player_cost),"player_time_adjusted_profit_gp":int(adjusted),"expected_after_tax_roi_pct":round(adjusted_roi,3) if adjusted_roi is not None else None,"expected_hold_hours":round(elapsed,3),"expected_gp_per_hour":int(gph),"slot_efficiency_gp_per_hour":int(gph),"learning_adjustment_points":learn,"profit_efficiency_score":score,"mechanics_source":x.get("mechanics_source")})
     rows.sort(key=lambda r:(r["profit_efficiency_score"],r["expected_gp_per_hour"]),reverse=True)
     return rows
@@ -364,6 +381,8 @@ def slot_optimizer(packet,cfg,fast,evergreen,conversions):
     total=int(cfg.get("ge_slots",{}).get("total_slots") or 8); known_open=len(packet.get("open_offers_unconfirmed") or []); free_upper=max(0,total-known_open); minimum=int(cfg.get("ge_slots",{}).get("minimum_slot_efficiency_gp_per_hour") or 50000); pool=[]
     for collection in (fast,evergreen,conversions):
         for x in collection:
+            if x.get("validation_flag") == "ANOMALOUS_PATIENT_MARGIN_REQUIRES_VALIDATION":
+                continue
             gph=x.get("slot_efficiency_gp_per_hour")
             if not isinstance(gph,(int,float)) or gph<minimum: continue
             name=x.get("name") or x.get("strategy"); pool.append({"engine":x.get("engine"),"item_or_strategy":name,"slot_efficiency_gp_per_hour":int(gph),"capacity_gp":x.get("capacity_gp"),"expected_profit_at_capacity_gp":x.get("expected_profit_at_capacity_gp") if x.get("expected_profit_at_capacity_gp") is not None else x.get("player_time_adjusted_profit_gp"),"profit_efficiency_score":x.get("profit_efficiency_score")})
@@ -382,7 +401,11 @@ def main():
     cfg=load_json(CFG); shadow=load_json(SHADOW); by_name,by_id=market_maps(); apply_capital_aging(packet,cfg,now); fast=fast_profit_rows(packet,cfg,shadow,now); evergreen=evergreen_profit_rows(packet,cfg,shadow); conversions=conversion_profit_rows(packet,cfg,shadow,by_name); sets=set_edges(packet,by_name); regime=market_regime(cfg,by_id); slots=slot_optimizer(packet,cfg,fast,evergreen,conversions); frontier=[]
     for rows in (fast[:8],conversions[:8],evergreen[:8]):
         for x in rows:
-            frontier.append({"engine":x.get("engine"),"item_or_strategy":x.get("name") or x.get("strategy"),"profit_efficiency_score":x.get("profit_efficiency_score"),"expected_gp_per_hour":x.get("expected_gp_per_hour"),"expected_profit_at_capacity_gp":x.get("expected_profit_at_capacity_gp") if x.get("expected_profit_at_capacity_gp") is not None else x.get("player_time_adjusted_profit_gp"),"capacity_gp":x.get("capacity_gp"),"expected_after_tax_roi_pct":x.get("expected_after_tax_roi_pct"),"player_time_hours":x.get("player_time_hours")})
+            candidate_profit=x.get("expected_profit_at_capacity_gp") if x.get("expected_profit_at_capacity_gp") is not None else x.get("player_time_adjusted_profit_gp")
+            if not isinstance(candidate_profit,(int,float)) or candidate_profit<=0: continue
+            if not isinstance(x.get("expected_gp_per_hour"),(int,float)) or x.get("expected_gp_per_hour")<=0: continue
+            if x.get("validation_flag") == "ANOMALOUS_PATIENT_MARGIN_REQUIRES_VALIDATION": continue
+            frontier.append({"engine":x.get("engine"),"item_or_strategy":x.get("name") or x.get("strategy"),"profit_efficiency_score":x.get("profit_efficiency_score"),"expected_gp_per_hour":x.get("expected_gp_per_hour"),"expected_profit_at_capacity_gp":candidate_profit,"capacity_gp":x.get("capacity_gp"),"expected_after_tax_roi_pct":x.get("expected_after_tax_roi_pct"),"player_time_hours":x.get("player_time_hours")})
     frontier.sort(key=lambda x:(x.get("profit_efficiency_score") or 0,x.get("expected_gp_per_hour") or -10**18),reverse=True)
     packet["profit_layer"]={"schema_version":1,"generated_at":datetime.fromtimestamp(now,timezone.utc).isoformat().replace("+00:00","Z"),"objective":cfg.get("objective"),"market_regime":regime,"capital_frontier":frontier[:15],"fast_flip_capacity_velocity":fast[:15],"evergreen_capacity_velocity":evergreen[:12],"conversion_capacity_velocity":conversions[:12],"hard_value_set_edges":sets[:10],"ge_slot_optimizer":slots,"shadow_learning":{"signals_total":shadow.get("signals_total",0),"graded_observations":shadow.get("graded_observations",0),"by_engine":shadow.get("by_engine") or {},"score_adjustments":shadow.get("score_adjustments") or {},"warning":shadow.get("warning")},"player_time_shadow_value_gp_per_hour":(cfg.get("player_time") or {}).get("shadow_value_gp_per_hour"),"capacity_model_note":(cfg.get("capacity_model") or {}).get("rule"),"allocation_note":"Exact GP allocation is intentionally not optimized when current liquid cash is unknown; the capital frontier ranks opportunities by expected GP velocity, capacity and execution quality."}
     save_json(PACKET,packet); save_json(PROFIT_OUT,packet["profit_layer"]); print(f"Augmented profit layer: fast={len(fast)} evergreen={len(evergreen)} conversions={len(conversions)} regime={regime.get('label')}")
