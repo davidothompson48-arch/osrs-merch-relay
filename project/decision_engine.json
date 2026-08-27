@@ -1,85 +1,82 @@
 {
-  "schema_version": 3,
-  "updated_at_utc": "2026-08-27T03:30:00Z",
-  "purpose": "Normalize trade-engine scoring and rank incremental GP across cash, existing positions, new trades, conversions, evergreen mean-reversion and rotations.",
+  "schema_version": 4,
+  "updated_at_utc": "2026-08-27T04:40:00Z",
+  "purpose": "Maximize long-run expected GP growth by ranking capital on probability-weighted GP velocity, scalable capacity, execution quality and opportunity cost rather than headline ROI.",
   "cash_is_candidate": true,
-  "engine_thresholds": {
-    "recommend": 70,
-    "very_strong": 80,
-    "exceptional": 90,
-    "watchlist_minimum": 50
-  },
+  "engine_thresholds": {"recommend":70,"very_strong":80,"exceptional":90,"watchlist_minimum":50},
   "gp_deployment_weights": {
-    "probability_weighted_after_tax_return": 20,
-    "turnover_efficiency": 15,
+    "expected_gp_velocity": 25,
+    "expected_profit_at_capacity": 15,
+    "probability_weighted_after_tax_return": 10,
     "liquidity_and_execution_probability": 15,
-    "tape_quality_and_relative_strength": 15,
-    "catalyst_or_fundamental_confidence": 10,
-    "downside_and_invalidation_quality": 10,
-    "time_to_payoff": 5,
-    "diversification_value": 5,
-    "opportunity_cost_vs_alternatives": 5
+    "capacity_and_slippage_quality": 10,
+    "player_time_efficiency": 10,
+    "tape_and_fundamental_quality": 5,
+    "downside_and_invalidation_quality": 5,
+    "diversification_value": 3,
+    "ge_slot_and_opportunity_cost": 2
   },
+  "ranking_rule": "ROI is secondary to expected GP/hour and expected profit at realistic capacity. A smaller percentage edge can outrank a larger one if it scales better, fills more reliably, consumes less player time or recycles capital faster.",
   "engine_specific_emphasis": {
-    "fast_flip": ["executable_after_tax_spread", "freshness", "fill_probability", "exit_probability", "roi_per_hour", "gp_throughput"],
-    "swing": ["multi_window_momentum", "abnormal_volume", "reversal_quality", "relative_strength", "roi_per_day", "liquidity"],
-    "catalyst": ["scenario_expected_value", "catalyst_confidence", "beneficiary_certainty", "timing", "priced_in_risk", "downside_if_wrong"],
-    "conversion_relative_value": ["hard_economic_relationship", "after_tax_margin", "input_output_liquidity", "conversion_friction", "mean_reversion_pressure"],
-    "evergreen_staple_reversion": ["persistent_consumption", "discount_to_7d_and_30d_normal", "30d_percentile", "24h_volume_and_gp_turnover", "stabilization_before_entry", "after_tax_rebound_room", "structural_supply_demand_bear_check"]
+    "fast_flip":["expected_gp_per_hour","capacity_gp","fill_probability","exit_probability","executable_after_tax_spread","gp_throughput","slot_efficiency"],
+    "swing":["expected_gp_per_day","capital_aging","multi_window_momentum","reversal_quality","relative_strength","liquidity"],
+    "catalyst":["scenario_expected_value","time_to_catalyst","capital_aging","beneficiary_certainty","priced_in_risk","downside_if_wrong"],
+    "conversion_relative_value":["hard_economic_relationship","player_time_adjusted_profit","capacity","output_liquidity","after_tax_margin","conversion_friction"],
+    "evergreen_staple_reversion":["persistent_consumption","discount_to_30d_normal","30d_percentile","stabilization","capacity","expected_gp_per_day","structural_bear_check"]
+  },
+  "capital_velocity": {
+    "primary_metric":"expected_gp_per_hour",
+    "secondary_metrics":["expected_profit_at_capacity_gp","expected_after_tax_roi_pct","capacity_gp"],
+    "rule":"Compare every new trade and existing speculative position with what the same GP could plausibly earn elsewhere over the same time window."
+  },
+  "capacity_and_slippage": {
+    "required_for_recommendations":true,
+    "rule":"Never assume a one-unit spread scales to a full GE limit. Size from observed turnover, buy limit, liquidity and conservative market participation."
+  },
+  "ge_slot_optimizer": {
+    "slots":8,
+    "rule":"Treat GE slots as scarce capital infrastructure. Prefer high slot-efficiency opportunities and do not occupy slots with weak passive orders when a materially higher-GP/hour trade exists."
+  },
+  "player_time": {
+    "charge_manual_processing":true,
+    "rule":"Report raw conversion profit and player-time-adjusted profit separately. Manual labor can make a large percentage margin inferior to a passive trade."
+  },
+  "capital_aging": {
+    "enabled":true,
+    "rule":"Expected-payoff windows are part of the original thesis. Positions that overstay without improved evidence receive an opportunity-cost penalty; hold-for-use gear is exempt."
+  },
+  "shadow_learning": {
+    "enabled":true,
+    "checkpoints_hours":[1,4,24,72,168],
+    "minimum_samples_before_score_changes":20,
+    "rule":"Record qualified signals even when not traded, then grade their subsequent behavior. Do not overfit small samples; confirmed user executions remain stronger evidence."
+  },
+  "market_regime": {
+    "enabled":true,
+    "labels":["BROAD_RISK_ON","MIXED","BROAD_RISK_OFF","HIGH_DISPERSION"],
+    "rule":"Use liquid-universe breadth to alter selectivity: risk-off increases cash value and demands stronger rebound evidence; risk-on increases the value of momentum only when execution remains healthy."
   },
   "evergreen_staple_reversion": {
-    "goal": "Find liquid items with durable recurring consumption that are temporarily depressed versus their own recent trading range, especially where demand remains healthy and the selloff begins to stabilize.",
-    "data_file": "staples_watch.json",
-    "universe_file": "project/evergreen_staples.json",
-    "preferred_setup": {
-      "discount_to_30d_median_pct": -5.0,
-      "30d_percentile_max": 35,
-      "minimum_24h_gp_traded": 10000000,
-      "fresh_prints_required": true,
-      "stabilization_required_for_buy": true
-    },
-    "setup_labels": ["BUY_ZONE_CANDIDATE", "WATCH_REVERSAL", "FALLING_KNIFE", "NOT_OVERSOLD"],
-    "entry_principle": "Do not buy merely because a staple is down. Prefer a meaningful discount plus healthy persistent turnover plus stabilization/absorption. Falling knives remain watches until order flow or short-window price action improves.",
-    "structural_bear_check": "Before recommending any mean-reversion buy, search for permanent supply increases, drop-table changes, substitutes, activity/bot changes, training-method shifts, balance changes or new content that could make the old price range irrelevant.",
-    "typical_target": "Mean reversion toward the 7d/30d median or another clearly supported resistance zone, with after-tax ROI and time stop calculated from live tape.",
-    "portfolio_role": "Prefer these trades when they diversify away from concentrated catalyst exposure and can recycle GP faster than long-duration speculation."
+    "goal":"Find liquid, durably consumed items temporarily depressed versus their own recent range.",
+    "data_file":"staples_watch.json","universe_file":"project/evergreen_staples.json",
+    "preferred_setup":{"discount_to_30d_median_pct":-5.0,"30d_percentile_max":35,"minimum_24h_gp_traded":10000000,"fresh_prints_required":true,"stabilization_required_for_buy":true},
+    "setup_labels":["BUY_ZONE_CANDIDATE","WATCH_REVERSAL","FALLING_KNIFE","NOT_OVERSOLD"],
+    "structural_bear_check":"Reject mean reversion when permanent supply, substitutes, balance changes, bot/activity changes or demand destruction make the old range obsolete."
   },
   "risk_budget": {
-    "theme_concentration_soft_warning_pct_known_merch_basis": 35,
-    "single_speculative_item_soft_warning_pct_known_merch_basis": 20,
-    "thin_item_sizing_policy": "Apply a substantial sizing penalty; nominal ROI never overrides exit difficulty.",
-    "unknown_cash_policy": "Do not infer total bank or cash. Score incremental deployment using confirmed holdings/bases and known available cash only.",
-    "hold_for_use_policy": "Separate hold-for-use gear from deployable trading capital when calculating merch concentration.",
-    "averaging_down_policy": "Never add merely because the current price is below basis. Require improved expected value, tape or catalyst evidence."
-  },
-  "relative_strength": {
-    "classifications": ["OUTPERFORMING", "INLINE", "UNDERPERFORMING"],
-    "rule": "Compare item returns and volume behavior against a relevant peer basket over matching windows before attributing movement to an item-specific thesis."
+    "theme_concentration_soft_warning_pct_known_merch_basis":35,
+    "single_speculative_item_soft_warning_pct_known_merch_basis":20,
+    "thin_item_sizing_policy":"Apply a substantial capacity penalty; nominal ROI never overrides exit difficulty.",
+    "unknown_cash_policy":"Do not infer cash. Build a ranked capacity frontier until liquid GP is explicitly known.",
+    "hold_for_use_policy":"Separate hold-for-use gear from deployable trading capital.",
+    "averaging_down_policy":"Never add merely because price is below basis."
   },
   "pre_catalyst_radar": {
-    "minimum_independent_signals": 2,
-    "example_thresholds": {
-      "volume_multiple_vs_trailing_baseline": 2.5,
-      "persistent_high_side_share_pct": 65,
-      "stealth_price_move_ceiling_pct": 2.0
-    },
-    "labels": ["RADAR-LOW", "RADAR-MEDIUM", "RADAR-HIGH"],
-    "exclusions": ["stale prints", "tiny absolute volume", "obvious sector-wide move", "normal periodic behavior", "update-day noise with no item-specific edge"]
+    "minimum_independent_signals":2,
+    "example_thresholds":{"volume_multiple_vs_trailing_baseline":2.5,"persistent_high_side_share_pct":65,"stealth_price_move_ceiling_pct":2.0},
+    "labels":["RADAR-LOW","RADAR-MEDIUM","RADAR-HIGH"],
+    "exclusions":["stale prints","tiny absolute volume","obvious sector-wide move","normal periodic behavior","update-day noise with no item-specific edge"]
   },
-  "rotation_policy": {
-    "require_material_advantage_after_tax": true,
-    "compare": ["expected_return", "hold_time", "liquidity", "correlation", "execution_friction", "tax_churn"]
-  },
-  "output_policy": {
-    "delta_first": true,
-    "always_rank_cash": true,
-    "top_deployment_candidates": 5,
-    "max_fast_flips": 3,
-    "max_swings": 3,
-    "max_staple_rebounds": 5,
-    "max_catalyst_trades": 3,
-    "max_conversions": 3,
-    "max_radar_alerts": 5,
-    "repeat_unchanged_thesis_prose": false
-  }
+  "rotation_policy": {"require_material_advantage_after_tax":true,"compare":["expected_gp_velocity","expected_profit_at_capacity","hold_time","liquidity","correlation","execution_friction","tax_churn","capital_age"]},
+  "output_policy": {"delta_first":true,"always_rank_cash":true,"top_deployment_candidates":5,"max_fast_flips":3,"max_swings":3,"max_staple_rebounds":5,"max_catalyst_trades":3,"max_conversions":3,"max_radar_alerts":5,"repeat_unchanged_thesis_prose":false}
 }
