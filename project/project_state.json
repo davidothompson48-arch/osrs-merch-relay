@@ -1,8 +1,9 @@
 {
-  "schema_version": 1,
-  "updated_at_utc": "2026-08-20T03:40:00Z",
+  "schema_version": 2,
+  "updated_at_utc": "2026-08-27T01:00:00Z",
   "project": "OSRS Merch Desk",
-  "goal": "Find the best risk-adjusted use of GP using RuneLite/Wiki market data plus catalyst and community intelligence without forcing trades.",
+  "goal": "Rank the best risk-adjusted use of incremental GP across cash, existing holdings, flips, swings, catalysts, conversions and rotations using RuneLite/Wiki market data plus catalyst/community intelligence without forcing trades.",
+  "architecture": "decision_engine_v2",
   "repo": "davidothompson48-arch/osrs-merch-relay",
   "master_prompt_fingerprint": {
     "source_name": "Pasted text.txt",
@@ -10,7 +11,7 @@
     "bytes": 20347,
     "lines": 1119,
     "normalized_persistent_copy": "project/OPERATING_SPEC.md",
-    "note": "OPERATING_SPEC.md preserves the operational requirements in normalized form; this fingerprint identifies the exact user-supplied master prompt version used to build it."
+    "note": "OPERATING_SPEC.md has since been upgraded to Decision Engine v2 while preserving the original market-source and portfolio-safety constraints."
   },
   "live_files": {
     "core_snapshot": "snapshot.json",
@@ -26,6 +27,10 @@
     "trade_journal": "project/trade_journal.csv",
     "scanner_feedback": "project/scanner_feedback.json",
     "theses": "project/thesis_watchlist.json",
+    "probability_models": "project/probability_models.json",
+    "catalyst_database": "project/catalyst_database.json",
+    "decision_engine": "project/decision_engine.json",
+    "runtime_state": "project/desk_runtime_state.json",
     "verified_catalysts": "project/catalysts_verified.md",
     "news_baseline": "project/news_baseline.json",
     "related_universe": "project/related_items.json",
@@ -49,15 +54,37 @@
     "reads_persistent_project_memory": true,
     "reads_related_watch": true,
     "reads_recent_history": true,
-    "can_use_full_market_universe_for_arbitrary_item_followup": true
+    "uses_full_market_discovery_engine": true,
+    "uses_pre_catalyst_radar": true,
+    "uses_probability_models": true,
+    "uses_gp_deployment_board": true,
+    "uses_portfolio_risk_budget": true,
+    "uses_delta_first_output": true,
+    "runtime_state_writeback_when_available": true
   },
+  "decision_engines": [
+    "fast_flip",
+    "swing",
+    "catalyst_speculation",
+    "conversion_relative_value"
+  ],
   "report_requirements": {
     "include_profit_and_loss_statement_every_full_desk_run": true,
     "pnl_basis": "Use only confirmed holdings and cost bases; calculate gross mark-to-market and approximate after-tax realizable P/L from fresh Wiki/RuneLite-origin prices. Do not count unfilled offers as owned or sold. Flag asynchronous/crossed prints instead of pretending they are executable.",
-    "placement": "Place P&L after the Portfolio/Portfolio Changes area unless another nearby location is clearer."
+    "placement": "Place P&L after the compact Portfolio table.",
+    "delta_first": true,
+    "rank_cash_against_trades": true,
+    "cover_every_active_holding_in_table": true,
+    "repeat_unchanged_thesis_prose": false
   },
   "known_successful_scanner_feedback": [
-    {"item": "Smoke rune", "buy_gp": 65, "sell_gp": 71, "quantity": null, "status": "confirmed round trip"}
+    {
+      "item": "Smoke rune",
+      "buy_gp": 65,
+      "sell_gp": 71,
+      "quantity": null,
+      "status": "confirmed round trip"
+    }
   ],
   "data_quality_rules": [
     "Newest explicit user portfolio statement overrides older portfolio snapshots.",
@@ -66,7 +93,10 @@
     "Official proposal language is not the same as poll passage or implementation.",
     "Community speculation is never promoted to fact without official corroboration.",
     "Unknown portfolio fields belong in data_gap_register.json rather than being guessed.",
-    "Known news belongs in news_baseline.json so old catalysts are not relabeled NEW.",
-    "Only user-confirmed executions may be treated as empirical scanner outcomes."
+    "Known news belongs in catalyst/news baseline state so old catalysts are not relabeled NEW.",
+    "Only user-confirmed executions may be treated as empirical scanner outcomes.",
+    "Cash is always a valid GP Deployment Board candidate.",
+    "A trade can score well individually and still be rejected after correlation/concentration penalties.",
+    "Pre-Catalyst Radar is an anomaly detector, not evidence of leaked information."
   ]
 }
