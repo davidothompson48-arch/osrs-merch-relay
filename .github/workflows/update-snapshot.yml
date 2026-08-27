@@ -12,6 +12,7 @@ on:
       - 'collect_universe.py'
       - 'build_desk_packet.py'
       - 'augment_desk_packet.py'
+      - 'build_desk_lite.py'
       - 'archive_snapshot.py'
       - 'project/related_items.json'
       - 'project/evergreen_staples.json'
@@ -104,11 +105,14 @@ jobs:
             if ! python augment_desk_packet.py; then
               echo "Desk packet catalyst augmentation failed"
             fi
+            if ! python build_desk_lite.py; then
+              echo "Lite desk packet build failed"
+            fi
           }
 
-          # Keep a watchdog alive for ~5.5 hours. Each cycle publishes a fast
-          # one-file desk packet first; slower monthly/universe research updates
-          # afterward without blocking access to fresh core tape.
+          # Keep a watchdog alive for ~5.5 hours. Each cycle publishes an
+          # ultra-compact routine packet first; deeper monthly/universe research
+          # updates afterward without blocking fresh execution data.
           for cycle in $(seq 1 66); do
             cycle_started=$(date +%s)
             echo "=== Relay cycle $cycle started $(date -u +%FT%TZ) ==="
@@ -123,14 +127,10 @@ jobs:
               echo "Related-sector collection failed this cycle; retaining prior file"
             fi
 
-            # FAST PATH: fresh core/sector data + cached deep research. ChatGPT
-            # normally reads only desk_packet.json for a full desk run.
             build_packet || true
             commit_and_push "Update fast OSRS desk packet" \
-              snapshot.json relay_health.json related_watch.json desk_packet.json || true
+              snapshot.json relay_health.json related_watch.json desk_packet.json desk_packet_lite.json || true
 
-            # Slow history is hourly and internally parallelized. Current prints
-            # remain five-minute fresh through the packet above.
             if [ "$cycle" -eq 1 ] || [ $((cycle % 12)) -eq 0 ]; then
               if ! retry 2 python collect_staples.py; then
                 echo "Evergreen-staple collection failed; retaining prior file"
@@ -140,8 +140,6 @@ jobs:
               fi
             fi
 
-            # Full universe refreshes every ~15 minutes. Snapshot already performs
-            # a five-minute full-market screen; shards are deeper validation/fallback.
             if [ "$cycle" -eq 1 ] || [ $((cycle % 3)) -eq 0 ]; then
               if ! retry 3 python collect_universe.py; then
                 echo "Full-universe collection failed; retaining prior shards"
@@ -154,7 +152,7 @@ jobs:
 
             build_packet || true
             commit_and_push "Update OSRS research packet and history" \
-              staples_watch.json portfolio_history.json market_universe/ desk_packet.json \
+              staples_watch.json portfolio_history.json market_universe/ desk_packet.json desk_packet_lite.json \
               history/market_history.jsonl history/recent_history.json || true
 
             cycle_finished=$(date +%s)
