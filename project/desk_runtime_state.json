@@ -1,13 +1,52 @@
 {
   "schema_version": 1,
-  "updated_at_utc": "2026-08-27T01:00:00Z",
-  "last_successful_run_utc": null,
-  "top_deployment_board": [],
-  "portfolio_ratings": {},
-  "risk_buckets_pct_known_merch_basis": {},
-  "active_trade_recommendations": [],
-  "pre_catalyst_radar": [],
+  "updated_at_utc": "2026-08-27T02:05:00Z",
+  "last_successful_run_utc": "2026-08-27T02:05:00Z",
+  "top_deployment_board": [
+    {"rank":1,"action":"Convert Diamond to Diamond bolt tips in controlled batches","deployment_score":90,"expected_net_roi_range_pct":"23-29% at observed prices before processing-time opportunity cost","hold":"processing plus roughly 1-4h staged exit","capital":"use existing Diamonds first; fresh 3k batch roughly 5.0m","main_risk":"tip price slippage from adding supply / processing-time opportunity cost"},
+    {"rank":2,"action":"Divine super combat potion(4) -> decant to (1) relative-value trade","deployment_score":86,"expected_net_roi_range_pct":"about 4.4-4.8% at observed prices before negligible vial cost","hold":"roughly 1-4h staged exit","capital":"about 9.3m for 500 four-dose potions","main_risk":"one-dose exit price and observed high-side demand can decay"},
+    {"rank":3,"action":"Cash / patient limit orders","deployment_score":79,"expected_net_roi_range_pct":"0% nominal; preserves optionality","hold":"until verified dislocation/catalyst","capital":"remaining liquid GP","main_risk":"opportunity cost if speculative markets continue higher"},
+    {"rank":4,"action":"Wrath rune only on retracement","deployment_score":72,"expected_net_roi_range_pct":"catalyst-dependent","hold":"days-weeks","capital":"small add only near 335-340 if tape remains supportive","main_risk":"Breaker rune remains unspecified and portfolio already has material correlated exposure"}
+  ],
+  "portfolio_ratings": {
+    "Wrath rune":"HOLD",
+    "Diamond":"HOLD/CONVERT PARTIAL",
+    "Arcane prayer scroll":"WATCH/TRIM STRENGTH",
+    "Dexterous prayer scroll":"WATCH/NO ADD",
+    "Elder maul":"STRONG HOLD FOR USE",
+    "Inquisitor's great helm":"HOLD FOR USE/NO ADD",
+    "Nightmare staff":"STRONG HOLD",
+    "Staff of the Dead":"HOLD",
+    "Toxic staff (uncharged)":"HOLD",
+    "Burnt page":"HOLD/CONVERSION OPTIONALITY",
+    "Searing page":"HOLD",
+    "Tome of Fire (empty)":"HOLD",
+    "Tome of Earth (empty)":"HOLD",
+    "Tome of Water (empty)":"HOLD",
+    "Amulet of magic":"HOLD/NO ADD",
+    "Torva platelegs":"HOLD FOR USE",
+    "Bandos tassets":"HOLD FOR USE"
+  },
+  "risk_buckets_pct_known_merch_basis": {
+    "CoX_prayer_scrolls":50.9,
+    "elemental_magic":23.6,
+    "rune_sink":16.6,
+    "ranged_ascension_diamonds":8.9,
+    "note":"Buckets overlap conceptually; percentages shown here use approximately 534.5m known merch/speculative basis excluding Elder maul, Inquisitor helm and Torva legs treated as hold-for-use gear."
+  },
+  "active_trade_recommendations": [
+    {"item":"Diamond","action":"convert to Diamond bolt tips","test_batch":3000,"entry":"use existing stack first; for fresh GP do not pay above current actively traded acquisition zone without recalculation","exit":"stage tip sales around current tape; recalc if tip sell price drops materially","invalidation":"after-tax conversion margin below 12% or tip liquidity deteriorates materially"},
+    {"item":"Divine super combat potion(4)","action":"buy and decant to Divine super combat potion(1)","test_batch":500,"entry":"patient around observed low; avoid chasing above roughly 18.75k without recalculation","exit":"stage one-dose output near observed high","invalidation":"net decant margin below 3% or one-dose high-side demand collapses"}
+  ],
+  "pre_catalyst_radar": [
+    {"item":"Divine super combat potion(1)","level":"RADAR-MEDIUM","signals":["extreme one-hour HIGH-side flow","one-hour price elevated only modestly versus 24h while turnover accelerated"],"warning":"Dose-decant economics can create structural flow; do not interpret as leaked information."}
+  ],
   "latest_material_catalyst_ids": [],
-  "material_change_flags": [],
-  "notes": "Seed state. Hourly desk should replace these compact fields after successful runs when GitHub write access is available. Do not store long prose reports here."
+  "material_change_flags": [
+    "Toxic staff (uncharged) 9.0m buy filled and added to portfolio",
+    "Fresh relay restored after workflow rerun",
+    "Diamond-to-bolt-tip processing is the highest-ranked hard-value opportunity",
+    "Divine super combat dose decanting emerged as a new relative-value opportunity"
+  ],
+  "notes":"Prices are not authoritative in this state file; all execution levels must be refreshed from prices.runescape.wiki/RuneLite on every run."
 }
