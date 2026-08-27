@@ -1,6 +1,6 @@
 {
-  "schema_version": 1,
-  "updated_at_utc": "2026-08-19T02:45:00Z",
+  "schema_version": 2,
+  "updated_at_utc": "2026-08-27T04:31:00Z",
   "rule": "These are static recipe/set relationships only. All input/output market values and ROI must be recalculated from fresh prices.runescape.wiki data on every run.",
   "conversions": [
     {
@@ -12,8 +12,9 @@
       "requirements": "65 Fletching and a chisel",
       "xp_per_input": 7,
       "process_time_seconds_approx": 3,
+      "player_time_attention": "LOW",
       "source": "https://oldschool.runescape.wiki/w/Diamond_bolt_tips",
-      "notes": "Diamond bolt tips item ID 9192; Wiki static page lists GE buy limit 11,000. Current price/volume from the static page must not be used by the desk."
+      "notes": "Diamond bolt tips item ID 9192; current prices/volume must come only from fresh Wiki/RuneLite data."
     },
     {
       "type": "processing",
@@ -22,6 +23,8 @@
       "output": "Onyx bolt tips",
       "output_quantity": 24,
       "requirements": "73 Fletching and a chisel",
+      "process_time_seconds_approx": 3,
+      "player_time_attention": "LOW",
       "source": "https://oldschool.runescape.wiki/w/Cutting_onyx",
       "notes": "Use only fresh Wiki/RuneLite API market prices when evaluating this conversion."
     },
@@ -33,6 +36,7 @@
       ],
       "output": "Searing page",
       "output_quantity": 1,
+      "player_time_attention": "MEDIUM",
       "source": "https://oldschool.runescape.wiki/w/Searing_page",
       "notes": "Each Searing page adds 20 Tome of fire charges. Current conversion value must always be recalculated from fresh Wiki/RuneLite prices."
     },
@@ -43,8 +47,80 @@
       "output": "Burnt page",
       "output_quantity": 250,
       "npc": "Ignisia",
+      "player_time_attention": "NEGLIGIBLE",
       "source": "https://oldschool.runescape.wiki/w/Tome_of_fire",
-      "notes": "One-way exchange from Tome to Burnt pages; this creates a reserve-supply/arbitrage relationship but Burnt pages cannot be exchanged back into a Tome."
+      "notes": "One-way exchange from Tome to Burnt pages; Burnt pages cannot be exchanged back into a Tome."
+    },
+    {
+      "type": "dose_decant",
+      "input": "Divine super combat potion(4)",
+      "input_quantity": 1,
+      "output": "Divine super combat potion(1)",
+      "output_quantity": 4,
+      "reversible": true,
+      "player_time_attention": "NEGLIGIBLE",
+      "source": "https://oldschool.runescape.wiki/w/Decanting",
+      "notes": "Dose-equivalent decanting relationship. Extra vial/friction is normally tiny but should be checked before scaling."
+    },
+    {
+      "type": "dose_decant",
+      "input": "Prayer potion(4)",
+      "input_quantity": 1,
+      "output": "Prayer potion(1)",
+      "output_quantity": 4,
+      "reversible": true,
+      "player_time_attention": "NEGLIGIBLE",
+      "source": "https://oldschool.runescape.wiki/w/Decanting"
+    },
+    {
+      "type": "dose_decant",
+      "input": "Super restore(4)",
+      "input_quantity": 1,
+      "output": "Super restore(1)",
+      "output_quantity": 4,
+      "reversible": true,
+      "player_time_attention": "NEGLIGIBLE",
+      "source": "https://oldschool.runescape.wiki/w/Decanting"
+    },
+    {
+      "type": "dose_decant",
+      "input": "Saradomin brew(4)",
+      "input_quantity": 1,
+      "output": "Saradomin brew(1)",
+      "output_quantity": 4,
+      "reversible": true,
+      "player_time_attention": "NEGLIGIBLE",
+      "source": "https://oldschool.runescape.wiki/w/Decanting"
+    },
+    {
+      "type": "dose_decant",
+      "input": "Ranging potion(4)",
+      "input_quantity": 1,
+      "output": "Ranging potion(1)",
+      "output_quantity": 4,
+      "reversible": true,
+      "player_time_attention": "NEGLIGIBLE",
+      "source": "https://oldschool.runescape.wiki/w/Decanting"
+    },
+    {
+      "type": "dose_decant",
+      "input": "Super combat potion(4)",
+      "input_quantity": 1,
+      "output": "Super combat potion(1)",
+      "output_quantity": 4,
+      "reversible": true,
+      "player_time_attention": "NEGLIGIBLE",
+      "source": "https://oldschool.runescape.wiki/w/Decanting"
+    },
+    {
+      "type": "dose_decant",
+      "input": "Stamina potion(4)",
+      "input_quantity": 1,
+      "output": "Stamina potion(1)",
+      "output_quantity": 4,
+      "reversible": true,
+      "player_time_attention": "NEGLIGIBLE",
+      "source": "https://oldschool.runescape.wiki/w/Decanting"
     }
   ],
   "sets": [
@@ -52,6 +128,7 @@
       "set": "Inquisitor's armour set",
       "item_id": 24488,
       "components": ["Inquisitor's great helm", "Inquisitor's hauberk", "Inquisitor's plateskirt"],
+      "reversible": true,
       "source": "https://oldschool.runescape.wiki/w/Exchange:Inquisitor%27s_armour_set",
       "notes": "Set does not include the Inquisitor's mace. Evaluate set-to-pieces and pieces-to-set pricing from fresh Wiki/RuneLite tape only."
     }
