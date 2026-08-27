@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at_utc": "2026-08-27T05:04:00Z",
+  "updated_at_utc": "2026-08-27T05:59:55Z",
   "purpose": "Structured register of material OSRS market catalysts so hourly runs distinguish genuinely new evidence from recycled information.",
   "status_values": [
     "NEW",
@@ -114,6 +114,93 @@
       "summary": "All six proposed Fractured Archive rewards passed: Elemental Fragments 85.8%, Rondache 80.7%, Zorya's Tome 90.4%, Zeal 86.1%, Ascension Crossbows 85.6%, Breaker 88.4%. The Obligator won the Breaker visual poll.",
       "market_pricing_assessment": "Existence risk for the proposed reward set is sharply reduced. Legacy elemental and Crush beneficiaries gain catalyst credibility, but exact encounter utility is still unconfirmed. Breaker's specific charge rune remains unknown, so Wrath-specific conviction should not be upgraded on beneficiary selection alone.",
       "what_changed_since_prior": "Previously the repository treated individual reward passage as unverified. The official result page now verifies passage of every proposed reward."
+    },
+    {
+      "id": "jewellers_chisel_bolt_tip_supply_aug19",
+      "first_seen": "2026-08-27",
+      "latest_evidence_date": "2026-08-19",
+      "source_attribution": "Jagex Summer Sweep Up - Hunter & Skilling, 19 Aug 2026, https://secure.runescape.com/m=news/summer-sweep-up---hunter--skilling?oldschool=1",
+      "evidence_class": "CONFIRMED implemented processing change",
+      "affected_theses": [
+        "ascension_bolt_legacy_tip_speculation",
+        "diamond_bolt_tip_processing"
+      ],
+      "affected_items": [
+        "Diamond",
+        "Uncut diamond",
+        "Diamond bolt tips",
+        "Onyx",
+        "Onyx bolt tips",
+        "Jeweller's Chisel"
+      ],
+      "credibility": "CONFIRMED",
+      "status": "NEW",
+      "confidence_0_100": 100,
+      "impact": "Moderate-High",
+      "direction": "Bearish bolt-tip scarcity / supportive gem processing demand when margins exist",
+      "summary": "The Jeweller's Chisel now cuts bolt tips from gems in 2 ticks instead of 5 and has a 1-in-10 chance to cut 2 gems into bolt tips at once. A hotfix temporarily slows only the first gem in a multi-gem sequence; subsequent gems retain the improved 2-tick rate.",
+      "market_pricing_assessment": "Legacy bolt-tip supply can now respond much faster to profitable conversion margins. This weakens any scarcity-based bull thesis for Diamond/Onyx bolt tips and makes tip-output price compression more likely during arbitrage, while potentially increasing demand for source gems when conversion economics are attractive.",
+      "what_changed_since_prior": "The stored baseline did not include the implemented Aug 19 processing-speed and bonus-throughput change."
+    },
+    {
+      "id": "abyssal_lantern_outside_gotr_rune_supply_aug19",
+      "first_seen": "2026-08-27",
+      "latest_evidence_date": "2026-08-19",
+      "source_attribution": "Jagex Summer Sweep Up - Hunter & Skilling, 19 Aug 2026, https://secure.runescape.com/m=news/summer-sweep-up---hunter--skilling?oldschool=1",
+      "evidence_class": "CONFIRMED implemented Runecrafting system change",
+      "affected_theses": [
+        "breaker_charge_rune",
+        "high_level_rune_supply"
+      ],
+      "affected_items": [
+        "Wrath rune",
+        "Nature rune",
+        "Soul rune",
+        "Blood rune",
+        "Death rune",
+        "Chaos rune",
+        "Abyssal lantern"
+      ],
+      "credibility": "CONFIRMED",
+      "status": "NEW",
+      "confidence_0_100": 95,
+      "impact": "Moderate",
+      "direction": "Bearish supply-side offset for craftable runes",
+      "summary": "The Abyssal Lantern now functions outside Guardians of the Rift when burning logs with applicable effects. Jagex explicitly states rune-boosting effects such as Blisterwood apply to base runes crafted outside GOTR, not extra runes from Scar Essence extracts or Blood essence.",
+      "market_pricing_assessment": "This creates an incremental production-efficiency increase for altar-crafted base runes and therefore slightly reduces the scarcity ceiling for any existing rune selected as Breaker's charge rune. The specific Breaker rune probability is unchanged; the development affects expected supply response, not beneficiary selection.",
+      "what_changed_since_prior": "The stored rune thesis did not account for the Aug 19 expansion of Abyssal Lantern rune-boosting effects outside GOTR."
+    },
+    {
+      "id": "sailing_courier_loot_sacks_supply_aug26",
+      "first_seen": "2026-08-27",
+      "latest_evidence_date": "2026-08-26",
+      "source_attribution": "Jagex Mad Angel Combat Achievements / Sailing changes, 26 Aug 2026, https://secure.runescape.com/m=news/mad-angel-combat-achievements?oldschool=1",
+      "evidence_class": "CONFIRMED implemented repeatable loot-source change",
+      "affected_theses": [
+        "diamond_supply",
+        "evergreen_consumable_supply",
+        "bone_supply"
+      ],
+      "affected_items": [
+        "Uncut diamond",
+        "Diamond",
+        "Bones",
+        "Astral rune",
+        "Zulrah's scales",
+        "Crystal shard",
+        "Cannonballs",
+        "Bars",
+        "Ores",
+        "Planks"
+      ],
+      "credibility": "CONFIRMED",
+      "status": "NEW",
+      "confidence_0_100": 100,
+      "impact": "Moderate",
+      "direction": "Bearish incremental supply for listed commodities",
+      "summary": "Courier Tasks now award stackable Loot Sacks. Each sack has a 1-in-5 chance to contain a supply bundle; Cairn Isle thematic bundles explicitly include uncut gems up to diamonds, while Entrana bundles include various bones with higher-level bones from higher-tier sacks. Other ports add runes, scales, shards, ores, bars, planks and consumables.",
+      "market_pricing_assessment": "This is a new repeatable commodity source. Diamond supply receives a direct incremental headwind through uncut-diamond drops. Broad bone supply also increases, but Jagex did not enumerate the exact higher-level bone types in this post, so a Dragon-bones-specific impact should remain unconfirmed until the drop table is established.",
+      "what_changed_since_prior": "The stored baseline predates the Aug 26 Courier Loot Sack implementation and did not include this supply source."
     }
   ],
   "record_rules": {
