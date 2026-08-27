@@ -11,6 +11,7 @@ CFG = "project/profit_engine.json"
 LIFECYCLE = "project/position_lifecycle.json"
 SHADOW = "shadow_book_summary.json"
 CONVERSIONS = "project/known_conversions.json"
+PROFIT_OUT = "profit_snapshot.json"
 
 
 def load_json(path, default=None):
@@ -240,6 +241,10 @@ def conversion_profit_rows(packet, cfg, shadow, by_name):
         immediate_roi = immediate.get("roi_pct")
         if not isinstance(patient_roi, (int, float)) and not isinstance(immediate_roi, (int, float)):
             continue
+        freshness = x.get("freshness") or []
+        if any(q in ("STALE", "INCOMPLETE") for q in freshness):
+            continue
+        staleish = any(q == "STALEISH" for q in freshness)
         output = x.get("output")
         output_qty = int(x.get("output_quantity") or 1)
         out_row = by_name.get(output) or {}
@@ -261,10 +266,23 @@ def conversion_profit_rows(packet, cfg, shadow, by_name):
         if input_caps:
             capacity_units = min(capacity_units, max(1, min(input_caps)))
         capacity_units = max(1, capacity_units)
+        validation_flag = None
         if isinstance(immediate_roi, (int, float)) and immediate_roi > 0:
             mode = "IMMEDIATE"; profit_per = immediate.get("profit_gp") or 0; input_cost_per = immediate.get("input_cost") or 0; execution = 0.86
         else:
             mode = "PATIENT"; profit_per = patient.get("profit_gp") or 0; input_cost_per = patient.get("input_cost") or 0; execution = 0.58
+        if staleish:
+            execution *= 0.45
+            validation_flag = "STALEISH_PRINT_HAIRCUT"
+        out_hour = out_row.get("1h") or {}
+        out_vol1h = int(out_hour.get("highPriceVolume") or 0) + int(out_hour.get("lowPriceVolume") or 0)
+        if out_vol1h < max(10, output_qty * 2):
+            execution *= 0.50
+            validation_flag = validation_flag or "THIN_OUTPUT_HAIRCUT"
+        if mode == "PATIENT" and isinstance(patient_roi, (int, float)) and patient_roi > 25:
+            execution *= 0.35
+            validation_flag = "ANOMALOUS_PATIENT_MARGIN_REQUIRES_VALIDATION"
+        execution = clamp(execution, 0.05, 0.90)
         raw_profit = float(profit_per) * capacity_units
         capacity_gp = float(input_cost_per) * capacity_units
         process_seconds = meta.get("process_time_seconds_approx")
@@ -279,7 +297,7 @@ def conversion_profit_rows(packet, cfg, shadow, by_name):
         adjusted_roi = adjusted / capacity_gp * 100 if capacity_gp else None
         learn = learning_adjustment(shadow, "conversion")
         score = profit_score(max(0,gph), max(0,adjusted_roi or 0), capacity_gp, execution, 1-attention_factor, learn)
-        rows.append({"engine":"conversion","strategy":key,"type":x.get("type"),"output":output,"ranking_mode":mode,"patient_roi_pct":patient_roi,"immediate_roi_pct":immediate_roi,"modeled_capacity_conversion_units":capacity_units,"capacity_gp":int(capacity_gp),"raw_profit_at_capacity_gp":int(raw_profit),"execution_probability_heuristic":execution,"expected_profit_before_player_time_gp":int(expected_raw),"player_time_attention":attention,"player_time_hours":round(active_hours,3),"player_time_shadow_cost_gp":int(player_cost),"player_time_adjusted_profit_gp":int(adjusted),"expected_after_tax_roi_pct":round(adjusted_roi,3) if adjusted_roi is not None else None,"expected_hold_hours":round(elapsed,3),"expected_gp_per_hour":int(gph),"slot_efficiency_gp_per_hour":int(gph),"learning_adjustment_points":learn,"profit_efficiency_score":score,"mechanics_source":x.get("mechanics_source")})
+        rows.append({"engine":"conversion","strategy":key,"type":x.get("type"),"output":output,"ranking_mode":mode,"patient_roi_pct":patient_roi,"immediate_roi_pct":immediate_roi,"freshness":freshness,"output_one_hour_volume":out_vol1h,"validation_flag":validation_flag,"modeled_capacity_conversion_units":capacity_units,"capacity_gp":int(capacity_gp),"raw_profit_at_capacity_gp":int(raw_profit),"execution_probability_heuristic":execution,"expected_profit_before_player_time_gp":int(expected_raw),"player_time_attention":attention,"player_time_hours":round(active_hours,3),"player_time_shadow_cost_gp":int(player_cost),"player_time_adjusted_profit_gp":int(adjusted),"expected_after_tax_roi_pct":round(adjusted_roi,3) if adjusted_roi is not None else None,"expected_hold_hours":round(elapsed,3),"expected_gp_per_hour":int(gph),"slot_efficiency_gp_per_hour":int(gph),"learning_adjustment_points":learn,"profit_efficiency_score":score,"mechanics_source":x.get("mechanics_source")})
     rows.sort(key=lambda r:(r["profit_efficiency_score"],r["expected_gp_per_hour"]),reverse=True)
     return rows
 
@@ -367,7 +385,7 @@ def main():
             frontier.append({"engine":x.get("engine"),"item_or_strategy":x.get("name") or x.get("strategy"),"profit_efficiency_score":x.get("profit_efficiency_score"),"expected_gp_per_hour":x.get("expected_gp_per_hour"),"expected_profit_at_capacity_gp":x.get("expected_profit_at_capacity_gp") if x.get("expected_profit_at_capacity_gp") is not None else x.get("player_time_adjusted_profit_gp"),"capacity_gp":x.get("capacity_gp"),"expected_after_tax_roi_pct":x.get("expected_after_tax_roi_pct"),"player_time_hours":x.get("player_time_hours")})
     frontier.sort(key=lambda x:(x.get("profit_efficiency_score") or 0,x.get("expected_gp_per_hour") or -10**18),reverse=True)
     packet["profit_layer"]={"schema_version":1,"generated_at":datetime.fromtimestamp(now,timezone.utc).isoformat().replace("+00:00","Z"),"objective":cfg.get("objective"),"market_regime":regime,"capital_frontier":frontier[:15],"fast_flip_capacity_velocity":fast[:15],"evergreen_capacity_velocity":evergreen[:12],"conversion_capacity_velocity":conversions[:12],"hard_value_set_edges":sets[:10],"ge_slot_optimizer":slots,"shadow_learning":{"signals_total":shadow.get("signals_total",0),"graded_observations":shadow.get("graded_observations",0),"by_engine":shadow.get("by_engine") or {},"score_adjustments":shadow.get("score_adjustments") or {},"warning":shadow.get("warning")},"player_time_shadow_value_gp_per_hour":(cfg.get("player_time") or {}).get("shadow_value_gp_per_hour"),"capacity_model_note":(cfg.get("capacity_model") or {}).get("rule"),"allocation_note":"Exact GP allocation is intentionally not optimized when current liquid cash is unknown; the capital frontier ranks opportunities by expected GP velocity, capacity and execution quality."}
-    save_json(PACKET,packet); print(f"Augmented profit layer: fast={len(fast)} evergreen={len(evergreen)} conversions={len(conversions)} regime={regime.get('label')}")
+    save_json(PACKET,packet); save_json(PROFIT_OUT,packet["profit_layer"]); print(f"Augmented profit layer: fast={len(fast)} evergreen={len(evergreen)} conversions={len(conversions)} regime={regime.get('label')}")
 
 
 if __name__=="__main__":
