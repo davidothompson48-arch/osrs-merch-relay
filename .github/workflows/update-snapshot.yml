@@ -64,116 +64,50 @@ jobs:
         shell: bash
         run: |
           set -u
-
           retry() {
-            local attempts="$1"
-            shift
-            local n=1
+            local attempts="$1"; shift; local n=1
             while ! "$@"; do
-              if [ "$n" -ge "$attempts" ]; then
-                return 1
-              fi
-              sleep $((n * 6))
-              n=$((n + 1))
+              if [ "$n" -ge "$attempts" ]; then return 1; fi
+              sleep $((n * 6)); n=$((n + 1))
             done
           }
-
           commit_and_push() {
-            local message="$1"
-            shift
-            local added=0
+            local message="$1"; shift; local added=0
             for path in "$@"; do
-              if [ -e "$path" ]; then
-                git add -- "$path"
-                added=1
-              fi
+              if [ -e "$path" ]; then git add -- "$path"; added=1; fi
             done
-            if [ "$added" -eq 0 ] || git diff --cached --quiet; then
-              return 0
-            fi
+            if [ "$added" -eq 0 ] || git diff --cached --quiet; then return 0; fi
             git commit -m "$message"
             for push_attempt in 1 2 3; do
-              if git push origin HEAD:main; then
-                return 0
-              fi
-              git pull --rebase origin main
-              sleep $((push_attempt * 4))
+              if git push origin HEAD:main; then return 0; fi
+              git pull --rebase origin main; sleep $((push_attempt * 4))
             done
             return 1
           }
-
           build_packet() {
-            if ! python build_desk_packet.py; then
-              echo "Desk packet build failed"
-              return 1
-            fi
-            if ! python augment_desk_packet.py; then
-              echo "Desk packet catalyst augmentation failed"
-            fi
-            if ! python sanitize_shadow_book.py; then
-              echo "Shadow-book sanitizer failed"
-            fi
-            if ! python shadow_book.py; then
-              echo "Shadow-book learning pass failed"
-            fi
-            if ! python augment_profit_packet.py; then
-              echo "Profit/capacity augmentation failed"
-            fi
-            if ! python build_desk_lite.py; then
-              echo "Lite desk packet build failed"
-            fi
+            python build_desk_packet.py || return 1
+            python augment_desk_packet.py || true
+            python sanitize_shadow_book.py || true
+            python shadow_book.py || true
+            python augment_profit_packet.py || true
+            python optimize_allocation.py || true
+            python build_desk_lite.py || true
           }
-
           for cycle in $(seq 1 66); do
             cycle_started=$(date +%s)
-            echo "=== Relay cycle $cycle started $(date -u +%FT%TZ) ==="
-
             git reset --hard HEAD
             git pull --rebase origin main
-
-            if ! retry 4 python collect.py; then
-              echo "Core RuneLite/Wiki collection failed this cycle"
-            fi
-            if ! retry 3 python collect_related.py; then
-              echo "Related-sector collection failed this cycle; retaining prior file"
-            fi
-
+            retry 4 python collect.py || true
+            retry 3 python collect_related.py || true
             build_packet || true
-            commit_and_push "Update fast OSRS profit desk packet" \
-              snapshot.json relay_health.json related_watch.json desk_packet.json desk_packet_lite.json profit_snapshot.json \
-              shadow_book.json shadow_book_summary.json || true
-
+            commit_and_push "Update fast OSRS profit desk packet" snapshot.json relay_health.json related_watch.json desk_packet.json desk_packet_lite.json profit_snapshot.json shadow_book.json shadow_book_summary.json || true
             if [ "$cycle" -eq 1 ] || [ $((cycle % 12)) -eq 0 ]; then
-              if ! retry 2 python collect_staples.py; then
-                echo "Evergreen-staple collection failed; retaining prior file"
-              fi
-              if ! retry 2 python collect_portfolio_history.py; then
-                echo "Portfolio history collection failed; retaining prior file"
-              fi
+              retry 2 python collect_staples.py || true
+              retry 2 python collect_portfolio_history.py || true
             fi
-
-            if [ "$cycle" -eq 1 ] || [ $((cycle % 3)) -eq 0 ]; then
-              if ! retry 3 python collect_universe.py; then
-                echo "Full-universe collection failed; retaining prior shards"
-              fi
-            fi
-
-            if ! python archive_snapshot.py; then
-              echo "History archive failed this cycle"
-            fi
-
+            if [ "$cycle" -eq 1 ] || [ $((cycle % 3)) -eq 0 ]; then retry 3 python collect_universe.py || true; fi
+            python archive_snapshot.py || true
             build_packet || true
-            commit_and_push "Update OSRS profit research packet and history" \
-              staples_watch.json portfolio_history.json market_universe/ desk_packet.json desk_packet_lite.json profit_snapshot.json \
-              shadow_book.json shadow_book_summary.json history/market_history.jsonl history/recent_history.json || true
-
-            cycle_finished=$(date +%s)
-            elapsed=$((cycle_finished - cycle_started))
-            sleep_for=$((300 - elapsed))
-            if [ "$sleep_for" -gt 0 ]; then
-              echo "Cycle finished in ${elapsed}s; sleeping ${sleep_for}s"
-              sleep "$sleep_for"
-            else
-              echo "Cycle took ${elapsed}s; starting next cycle immediately"
-            fi
+            commit_and_push "Update OSRS profit research packet and history" staples_watch.json portfolio_history.json market_universe/ desk_packet.json desk_packet_lite.json profit_snapshot.json shadow_book.json shadow_book_summary.json history/market_history.jsonl history/recent_history.json || true
+            elapsed=$(($(date +%s) - cycle_started)); sleep_for=$((300 - elapsed)); if [ "$sleep_for" -gt 0 ]; then sleep "$sleep_for"; fi
           done
