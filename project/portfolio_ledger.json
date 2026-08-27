@@ -1,23 +1,23 @@
 {
-  "schema_version": 1,
-  "updated_at_utc": "2026-08-23T16:23:00Z",
+  "schema_version": 2,
+  "updated_at_utc": "2026-08-27T01:45:00Z",
   "purpose": "Persistent user portfolio state for the OSRS Merch Desk. Current market prices are never stored here as authoritative; executable prices must come from fresh Wiki/RuneLite data.",
   "source_of_truth_for_market_data": "prices.runescape.wiki via fresh relay/direct API",
   "account_context": {
     "historical_bank_value": "1b+ gp reported by user",
-    "current_liquid_gp": 41000000,
-    "confidence": "high - explicitly confirmed by user 2026-08-23",
-    "rule": "Use this cash figure for sizing until superseded by a newer explicit user statement. Open buy offers are not deducted from cash until the user confirms a fill."
+    "current_liquid_gp": null,
+    "confidence": "unknown current cash after later confirmed Kodai sale and SOTD fills",
+    "rule": "Do not infer exact current cash from older snapshots or proceeds. Size only from explicitly confirmed available cash when known. Open buy offers are not holdings until the user confirms a fill."
   },
   "active_positions": [
     {"item":"Wrath rune","item_id":21880,"quantity":262000,"cost_basis_gp_each":339.5229,"cost_basis_gp_total_approx":88955000,"confidence":"high","lots":[{"quantity":237000,"price_gp_each":340,"status":"confirmed prior aggregate basis"},{"quantity":25000,"price_gp_each":335,"status":"confirmed purchase 2026-08-19 local / 2026-08-20 UTC"}],"thesis":"Future rune-sink / Breaker candidate speculation.","adversarial_note":"Breaker using Wrath specifically remains unconfirmed."},
     {"item":"Diamond","item_id":1601,"quantity":28000,"cost_basis_gp_each":1700,"cost_basis_gp_total_approx":47600000,"confidence":"high","note":"User confirmed current stack on 2026-08-19; directly exposed to Jeweller's Chisel / bolt-tip processing changes."},
     {"item":"Arcane prayer scroll","item_id":21079,"quantity":32,"cost_basis_gp_each":5900000,"cost_basis_gp_total_approx":188800000,"confidence":"high"},
     {"item":"Dexterous prayer scroll","item_id":21034,"quantity":4,"cost_basis_gp_each":20800000,"cost_basis_gp_total_approx":83200000,"confidence":"high"},
-    {"item":"Elder maul","item_id":21003,"quantity":1,"cost_basis_gp_each":90000000,"cost_basis_gp_total_approx":90000000,"confidence":"high","note":"User intends to keep for Raids 4 use; treat as hybrid use/investment position, not routine profit-taking inventory."},
+    {"item":"Elder maul","item_id":21003,"quantity":1,"cost_basis_gp_each":90000000,"cost_basis_gp_total_approx":90000000,"confidence":"high","note":"User intends to keep for Raids 4 use; treat as hold-for-use/hybrid exposure, not routine profit-taking inventory."},
     {"item":"Inquisitor's great helm","item_id":24419,"quantity":1,"cost_basis_gp_each":87000000,"cost_basis_gp_total_approx":87000000,"confidence":"high","note":"Confirmed current holding; user intends to keep for Raids 4 crush setup."},
     {"item":"Nightmare staff","item_id":24422,"quantity":1,"cost_basis_gp_each":28700000,"cost_basis_gp_total_approx":28700000,"confidence":"high"},
-    {"item":"Kodai wand","item_id":21006,"quantity":1,"cost_basis_gp_each":56000000,"cost_basis_gp_total_approx":56000000,"confidence":"high","note":"2026-08-23 thesis revision: treat as EXIT-ON-STRENGTH rather than core Raid 4 elemental exposure. User is willing to exit once approximately +1m net profit after GE tax; at 2% tax this implies roughly 58.16m+ gross sale price, subject to fresh tape. Rationale: Kodai's distinctive value is Ancient Magicks/barrage utility, while Staff of the Dead/Toxic Staff provide much cheaper +15% standard-spell damage exposure and Harmonised setup has the stronger direct elemental-speed interaction."},
+    {"item":"Staff of the dead","item_id":11791,"quantity":2,"cost_basis_gp_each":5750000,"cost_basis_gp_total_approx":11500000,"confidence":"high","note":"Two buy offers at 5.75m each were explicitly confirmed filled on 2026-08-25."},
     {"item":"Burnt page","item_id":20718,"quantity":2300,"cost_basis_gp_each":6100,"cost_basis_gp_total_approx":14030000,"confidence":"high"},
     {"item":"Searing page","item_id":28931,"quantity":1657,"cost_basis_gp_each":18111,"cost_basis_gp_total_approx":30009927,"confidence":"high","note":"User confirmed the remaining 599-unit order filled; full 1,657-page position is owned."},
     {"item":"Tome of fire (empty)","item_id":20716,"quantity":7,"cost_basis_gp_each":1490000,"cost_basis_gp_total_approx":10430000,"confidence":"high"},
@@ -28,34 +28,35 @@
     {"item":"Bandos tassets","item_id":11834,"quantity":1,"cost_basis_gp_each":null,"cost_basis_gp_total_approx":null,"confidence":"high holding / unknown basis","note":"User explicitly confirmed still owned on 2026-08-23. Treat primarily as use gear unless a superior capital rotation exists; cost basis unresolved."}
   ],
   "wanted_acquisitions": [
-    {"item":"Torva platebody","item_id":26384,"priority":1,"status":"wanted","note":"Next priority after Torva platelegs; user is considering reconsolidating capital from Kodai into Torva."},
-    {"item":"Staff of the Dead","item_id":11791,"priority":2,"status":"speculative watch / possible accumulation","note":"Cheap +15% standard-spell damage hardware with 12.5% rune-save passive; compare against Kodai and Toxic Staff for Fractured Archive elemental thesis. Prefer patient entries due thin liquidity."},
-    {"item":"Toxic staff (uncharged)","item_id":12902,"priority":2,"status":"speculative watch","note":"When charged, provides +25 Magic attack, +15% Magic damage, rune saving and venom while autocasting standard spells; closer functional comparator to Kodai for elemental spell use."},
+    {"item":"Torva platebody","item_id":26384,"priority":1,"status":"wanted","note":"User wants Torva body as a future use-gear acquisition; evaluate against trading-capital opportunity cost rather than assuming immediate purchase."},
     {"item":"Inquisitor's mace","item_id":24417,"priority":3,"status":"wanted","note":"Wanted as a 1h Crush option for Raids 4 / potential Rondache pairing; monitor Breaker substitution risk."},
     {"item":"Masori mask (f)","item_id":27235,"priority":4,"status":"watch","note":"Fortified Masori set acquisition watch."},
     {"item":"Masori body (f)","item_id":27238,"priority":4,"status":"watch","note":"Fortified Masori set acquisition watch."},
     {"item":"Masori chaps (f)","item_id":27241,"priority":4,"status":"watch","note":"Fortified Masori set acquisition watch."}
   ],
   "open_offers_unconfirmed": [
-    {"item":"Dragon bones","item_id":536,"side":"buy","quantity":7500,"price_gp_each":3075,"total_gp_if_filled":23062500,"status":"open / unconfirmed fill","note":"User placed one full GE-limit order on 2026-08-23. Do not treat as owned until user confirms fill."}
+    {"item":"Dragon bones","item_id":536,"side":"buy","quantity":7500,"price_gp_each":3075,"total_gp_if_filled":23062500,"status":"open / unconfirmed fill","note":"User placed one full GE-limit order on 2026-08-23. Do not treat as owned until user confirms fill or cancellation."},
+    {"item":"Toxic staff of the dead (uncharged)","item_id":12902,"side":"buy","quantity":1,"price_gp_each":9000000,"total_gp_if_filled":9000000,"status":"open / unconfirmed fill","note":"User reported a 9.0m buy offer; no later fill confirmation has been provided."}
   ],
   "historical_or_resolved_positions": [
+    {"item":"Kodai wand","item_id":21006,"status":"sold","execution_price_gp_each":58000000,"quantity":1,"note":"User explicitly confirmed exit at 58.0m. Remove from active holdings."},
     {"item":"Grimy lantadyme","status":"sold","execution_price_gp_each":null,"note":"User explicitly reported the grimy position sold; exact execution price not confirmed."},
     {"item":"Games necklace(8)","status":"sold","execution_price_gp_each":null,"note":"User explicitly reported the Games necklace position sold; exact execution price not confirmed."},
-    {"item":"Dragon bones","status":"not owned before current open order","note":"User explicitly confirmed no ownership on 2026-08-22; a new 7,500 @3,075 buy order is now open but unfilled/unconfirmed."},
+    {"item":"Dragon bones","status":"not owned before current open order","note":"User explicitly confirmed no ownership on 2026-08-22; a later 7,500 @3,075 buy order remains unconfirmed."},
     {"item":"Diamond bolt tips","status":"not owned","note":"User explicitly confirmed no current ownership on 2026-08-22."},
     {"item":"Inquisitor's hauberk","status":"not owned","note":"User explicitly confirmed no current ownership on 2026-08-22."},
     {"item":"Inquisitor's plateskirt","status":"not owned","note":"User explicitly confirmed no current ownership on 2026-08-22."},
     {"item":"Ancestral robe bottom","status":"not owned","note":"User explicitly confirmed no current ownership on 2026-08-22."}
   ],
   "tracked_unresolved": [
-    {"item":"Bandos tassets","field":"cost_basis","status":"unknown","note":"User confirmed ownership but did not provide purchase price/basis."}
+    {"item":"Bandos tassets","field":"cost_basis","status":"unknown","note":"User confirmed ownership but did not provide purchase price/basis."},
+    {"item":"current_liquid_gp","field":"cash","status":"unknown","note":"Prior 41m snapshot is stale after confirmed Kodai sale and SOTD fills; do not guess current cash."}
   ],
   "non_portfolio_gameplay_items": [
     {"item":"Blood rune","note":"Visible stack was user-crafted/runecrafting output, not a merch position."},
     {"item":"Pure essence","note":"Runecrafting supply, not merch unless user says otherwise."}
   ],
-  "portfolio_cost_basis_total_approx_gp": 857544927,
-  "portfolio_cost_basis_note": "Excludes Bandos tassets because cost basis is unresolved. Excludes the open Dragon bones order until filled.",
+  "portfolio_cost_basis_total_approx_gp": 813044927,
+  "portfolio_cost_basis_note": "Excludes Bandos tassets because cost basis is unresolved. Excludes open Dragon bones and Toxic staff offers until filled. Includes the two confirmed SOTD fills and excludes sold Kodai.",
   "portfolio_rule": "Newest explicit user statement overrides older state. A buy/sell offer is not a fill unless the user confirms execution."
 }
