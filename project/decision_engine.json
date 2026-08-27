@@ -1,0 +1,66 @@
+{
+  "schema_version": 2,
+  "updated_at_utc": "2026-08-27T01:00:00Z",
+  "purpose": "Normalize trade-engine scoring and rank incremental GP across cash, existing positions, new trades, conversions and rotations.",
+  "cash_is_candidate": true,
+  "engine_thresholds": {
+    "recommend": 70,
+    "very_strong": 80,
+    "exceptional": 90,
+    "watchlist_minimum": 50
+  },
+  "gp_deployment_weights": {
+    "probability_weighted_after_tax_return": 20,
+    "turnover_efficiency": 15,
+    "liquidity_and_execution_probability": 15,
+    "tape_quality_and_relative_strength": 15,
+    "catalyst_or_fundamental_confidence": 10,
+    "downside_and_invalidation_quality": 10,
+    "time_to_payoff": 5,
+    "diversification_value": 5,
+    "opportunity_cost_vs_alternatives": 5
+  },
+  "engine_specific_emphasis": {
+    "fast_flip": ["executable_after_tax_spread", "freshness", "fill_probability", "exit_probability", "roi_per_hour", "gp_throughput"],
+    "swing": ["multi_window_momentum", "abnormal_volume", "reversal_quality", "relative_strength", "roi_per_day", "liquidity"],
+    "catalyst": ["scenario_expected_value", "catalyst_confidence", "beneficiary_certainty", "timing", "priced_in_risk", "downside_if_wrong"],
+    "conversion_relative_value": ["hard_economic_relationship", "after_tax_margin", "input_output_liquidity", "conversion_friction", "mean_reversion_pressure"]
+  },
+  "risk_budget": {
+    "theme_concentration_soft_warning_pct_known_merch_basis": 35,
+    "single_speculative_item_soft_warning_pct_known_merch_basis": 20,
+    "thin_item_sizing_policy": "Apply a substantial sizing penalty; nominal ROI never overrides exit difficulty.",
+    "unknown_cash_policy": "Do not infer total bank or cash. Score incremental deployment using confirmed holdings/bases and known available cash only.",
+    "hold_for_use_policy": "Separate hold-for-use gear from deployable trading capital when calculating merch concentration.",
+    "averaging_down_policy": "Never add merely because the current price is below basis. Require improved expected value, tape or catalyst evidence."
+  },
+  "relative_strength": {
+    "classifications": ["OUTPERFORMING", "INLINE", "UNDERPERFORMING"],
+    "rule": "Compare item returns and volume behavior against a relevant peer basket over matching windows before attributing movement to an item-specific thesis."
+  },
+  "pre_catalyst_radar": {
+    "minimum_independent_signals": 2,
+    "example_thresholds": {
+      "volume_multiple_vs_trailing_baseline": 2.5,
+      "persistent_high_side_share_pct": 65,
+      "stealth_price_move_ceiling_pct": 2.0
+    },
+    "labels": ["RADAR-LOW", "RADAR-MEDIUM", "RADAR-HIGH"],
+    "exclusions": ["stale prints", "tiny absolute volume", "obvious sector-wide move", "normal periodic behavior", "update-day noise with no item-specific edge"]
+  },
+  "rotation_policy": {
+    "require_material_advantage_after_tax": true,
+    "compare": ["expected_return", "hold_time", "liquidity", "correlation", "execution_friction", "tax_churn"]
+  },
+  "output_policy": {
+    "delta_first": true,
+    "always_rank_cash": true,
+    "top_deployment_candidates": 5,
+    "max_fast_flips": 3,
+    "max_swings": 3,
+    "max_catalyst_trades": 3,
+    "max_conversions": 3,
+    "max_radar_alerts": 5,
+    "repeat_unchanged_thesis_prose": false
+  }
+}
