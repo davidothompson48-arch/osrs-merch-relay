@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "updated_at_utc": "2026-08-27T01:00:00Z",
+  "purpose": "Structured register of material OSRS market catalysts so hourly runs distinguish genuinely new evidence from recycled information.",
+  "status_values": ["NEW", "DEVELOPING", "CONFIRMED", "WEAKENING", "DISPROVEN", "UNCHANGED"],
+  "credibility_values": ["CONFIRMED", "STRONG EVIDENCE", "PLAUSIBLE SPECULATION", "WEAK SPECULATION", "RUMOR"],
+  "records": [
+    {
+      "id": "fractured_archive_breaker_unspecified_rune",
+      "first_seen": "2026-07-30",
+      "latest_evidence_date": "2026-07-30",
+      "source_attribution": "Jagex Fractured Archive rewards proposal",
+      "affected_theses": ["breaker_charge_rune"],
+      "affected_items": ["Wrath rune", "Nature rune", "Soul rune", "Blood rune", "Death rune", "Chaos rune"],
+      "credibility": "CONFIRMED",
+      "status": "UNCHANGED",
+      "confidence_0_100": 95,
+      "impact": "High",
+      "direction": "Mixed",
+      "summary": "Breaker requires Ascension Shards plus a rune of some kind; the specific rune was not decided in the cited proposal.",
+      "market_pricing_assessment": "Treat all rune-specific beneficiary calls as speculation until narrowed or confirmed.",
+      "what_changed_since_prior": "Baseline record only."
+    },
+    {
+      "id": "cox_scroll_supply_reduction_aug12",
+      "first_seen": "2026-08-12",
+      "latest_evidence_date": "2026-08-12",
+      "source_attribution": "Jagex implemented CoX reward weighting changes",
+      "affected_theses": ["cox_scroll_recovery"],
+      "affected_items": ["Arcane prayer scroll", "Dexterous prayer scroll", "Ancestral hat", "Ancestral robe top", "Ancestral robe bottom"],
+      "credibility": "CONFIRMED",
+      "status": "CONFIRMED",
+      "confidence_0_100": 100,
+      "impact": "High",
+      "direction": "Mixed",
+      "summary": "Prayer scroll supply weights were reduced while Ancestral relative weighting increased.",
+      "market_pricing_assessment": "Fundamental supply changes are confirmed, but subsequent price direction must be read from live tape rather than assumed.",
+      "what_changed_since_prior": "Baseline record only."
+    }
+  ],
+  "record_rules": {
+    "newness": "Only mark NEW when evidence appeared after the latest stored evidence and materially changes probability, beneficiary, timing, supply/demand or invalidation.",
+    "unchanged": "Do not rewrite old catalyst history each hour. If no material evidence changed, preserve record and report NO NEW MATERIAL CATALYST.",
+    "source_quality": "Prefer official Jagex/JMod sources. Community evidence may trigger research but must retain lower credibility until corroborated.",
+    "screenshots": "Cross-check screenshots or paraphrased JMod remarks against an original attributable source where practical.",
+    "market_data": "Current price reaction must always use RuneLite/Wiki-origin data only."
+  }
+}
