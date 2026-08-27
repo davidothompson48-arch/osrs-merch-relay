@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "updated_at_utc": "2026-08-27T04:31:00Z",
+  "objective": "Maximize long-run expected GP growth, not headline ROI. Prefer high probability-weighted GP per unit time, scalable capacity, reliable execution, low player-time cost and low correlation.",
+  "primary_ranking_metrics": [
+    "expected_gp_per_hour",
+    "expected_profit_at_capacity_gp",
+    "expected_after_tax_roi_pct",
+    "capacity_gp",
+    "execution_probability",
+    "player_time_adjusted_profit_gp",
+    "slot_efficiency_gp_per_hour"
+  ],
+  "capacity_model": {
+    "participation_fraction_of_1h_volume_by_liquidity": {
+      "VERY LIQUID": 0.10,
+      "LIQUID": 0.08,
+      "MODERATE": 0.06,
+      "THIN": 0.03,
+      "VERY THIN": 0.01,
+      "UNKNOWN": 0.03
+    },
+    "evergreen_fraction_of_24h_volume": 0.015,
+    "conversion_output_fraction_of_24h_volume": 0.03,
+    "hard_max_fraction_of_1h_volume": 0.15,
+    "slippage_labels": {
+      "LOW_max_participation_pct": 5,
+      "MEDIUM_max_participation_pct": 10,
+      "HIGH_above_participation_pct": 10
+    },
+    "rule": "Capacity is a conservative model of how much can be deployed without assuming the visible one-unit edge scales indefinitely. It is not a guaranteed fill size."
+  },
+  "execution_model": {
+    "freshness_factor": {"FRESH": 1.0, "USABLE": 0.85, "STALEISH": 0.55, "STALE": 0.20, "INCOMPLETE": 0.45},
+    "fast_flip_base_hold_hours": 2.0,
+    "evergreen_base_hold_hours": 72.0,
+    "conversion_base_exit_hours": 4.0,
+    "minimum_modeled_execution_probability": 0.12,
+    "rule": "Execution probabilities are ranking heuristics based on observed flow/freshness and are never presented as guaranteed fill odds."
+  },
+  "player_time": {
+    "shadow_value_gp_per_hour": 2500000,
+    "attention_factors": {
+      "HIGH": 1.0,
+      "MEDIUM": 0.6,
+      "LOW": 0.3,
+      "NEGLIGIBLE": 0.1,
+      "PASSIVE": 0.0
+    },
+    "default_manual_attention": "MEDIUM",
+    "rule": "Manual processing is charged against an explicit configurable shadow value of player time. Show raw profit and player-time-adjusted profit separately."
+  },
+  "ge_slots": {
+    "total_slots": 8,
+    "minimum_slot_efficiency_gp_per_hour": 50000,
+    "known_open_offers_consume_slots": true,
+    "rule": "Rank slot use by expected GP/hour after execution/player-time adjustment. Unknown non-desk GE orders mean free-slot counts are upper bounds, not facts."
+  },
+  "capital_aging": {
+    "enabled": true,
+    "penalty_begins_at_expected_payoff_multiple": 1.0,
+    "score_penalty_per_half_life_overdue": 4,
+    "maximum_score_penalty": 20,
+    "reset_only_on": ["new confirmed catalyst", "materially improved expected value", "explicit strategy re-underwrite"],
+    "rule": "Dead capital becomes progressively less competitive even if the original thesis has not fully invalidated. Hold-for-use gear is exempt."
+  },
+  "shadow_learning": {
+    "checkpoints_hours": [1, 4, 24, 72, 168],
+    "minimum_samples_before_score_adjustment": 20,
+    "maximum_learning_adjustment_points": 8,
+    "signal_cooldown_hours": {"fast_flip": 8, "momentum": 12, "evergreen": 24, "conversion": 12},
+    "rule": "Shadow signals are research observations, not claimed executions. Real user-confirmed fills remain the higher-quality evidence source."
+  },
+  "regime_model": {
+    "minimum_liquid_item_gp_per_hour": 20000000,
+    "risk_on_breadth_pct": 62,
+    "risk_off_breadth_pct": 62,
+    "median_move_threshold_pct": 0.75,
+    "labels": ["BROAD_RISK_ON", "MIXED", "BROAD_RISK_OFF", "HIGH_DISPERSION"]
+  },
+  "value_graph": {
+    "prefer_mechanical_edges": true,
+    "include_processing": true,
+    "include_npc_exchange": true,
+    "include_dose_decanting": true,
+    "include_sets_components": true,
+    "rule": "Mechanical edges compete directly against speculative trades after tax, capacity, labor and liquidity."
+  }
+}
