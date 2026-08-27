@@ -12,6 +12,8 @@ on:
       - 'collect_universe.py'
       - 'build_desk_packet.py'
       - 'augment_desk_packet.py'
+      - 'augment_profit_packet.py'
+      - 'shadow_book.py'
       - 'build_desk_lite.py'
       - 'archive_snapshot.py'
       - 'project/related_items.json'
@@ -19,6 +21,8 @@ on:
       - 'project/portfolio_ledger.json'
       - 'project/known_conversions.json'
       - 'project/tax_policy.json'
+      - 'project/profit_engine.json'
+      - 'project/position_lifecycle.json'
       - 'project/desk_runtime_state.json'
       - 'project/catalyst_database.json'
       - 'project/probability_models.json'
@@ -105,6 +109,12 @@ jobs:
             if ! python augment_desk_packet.py; then
               echo "Desk packet catalyst augmentation failed"
             fi
+            if ! python shadow_book.py; then
+              echo "Shadow-book learning pass failed"
+            fi
+            if ! python augment_profit_packet.py; then
+              echo "Profit/capacity augmentation failed"
+            fi
             if ! python build_desk_lite.py; then
               echo "Lite desk packet build failed"
             fi
@@ -128,8 +138,9 @@ jobs:
             fi
 
             build_packet || true
-            commit_and_push "Update fast OSRS desk packet" \
-              snapshot.json relay_health.json related_watch.json desk_packet.json desk_packet_lite.json || true
+            commit_and_push "Update fast OSRS profit desk packet" \
+              snapshot.json relay_health.json related_watch.json desk_packet.json desk_packet_lite.json \
+              shadow_book.json shadow_book_summary.json || true
 
             if [ "$cycle" -eq 1 ] || [ $((cycle % 12)) -eq 0 ]; then
               if ! retry 2 python collect_staples.py; then
@@ -151,9 +162,9 @@ jobs:
             fi
 
             build_packet || true
-            commit_and_push "Update OSRS research packet and history" \
+            commit_and_push "Update OSRS profit research packet and history" \
               staples_watch.json portfolio_history.json market_universe/ desk_packet.json desk_packet_lite.json \
-              history/market_history.jsonl history/recent_history.json || true
+              shadow_book.json shadow_book_summary.json history/market_history.jsonl history/recent_history.json || true
 
             cycle_finished=$(date +%s)
             elapsed=$((cycle_finished - cycle_started))
