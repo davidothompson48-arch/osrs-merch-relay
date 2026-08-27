@@ -1,29 +1,30 @@
 {
-  "schema_version": 1,
-  "updated_at_utc": "2026-08-27T02:47:00Z",
-  "last_successful_run_utc": "2026-08-27T02:47:00Z",
+  "schema_version": 2,
+  "updated_at_utc": "2026-08-27T03:44:00Z",
+  "last_successful_run_utc": "2026-08-27T03:44:00Z",
   "top_deployment_board": [
-    {"rank":1,"action":"Convert Diamond to Diamond bolt tips in controlled batches","deployment_score":88,"expected_net_roi_range_pct":"material positive mechanical margin; refresh exact prices before each batch","hold":"processing plus staged exit","capital":"use existing Diamonds first","main_risk":"tip-price slippage and processing-time opportunity cost"},
-    {"rank":2,"action":"Cash / patient limit orders","deployment_score":81,"expected_net_roi_range_pct":"0% nominal; preserves optionality","hold":"until verified dislocation/catalyst","capital":"remaining liquid GP","main_risk":"opportunity cost"},
-    {"rank":3,"action":"Divine super combat potion dose-decant relative value","deployment_score":80,"expected_net_roi_range_pct":"recalculate live margin before entry","hold":"roughly 1-4h staged exit","capital":"small test batch only","main_risk":"one-dose exit demand can decay"},
-    {"rank":4,"action":"Wrath rune only on retracement","deployment_score":71,"expected_net_roi_range_pct":"catalyst-dependent","hold":"days-weeks","capital":"small add only near 335-340 if tape remains supportive","main_risk":"Breaker rune remains unspecified and portfolio already has correlated exposure"}
+    {"rank":1,"action":"Convert existing Diamonds to Diamond bolt tips in controlled batches","deployment_score":92,"expected_net_roi_range_pct":"about 20.7%-22.1% versus existing 1700 basis at observed related-tape prices","hold":"processing plus staged exit, hours to roughly 1 day","capital":"use 3000 existing Diamonds first","main_risk":"tip-price slippage and output liquidity"},
+    {"rank":2,"action":"Dragon knife aggressive fast flip test","deployment_score":84,"expected_net_roi_range_pct":"about 5%-7.4% after tax if patient entry/exit fills","hold":"roughly 1-4h","capital":"about 5-7m test only","main_risk":"spread closes before exit or low-side fill is adverse selection"},
+    {"rank":3,"action":"Cash / patient limit orders","deployment_score":82,"expected_net_roi_range_pct":"0% nominal; preserves optionality","hold":"until verified dislocation/catalyst","capital":"remaining liquid GP","main_risk":"opportunity cost"},
+    {"rank":4,"action":"Divine super combat dose-decant only as a small relative-value test","deployment_score":74,"expected_net_roi_range_pct":"about 4.5%-4.9% modeled at current dose relationship; exit-liquidity constrained","hold":"roughly 1-4h staged exit","capital":"roughly 2-5m maximum test","main_risk":"one-dose seller pressure and limited exit throughput"},
+    {"rank":5,"action":"Keep Dragon bones crash-catcher order at 3075; do not market-buy current tape","deployment_score":73,"expected_net_roi_range_pct":"conditional on fill and mean reversion; no current buy signal","hold":"days","capital":"23.06m only if existing 7500 order fills","main_risk":"a fill could occur during a genuine structural dump"}
   ],
   "portfolio_ratings": {
-    "Wrath rune":"HOLD",
-    "Diamond":"HOLD/CONVERT PARTIAL",
-    "Arcane prayer scroll":"WATCH/TRIM STRENGTH",
-    "Dexterous prayer scroll":"WATCH/NO ADD",
+    "Wrath rune":"HOLD / NO CHASE",
+    "Diamond":"CONVERT PARTIAL",
+    "Arcane prayer scroll":"WATCH / TRIM STRENGTH / NO ADD",
+    "Dexterous prayer scroll":"WATCH / NO ADD",
     "Elder maul":"STRONG HOLD FOR USE",
-    "Inquisitor's great helm":"HOLD FOR USE/NO ADD",
+    "Inquisitor's great helm":"HOLD FOR USE / NO ADD",
     "Nightmare staff":"HOLD",
     "Staff of the Dead":"HOLD",
     "Toxic staff (uncharged)":"HOLD",
-    "Burnt page":"HOLD/CONVERSION OPTIONALITY",
+    "Burnt page":"HOLD / CONVERSION OPTIONALITY",
     "Searing page":"HOLD",
     "Tome of Fire (empty)":"HOLD",
     "Tome of Earth (empty)":"HOLD",
     "Tome of Water (empty)":"HOLD",
-    "Amulet of magic":"HOLD/NO ADD",
+    "Amulet of magic":"HOLD / NO ADD",
     "Torva platelegs":"HOLD FOR USE",
     "Bandos tassets":"HOLD FOR USE"
   },
@@ -36,15 +37,25 @@
   },
   "active_trade_recommendations": [
     {"item":"Diamond","action":"convert to Diamond bolt tips","test_batch":3000,"invalidation":"after-tax conversion margin below 12% or tip liquidity deteriorates materially"},
-    {"item":"Divine super combat potion(4)","action":"decant to Divine super combat potion(1)","test_batch":"small only","invalidation":"net decant margin below 3% or one-dose demand collapses"}
+    {"item":"Dragon knife","action":"aggressive fast flip","entry_zone":"3370-3420","ideal_entry":"about 3372","do_not_chase_above":3450,"test_quantity":"1500-2000","targets":"3650 then about 3690","time_stop":"2-4h","invalidation":"seller pressure accelerates, low-side reprices below about 3300 without absorption, or HIGH-side share loses 50% with spread collapse"},
+    {"item":"Divine super combat potion(4)","action":"decant to Divine super combat potion(1) only if live margin persists","test_batch":"100-250 four-dose potions","invalidation":"net decant margin below 3% or one-dose exit demand deteriorates"},
+    {"item":"Dragon bones","action":"leave existing 7500 @ 3075 crash-catcher order unconfirmed until user reports fill","invalidation":"structural supply/demand change makes historical mean reversion unreliable"}
+  ],
+  "evergreen_staple_status": [
+    {"item":"Dragon bones","status":"NOT_OVERSOLD","reason":"7d positive and 30d only modestly negative; current demand/stabilization healthy"},
+    {"item":"Ruby bolts (e)","status":"WATCH_REVERSAL","reason":"discounted versus 24h reference but one-hour flow roughly balanced; wait for buyer confirmation"},
+    {"item":"Dragon bolts","status":"WATCH_REVERSAL","reason":"below 24h reference with very strong one-hour HIGH-side flow; deeper 30d percentile confirmation pending staples file"},
+    {"item":"Mahogany logs","status":"WATCH_REVERSAL","reason":"meaningfully below 24h reference but latest HIGH/LOW crossed asynchronously; do not catch unstable tape"},
+    {"item":"Rune dart","status":"FALLING_KNIFE","reason":"apparent spread is attractive but 5m pace/price is materially weaker than 1h"}
   ],
   "pre_catalyst_radar": [],
   "latest_material_catalyst_ids": [],
   "material_change_flags": [
-    "Arcane current HIGH weakened from 5.351m at prior run to 5.234m while weekly/30d structure remains negative",
-    "Nightmare staff current HIGH fell from about 31.38m to 30.12m; still above 28.7m basis but short-term strength cooled",
-    "Wrath remains 350/350 with strong one-hour classified HIGH-side share; no chase",
+    "Evergreen staple engine manually validated while staples_watch.json awaits first workflow generation",
+    "Dragon knife cleared aggressive fast-flip validation on fresh full-market scan",
+    "Dragon bones are liquid and stabilizing but do not meet oversold criteria at current price",
+    "Arcane and Dexterous remain weak despite structurally lower CoX scroll weighting",
     "No new material Raid-4 catalyst verified"
   ],
-  "notes":"All execution levels must be refreshed from prices.runescape.wiki/RuneLite on every run."
+  "notes":"All execution levels must be refreshed from prices.runescape.wiki/RuneLite on every run. Related-watch data was older than core but remained well inside stale threshold; dedicated staples 30d output not yet generated on this run."
 }
