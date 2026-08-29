@@ -1,6 +1,6 @@
 {
-  "schema_version": 1,
-  "updated_at_utc": "2026-08-27T04:31:00Z",
+  "schema_version": 2,
+  "updated_at_utc": "2026-08-29T07:00:00Z",
   "objective": "Maximize long-run expected GP growth, not headline ROI. Prefer high probability-weighted GP per unit time, scalable capacity, reliable execution, low player-time cost and low correlation.",
   "primary_ranking_metrics": [
     "expected_gp_per_hour",
@@ -33,10 +33,49 @@
   "execution_model": {
     "freshness_factor": {"FRESH": 1.0, "USABLE": 0.85, "STALEISH": 0.55, "STALE": 0.20, "INCOMPLETE": 0.45},
     "fast_flip_base_hold_hours": 2.0,
+    "fast_flip_curve_anchor_hours": 2.0,
+    "fast_flip_max_modeled_cycle_hours": 24.0,
+    "fast_flip_horizons_minutes": [5, 15, 60, 120, 240],
     "evergreen_base_hold_hours": 72.0,
     "conversion_base_exit_hours": 4.0,
     "minimum_modeled_execution_probability": 0.12,
-    "rule": "Execution probabilities are ranking heuristics based on observed flow/freshness and are never presented as guaranteed fill odds."
+    "rule": "Execution probabilities are ranking heuristics based on observed flow/freshness and are never presented as guaranteed fill odds. Fast flips expose separate entry, exit and round-trip cumulative probability curves instead of a single undifferentiated execution number."
+  },
+  "real_execution_learning": {
+    "enabled": true,
+    "horizons_minutes": [5, 15, 60, 120, 240],
+    "item_min_samples_before_blend": 8,
+    "engine_min_samples_before_blend": 20,
+    "prior_strength_samples": 12,
+    "maximum_empirical_weight": 0.75,
+    "rule": "User-confirmed GE orders are the highest-quality execution evidence. Empirical fill curves may blend into model probabilities only after minimum sample thresholds; unknown timestamps never become negative samples."
+  },
+  "spread_persistence": {
+    "enabled": true,
+    "lookback_minutes": 120,
+    "state_retention_hours": 6,
+    "maximum_observations_per_item": 30,
+    "maximum_snapshot_gap_seconds": 720,
+    "minimum_snapshots_persistent": 3,
+    "minimum_minutes_persistent": 10,
+    "minimum_qualified_ratio_persistent": 0.67,
+    "minimum_snapshots_repeatable": 6,
+    "minimum_minutes_repeatable": 30,
+    "minimum_qualified_ratio_repeatable": 0.75,
+    "max_high_low_age_seconds": 900,
+    "minimum_one_hour_volume": 20,
+    "minimum_each_side_share": 0.05,
+    "minimum_roi_retention_vs_median": 0.45,
+    "execution_multiplier": {
+      "REPEATABLE_MARKET": 1.05,
+      "PERSISTENT_SPREAD": 1.0,
+      "FLASH_SPREAD": 0.55,
+      "UNSTABLE_SPREAD": 0.35,
+      "INVALID_SPREAD": 0.10,
+      "UNKNOWN": 0.50
+    },
+    "auto_allocation_eligible_classes": ["PERSISTENT_SPREAD", "REPEATABLE_MARKET"],
+    "rule": "A fast flip is not automatic-allocation eligible until its spread survives at least three consecutive snapshots and ten minutes with fresh HIGH/LOW prints, both sides trading, adequate turnover and retained positive after-tax edge."
   },
   "player_time": {
     "shadow_value_gp_per_hour": 2500000,
@@ -85,5 +124,16 @@
     "include_dose_decanting": true,
     "include_sets_components": true,
     "rule": "Mechanical edges compete directly against speculative trades after tax, capacity, labor and liquidity."
+  },
+  "future_engine_hooks": {
+    "order_price_optimizer": {"status": "PLANNED", "phase": 2, "depends_on": ["real_execution_learning", "multi_horizon_fill_curves"]},
+    "gp_per_slot_hour_optimizer": {"status": "PLANNED", "phase": 2, "depends_on": ["real_execution_learning"]},
+    "active_vs_parking_slot_buckets": {"status": "PLANNED", "phase": 2},
+    "minimum_absolute_profit_hurdles": {"status": "PLANNED", "phase": 3},
+    "repeatability_multiplier": {"status": "PLANNED", "phase": 3, "depends_on": ["spread_persistence", "real_execution_learning"]},
+    "opportunity_book": {"status": "PLANNED", "phase": 3, "depends_on": ["spread_persistence"]},
+    "attention_modes": {"status": "PLANNED", "phase": 4},
+    "remaining_upside_rotation": {"status": "PLANNED", "phase": 4},
+    "realized_performance_dashboard": {"status": "PLANNED", "phase": 4, "depends_on": ["real_execution_learning"]}
   }
 }
