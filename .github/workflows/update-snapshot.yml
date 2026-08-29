@@ -14,6 +14,7 @@ on:
       - 'augment_desk_packet.py'
       - 'augment_profit_packet.py'
       - 'augment_execution_features.py'
+      - 'optimize_execution_prices.py'
       - 'real_execution_learning.py'
       - 'update_spread_persistence.py'
       - 'optimize_allocation.py'
@@ -99,6 +100,7 @@ jobs:
             python update_spread_persistence.py || true
             python augment_profit_packet.py || true
             python augment_execution_features.py || true
+            python optimize_execution_prices.py || true
             python optimize_allocation.py || true
             python build_desk_lite.py || true
           }
