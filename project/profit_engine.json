@@ -1,6 +1,6 @@
 {
-  "schema_version": 2,
-  "updated_at_utc": "2026-08-29T07:00:00Z",
+  "schema_version": 3,
+  "updated_at_utc": "2026-08-29T07:15:00Z",
   "objective": "Maximize long-run expected GP growth, not headline ROI. Prefer high probability-weighted GP per unit time, scalable capacity, reliable execution, low player-time cost and low correlation.",
   "primary_ranking_metrics": [
     "expected_gp_per_hour",
@@ -9,7 +9,8 @@
     "capacity_gp",
     "execution_probability",
     "player_time_adjusted_profit_gp",
-    "slot_efficiency_gp_per_hour"
+    "slot_efficiency_gp_per_hour",
+    "gp_per_ge_slot_hour"
   ],
   "capacity_model": {
     "participation_fraction_of_1h_volume_by_liquidity": {
@@ -93,7 +94,37 @@
     "total_slots": 8,
     "minimum_slot_efficiency_gp_per_hour": 50000,
     "known_open_offers_consume_slots": true,
-    "rule": "Rank slot use by expected GP/hour after execution/player-time adjustment. Unknown non-desk GE orders mean free-slot counts are upper bounds, not facts."
+    "rule": "Rank slot use by probability-weighted GP per GE-slot-hour after execution, tax, slippage and player-time adjustment. Unknown non-desk GE orders mean free-slot counts are upper bounds, not facts."
+  },
+  "phase2": {
+    "order_price_optimizer": {
+      "enabled": true,
+      "objective": "maximize_probability_weighted_gp_per_hour",
+      "entry_aggression_fractions": [0.0, 0.15, 0.30, 0.50],
+      "exit_concession_fractions": [0.0, 0.15, 0.30, 0.50],
+      "odds_multiplier_at_full_spread": 3.0,
+      "do_not_chase_fraction_of_spread": 0.65,
+      "minimum_net_profit_per_unit_gp": 1,
+      "slippage_objective_multiplier": {"LOW": 1.0, "MEDIUM": 0.90, "HIGH": 0.75, "UNKNOWN": 0.90},
+      "allocation_authority_rule": "The optimizer may change automatic frontier economics only after the underlying fast-flip spread is PERSISTENT_SPREAD or REPEATABLE_MARKET. FLASH/UNSTABLE/INVALID spreads receive advisory prices only."
+    },
+    "slot_architecture": {
+      "enabled": true,
+      "active_target_slots": 4,
+      "parking_target_slots": 3,
+      "flexible_reserve_slots": 1,
+      "active_max_expected_hold_hours": 6,
+      "targets_are_soft": true,
+      "known_unclassified_open_offers_default_bucket": "PARKING",
+      "rule": "ACTIVE slots prioritize short-cycle realized velocity, PARKING slots hold patient evergreen/crash-catcher orders, and FLEXIBLE is reserved for relative-value or opportunistic use. The targets are soft and never override materially better GP per slot-hour."
+    },
+    "rollout": {
+      "status": "ACTIVE",
+      "price_optimizer_model_status": "PRIOR-DRIVEN_UNTIL_REAL_EXECUTION_SAMPLE_THRESHOLDS",
+      "slot_optimizer_status": "ACTIVE",
+      "review_after_relay_cycles": 12,
+      "rule": "Phase 2 consumes Phase 1 persistence and real-execution outputs. It must not bypass the persistence gate or treat modeled optimal prices as guaranteed fills."
+    }
   },
   "capital_aging": {
     "enabled": true,
@@ -126,9 +157,9 @@
     "rule": "Mechanical edges compete directly against speculative trades after tax, capacity, labor and liquidity."
   },
   "future_engine_hooks": {
-    "order_price_optimizer": {"status": "PLANNED", "phase": 2, "depends_on": ["real_execution_learning", "multi_horizon_fill_curves"]},
-    "gp_per_slot_hour_optimizer": {"status": "PLANNED", "phase": 2, "depends_on": ["real_execution_learning"]},
-    "active_vs_parking_slot_buckets": {"status": "PLANNED", "phase": 2},
+    "order_price_optimizer": {"status": "ACTIVE", "phase": 2, "depends_on": ["real_execution_learning", "multi_horizon_fill_curves", "spread_persistence"]},
+    "gp_per_slot_hour_optimizer": {"status": "ACTIVE", "phase": 2, "depends_on": ["real_execution_learning"]},
+    "active_vs_parking_slot_buckets": {"status": "ACTIVE", "phase": 2},
     "minimum_absolute_profit_hurdles": {"status": "PLANNED", "phase": 3},
     "repeatability_multiplier": {"status": "PLANNED", "phase": 3, "depends_on": ["spread_persistence", "real_execution_learning"]},
     "opportunity_book": {"status": "PLANNED", "phase": 3, "depends_on": ["spread_persistence"]},
