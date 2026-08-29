@@ -41,7 +41,38 @@ def slot_bucket_for(engine, hold_hours, phase2_cfg):
     return "FLEXIBLE"
 
 
-def sanitized_rows(profit, phase2_cfg):
+def minimum_profit_hurdle_config(cfg):
+    return ((cfg.get("phase3") or {}).get("minimum_absolute_profit_hurdles") or {})
+
+
+def minimum_profit_hurdle_authoritative(cfg):
+    hurdle_cfg = minimum_profit_hurdle_config(cfg)
+    return bool(hurdle_cfg.get("enabled")) and hurdle_cfg.get("rollout_status") == "ALLOCATION_AUTHORITATIVE"
+
+
+def annotate_minimum_profit_hurdle(row, cfg):
+    hurdle_cfg = minimum_profit_hurdle_config(cfg)
+    if not hurdle_cfg.get("enabled"):
+        return row
+    thresholds = hurdle_cfg.get("minimum_expected_profit_gp_by_slot_bucket") or {}
+    bucket = row.get("slot_bucket") or "FLEXIBLE"
+    hurdle_gp = thresholds.get(bucket)
+    profit_gp = row.get("expected_profit_at_capacity_gp")
+    if not isinstance(hurdle_gp, (int, float)) or hurdle_gp < 0:
+        row["minimum_absolute_profit_hurdle_pass"] = None
+        row["minimum_absolute_profit_hurdle_reason"] = "NO_BUCKET_THRESHOLD"
+        return row
+    passed = isinstance(profit_gp, (int, float)) and profit_gp >= hurdle_gp
+    row.update({
+        "minimum_absolute_profit_hurdle_gp": int(hurdle_gp),
+        "minimum_absolute_profit_hurdle_pass": passed,
+        "minimum_absolute_profit_shortfall_gp": max(0, int(hurdle_gp - profit_gp)) if isinstance(profit_gp, (int, float)) else None,
+    })
+    return row
+
+
+def sanitized_rows(profit, cfg):
+    phase2_cfg = cfg.get("phase2") or {}
     rows = []
     for group in ("fast_flip_capacity_velocity", "evergreen_capacity_velocity", "conversion_capacity_velocity"):
         for x in profit.get(group) or []:
@@ -72,7 +103,7 @@ def sanitized_rows(profit, phase2_cfg):
             roi_per_hour = (roi / hold) if isinstance(roi, (int, float)) else None
             engine = x.get("engine")
             bucket = slot_bucket_for(engine, hold, phase2_cfg)
-            rows.append({
+            row = {
                 "engine": engine,
                 "item_or_strategy": x.get("name") or x.get("strategy"),
                 "profit_efficiency_score": x.get("profit_efficiency_score"),
@@ -95,7 +126,8 @@ def sanitized_rows(profit, phase2_cfg):
                 "price_optimizer_allocation_authority": x.get("price_optimizer_allocation_authority"),
                 "slot_bucket": bucket,
                 "source_key": row_key(x),
-            })
+            }
+            rows.append(annotate_minimum_profit_hurdle(row, cfg))
     best = {}
     for x in rows:
         key = x["source_key"]
@@ -103,6 +135,55 @@ def sanitized_rows(profit, phase2_cfg):
         if prior is None or x["expected_gp_per_hour"] > prior["expected_gp_per_hour"]:
             best[key] = x
     return list(best.values())
+
+
+def allocation_rows(rows, cfg):
+    if not minimum_profit_hurdle_authoritative(cfg):
+        return list(rows)
+    return [x for x in rows if x.get("minimum_absolute_profit_hurdle_pass") is True]
+
+
+def minimum_profit_hurdle_summary(rows, cfg):
+    hurdle_cfg = minimum_profit_hurdle_config(cfg)
+    enabled = bool(hurdle_cfg.get("enabled"))
+    rollout = hurdle_cfg.get("rollout_status") or "DISABLED"
+    evaluated = [x for x in rows if x.get("minimum_absolute_profit_hurdle_pass") is not None]
+    passed = [x for x in evaluated if x.get("minimum_absolute_profit_hurdle_pass") is True]
+    failed = [x for x in evaluated if x.get("minimum_absolute_profit_hurdle_pass") is False]
+    by_bucket = {}
+    for bucket in ("ACTIVE", "PARKING", "FLEXIBLE"):
+        bucket_rows = [x for x in evaluated if x.get("slot_bucket") == bucket]
+        by_bucket[bucket] = {
+            "evaluated": len(bucket_rows),
+            "passed": sum(1 for x in bucket_rows if x.get("minimum_absolute_profit_hurdle_pass") is True),
+            "failed": sum(1 for x in bucket_rows if x.get("minimum_absolute_profit_hurdle_pass") is False),
+        }
+    advisory_failures = sorted(
+        failed,
+        key=lambda x: (x.get("profit_efficiency_score") or 0, x.get("expected_gp_per_hour") or 0),
+        reverse=True,
+    )
+    return {
+        "enabled": enabled,
+        "rollout_status": rollout,
+        "allocation_authoritative": minimum_profit_hurdle_authoritative(cfg),
+        "evaluation_basis": hurdle_cfg.get("evaluation_basis"),
+        "thresholds_gp_by_slot_bucket": hurdle_cfg.get("minimum_expected_profit_gp_by_slot_bucket") or {},
+        "evaluated_candidates": len(evaluated),
+        "passed_candidates": len(passed),
+        "failed_candidates": len(failed),
+        "would_change_current_frontiers": bool(failed),
+        "by_slot_bucket": by_bucket,
+        "advisory_failures": [{
+            "engine": x.get("engine"),
+            "item_or_strategy": x.get("item_or_strategy"),
+            "slot_bucket": x.get("slot_bucket"),
+            "expected_profit_at_capacity_gp": x.get("expected_profit_at_capacity_gp"),
+            "minimum_absolute_profit_hurdle_gp": x.get("minimum_absolute_profit_hurdle_gp"),
+            "minimum_absolute_profit_shortfall_gp": x.get("minimum_absolute_profit_shortfall_gp"),
+        } for x in advisory_failures[:10]],
+        "promotion_rule": hurdle_cfg.get("promotion_rule"),
+    }
 
 
 def known_offer_bucket_counts(packet):
@@ -184,13 +265,14 @@ def main():
     packet = load(PACKET)
     cfg = load(CFG)
     profit = packet.get("profit_layer") or {}
-    phase2_cfg = cfg.get("phase2") or {}
-    rows = sanitized_rows(profit, phase2_cfg)
+    rows = sanitized_rows(profit, cfg)
+    hurdle_summary = minimum_profit_hurdle_summary(rows, cfg)
+    frontier_rows = allocation_rows(rows, cfg)
 
-    absolute = sorted(rows, key=lambda x: (x.get("expected_gp_per_hour") or 0, x.get("expected_profit_at_capacity_gp") or 0), reverse=True)
-    marginal = sorted(rows, key=lambda x: (x.get("expected_roi_per_capital_hour_pct") or -999, x.get("expected_gp_per_hour") or 0), reverse=True)
-    balanced = sorted(rows, key=lambda x: (x.get("profit_efficiency_score") or 0, x.get("expected_gp_per_hour") or 0), reverse=True)
-    slot_ranked = sorted(rows, key=lambda x: (x.get("gp_per_ge_slot_hour") or 0, x.get("expected_profit_at_capacity_gp") or 0), reverse=True)
+    absolute = sorted(frontier_rows, key=lambda x: (x.get("expected_gp_per_hour") or 0, x.get("expected_profit_at_capacity_gp") or 0), reverse=True)
+    marginal = sorted(frontier_rows, key=lambda x: (x.get("expected_roi_per_capital_hour_pct") or -999, x.get("expected_gp_per_hour") or 0), reverse=True)
+    balanced = sorted(frontier_rows, key=lambda x: (x.get("profit_efficiency_score") or 0, x.get("expected_gp_per_hour") or 0), reverse=True)
+    slot_ranked = sorted(frontier_rows, key=lambda x: (x.get("gp_per_ge_slot_hour") or 0, x.get("expected_profit_at_capacity_gp") or 0), reverse=True)
 
     cumulative = 0
     ladder = []
@@ -209,21 +291,28 @@ def main():
     profit["allocation_rule"] = (
         "With unknown liquid cash, deploy incrementally down the marginal-capital ladder to modeled capacity. "
         "Fast flips require persistent-spread validation before allocation. Phase-2 fast flips use the price pair "
-        "that maximizes modeled probability-weighted GP/hour; GE slots are ranked separately by GP per slot-hour."
+        "that maximizes modeled probability-weighted GP/hour; GE slots are ranked separately by GP per slot-hour. "
+        "Phase-3 minimum absolute-profit hurdles remain observation-only until their promotion rule is satisfied."
     )
-    profit["ge_slot_optimizer"] = build_slot_optimizer(packet, rows, cfg)
+    profit["ge_slot_optimizer"] = build_slot_optimizer(packet, frontier_rows, cfg)
+    profit["minimum_absolute_profit_hurdles"] = hurdle_summary
 
     state = profit.get("execution_upgrade_state") or {}
     state.update({
         "optimal_entry_exit_price_optimizer": "ACTIVE",
         "gp_per_ge_slot_hour_optimizer": "ACTIVE",
         "active_vs_parking_slot_buckets": "ACTIVE",
+        "minimum_absolute_profit_hurdles": hurdle_summary.get("rollout_status"),
     })
     profit["execution_upgrade_state"] = state
 
     packet["profit_layer"] = profit
     save(PACKET, packet)
-    print(f"Optimized allocation frontiers: valid={len(rows)} marginal={len(ladder)} slot_ranked={len(slot_ranked)}")
+    print(
+        f"Optimized allocation frontiers: valid={len(rows)} authoritative={len(frontier_rows)} "
+        f"marginal={len(ladder)} slot_ranked={len(slot_ranked)} "
+        f"hurdle={hurdle_summary.get('rollout_status')} failed={hurdle_summary.get('failed_candidates')}"
+    )
 
 
 if __name__ == "__main__":

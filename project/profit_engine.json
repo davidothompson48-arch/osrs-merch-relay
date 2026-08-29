@@ -1,6 +1,6 @@
 {
-  "schema_version": 3,
-  "updated_at_utc": "2026-08-29T07:15:00Z",
+  "schema_version": 4,
+  "updated_at_utc": "2026-08-29T07:52:45Z",
   "objective": "Maximize long-run expected GP growth, not headline ROI. Prefer high probability-weighted GP per unit time, scalable capacity, reliable execution, low player-time cost and low correlation.",
   "primary_ranking_metrics": [
     "expected_gp_per_hour",
@@ -126,6 +126,26 @@
       "rule": "Phase 2 consumes Phase 1 persistence and real-execution outputs. It must not bypass the persistence gate or treat modeled optimal prices as guaranteed fills."
     }
   },
+  "phase3": {
+    "minimum_absolute_profit_hurdles": {
+      "enabled": true,
+      "rollout_status": "OBSERVATION_ONLY",
+      "minimum_expected_profit_gp_by_slot_bucket": {
+        "ACTIVE": 50000,
+        "PARKING": 250000,
+        "FLEXIBLE": 75000
+      },
+      "evaluation_basis": "Probability-weighted expected profit at modeled capacity after tax, slippage, execution probability and any player-time shadow cost.",
+      "promotion_rule": "Observe at least 12 relay cycles and 50 evaluated candidates. Promote only after review confirms the hurdles reduce low-value slot use without suppressing repeatable realized GP; changing rollout_status to ALLOCATION_AUTHORITATIVE is an explicit later decision.",
+      "rule": "A high percentage return or GP/hour estimate does not justify a GE slot when the modeled absolute payout is too small to overcome operational friction and model error. Bucket-specific priors are deliberately conservative and remain advisory during observation."
+    },
+    "rollout": {
+      "status": "OBSERVATION_ONLY",
+      "active_feature": "minimum_absolute_profit_hurdles",
+      "repeatability_multiplier_status": "WAITING_FOR_MORE_REAL_EXECUTIONS",
+      "opportunity_book_status": "PLANNED"
+    }
+  },
   "capital_aging": {
     "enabled": true,
     "penalty_begins_at_expected_payoff_multiple": 1.0,
@@ -160,7 +180,7 @@
     "order_price_optimizer": {"status": "ACTIVE", "phase": 2, "depends_on": ["real_execution_learning", "multi_horizon_fill_curves", "spread_persistence"]},
     "gp_per_slot_hour_optimizer": {"status": "ACTIVE", "phase": 2, "depends_on": ["real_execution_learning"]},
     "active_vs_parking_slot_buckets": {"status": "ACTIVE", "phase": 2},
-    "minimum_absolute_profit_hurdles": {"status": "PLANNED", "phase": 3},
+    "minimum_absolute_profit_hurdles": {"status": "OBSERVATION_ONLY", "phase": 3, "depends_on": ["gp_per_slot_hour_optimizer", "player_time_adjusted_profit"]},
     "repeatability_multiplier": {"status": "PLANNED", "phase": 3, "depends_on": ["spread_persistence", "real_execution_learning"]},
     "opportunity_book": {"status": "PLANNED", "phase": 3, "depends_on": ["spread_persistence"]},
     "attention_modes": {"status": "PLANNED", "phase": 4},
