@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "updated_at_utc": "2026-08-29T07:00:00Z",
+  "objective": "Turn the desk from a scanner into a realized-execution trading system over multiple runs without destabilizing the fast path.",
+  "phases": [
+    {
+      "phase": 1,
+      "status": "IMPLEMENTING",
+      "features": [
+        {"id": 1, "name": "real_execution_learning", "status": "ACTIVE", "output": "real_execution_summary.json"},
+        {"id": 2, "name": "multi_horizon_fill_curves", "status": "ACTIVE", "output": "profit_layer fast-flip execution curves"},
+        {"id": 3, "name": "spread_persistence_validation", "status": "ACTIVE", "output": "spread_persistence.json"}
+      ]
+    },
+    {
+      "phase": 2,
+      "status": "PLANNED",
+      "features": [
+        {"id": 4, "name": "optimal_entry_exit_price_optimizer"},
+        {"id": 5, "name": "gp_per_ge_slot_hour_optimizer"},
+        {"id": 6, "name": "active_vs_parking_slot_buckets"}
+      ]
+    },
+    {
+      "phase": 3,
+      "status": "PLANNED",
+      "features": [
+        {"id": 7, "name": "minimum_absolute_profit_hurdles"},
+        {"id": 8, "name": "repeatability_multiplier"},
+        {"id": 9, "name": "persistent_opportunity_book"}
+      ]
+    },
+    {
+      "phase": 4,
+      "status": "PLANNED",
+      "features": [
+        {"id": 10, "name": "attention_modes_passive_normal_active"},
+        {"id": 11, "name": "remaining_upside_capital_rotation"},
+        {"id": 12, "name": "realized_performance_dashboard"}
+      ]
+    }
+  ],
+  "migration_rule": "Later phases consume the phase-1 execution and persistence outputs instead of creating parallel scoring systems. New features should be introduced behind config switches and evaluated over multiple relay cycles before receiving allocation authority."
+}
