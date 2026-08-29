@@ -1,22 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at_utc": "2026-08-27T08:14:40Z",
+  "updated_at_utc": "2026-08-29T00:09:29Z",
   "purpose": "Structured register of material OSRS market catalysts so hourly runs distinguish genuinely new evidence from recycled information.",
-  "status_values": [
-    "NEW",
-    "DEVELOPING",
-    "CONFIRMED",
-    "WEAKENING",
-    "DISPROVEN",
-    "UNCHANGED"
-  ],
-  "credibility_values": [
-    "CONFIRMED",
-    "STRONG EVIDENCE",
-    "PLAUSIBLE SPECULATION",
-    "WEAK SPECULATION",
-    "RUMOR"
-  ],
+  "status_values": ["NEW", "DEVELOPING", "CONFIRMED", "WEAKENING", "DISPROVEN", "UNCHANGED"],
+  "credibility_values": ["CONFIRMED", "STRONG EVIDENCE", "PLAUSIBLE SPECULATION", "WEAK SPECULATION", "RUMOR"],
   "records": [
     {
       "id": "fractured_archive_breaker_unspecified_rune",
@@ -134,6 +121,23 @@
       "summary": "The lock-in poll passed the proposed ability to trade grown dogs to an NPC for 100 Blood Runes, increasing to 200 with completion of the Morytania Medium Diary, by 78.7% Yes. The source depends on A Ruff Situation being implemented as described and is therefore a future supply catalyst rather than a current live source.",
       "market_pricing_assessment": "This adds a poll-confirmed future Blood-rune source and increases Blood-rune supply elasticity. It matters to the Breaker competing-rune basket because Blood would have somewhat more supply response if selected, but it provides no evidence that Jagex is more or less likely to choose Blood, Wrath, or another rune.",
       "what_changed_since_prior": "The repository did not record the Aug 21 lock-in result creating this future Blood-rune source. No Breaker-rune probability was changed because the evidence affects expected supply impact, not selection probability."
+    },
+    {
+      "id": "bounty_task_loot_sack_removal_next_update_aug28",
+      "first_seen": "2026-08-29",
+      "latest_evidence_date": "2026-08-28",
+      "source_attribution": "Jagex Mad Angel Combat Achievements known-issues/status note, current page observed 29 Aug 2026 UTC: https://secure.runescape.com/m=news/mad-angel-combat-achievements?oldschool=1",
+      "evidence_class": "CONFIRMED Jagex stated near-term correction to unintended live reward source",
+      "affected_theses": ["diamond_supply", "evergreen_consumable_supply", "bone_supply"],
+      "affected_items": ["Uncut diamond", "Diamond", "Bones", "Astral rune", "Zulrah's scales", "Crystal shard", "Cannonballs", "Bars", "Ores", "Planks", "Loot Sack"],
+      "credibility": "CONFIRMED",
+      "status": "NEW",
+      "confidence_0_100": 100,
+      "impact": "Moderate",
+      "direction": "Modestly bullish relative to current live supply; does not reverse the permanent Courier Task supply increase",
+      "summary": "Jagex states that Bounty Tasks should not award Loot Sacks after next week's Game Update. Courier Tasks remain the intended Loot Sack source, so the upcoming change removes a temporary unintended extra path feeding the same commodity bundles.",
+      "market_pricing_assessment": "Near-term Loot Sack commodity inflow should fall when the Bounty Task award path is removed. This partially offsets, but does not invalidate, the Aug 26 bearish supply catalyst because Courier Tasks continue to generate sacks. The effect is most relevant to high-volume bounty participation and should be treated as a supply-rate correction rather than a beneficiary reversal.",
+      "what_changed_since_prior": "The stored Aug 26 Loot Sack catalyst captured the intended Courier Task source but did not capture Jagex's current statement that Bounty Task sacks are unintended and scheduled for removal next game update."
     }
   ],
   "record_rules": {
