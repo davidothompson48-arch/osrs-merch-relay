@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at_utc": "2026-08-29T07:37:41Z",
+  "updated_at_utc": "2026-08-29T08:04:00Z",
   "rule": "Only user-confirmed orders/fills/cancels belong here. Shadow observations and market prints are never promoted to real executions. Unknown timestamps remain null and do not enter fill-time probability estimates.",
   "orders": [
     {
@@ -30,14 +30,32 @@
       "quantity": 5000,
       "limit_price_gp_each": 609,
       "placed_at_utc": "2026-08-29T07:37:41Z",
-      "status": "OPEN",
-      "filled_quantity": 0,
-      "avg_fill_price_gp_each": null,
+      "status": "FILLED",
+      "filled_quantity": 5000,
+      "avg_fill_price_gp_each": 609,
       "filled_at_utc": null,
       "cancelled_at_utc": null,
-      "timing_quality": "APPROX_CURRENT_CHAT_TIME",
+      "timing_quality": "PLACEMENT_APPROX_FILL_UNKNOWN",
       "source": "user_confirmed",
-      "notes": "User reported immediately after placing a buy order for 5,000 Snape grass at 609 gp each. Placement timestamp uses current chat time and is approximate to the report time."
+      "notes": "User confirmed the full 5,000 Snape grass order filled at 609 gp each. Placement timestamp was captured from the original report; exact fill time was not stated and remains null."
+    },
+    {
+      "order_id": "snape-grass-buy-8000-605-20260829",
+      "engine": "evergreen",
+      "item": "Snape grass",
+      "item_id": 231,
+      "side": "buy",
+      "quantity": 8000,
+      "limit_price_gp_each": 605,
+      "placed_at_utc": null,
+      "status": "FILLED",
+      "filled_quantity": 8000,
+      "avg_fill_price_gp_each": 605,
+      "filled_at_utc": null,
+      "cancelled_at_utc": null,
+      "timing_quality": "UNKNOWN",
+      "source": "user_confirmed",
+      "notes": "User confirmed an additional 8,000 Snape grass filled at 605 gp each. Exact placement and fill timestamps were not provided, so they remain null and do not affect fill-time curves."
     }
   ],
   "round_trips": []
