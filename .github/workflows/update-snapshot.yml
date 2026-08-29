@@ -13,6 +13,10 @@ on:
       - 'build_desk_packet.py'
       - 'augment_desk_packet.py'
       - 'augment_profit_packet.py'
+      - 'augment_execution_features.py'
+      - 'real_execution_learning.py'
+      - 'update_spread_persistence.py'
+      - 'optimize_allocation.py'
       - 'shadow_book.py'
       - 'sanitize_shadow_book.py'
       - 'build_desk_lite.py'
@@ -20,9 +24,11 @@ on:
       - 'project/related_items.json'
       - 'project/evergreen_staples.json'
       - 'project/portfolio_ledger.json'
+      - 'project/execution_ledger.json'
       - 'project/known_conversions.json'
       - 'project/tax_policy.json'
       - 'project/profit_engine.json'
+      - 'project/profit_engine_roadmap.json'
       - 'project/position_lifecycle.json'
       - 'project/desk_runtime_state.json'
       - 'project/catalyst_database.json'
@@ -89,7 +95,10 @@ jobs:
             python augment_desk_packet.py || true
             python sanitize_shadow_book.py || true
             python shadow_book.py || true
+            python real_execution_learning.py || true
+            python update_spread_persistence.py || true
             python augment_profit_packet.py || true
+            python augment_execution_features.py || true
             python optimize_allocation.py || true
             python build_desk_lite.py || true
           }
@@ -100,7 +109,7 @@ jobs:
             retry 4 python collect.py || true
             retry 3 python collect_related.py || true
             build_packet || true
-            commit_and_push "Update fast OSRS profit desk packet" snapshot.json relay_health.json related_watch.json desk_packet.json desk_packet_lite.json profit_snapshot.json shadow_book.json shadow_book_summary.json || true
+            commit_and_push "Update fast OSRS profit desk packet" snapshot.json relay_health.json related_watch.json desk_packet.json desk_packet_lite.json profit_snapshot.json shadow_book.json shadow_book_summary.json real_execution_summary.json spread_persistence.json || true
             if [ "$cycle" -eq 1 ] || [ $((cycle % 12)) -eq 0 ]; then
               retry 2 python collect_staples.py || true
               retry 2 python collect_portfolio_history.py || true
@@ -108,6 +117,6 @@ jobs:
             if [ "$cycle" -eq 1 ] || [ $((cycle % 3)) -eq 0 ]; then retry 3 python collect_universe.py || true; fi
             python archive_snapshot.py || true
             build_packet || true
-            commit_and_push "Update OSRS profit research packet and history" staples_watch.json portfolio_history.json market_universe/ desk_packet.json desk_packet_lite.json profit_snapshot.json shadow_book.json shadow_book_summary.json history/market_history.jsonl history/recent_history.json || true
+            commit_and_push "Update OSRS profit research packet and history" staples_watch.json portfolio_history.json market_universe/ desk_packet.json desk_packet_lite.json profit_snapshot.json shadow_book.json shadow_book_summary.json real_execution_summary.json spread_persistence.json history/market_history.jsonl history/recent_history.json || true
             elapsed=$(($(date +%s) - cycle_started)); sleep_for=$((300 - elapsed)); if [ "$sleep_for" -gt 0 ]; then sleep "$sleep_for"; fi
           done
