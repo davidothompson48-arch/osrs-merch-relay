@@ -1,11 +1,11 @@
 {
-  "schema_version": 1,
-  "updated_at_utc": "2026-08-29T07:00:00Z",
+  "schema_version": 2,
+  "updated_at_utc": "2026-08-29T07:16:00Z",
   "objective": "Turn the desk from a scanner into a realized-execution trading system over multiple runs without destabilizing the fast path.",
   "phases": [
     {
       "phase": 1,
-      "status": "IMPLEMENTING",
+      "status": "ACTIVE",
       "features": [
         {"id": 1, "name": "real_execution_learning", "status": "ACTIVE", "output": "real_execution_summary.json"},
         {"id": 2, "name": "multi_horizon_fill_curves", "status": "ACTIVE", "output": "profit_layer fast-flip execution curves"},
@@ -14,12 +14,13 @@
     },
     {
       "phase": 2,
-      "status": "PLANNED",
+      "status": "ACTIVE",
       "features": [
-        {"id": 4, "name": "optimal_entry_exit_price_optimizer"},
-        {"id": 5, "name": "gp_per_ge_slot_hour_optimizer"},
-        {"id": 6, "name": "active_vs_parking_slot_buckets"}
-      ]
+        {"id": 4, "name": "optimal_entry_exit_price_optimizer", "status": "ACTIVE", "output": "fast_flip_capacity_velocity.optimal_execution"},
+        {"id": 5, "name": "gp_per_ge_slot_hour_optimizer", "status": "ACTIVE", "output": "profit_layer.ge_slot_hour_frontier"},
+        {"id": 6, "name": "active_vs_parking_slot_buckets", "status": "ACTIVE", "output": "profit_layer.ge_slot_optimizer.bucket_recommendations"}
+      ],
+      "rollout_rule": "Optimal prices are advisory for unproven spreads and receive allocation authority only after Phase-1 persistence validation clears. GP-per-slot-hour uses probability-weighted realized-cycle economics rather than raw spread."
     },
     {
       "phase": 3,
@@ -28,7 +29,8 @@
         {"id": 7, "name": "minimum_absolute_profit_hurdles"},
         {"id": 8, "name": "repeatability_multiplier"},
         {"id": 9, "name": "persistent_opportunity_book"}
-      ]
+      ],
+      "entry_condition": "Evaluate after Phase 2 has accumulated multiple relay cycles and the persistence engine has promoted enough markets to generate meaningful active-slot observations."
     },
     {
       "phase": 4,
@@ -40,5 +42,5 @@
       ]
     }
   ],
-  "migration_rule": "Later phases consume the phase-1 execution and persistence outputs instead of creating parallel scoring systems. New features should be introduced behind config switches and evaluated over multiple relay cycles before receiving allocation authority."
+  "migration_rule": "Later phases consume Phase-1 execution/persistence and Phase-2 price/slot outputs instead of creating parallel scoring systems. New features are introduced behind configuration, observed over multiple relay cycles, and only then receive allocation authority."
 }
