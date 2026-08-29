@@ -36,8 +36,16 @@ def sanitized_rows(profit):
             capacity = x.get("capacity_gp")
             if not positive(profit_gp) or not positive(gph) or not positive(capacity) or not positive(hold):
                 continue
+            if x.get("auto_allocation_eligible") is False:
+                continue
             validation = x.get("validation_flag")
-            if validation == "ANOMALOUS_PATIENT_MARGIN_REQUIRES_VALIDATION":
+            if validation in {
+                "ANOMALOUS_PATIENT_MARGIN_REQUIRES_VALIDATION",
+                "SPREAD_NOT_PERSISTENT",
+                "SPREAD_UNSTABLE",
+                "SPREAD_INVALID",
+                "SPREAD_PERSISTENCE_UNKNOWN",
+            }:
                 continue
             # Dose ratios can show enormous apparent margins from asynchronous or
             # thin 1-dose prints. Force human validation before allowing >15% into
@@ -60,6 +68,9 @@ def sanitized_rows(profit):
                 "execution_probability_heuristic": x.get("execution_probability_heuristic"),
                 "slippage_risk": x.get("slippage_risk"),
                 "player_time_hours": x.get("player_time_hours"),
+                "spread_persistence_class": x.get("spread_persistence_class"),
+                "expected_cycle_hours": x.get("expected_cycle_hours"),
+                "real_execution_learning_applied": x.get("real_execution_learning_applied"),
                 "source_key": row_key(x)
             })
     # Deduplicate same engine/strategy if a future packet includes overlapping views.
@@ -91,7 +102,7 @@ def main():
     profit["marginal_capital_frontier"] = marginal[:15]
     profit["capital_allocation_ladder"] = ladder[:15]
     profit["capital_frontier"] = balanced[:15]
-    profit["allocation_rule"] = "With unknown liquid cash, deploy incrementally down the marginal-capital ladder: fill the highest expected return-per-capital-hour tranche only to modeled capacity, then move to the next. Absolute GP/hour is shown separately so small high-efficiency trades do not hide larger scalable opportunities."
+    profit["allocation_rule"] = "With unknown liquid cash, deploy incrementally down the marginal-capital ladder: fill the highest expected return-per-capital-hour tranche only to modeled capacity, then move to the next. Fast flips must first pass persistent-spread validation; FLASH/UNSTABLE/INVALID spreads remain watch-only regardless of optical ROI."
 
     # Rebuild slot priority from sanitized opportunities and keep only meaningful slot users.
     slot = profit.get("ge_slot_optimizer") or {}
@@ -103,7 +114,8 @@ def main():
         "slot_efficiency_gp_per_hour": x["expected_gp_per_hour"],
         "capacity_gp": x["capacity_gp"],
         "expected_profit_at_capacity_gp": x["expected_profit_at_capacity_gp"],
-        "profit_efficiency_score": x.get("profit_efficiency_score")
+        "profit_efficiency_score": x.get("profit_efficiency_score"),
+        "spread_persistence_class": x.get("spread_persistence_class")
     } for x in slot_rows[:free_upper]]
     profit["ge_slot_optimizer"] = slot
 
