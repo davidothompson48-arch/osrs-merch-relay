@@ -1,6 +1,6 @@
 {
-  "schema_version": 4,
-  "updated_at_utc": "2026-08-29T07:52:45Z",
+  "schema_version": 5,
+  "updated_at_utc": "2026-08-29T14:48:34Z",
   "objective": "Maximize long-run expected GP growth, not headline ROI. Prefer high probability-weighted GP per unit time, scalable capacity, reliable execution, low player-time cost and low correlation.",
   "primary_ranking_metrics": [
     "expected_gp_per_hour",
@@ -139,11 +139,80 @@
       "promotion_rule": "Observe at least 12 relay cycles and 50 evaluated candidates. Promote only after review confirms the hurdles reduce low-value slot use without suppressing repeatable realized GP; changing rollout_status to ALLOCATION_AUTHORITATIVE is an explicit later decision.",
       "rule": "A high percentage return or GP/hour estimate does not justify a GE slot when the modeled absolute payout is too small to overcome operational friction and model error. Bucket-specific priors are deliberately conservative and remain advisory during observation."
     },
+    "repeatability_multiplier": {
+      "enabled": true,
+      "rollout_status": "OBSERVATION_ONLY",
+      "minimum_book_observations": 6,
+      "minimum_consecutive_observations": 3,
+      "minimum_qualified_ratio": 0.67,
+      "minimum_real_round_trips_before_authority": 20,
+      "minimum_item_round_trips_before_bonus": 3,
+      "minimum_item_win_rate_pct_before_bonus": 50,
+      "advisory_multiplier_by_class": {
+        "REPEATABLE": 1.1,
+        "EARLY_SAMPLE": 0.95,
+        "INCONSISTENT": 0.75,
+        "UNOBSERVED": 1.0
+      },
+      "rule": "Repeatability is measured from persistent opportunity observations and user-confirmed executions. A multiplier above 1.0 also requires at least three profitable user-confirmed item round trips with a win rate of at least 50%; otherwise any book-only bonus is capped at 1.0. Multipliers remain advisory until the opportunity book and completed-round-trip thresholds clear and allocation authority is explicitly enabled."
+    },
+    "persistent_opportunity_book": {
+      "enabled": true,
+      "rollout_status": "ACTIVE",
+      "maximum_consecutive_gap_seconds": 720,
+      "retention_hours": 168,
+      "maximum_records": 500,
+      "minimum_cycles_before_review": 12,
+      "minimum_candidate_observations_before_review": 50,
+      "rule": "Track credible frontier opportunities across distinct RuneLite market snapshots. Deduplicate repeated packet builds from the same snapshot and retain only compact execution-relevant statistics."
+    },
     "rollout": {
       "status": "OBSERVATION_ONLY",
-      "active_feature": "minimum_absolute_profit_hurdles",
+      "active_features": [
+        "minimum_absolute_profit_hurdles",
+        "persistent_opportunity_book"
+      ],
       "repeatability_multiplier_status": "WAITING_FOR_MORE_REAL_EXECUTIONS",
-      "opportunity_book_status": "PLANNED"
+      "opportunity_book_status": "ACTIVE"
+    }
+  },
+  "phase4": {
+    "attention_modes": {
+      "enabled": true,
+      "rollout_status": "ADVISORY",
+      "current_mode": "NORMAL",
+      "modes": {
+        "PASSIVE": {
+          "maximum_player_time_attention": "NEGLIGIBLE",
+          "absolute_profit_hurdle_multiplier": 1.25,
+          "allowed_slot_buckets": ["PARKING", "FLEXIBLE"]
+        },
+        "NORMAL": {
+          "maximum_player_time_attention": "MEDIUM",
+          "absolute_profit_hurdle_multiplier": 1.0,
+          "allowed_slot_buckets": ["ACTIVE", "PARKING", "FLEXIBLE"]
+        },
+        "ACTIVE": {
+          "maximum_player_time_attention": "HIGH",
+          "absolute_profit_hurdle_multiplier": 0.75,
+          "allowed_slot_buckets": ["ACTIVE", "PARKING", "FLEXIBLE"]
+        }
+      },
+      "rule": "Attention modes expose how candidate eligibility changes with player availability. NORMAL is the default scenario; modes do not alter live allocation until explicitly promoted."
+    },
+    "remaining_upside_capital_rotation": {
+      "enabled": true,
+      "rollout_status": "ADVISORY",
+      "minimum_velocity_advantage_multiple": 2.0,
+      "minimum_expected_profit_advantage_gp": 250000,
+      "rule": "Issue a rotation alert only when a non-use holding has an explicit expected exit price and remaining payoff time, and another qualified opportunity materially dominates after tax, capacity and horizon scaling. Hold-for-use gear is always exempt."
+    },
+    "realized_performance_dashboard": {
+      "enabled": true,
+      "rollout_status": "ACTIVE",
+      "minimum_round_trips_before_strategy_ranking": 10,
+      "minimum_timed_round_trips_before_gp_hour_authority": 8,
+      "rule": "Dashboard metrics use only user-confirmed round trips. Strategy ranking and realized GP-per-slot-hour remain non-authoritative until the minimum completed and timed sample thresholds clear."
     }
   },
   "capital_aging": {
@@ -181,10 +250,10 @@
     "gp_per_slot_hour_optimizer": {"status": "ACTIVE", "phase": 2, "depends_on": ["real_execution_learning"]},
     "active_vs_parking_slot_buckets": {"status": "ACTIVE", "phase": 2},
     "minimum_absolute_profit_hurdles": {"status": "OBSERVATION_ONLY", "phase": 3, "depends_on": ["gp_per_slot_hour_optimizer", "player_time_adjusted_profit"]},
-    "repeatability_multiplier": {"status": "PLANNED", "phase": 3, "depends_on": ["spread_persistence", "real_execution_learning"]},
-    "opportunity_book": {"status": "PLANNED", "phase": 3, "depends_on": ["spread_persistence"]},
-    "attention_modes": {"status": "PLANNED", "phase": 4},
-    "remaining_upside_rotation": {"status": "PLANNED", "phase": 4},
-    "realized_performance_dashboard": {"status": "PLANNED", "phase": 4, "depends_on": ["real_execution_learning"]}
+    "repeatability_multiplier": {"status": "OBSERVATION_ONLY", "phase": 3, "depends_on": ["spread_persistence", "real_execution_learning", "opportunity_book"]},
+    "opportunity_book": {"status": "ACTIVE", "phase": 3, "depends_on": ["spread_persistence", "minimum_absolute_profit_hurdles"]},
+    "attention_modes": {"status": "ADVISORY", "phase": 4, "depends_on": ["gp_per_slot_hour_optimizer", "minimum_absolute_profit_hurdles"]},
+    "remaining_upside_rotation": {"status": "ADVISORY", "phase": 4, "depends_on": ["capital_aging", "repeatability_multiplier"]},
+    "realized_performance_dashboard": {"status": "ACTIVE", "phase": 4, "depends_on": ["real_execution_learning"]}
   }
 }

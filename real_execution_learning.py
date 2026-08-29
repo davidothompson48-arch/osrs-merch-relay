@@ -2,6 +2,7 @@
 import csv
 import json
 import math
+import statistics
 import time
 from datetime import datetime, timezone
 
@@ -108,7 +109,67 @@ def tax_for(price, tax_policy):
     return min(value, cap) if cap > 0 else value
 
 
-def round_trip_stats(round_trips, order_map, tax_policy):
+def grouped_performance(realized, field):
+    output = {}
+    for value in sorted({str(x.get(field) or "UNKNOWN") for x in realized}):
+        rows = [x for x in realized if str(x.get(field) or "UNKNOWN") == value]
+        timed = [x for x in rows if isinstance(x.get("cycle_hours"), (int, float)) and x["cycle_hours"] > 0]
+        profit = sum(x["net_profit_gp"] for x in rows)
+        timed_profit = sum(x["net_profit_gp"] for x in timed)
+        hours = sum(x["cycle_hours"] for x in timed)
+        output[value] = {
+            "round_trips": len(rows),
+            "wins": sum(1 for x in rows if x["net_profit_gp"] > 0),
+            "win_rate_pct": round(100 * sum(1 for x in rows if x["net_profit_gp"] > 0) / len(rows), 2) if rows else None,
+            "realized_net_profit_gp": int(profit),
+            "timed_round_trips": len(timed),
+            "timed_realized_net_profit_gp": int(timed_profit),
+            "realized_gp_per_slot_hour": int(timed_profit / hours) if hours > 0 else None,
+        }
+    return output
+
+
+def performance_dashboard(realized, cfg):
+    dashboard_cfg = ((cfg.get("phase4") or {}).get("realized_performance_dashboard") or {})
+    timed = [x for x in realized if isinstance(x.get("cycle_hours"), (int, float)) and x["cycle_hours"] > 0]
+    profit = sum(x["net_profit_gp"] for x in realized)
+    timed_profit = sum(x["net_profit_gp"] for x in timed)
+    capital = sum(x.get("capital_deployed_gp") or 0 for x in realized)
+    hours = sum(x["cycle_hours"] for x in timed)
+    minimum_round_trips = int(dashboard_cfg.get("minimum_round_trips_before_strategy_ranking") or 10)
+    minimum_timed = int(dashboard_cfg.get("minimum_timed_round_trips_before_gp_hour_authority") or 8)
+    profits = [x["net_profit_gp"] for x in realized]
+    return {
+        "status": "MEASUREMENT_READY" if len(realized) >= minimum_round_trips else "COLLECTING_DATA",
+        "strategy_ranking_authoritative": len(realized) >= minimum_round_trips and len(timed) >= minimum_timed,
+        "completed_round_trips": len(realized),
+        "wins": sum(1 for x in realized if x["net_profit_gp"] > 0),
+        "losses": sum(1 for x in realized if x["net_profit_gp"] < 0),
+        "breakeven": sum(1 for x in realized if x["net_profit_gp"] == 0),
+        "win_rate_pct": round(100 * sum(1 for x in realized if x["net_profit_gp"] > 0) / len(realized), 2) if realized else None,
+        "realized_net_profit_gp": int(profit),
+        "capital_deployed_gp": int(capital),
+        "realized_roi_pct": round(profit / capital * 100, 3) if capital > 0 else None,
+        "timed_round_trips": len(timed),
+        "timed_realized_net_profit_gp": int(timed_profit),
+        "aggregate_realized_gp_per_slot_hour": int(timed_profit / hours) if hours > 0 else None,
+        "median_cycle_hours": round(statistics.median(x["cycle_hours"] for x in timed), 3) if timed else None,
+        "average_profit_per_round_trip_gp": int(profit / len(realized)) if realized else None,
+        "best_trade": max(realized, key=lambda x: x["net_profit_gp"]) if realized else None,
+        "worst_trade": min(realized, key=lambda x: x["net_profit_gp"]) if realized else None,
+        "by_engine": grouped_performance(realized, "engine"),
+        "by_item": grouped_performance(realized, "item"),
+        "minimum_round_trips_before_strategy_ranking": minimum_round_trips,
+        "minimum_timed_round_trips_before_gp_hour_authority": minimum_timed,
+        "data_gaps": {
+            "round_trips_needed": max(0, minimum_round_trips - len(realized)),
+            "timed_round_trips_needed": max(0, minimum_timed - len(timed)),
+        },
+        "rule": dashboard_cfg.get("rule"),
+    }
+
+
+def round_trip_stats(round_trips, order_map, tax_policy, cfg):
     realized = []
     for row in round_trips:
         entry = order_map.get(row.get("entry_order_id"))
@@ -123,6 +184,7 @@ def round_trip_stats(round_trips, order_map, tax_policy):
         tax = tax_for(sell, tax_policy)
         net_each = sell - tax - buy
         profit = net_each * qty
+        capital = buy * qty
         entry_fill = parse_iso(entry.get("filled_at_utc"))
         exit_fill = parse_iso(exit_order.get("filled_at_utc"))
         cycle_hours = None
@@ -135,6 +197,8 @@ def round_trip_stats(round_trips, order_map, tax_policy):
             "buy_gp_each": buy,
             "sell_gp_each": sell,
             "net_profit_gp": int(profit),
+            "capital_deployed_gp": int(capital),
+            "realized_roi_pct": round(profit / capital * 100, 3) if capital > 0 else None,
             "cycle_hours": round(cycle_hours, 3) if cycle_hours is not None else None,
             "realized_gp_per_hour": int(profit / cycle_hours) if cycle_hours and cycle_hours > 0 else None,
         })
@@ -146,6 +210,7 @@ def round_trip_stats(round_trips, order_map, tax_policy):
         "timed_round_trips": len(timed),
         "average_realized_gp_per_hour": int(sum(x["realized_gp_per_hour"] for x in timed) / len(timed)) if timed else None,
         "recent": realized[-20:],
+        "performance_dashboard": performance_dashboard(realized, cfg),
     }
 
 
@@ -185,8 +250,10 @@ def main():
     for engine in sorted({x.get("engine") or "UNKNOWN" for x in orders}):
         by_engine[engine] = group_summary([x for x in orders if (x.get("engine") or "UNKNOWN") == engine], horizons, now)
 
+    round_trips = round_trip_stats(ledger.get("round_trips") or [], order_map, tax_policy, cfg)
+    dashboard = round_trips.pop("performance_dashboard")
     summary = {
-        "schema_version": 1,
+        "schema_version": 2,
         "generated_at": datetime.fromtimestamp(now, timezone.utc).isoformat().replace("+00:00", "Z"),
         "horizons_minutes": horizons,
         "orders_total": len(orders),
@@ -195,7 +262,8 @@ def main():
         "legacy_trade_journal_records": legacy_journal_count(),
         "by_item": by_item,
         "by_engine": by_engine,
-        "round_trips": round_trip_stats(ledger.get("round_trips") or [], order_map, tax_policy),
+        "round_trips": round_trips,
+        "performance_dashboard": dashboard,
         "minimum_samples_before_item_blend": int(learn_cfg.get("item_min_samples_before_blend") or 8),
         "minimum_samples_before_engine_blend": int(learn_cfg.get("engine_min_samples_before_blend") or 20),
         "rule": "Real user-confirmed orders outrank shadow observations. Fill-time curves use only orders with known placement timestamps and only horizons with enough observation time; unknown timestamps never become negative samples.",

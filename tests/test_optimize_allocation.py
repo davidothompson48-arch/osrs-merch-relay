@@ -140,6 +140,8 @@ class MinimumAbsoluteProfitHurdleTests(unittest.TestCase):
             "minimum_absolute_profit_hurdle_gp": 50_000,
             "minimum_absolute_profit_hurdle_pass": False,
             "minimum_absolute_profit_shortfall_gp": 40_000,
+            "repeatability_class": "EARLY_SAMPLE",
+            "repeatability_multiplier_advisory": 0.95,
         }
         summary = {
             "rollout_status": "OBSERVATION_ONLY",
@@ -151,7 +153,117 @@ class MinimumAbsoluteProfitHurdleTests(unittest.TestCase):
 
         self.assertNotIn("minimum_absolute_profit_hurdle_gp", compact_row)
         self.assertNotIn("minimum_absolute_profit_hurdle_pass", compact_row)
+        self.assertNotIn("repeatability_class", compact_row)
         self.assertEqual(compact_summary["advisory_failures"], [{"item_or_strategy": "candidate"}])
+
+    def test_repeatability_is_advisory_until_explicit_authority_and_data_thresholds(self):
+        cfg = config()
+        cfg["phase3"]["repeatability_multiplier"] = {
+            "enabled": True,
+            "rollout_status": "OBSERVATION_ONLY",
+            "minimum_real_round_trips_before_authority": 1,
+            "advisory_multiplier_by_class": {"INCONSISTENT": 0.75, "UNOBSERVED": 1.0},
+        }
+        cfg["phase3"]["persistent_opportunity_book"] = {
+            "minimum_cycles_before_review": 1,
+            "minimum_candidate_observations_before_review": 1,
+        }
+        row = {
+            "engine": "fast_flip",
+            "item_or_strategy": "Test item",
+            "expected_profit_at_capacity_gp": 100_000,
+            "expected_gp_per_hour": 50_000,
+            "gp_per_ge_slot_hour": 50_000,
+            "profit_efficiency_score": 70,
+        }
+        book = {
+            "cycles_observed": 1,
+            "total_candidate_observations": 1,
+            "records": {"fast_flip::Test item": {"repeatability_class": "INCONSISTENT", "observations": 3}},
+        }
+        real = {"round_trips": {"completed_round_trips": 1}}
+
+        observed = allocation.annotate_repeatability(dict(row), cfg, book, real)
+
+        self.assertFalse(observed["repeatability_allocation_authority"])
+        self.assertEqual(observed["expected_profit_at_capacity_gp"], 100_000)
+        self.assertEqual(observed["repeatability_adjusted_profit_gp_advisory"], 75_000)
+
+        cfg["phase3"]["repeatability_multiplier"]["rollout_status"] = "ALLOCATION_AUTHORITATIVE"
+        authoritative = allocation.annotate_repeatability(dict(row), cfg, book, real)
+
+        self.assertTrue(authoritative["repeatability_allocation_authority"])
+        self.assertEqual(authoritative["expected_profit_at_capacity_gp"], 75_000)
+        self.assertEqual(authoritative["expected_gp_per_hour"], 37_500)
+
+    def test_repeatability_bonus_requires_profitable_item_round_trips(self):
+        cfg = config()
+        cfg["phase3"]["repeatability_multiplier"] = {
+            "enabled": True,
+            "rollout_status": "OBSERVATION_ONLY",
+            "minimum_item_round_trips_before_bonus": 3,
+            "minimum_item_win_rate_pct_before_bonus": 50,
+            "advisory_multiplier_by_class": {"REPEATABLE": 1.1, "UNOBSERVED": 1.0},
+        }
+        row = {
+            "engine": "evergreen", "item_or_strategy": "Test item",
+            "expected_profit_at_capacity_gp": 100_000, "expected_gp_per_hour": 10_000,
+        }
+        book = {"records": {"evergreen::Test item": {"repeatability_class": "REPEATABLE", "observations": 8}}}
+        without_realized_sample = allocation.annotate_repeatability(dict(row), cfg, book, {})
+
+        self.assertEqual(without_realized_sample["repeatability_configured_multiplier"], 1.1)
+        self.assertEqual(without_realized_sample["repeatability_multiplier_advisory"], 1.0)
+        self.assertFalse(without_realized_sample["repeatability_bonus_real_execution_confirmed"])
+
+        real = {"performance_dashboard": {"by_item": {"Test item": {
+            "round_trips": 3, "win_rate_pct": 66.67, "realized_net_profit_gp": 50_000,
+        }}}}
+        with_realized_sample = allocation.annotate_repeatability(dict(row), cfg, book, real)
+
+        self.assertEqual(with_realized_sample["repeatability_multiplier_advisory"], 1.1)
+        self.assertTrue(with_realized_sample["repeatability_bonus_real_execution_confirmed"])
+
+    def test_attention_modes_change_advisory_candidate_eligibility(self):
+        cfg = config()
+        cfg["phase4"] = {"attention_modes": {
+            "enabled": True,
+            "rollout_status": "ADVISORY",
+            "current_mode": "NORMAL",
+            "modes": {
+                "PASSIVE": {"maximum_player_time_attention": "NEGLIGIBLE", "absolute_profit_hurdle_multiplier": 1.0},
+                "ACTIVE": {"maximum_player_time_attention": "HIGH", "absolute_profit_hurdle_multiplier": 0.75},
+            },
+        }}
+        rows = [
+            {"engine": "evergreen", "item_or_strategy": "Passive", "slot_bucket": "PARKING", "expected_profit_at_capacity_gp": 300_000, "expected_gp_per_hour": 10_000, "minimum_absolute_profit_hurdle_gp": 250_000, "player_time_hours": 0, "profit_efficiency_score": 50},
+            {"engine": "conversion", "item_or_strategy": "Manual", "slot_bucket": "FLEXIBLE", "expected_profit_at_capacity_gp": 60_000, "expected_gp_per_hour": 20_000, "minimum_absolute_profit_hurdle_gp": 75_000, "player_time_attention": "HIGH", "profit_efficiency_score": 60},
+        ]
+
+        summary = allocation.build_attention_modes(rows, cfg)
+
+        self.assertEqual(summary["scenarios"]["PASSIVE"]["eligible_candidates"], 1)
+        self.assertEqual(summary["scenarios"]["ACTIVE"]["eligible_candidates"], 2)
+        self.assertFalse(summary["allocation_authoritative"])
+
+    def test_rotation_exempts_use_gear_and_refuses_to_invent_remaining_upside(self):
+        packet = {
+            "tax_policy": {"rate": 0.02, "cap_gp_per_item": 5_000_000},
+            "portfolio": [
+                {"item": "Use gear", "item_id": 1, "quantity": 1, "current": {"low": 1_000_000}, "capital_aging": {"exempt": True}},
+                {"item": "Merch", "item_id": 2, "quantity": 10, "current": {"low": 100_000}, "capital_aging": {"tracking_age_hours": 10}},
+            ],
+        }
+        lifecycle = {"positions": {"1": {"hold_for_use": True}, "2": {"hold_for_use": False, "expected_payoff_hours": 100}}}
+        cfg = {"phase4": {"remaining_upside_capital_rotation": {"enabled": True, "rollout_status": "ADVISORY"}}}
+        alternatives = [{"item_or_strategy": "Alternative", "minimum_absolute_profit_hurdle_pass": True, "repeatability_class": "REPEATABLE", "expected_gp_per_hour": 100_000, "expected_profit_at_capacity_gp": 500_000, "capacity_gp": 1_000_000, "expected_hold_hours": 4}]
+
+        summary = allocation.build_remaining_upside_rotation(packet, alternatives, cfg, lifecycle)
+
+        self.assertEqual(summary["hold_for_use_exempt_items"], ["Use gear"])
+        self.assertEqual(summary["data_gap_positions"], 1)
+        self.assertEqual(summary["rotation_alerts"], [])
+        self.assertFalse(summary["allocation_authoritative"])
 
 
 if __name__ == "__main__":

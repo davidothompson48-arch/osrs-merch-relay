@@ -19,6 +19,10 @@ This directory is the persistent memory layer for the user's Old School RuneScap
 
 ## Live generated files
 
+- `desk_packet_lite.json` — compact routine desk input. Normal desk runs should need this file only.
+- `desk_packet.json` — full development/validation packet with scoring, execution, persistence and staged profit-engine diagnostics.
+- `real_execution_summary.json` — execution-learning output derived only from user-confirmed ledger facts; unknown times and prices remain null.
+- `opportunity_book.json` — persistent, snapshot-deduplicated record of repeat opportunity observations used by the staged repeatability layer.
 - `snapshot.json` — fresh core portfolio + full-market scanner snapshot. All market fields originate only from `prices.runescape.wiki`.
 - `related_watch.json` — fresh related-sector comparison tape, also only from `prices.runescape.wiki`.
 - `market_universe/index.json` — fresh index for the complete Wiki-mapped tradeable/static item universe.
@@ -30,9 +34,12 @@ This directory is the persistent memory layer for the user's Old School RuneScap
 
 - `collect.py` — core portfolio plus broad-market scanner.
 - `collect_related.py` — fixed related-sector universe and competing-thesis tape.
+- `real_execution_learning.py` — confirmed-execution fill curves and realized performance measurement.
+- `optimize_allocation.py` — integrated hurdle, repeatability, attention and remaining-upside allocation analysis.
+- `update_opportunity_book.py` — persistent opportunity observation book with RuneLite-snapshot deduplication.
 - `collect_universe.py` — complete Wiki item universe split into readable shards.
 - `archive_snapshot.py` — rolling history and recent-history views.
-- `.github/workflows/update-snapshot.yml` — runs all collectors/archive hourly and on supported test triggers.
+- `.github/workflows/update-snapshot.yml` — runs the fast relay loop, profit engine, tests and archive sequence on its scheduled workflow and supported test triggers.
 
 ## Source hierarchy
 

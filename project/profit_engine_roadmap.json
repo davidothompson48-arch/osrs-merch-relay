@@ -1,6 +1,6 @@
 {
-  "schema_version": 3,
-  "updated_at_utc": "2026-08-29T07:52:45Z",
+  "schema_version": 4,
+  "updated_at_utc": "2026-08-29T14:48:34Z",
   "objective": "Turn the desk from a scanner into a realized-execution trading system over multiple runs without destabilizing the fast path.",
   "phases": [
     {
@@ -27,21 +27,23 @@
       "status": "OBSERVATION_ONLY",
       "features": [
         {"id": 7, "name": "minimum_absolute_profit_hurdles", "status": "OBSERVATION_ONLY", "output": "profit_layer.minimum_absolute_profit_hurdles", "allocation_authority": false},
-        {"id": 8, "name": "repeatability_multiplier", "status": "PLANNED"},
-        {"id": 9, "name": "persistent_opportunity_book", "status": "PLANNED"}
+        {"id": 8, "name": "repeatability_multiplier", "status": "OBSERVATION_ONLY", "output": "profit_layer.repeatability_multiplier", "allocation_authority": false},
+        {"id": 9, "name": "persistent_opportunity_book", "status": "ACTIVE", "output": "opportunity_book.json and profit_layer.persistent_opportunity_book", "allocation_authority": false}
       ],
       "entry_condition": "Phase 2 has accumulated multiple relay cycles and the persistence engine has promoted markets into active-slot observations.",
-      "rollout_rule": "Minimum absolute-profit hurdles are measured for at least 12 relay cycles and 50 evaluated candidates before explicit review for allocation authority. Repeatability waits for a materially larger user-confirmed execution sample; the opportunity book follows after the hurdle observations are stable."
+      "rollout_rule": "The opportunity book records deduplicated relay observations immediately. Minimum absolute-profit hurdles require at least 12 relay cycles and 50 evaluated candidates before authority review; repeatability authority also waits for a materially larger user-confirmed execution sample."
     },
     {
       "phase": 4,
-      "status": "PLANNED",
+      "status": "ADVISORY",
       "features": [
-        {"id": 10, "name": "attention_modes_passive_normal_active"},
-        {"id": 11, "name": "remaining_upside_capital_rotation"},
-        {"id": 12, "name": "realized_performance_dashboard"}
-      ]
+        {"id": 10, "name": "attention_modes_passive_normal_active", "status": "ADVISORY", "output": "profit_layer.attention_modes", "allocation_authority": false},
+        {"id": 11, "name": "remaining_upside_capital_rotation", "status": "ADVISORY", "output": "profit_layer.remaining_upside_capital_rotation", "allocation_authority": false},
+        {"id": 12, "name": "realized_performance_dashboard", "status": "ACTIVE", "output": "real_execution_summary.performance_dashboard and profit_layer.realized_performance_dashboard", "allocation_authority": false}
+      ],
+      "rollout_rule": "Measurement is active immediately. Attention and capital-rotation decisions remain advisory until explicit inputs and realized execution samples clear configured thresholds."
     }
   ],
+  "implementation_state": "ROADMAP_ARCHITECTURE_COMPLETE_STAGED_AUTHORITY",
   "migration_rule": "Later phases consume Phase-1 execution/persistence and Phase-2 price/slot outputs instead of creating parallel scoring systems. New features are introduced behind configuration, observed over multiple relay cycles, and only then receive allocation authority."
 }

@@ -236,6 +236,7 @@ def main():
         "minimum_samples_before_engine_blend": real.get("minimum_samples_before_engine_blend"),
         "rule": real.get("rule"),
     }
+    profit["realized_performance_dashboard"] = real.get("performance_dashboard") or {}
     profit["spread_persistence"] = {
         "updated_at": persistence.get("updated_at"),
         "class_counts": persistence.get("class_counts") or {},
@@ -245,6 +246,7 @@ def main():
         "real_execution_learning": "ACTIVE",
         "multi_horizon_fill_curves": "ACTIVE",
         "spread_persistence_validation": "ACTIVE",
+        "realized_performance_dashboard": "ACTIVE",
         "future_phases": "project/profit_engine_roadmap.json",
     }
     profit["generated_at"] = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
