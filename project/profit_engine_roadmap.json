@@ -1,6 +1,6 @@
 {
-  "schema_version": 4,
-  "updated_at_utc": "2026-08-29T14:48:34Z",
+  "schema_version": 5,
+  "updated_at_utc": "2026-09-01T05:45:00Z",
   "objective": "Turn the desk from a scanner into a realized-execution trading system over multiple runs without destabilizing the fast path.",
   "phases": [
     {
@@ -42,8 +42,19 @@
         {"id": 12, "name": "realized_performance_dashboard", "status": "ACTIVE", "output": "real_execution_summary.performance_dashboard and profit_layer.realized_performance_dashboard", "allocation_authority": false}
       ],
       "rollout_rule": "Measurement is active immediately. Attention and capital-rotation decisions remain advisory until explicit inputs and realized execution samples clear configured thresholds."
+    },
+    {
+      "phase": 5,
+      "status": "ADVISORY",
+      "features": [
+        {"id": 13, "name": "speculative_park_list", "status": "ADVISORY", "output": "speculative_park_snapshot.json and desk_packet[.speculative_park]", "allocation_authority": false},
+        {"id": 14, "name": "speculative_theme_concentration_caps", "status": "ACTIVE", "output": "speculative_park.portfolio_policy", "allocation_authority": false},
+        {"id": 15, "name": "catalyst_probability_weighted_patient_entries", "status": "ADVISORY", "output": "speculative_park.top_candidates[].entry", "allocation_authority": false}
+      ],
+      "entry_condition": "Cached catalyst_state and probability models are available and market_universe is fresh enough to price configured candidates.",
+      "rollout_rule": "Speculative parks remain completely separate from the normal capital frontier. Cash competes with every candidate. Positions require explicit thesis, invalidation, patient entry, per-item sizing and correlation-bucket caps. Promotion to allocation authority requires user-confirmed realized evidence and an explicit later decision."
     }
   ],
-  "implementation_state": "ROADMAP_ARCHITECTURE_COMPLETE_STAGED_AUTHORITY",
+  "implementation_state": "ROADMAP_ARCHITECTURE_COMPLETE_STAGED_AUTHORITY_WITH_SPECULATIVE_PARKS",
   "migration_rule": "Later phases consume Phase-1 execution/persistence and Phase-2 price/slot outputs instead of creating parallel scoring systems. New features are introduced behind configuration, observed over multiple relay cycles, and only then receive allocation authority."
 }
