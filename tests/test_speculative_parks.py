@@ -89,6 +89,24 @@ class SpeculativeParkTests(unittest.TestCase):
         ranked = sp.rank_candidate(self.candidate, row, self.model, self.cfg, now)
         self.assertEqual(ranked["status"], "WATCH_CROWDED")
 
+    def test_crossed_prints_are_watch_only(self):
+        row = {
+            "status": "PARK_NOW",
+            "market": {"high": 95, "low": 100, "freshness": "FRESH"},
+        }
+        safe = injector.sanitize_candidate(row)
+        self.assertEqual(safe["status"], "WATCH_ASYNC_PRINTS")
+        self.assertEqual(safe["execution_gate"], "REJECT_ASYNC_CROSSED_PRINTS")
+
+    def test_staleish_park_now_downgrades_to_deep_bid(self):
+        row = {
+            "status": "PARK_NOW",
+            "market": {"high": 100, "low": 95, "freshness": "STALEISH"},
+        }
+        safe = injector.sanitize_candidate(row)
+        self.assertEqual(safe["status"], "DEEP_BID")
+        self.assertEqual(safe["execution_gate"], "NO_MARKET_BUY_WITHOUT_FRESH_PRINTS")
+
     def test_injector_compacts_full_snapshot(self):
         snapshot = {
             "schema_version": 1,
@@ -101,6 +119,7 @@ class SpeculativeParkTests(unittest.TestCase):
             "cash_competes": True,
             "objective": "objective",
             "portfolio_policy": {"total_speculative_cap_pct_of_liquid_gp": 30},
+            "execution_rule": "rule",
             "actionable_count": 1,
             "candidate_count": 2,
             "missing_market_rows": [],
