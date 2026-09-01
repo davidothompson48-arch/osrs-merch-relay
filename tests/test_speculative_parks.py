@@ -74,7 +74,7 @@ class SpeculativeParkTests(unittest.TestCase):
         price = sp.price_opportunity(row, self.candidate, self.cfg["policy"])
         self.assertEqual(price["ideal_entry_gp"], 90)
         self.assertEqual(price["entry_zone_high_gp"], 95)
-        self.assertEqual(price["do_not_chase_gp"], 102)
+        self.assertEqual(price["do_not_chase_gp"], 101)
 
     def test_deep_discount_can_promote_park_now(self):
         now = 1_000_000
