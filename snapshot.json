@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-09-01T02:21:08.966026Z",
-  "generated_unix": 1788229268,
+  "generated_at": "2026-09-01T02:21:53.000641Z",
+  "generated_unix": 1788229313,
   "source": "prices.runescape.wiki OSRS RuneLite real-time API",
   "source_policy": "All market prices and volumes in this file originate only from prices.runescape.wiki.",
   "freshness_policy": "mapping/latest/1h are critical; 5m/6h/24h/timeseries are fail-soft and may be empty without blocking fresh current tape.",
@@ -30,8 +30,8 @@
         "low": 347,
         "highTime": 1788229242,
         "lowTime": 1788229149,
-        "highAgeSeconds": 26,
-        "lowAgeSeconds": 119,
+        "highAgeSeconds": 71,
+        "lowAgeSeconds": 164,
         "rawSpread": 4,
         "geTaxAtHigh": 7,
         "afterTaxSpread": -3,
@@ -64,32 +64,32 @@
         }
       },
       "movementPct": {
-        "1h": -0.289,
-        "6h": -0.145,
-        "24h": -0.433,
+        "1h": 0.435,
+        "6h": -1.0,
+        "24h": -0.288,
         "7d": 0.0,
         "30d": -1.42
       },
       "volume": {
         "1h": {
-          "high": 303648,
-          "low": 123553,
-          "total": 427201
+          "high": 93388,
+          "low": 129482,
+          "total": 222870
         },
         "6h": {
-          "high": 1039320,
-          "low": 950711,
-          "total": 1990031
+          "high": 874978,
+          "low": 918797,
+          "total": 1793775
         },
         "24h": {
-          "high": 3901613,
-          "low": 3524299,
-          "total": 7425912
+          "high": 3662259,
+          "low": 3565186,
+          "total": 7227445
         },
         "7d": {
-          "high": 33804591,
-          "low": 21753209,
-          "total": 55557800
+          "high": 33529369,
+          "low": 21742202,
+          "total": 55271571
         },
         "highSideShare1h": 0.7108,
         "estimatedGpTraded1h": 147384345
@@ -97,11 +97,11 @@
       "liquidity": "LIQUID",
       "history_complete": true,
       "previousRelaySnapshot": {
-        "generatedAt": "2026-09-01T02:16:08.931095Z",
-        "high": 347,
+        "generatedAt": "2026-09-01T02:21:08.966026Z",
+        "high": 351,
         "low": 347,
-        "highTime": 1788228954,
-        "lowTime": 1788228949
+        "highTime": 1788229242,
+        "lowTime": 1788229149
       }
     },
     "21079": {
@@ -114,8 +114,8 @@
         "low": 5250000,
         "highTime": 1788228731,
         "lowTime": 1788229236,
-        "highAgeSeconds": 537,
-        "lowAgeSeconds": 32,
+        "highAgeSeconds": 582,
+        "lowAgeSeconds": 77,
         "rawSpread": 7760,
         "geTaxAtHigh": 105155,
         "afterTaxSpread": -97395,
@@ -176,11 +176,11 @@
       "liquidity": "MODERATE",
       "history_complete": true,
       "previousRelaySnapshot": {
-        "generatedAt": "2026-09-01T02:16:08.931095Z",
+        "generatedAt": "2026-09-01T02:21:08.966026Z",
         "high": 5257760,
         "low": 5250000,
         "highTime": 1788228731,
-        "lowTime": 1788228356
+        "lowTime": 1788229236
       }
     },
     "21034": {
@@ -193,8 +193,8 @@
         "low": 17731736,
         "highTime": 1788228243,
         "lowTime": 1788228801,
-        "highAgeSeconds": 1025,
-        "lowAgeSeconds": 467,
+        "highAgeSeconds": 1070,
+        "lowAgeSeconds": 512,
         "rawSpread": 292424,
         "geTaxAtHigh": 360483,
         "afterTaxSpread": -68059,
@@ -255,7 +255,7 @@
       "liquidity": "LIQUID",
       "history_complete": true,
       "previousRelaySnapshot": {
-        "generatedAt": "2026-09-01T02:16:08.931095Z",
+        "generatedAt": "2026-09-01T02:21:08.966026Z",
         "high": 18024160,
         "low": 17731736,
         "highTime": 1788228243,
@@ -272,8 +272,8 @@
         "low": 75000000,
         "highTime": 1788229169,
         "lowTime": 1788227232,
-        "highAgeSeconds": 99,
-        "lowAgeSeconds": 2036,
+        "highAgeSeconds": 144,
+        "lowAgeSeconds": 2081,
         "rawSpread": -1500000,
         "geTaxAtHigh": 1470000,
         "afterTaxSpread": -2970000,
@@ -339,10 +339,10 @@
       "liquidity": "LIQUID",
       "history_complete": true,
       "previousRelaySnapshot": {
-        "generatedAt": "2026-09-01T02:16:08.931095Z",
-        "high": 74900000,
+        "generatedAt": "2026-09-01T02:21:08.966026Z",
+        "high": 73500000,
         "low": 75000000,
-        "highTime": 1788226152,
+        "highTime": 1788229169,
         "lowTime": 1788227232
       }
     },
@@ -356,8 +356,8 @@
         "low": 115973004,
         "highTime": 1788225069,
         "lowTime": 1788225361,
-        "highAgeSeconds": 4199,
-        "lowAgeSeconds": 3907,
+        "highAgeSeconds": 4244,
+        "lowAgeSeconds": 3952,
         "rawSpread": 1526996,
         "geTaxAtHigh": 2350000,
         "afterTaxSpread": -823004,
@@ -418,7 +418,7 @@
       "liquidity": "VERY LIQUID",
       "history_complete": true,
       "previousRelaySnapshot": {
-        "generatedAt": "2026-09-01T02:16:08.931095Z",
+        "generatedAt": "2026-09-01T02:21:08.966026Z",
         "high": 117500000,
         "low": 115973004,
         "highTime": 1788225069,
@@ -435,8 +435,8 @@
         "low": 117917965,
         "highTime": 1788228207,
         "lowTime": 1788229133,
-        "highAgeSeconds": 1061,
-        "lowAgeSeconds": 135,
+        "highAgeSeconds": 1106,
+        "lowAgeSeconds": 180,
         "rawSpread": 3213819,
         "geTaxAtHigh": 2422635,
         "afterTaxSpread": 791184,
@@ -502,11 +502,11 @@
       "liquidity": "LIQUID",
       "history_complete": true,
       "previousRelaySnapshot": {
-        "generatedAt": "2026-09-01T02:16:08.931095Z",
+        "generatedAt": "2026-09-01T02:21:08.966026Z",
         "high": 121131784,
-        "low": 118012406,
+        "low": 117917965,
         "highTime": 1788228207,
-        "lowTime": 1788225364
+        "lowTime": 1788229133
       }
     },
     "24417": {
@@ -519,8 +519,8 @@
         "low": 315082330,
         "highTime": 1788227266,
         "lowTime": 1788227091,
-        "highAgeSeconds": 2002,
-        "lowAgeSeconds": 2177,
+        "highAgeSeconds": 2047,
+        "lowAgeSeconds": 2222,
         "rawSpread": 1494015,
         "geTaxAtHigh": 5000000,
         "afterTaxSpread": -3505985,
@@ -581,7 +581,7 @@
       "liquidity": "VERY LIQUID",
       "history_complete": true,
       "previousRelaySnapshot": {
-        "generatedAt": "2026-09-01T02:16:08.931095Z",
+        "generatedAt": "2026-09-01T02:21:08.966026Z",
         "high": 316576345,
         "low": 315082330,
         "highTime": 1788227266,
@@ -598,8 +598,8 @@
         "low": 563,
         "highTime": 1788228930,
         "lowTime": 1788229176,
-        "highAgeSeconds": 338,
-        "lowAgeSeconds": 92,
+        "highAgeSeconds": 383,
+        "lowAgeSeconds": 137,
         "rawSpread": 156,
         "geTaxAtHigh": 14,
         "afterTaxSpread": 142,
@@ -665,11 +665,11 @@
       "liquidity": "VERY THIN",
       "history_complete": true,
       "previousRelaySnapshot": {
-        "generatedAt": "2026-09-01T02:16:08.931095Z",
+        "generatedAt": "2026-09-01T02:21:08.966026Z",
         "high": 719,
-        "low": 501,
+        "low": 563,
         "highTime": 1788228930,
-        "lowTime": 1788228384
+        "lowTime": 1788229176
       }
     },
     "21024": {
@@ -682,8 +682,8 @@
         "low": 61374379,
         "highTime": 1788229162,
         "lowTime": 1788229228,
-        "highAgeSeconds": 106,
-        "lowAgeSeconds": 40,
+        "highAgeSeconds": 151,
+        "lowAgeSeconds": 85,
         "rawSpread": 1415621,
         "geTaxAtHigh": 1255800,
         "afterTaxSpread": 159821,
@@ -749,11 +749,11 @@
       "liquidity": "VERY LIQUID",
       "history_complete": true,
       "previousRelaySnapshot": {
-        "generatedAt": "2026-09-01T02:16:08.931095Z",
-        "high": 62000000,
-        "low": 61380999,
-        "highTime": 1788228758,
-        "lowTime": 1788228740
+        "generatedAt": "2026-09-01T02:21:08.966026Z",
+        "high": 62790000,
+        "low": 61374379,
+        "highTime": 1788229162,
+        "lowTime": 1788229228
       }
     },
     "536": {
@@ -766,8 +766,8 @@
         "low": 3329,
         "highTime": 1788229224,
         "lowTime": 1788229238,
-        "highAgeSeconds": 44,
-        "lowAgeSeconds": 30,
+        "highAgeSeconds": 89,
+        "lowAgeSeconds": 75,
         "rawSpread": 89,
         "geTaxAtHigh": 68,
         "afterTaxSpread": 21,
@@ -833,11 +833,11 @@
       "liquidity": "LIQUID",
       "history_complete": true,
       "previousRelaySnapshot": {
-        "generatedAt": "2026-09-01T02:16:08.931095Z",
-        "high": 3420,
-        "low": 3328,
-        "highTime": 1788228951,
-        "lowTime": 1788228896
+        "generatedAt": "2026-09-01T02:21:08.966026Z",
+        "high": 3418,
+        "low": 3329,
+        "highTime": 1788229224,
+        "lowTime": 1788229238
       }
     },
     "25576": {
@@ -850,8 +850,8 @@
         "low": 723003,
         "highTime": 1788229106,
         "lowTime": 1788228778,
-        "highAgeSeconds": 162,
-        "lowAgeSeconds": 490,
+        "highAgeSeconds": 207,
+        "lowAgeSeconds": 535,
         "rawSpread": 26997,
         "geTaxAtHigh": 15000,
         "afterTaxSpread": 11997,
@@ -917,10 +917,10 @@
       "liquidity": "THIN",
       "history_complete": true,
       "previousRelaySnapshot": {
-        "generatedAt": "2026-09-01T02:16:08.931095Z",
+        "generatedAt": "2026-09-01T02:21:08.966026Z",
         "high": 750000,
         "low": 723003,
-        "highTime": 1788228817,
+        "highTime": 1788229106,
         "lowTime": 1788228778
       }
     },
@@ -934,8 +934,8 @@
         "low": 729103,
         "highTime": 1788229007,
         "lowTime": 1788228237,
-        "highAgeSeconds": 261,
-        "lowAgeSeconds": 1031,
+        "highAgeSeconds": 306,
+        "lowAgeSeconds": 1076,
         "rawSpread": 58563,
         "geTaxAtHigh": 15753,
         "afterTaxSpread": 42810,
@@ -1001,10 +1001,10 @@
       "liquidity": "THIN",
       "history_complete": true,
       "previousRelaySnapshot": {
-        "generatedAt": "2026-09-01T02:16:08.931095Z",
+        "generatedAt": "2026-09-01T02:21:08.966026Z",
         "high": 787666,
         "low": 729103,
-        "highTime": 1788228428,
+        "highTime": 1788229007,
         "lowTime": 1788228237
       }
     }
@@ -4455,25 +4455,6 @@
         "oneHourVs24hPct": -2.015
       },
       {
-        "id": 31551,
-        "name": "Rosewood seed",
-        "high": 158000,
-        "low": 157003,
-        "highTime": 1788222098,
-        "lowTime": 1788229112,
-        "buyLimit": 200,
-        "oneHourVolume": 149,
-        "highPriceVolume": 139,
-        "lowPriceVolume": 10,
-        "highSideShare": 0.9329,
-        "estimatedGpTraded1h": 23467723,
-        "liquidity": "MODERATE",
-        "afterTaxSpreadGp": -2163,
-        "afterTaxSpreadRoiPct": -1.378,
-        "fiveMinVsOneHourPct": -0.317,
-        "oneHourVs24hPct": 0.301
-      },
-      {
         "id": 30125,
         "name": "Prayer regeneration potion(4)",
         "high": 79499,
@@ -4570,6 +4551,25 @@
         "afterTaxSpreadRoiPct": -1.457,
         "fiveMinVsOneHourPct": -1.202,
         "oneHourVs24hPct": 0.874
+      },
+      {
+        "id": 1681,
+        "name": "Diamond amulet (u)",
+        "high": 1907,
+        "low": 1905,
+        "highTime": 1788229218,
+        "lowTime": 1788228349,
+        "buyLimit": 10000,
+        "oneHourVolume": 10861,
+        "highPriceVolume": 844,
+        "lowPriceVolume": 10017,
+        "highSideShare": 0.0777,
+        "estimatedGpTraded1h": 21102923,
+        "liquidity": "MODERATE",
+        "afterTaxSpreadGp": -36,
+        "afterTaxSpreadRoiPct": -1.89,
+        "fiveMinVsOneHourPct": null,
+        "oneHourVs24hPct": 1.834
       }
     ]
   }
