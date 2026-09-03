@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at_utc": "2026-09-02T11:56:05Z",
+  "updated_at_utc": "2026-09-03T16:15:00Z",
   "purpose": "Structured register of material OSRS market catalysts so hourly runs distinguish genuinely new evidence from recycled information.",
   "status_values": ["NEW", "DEVELOPING", "CONFIRMED", "WEAKENING", "DISPROVEN", "UNCHANGED"],
   "credibility_values": ["CONFIRMED", "STRONG EVIDENCE", "PLAUSIBLE SPECULATION", "WEAK SPECULATION", "RUMOR"],
@@ -172,6 +172,23 @@
       "summary": "Ghommal's Lucky Penny can now be consumed to unlock its charge-saving effect without occupying the equipment slot, and that effect now applies to the Amulet of Blood Fury.",
       "market_pricing_assessment": "For players with Master-tier Combat Achievement completion, Blood Fury charges can now benefit from the Penny's saving effect without sacrificing the neck slot. That reduces marginal Blood shard replacement demand for this high-end cohort, a structural consumption headwind even though total Blood Fury usage could partially offset it.",
       "what_changed_since_prior": "The stored catalyst baseline did not include Blood Fury eligibility for the persistent Lucky Penny charge-saving effect."
+    },
+    {
+      "id": "elemental_amulet_scaling_nerf_intent_sep3",
+      "first_seen": "2026-09-03",
+      "latest_evidence_date": "2026-09-03",
+      "source_attribution": "Jagex blog update added 3 Sep 2026 to Summer Sweep Up Miscellaneous, https://secure.runescape.com/m=news/summer-sweep-up-miscellaneous?oldschool=1",
+      "evidence_class": "JMOD_INTENT announced next-week balance change",
+      "affected_theses": ["legacy_elemental_hardware", "elemental_magic_demand", "amulet_of_magic_sink"],
+      "affected_items": ["Amulet of Air", "Amulet of Water", "Amulet of Earth", "Amulet of Fire", "Elemental Amulet", "Harmonised nightmare staff", "Staff of the dead", "Toxic staff of the dead", "Nightmare staff", "Tome of fire", "Water tome", "Earth tome", "Elemental Fragments", "Occult necklace"],
+      "credibility": "STRONG EVIDENCE",
+      "status": "NEW",
+      "confidence_0_100": 95,
+      "impact": "High",
+      "direction": "Bearish versus the Sep 2 endgame scaling interpretation; neutral to the direct Amulet-of-magic/rune sink",
+      "summary": "Jagex says it intends next week to make the elemental amulets' +2 max hit apply after Elemental Weakness and Magic Damage bonuses instead of being added to base damage before those multipliers. Jagex explicitly cited overly broad endgame strength, upcoming Fractured Archive Elemental Fragments, and the Harmonised-orb interaction as balance concerns.",
+      "market_pricing_assessment": "This materially reduces the multiplicative endgame synergy that drove the strongest Harmonised/legacy elemental hardware thesis after the September 2 implementation. The amulets still consume Amulets of magic and elemental runes, so the direct crafting sink remains. Elemental Fragments remain a confirmed future Raid 4 reward, but the expected upside should be treated as more selective rather than a blanket multiplier-driven legacy gear rerating.",
+      "what_changed_since_prior": "The Sep 2 baseline treated the live +2 effect as potentially supportive for elemental hardware. The Sep 3 official blog update now states Jagex intends to change the calculation order next week specifically to taper endgame power, directly weakening that beneficiary mechanism while leaving the sink unchanged."
     }
   ],
   "record_rules": {
