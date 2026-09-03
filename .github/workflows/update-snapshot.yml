@@ -18,6 +18,7 @@ on:
       - 'real_execution_learning.py'
       - 'update_spread_persistence.py'
       - 'optimize_allocation.py'
+      - 'portfolio_exit_engine.py'
       - 'update_opportunity_book.py'
       - 'build_speculative_parks.py'
       - 'inject_speculative_parks.py'
@@ -111,6 +112,7 @@ jobs:
             python optimize_execution_prices.py || true
             python optimize_allocation.py || true
             python update_opportunity_book.py || true
+            python portfolio_exit_engine.py || return 1
             python build_desk_lite.py || true
             python build_speculative_parks.py || true
             python inject_speculative_parks.py || true

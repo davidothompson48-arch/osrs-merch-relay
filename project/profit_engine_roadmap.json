@@ -1,6 +1,6 @@
 {
-  "schema_version": 5,
-  "updated_at_utc": "2026-09-01T05:45:00Z",
+  "schema_version": 6,
+  "updated_at_utc": "2026-09-03T04:51:17Z",
   "objective": "Turn the desk from a scanner into a realized-execution trading system over multiple runs without destabilizing the fast path.",
   "phases": [
     {
@@ -53,8 +53,23 @@
       ],
       "entry_condition": "Cached catalyst_state and probability models are available and market_universe is fresh enough to price configured candidates.",
       "rollout_rule": "Speculative parks remain completely separate from the normal capital frontier. Cash competes with every candidate. Positions require explicit thesis, invalidation, patient entry, per-item sizing and correlation-bucket caps. Promotion to allocation authority requires user-confirmed realized evidence and an explicit later decision."
+    },
+    {
+      "phase": 6,
+      "status": "ACTIVE",
+      "features": [
+        {
+          "id": 16,
+          "name": "portfolio_exit_and_basis_recovery_engine",
+          "status": "ACTIVE",
+          "output": "desk_packet[.portfolio_exit_engine] and portfolio[].exit_signal",
+          "recommendation_authority": true
+        }
+      ],
+      "entry_condition": "Confirmed position quantity and basis, a fresh usable RuneLite packet with one-hour anchors, and either a configured realized catalyst or an extreme after-tax gain.",
+      "rollout_rule": "Evaluate exits before new deployment. Static runtime ratings cannot suppress a dynamic exit. Thin tape requires patient staged limits and conservative references rather than an indiscriminate market sell or a blanket hold."
     }
   ],
-  "implementation_state": "ROADMAP_ARCHITECTURE_COMPLETE_STAGED_AUTHORITY_WITH_SPECULATIVE_PARKS",
-  "migration_rule": "Later phases consume Phase-1 execution/persistence and Phase-2 price/slot outputs instead of creating parallel scoring systems. New features are introduced behind configuration, observed over multiple relay cycles, and only then receive allocation authority."
+  "implementation_state": "ROADMAP_ARCHITECTURE_COMPLETE_WITH_ACTIVE_PORTFOLIO_EXIT_LIFECYCLE",
+  "migration_rule": "Later phases consume Phase-1 execution/persistence and Phase-2 price/slot outputs instead of creating parallel scoring systems. New entry-ranking features are observed before receiving authority; deterministic portfolio risk controls may be activated after fresh-data gates and regression tests pass."
 }

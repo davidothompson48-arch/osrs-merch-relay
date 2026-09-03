@@ -36,6 +36,7 @@ This directory is the persistent memory layer for the user's Old School RuneScap
 - `collect_related.py` — fixed related-sector universe and competing-thesis tape.
 - `real_execution_learning.py` — confirmed-execution fill curves and realized performance measurement.
 - `optimize_allocation.py` — integrated hurdle, repeatability, attention and remaining-upside allocation analysis.
+- `portfolio_exit_engine.py` — authoritative staged profit-taking and basis-recovery analysis for existing holdings; dynamic exit signals override stale static HOLD ratings.
 - `update_opportunity_book.py` — persistent opportunity observation book with RuneLite-snapshot deduplication.
 - `collect_universe.py` — complete Wiki item universe split into readable shards.
 - `archive_snapshot.py` — rolling history and recent-history views.
