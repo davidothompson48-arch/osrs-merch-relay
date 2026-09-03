@@ -143,6 +143,31 @@ class PortfolioExitEngineTests(unittest.TestCase):
         self.assertEqual(action["execution_style"], "PATIENT_STAGED_LIMIT")
         self.assertGreaterEqual(action["estimated_minimum_fill_hours"], 4)
 
+    def test_weak_buyer_flow_changes_execution_instead_of_suppressing_basis_recovery(self):
+        desk = packet()
+        position = desk["portfolio"][0]
+        position["current"].update({"high": 904, "low": 904})
+        position["averages"]["1h"].update({
+            "avgHighPrice": 1233,
+            "avgLowPrice": 723,
+            "highPriceVolume": 390,
+            "lowPriceVolume": 705,
+        })
+        position["movementPct"] = {"24h": 48.519, "7d": 83.146}
+
+        summary = exits.build_exit_engine(desk, config(), lifecycle(), now=NOW)
+        action = summary["priority_actions"][0]
+
+        self.assertTrue(summary["action_required"])
+        self.assertEqual(action["action"], "TRIM_RECOVER_BASIS")
+        self.assertEqual(action["sell_quantity"], 1800)
+        self.assertEqual(action["runner_quantity"], 1200)
+        self.assertEqual(action["recommended_limit_price_gp"], 885)
+        self.assertFalse(action["metrics"]["buyer_flow_supportive"])
+        self.assertIn("WEAK_BUYER_FLOW_PATIENT_EXIT", action["reason_codes"])
+        self.assertEqual(action["execution_style"], "PATIENT_STAGED_LIMIT")
+        self.assertTrue(action["market_dump_prohibited"])
+
     def test_unrealized_or_missing_configured_catalyst_does_not_trigger_normal_gain(self):
         desk = packet(include_catalyst=False)
 

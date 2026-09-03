@@ -1,6 +1,6 @@
 {
-  "schema_version": 6,
-  "updated_at_utc": "2026-09-03T04:51:17Z",
+  "schema_version": 7,
+  "updated_at_utc": "2026-09-03T05:09:34Z",
   "objective": "Maximize long-run expected GP growth, not headline ROI. Prefer high probability-weighted GP per unit time, scalable capacity, reliable execution, low player-time cost and low correlation.",
   "primary_ranking_metrics": [
     "expected_gp_per_hour",
@@ -226,7 +226,7 @@
       "minimum_immediate_after_tax_roi_pct": 25,
       "minimum_24h_gain_pct": 20,
       "minimum_7d_gain_pct": 50,
-      "minimum_high_side_share": 0.45,
+      "preferred_high_side_share": 0.45,
       "minimum_one_hour_volume": 20,
       "default_runner_fraction": 0.5,
       "maximum_trim_fraction": 0.75,
@@ -238,7 +238,7 @@
       "minimum_patient_after_tax_roi_pct": 150,
       "minimum_immediate_after_tax_roi_pct": 50
     },
-    "rule": "Evaluate every non-use holding for after-tax profit capture before ranking new GP deployment. A recently realized configured catalyst plus strong patient and immediate profit, momentum, volume and buyer-flow evidence triggers staged basis recovery. Extreme gains can trigger independently. Thin tape prohibits a market dump but never suppresses an otherwise validated patient sell."
+    "rule": "Evaluate every non-use holding for after-tax profit capture before ranking new GP deployment. A recently realized configured catalyst plus strong patient and immediate profit, momentum and usable volume triggers staged basis recovery. Buyer flow controls execution risk and staging, but weak flow does not suppress an otherwise validated profit-taking signal. Extreme gains can trigger independently. Thin tape prohibits a market dump but never suppresses an otherwise validated patient sell."
   },
   "capital_aging": {
     "enabled": true,

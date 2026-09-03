@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "updated_at_utc": "2026-09-03T04:51:17Z",
+  "updated_at_utc": "2026-09-03T05:09:34Z",
   "project": "OSRS Merch Desk",
   "goal": "Rank the best risk-adjusted use of incremental GP across cash, existing holdings, flips, swings, catalysts, conversions and rotations using RuneLite/Wiki market data plus catalyst/community intelligence without forcing trades.",
   "architecture": "decision_engine_v2",
@@ -101,6 +101,6 @@
     "Cash is always a valid GP Deployment Board candidate.",
     "A trade can score well individually and still be rejected after correlation/concentration penalties.",
     "Pre-Catalyst Radar is an anomaly detector, not evidence of leaked information.",
-    "A dynamic portfolio exit signal overrides a static runtime HOLD rating; thin tape changes execution style rather than suppressing a validated sell."
+    "A dynamic portfolio exit signal overrides a static runtime HOLD rating; thin tape or weak buyer flow changes execution style rather than suppressing a validated sell."
   ]
 }
