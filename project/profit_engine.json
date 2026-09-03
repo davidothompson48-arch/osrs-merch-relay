@@ -1,6 +1,6 @@
 {
-  "schema_version": 5,
-  "updated_at_utc": "2026-08-29T14:48:34Z",
+  "schema_version": 6,
+  "updated_at_utc": "2026-09-03T04:51:17Z",
   "objective": "Maximize long-run expected GP growth, not headline ROI. Prefer high probability-weighted GP per unit time, scalable capacity, reliable execution, low player-time cost and low correlation.",
   "primary_ranking_metrics": [
     "expected_gp_per_hour",
@@ -215,6 +215,31 @@
       "rule": "Dashboard metrics use only user-confirmed round trips. Strategy ranking and realized GP-per-slot-hour remain non-authoritative until the minimum completed and timed sample thresholds clear."
     }
   },
+  "portfolio_exit_engine": {
+    "enabled": true,
+    "rollout_status": "ACTIVE",
+    "recommendation_authoritative": true,
+    "maximum_actionable_print_age_seconds": 1800,
+    "thin_spread_pct": 8,
+    "recover_basis": {
+      "minimum_patient_after_tax_roi_pct": 80,
+      "minimum_immediate_after_tax_roi_pct": 25,
+      "minimum_24h_gain_pct": 20,
+      "minimum_7d_gain_pct": 50,
+      "minimum_high_side_share": 0.45,
+      "minimum_one_hour_volume": 20,
+      "default_runner_fraction": 0.5,
+      "maximum_trim_fraction": 0.75,
+      "patient_limit_discount_pct": 2,
+      "minimum_patient_window_hours": 4
+    },
+    "extreme_profit_lock": {
+      "enabled": true,
+      "minimum_patient_after_tax_roi_pct": 150,
+      "minimum_immediate_after_tax_roi_pct": 50
+    },
+    "rule": "Evaluate every non-use holding for after-tax profit capture before ranking new GP deployment. A recently realized configured catalyst plus strong patient and immediate profit, momentum, volume and buyer-flow evidence triggers staged basis recovery. Extreme gains can trigger independently. Thin tape prohibits a market dump but never suppresses an otherwise validated patient sell."
+  },
   "capital_aging": {
     "enabled": true,
     "penalty_begins_at_expected_payoff_multiple": 1.0,
@@ -254,6 +279,7 @@
     "opportunity_book": {"status": "ACTIVE", "phase": 3, "depends_on": ["spread_persistence", "minimum_absolute_profit_hurdles"]},
     "attention_modes": {"status": "ADVISORY", "phase": 4, "depends_on": ["gp_per_slot_hour_optimizer", "minimum_absolute_profit_hurdles"]},
     "remaining_upside_rotation": {"status": "ADVISORY", "phase": 4, "depends_on": ["capital_aging", "repeatability_multiplier"]},
-    "realized_performance_dashboard": {"status": "ACTIVE", "phase": 4, "depends_on": ["real_execution_learning"]}
+    "realized_performance_dashboard": {"status": "ACTIVE", "phase": 4, "depends_on": ["real_execution_learning"]},
+    "portfolio_exit_engine": {"status": "ACTIVE", "phase": 6, "depends_on": ["portfolio_cost_basis", "catalyst_state", "fresh_runelite_tape"]}
   }
 }

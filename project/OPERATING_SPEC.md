@@ -279,6 +279,29 @@ Actual recommendations receive CONVICTION 1-5; 5/5 is rare.
 
 Use: STRONG HOLD, HOLD, WATCH, TRIM, EXIT.
 
+### Portfolio exit precedence
+
+Evaluate `portfolio_exit_engine` before ranking or describing any new GP deployment. If
+`action_required=true`, lead with the exit as a material change and reproduce its staged
+execution plan accurately. A dynamic `TRIM` or `EXIT` signal overrides a static rating in
+`desk_runtime_state.json`; the static value is only prior-run context.
+
+Profit-taking must explicitly test cost basis, after-tax patient and immediate returns,
+catalyst lifecycle, supply elasticity, momentum, buyer-side flow, position size versus
+observed volume, and the value of retaining a runner. A confirmed catalyst is not an
+automatic reason to keep 100% of a position after the anticipated repricing occurs.
+
+Thin or asynchronous tape is an execution constraint, not a blanket HOLD instruction.
+When a validated exit signal exists on thin tape, use a patient staged limit, prohibit an
+indiscriminate market dump, state the quantity and limit floor, show whether the original
+basis is recovered, retain the configured runner, and give a reassessment window.
+
+When the user confirms an exit fill, update `execution_ledger.json` and the remaining
+portfolio quantity/basis as usual. If the fill completed a configured basis-recovery plan,
+also set that position's `exit_policy.basis_recovery_completed=true` in
+`position_lifecycle.json`; a confirmed runner must not be trimmed repeatedly by the same
+signal. An open sell offer is not a completed recovery until the user confirms its fill.
+
 ## Required execution plan for every actual trade recommendation
 
 Every actual recommendation must include:
