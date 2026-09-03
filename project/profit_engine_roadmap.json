@@ -1,6 +1,6 @@
 {
   "schema_version": 6,
-  "updated_at_utc": "2026-09-03T04:51:17Z",
+  "updated_at_utc": "2026-09-03T05:09:34Z",
   "objective": "Turn the desk from a scanner into a realized-execution trading system over multiple runs without destabilizing the fast path.",
   "phases": [
     {
@@ -67,7 +67,7 @@
         }
       ],
       "entry_condition": "Confirmed position quantity and basis, a fresh usable RuneLite packet with one-hour anchors, and either a configured realized catalyst or an extreme after-tax gain.",
-      "rollout_rule": "Evaluate exits before new deployment. Static runtime ratings cannot suppress a dynamic exit. Thin tape requires patient staged limits and conservative references rather than an indiscriminate market sell or a blanket hold."
+      "rollout_rule": "Evaluate exits before new deployment. Static runtime ratings cannot suppress a dynamic exit. Thin tape or weak buyer flow requires patient staged limits and conservative references rather than an indiscriminate market sell or a blanket hold."
     }
   ],
   "implementation_state": "ROADMAP_ARCHITECTURE_COMPLETE_WITH_ACTIVE_PORTFOLIO_EXIT_LIFECYCLE",

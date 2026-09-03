@@ -288,8 +288,10 @@ execution plan accurately. A dynamic `TRIM` or `EXIT` signal overrides a static 
 
 Profit-taking must explicitly test cost basis, after-tax patient and immediate returns,
 catalyst lifecycle, supply elasticity, momentum, buyer-side flow, position size versus
-observed volume, and the value of retaining a runner. A confirmed catalyst is not an
-automatic reason to keep 100% of a position after the anticipated repricing occurs.
+observed volume, and the value of retaining a runner. Buyer flow changes execution risk,
+staging and reassessment timing; weak buyer flow must not suppress an otherwise validated
+basis-recovery signal. A confirmed catalyst is not an automatic reason to keep 100% of a
+position after the anticipated repricing occurs.
 
 Thin or asynchronous tape is an execution constraint, not a blanket HOLD instruction.
 When a validated exit signal exists on thin tape, use a patient staged limit, prohibit an

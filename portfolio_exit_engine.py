@@ -256,7 +256,11 @@ def evaluate_position(position, policy, catalyst_state, cfg, tax_policy, now):
     movement_7d = (position.get("movementPct") or {}).get("7d")
     high_volume = market.get("one_hour_high_volume")
     total_volume = market.get("one_hour_total_volume")
-    high_share = high_volume / total_volume if valid_number(high_volume) and valid_number(total_volume) else None
+    high_share = (
+        max(0, high_volume) / total_volume
+        if isinstance(high_volume, (int, float)) and valid_number(total_volume)
+        else None
+    )
     catalyst_matches = realized_catalysts(policy, catalyst_state, now)
 
     recover_cfg = cfg.get("recover_basis") or {}
@@ -264,7 +268,13 @@ def evaluate_position(position, policy, catalyst_state, cfg, tax_policy, now):
     immediate_trigger = float(policy.get("minimum_immediate_after_tax_roi_pct", recover_cfg.get("minimum_immediate_after_tax_roi_pct", 25)))
     momentum_trigger = float(policy.get("minimum_24h_gain_pct", recover_cfg.get("minimum_24h_gain_pct", 20)))
     weekly_trigger = float(policy.get("minimum_7d_gain_pct", recover_cfg.get("minimum_7d_gain_pct", 50)))
-    share_trigger = float(policy.get("minimum_high_side_share", recover_cfg.get("minimum_high_side_share", 0.45)))
+    preferred_share = float(policy.get(
+        "preferred_high_side_share",
+        policy.get(
+            "minimum_high_side_share",
+            recover_cfg.get("preferred_high_side_share", recover_cfg.get("minimum_high_side_share", 0.45)),
+        ),
+    ))
     minimum_volume = int(policy.get("minimum_one_hour_volume", recover_cfg.get("minimum_one_hour_volume", 20)))
     conservative_profit_cleared = (
         immediate_roi is not None and immediate_roi >= immediate_trigger
@@ -276,6 +286,8 @@ def evaluate_position(position, policy, catalyst_state, cfg, tax_policy, now):
     ) or (
         isinstance(movement_7d, (int, float)) and movement_7d >= weekly_trigger
     )
+    buyer_flow_observed = isinstance(high_share, (int, float))
+    buyer_flow_supportive = buyer_flow_observed and high_share >= preferred_share
     catalyst_trigger = (
         policy.get("mode") == "CATALYST_BASIS_RECOVERY"
         and bool(catalyst_matches)
@@ -283,7 +295,7 @@ def evaluate_position(position, policy, catalyst_state, cfg, tax_policy, now):
         and conservative_profit_cleared
         and momentum_cleared
         and valid_number(total_volume) and total_volume >= minimum_volume
-        and isinstance(high_share, (int, float)) and high_share >= share_trigger
+        and buyer_flow_observed
     )
 
     extreme_cfg = cfg.get("extreme_profit_lock") or {}
@@ -305,6 +317,8 @@ def evaluate_position(position, policy, catalyst_state, cfg, tax_policy, now):
         "movement_24h_pct": movement_24h,
         "movement_7d_pct": movement_7d,
         "high_side_share_1h": round(high_share, 4) if isinstance(high_share, (int, float)) else None,
+        "preferred_high_side_share_1h": preferred_share,
+        "buyer_flow_supportive": buyer_flow_supportive,
         "one_hour_volume": int(total_volume) if valid_number(total_volume) else None,
     }
     if not (catalyst_trigger or extreme_trigger):
@@ -338,7 +352,12 @@ def evaluate_position(position, policy, catalyst_state, cfg, tax_policy, now):
     basis_recovery_pct = net_proceeds / basis_total * 100 if basis_total else None
     liquidity = str(position.get("liquidity") or "UNKNOWN").upper()
     spread_pct = (market["high"] - market["low"]) / market["low"] * 100
-    thin_tape = liquidity in {"THIN", "VERY THIN"} or spread_pct >= float(cfg.get("thin_spread_pct") or 8)
+    weak_buyer_flow = buyer_flow_observed and not buyer_flow_supportive
+    thin_tape = (
+        liquidity in {"THIN", "VERY THIN"}
+        or spread_pct >= float(cfg.get("thin_spread_pct") or 8)
+        or weak_buyer_flow
+    )
     demand_volume = high_volume if valid_number(high_volume) else total_volume
     minimum_fill_hours = planned_quantity / demand_volume if valid_number(demand_volume) else None
     minimum_fill_hours = max(float(recover_cfg.get("minimum_patient_window_hours") or 4), minimum_fill_hours or 0)
@@ -352,6 +371,8 @@ def evaluate_position(position, policy, catalyst_state, cfg, tax_policy, now):
         reason_codes.append("HIGH_SUPPLY_ELASTICITY")
     if thin_tape:
         reason_codes.append("THIN_TAPE_PATIENT_EXECUTION")
+    if weak_buyer_flow:
+        reason_codes.append("WEAK_BUYER_FLOW_PATIENT_EXIT")
     if gate == "ASYNC_CROSSED_PATIENT_ONLY":
         reason_codes.append("ASYNC_PRINTS_USE_CONSERVATIVE_PATIENT_REFERENCE")
     if (
@@ -377,9 +398,14 @@ def evaluate_position(position, policy, catalyst_state, cfg, tax_policy, now):
             if basis_recovered and runner_quantity > 0
             else "Lock available profit with the configured staged limit."
         )
+        flow_note = (
+            "Buyer flow is supportive."
+            if buyer_flow_supportive
+            else "Buyer flow is below the preferred threshold, so use patient staged execution instead of cancelling the exit."
+        )
         reason = (
             "The configured catalyst has been realized and the position cleared after-tax profit, momentum, "
-            f"volume, and buyer-flow thresholds. {outcome}"
+            f"and volume thresholds. {flow_note} {outcome}"
         )
     else:
         outcome = "while retaining a runner" if runner_quantity > 0 else "because the position cannot be split"
@@ -405,7 +431,7 @@ def evaluate_position(position, policy, catalyst_state, cfg, tax_policy, now):
         "market_dump_prohibited": thin_tape,
         "estimated_minimum_fill_hours": round(minimum_fill_hours, 2),
         "reassess_after_hours": max(4, int(math.ceil(minimum_fill_hours))),
-        "cancel_or_reprice_if": "Fresh one-hour patient reference falls below the limit and buyer-side flow loses the configured threshold.",
+        "cancel_or_reprice_if": "Fresh patient reference remains below the limit through the reassessment window or prints become stale; never chase a falling bid.",
         "reason_codes": sorted(set(reason_codes)),
         "realized_catalysts": catalyst_matches,
         "metrics": {
