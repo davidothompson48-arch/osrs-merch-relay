@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-09-04T00:49:36.295789Z",
-  "generated_unix": 1788482976,
+  "generated_at": "2026-09-04T00:50:31.604659Z",
+  "generated_unix": 1788483031,
   "source": "prices.runescape.wiki OSRS RuneLite real-time API",
   "source_policy": "All market prices and volumes in this file originate only from prices.runescape.wiki.",
   "freshness_policy": "mapping/latest/1h are critical; 5m/6h/24h/timeseries are fail-soft and may be empty without blocking fresh current tape.",
@@ -30,8 +30,8 @@
         "low": 343,
         "highTime": 1788482916,
         "lowTime": 1788482914,
-        "highAgeSeconds": 60,
-        "lowAgeSeconds": 62,
+        "highAgeSeconds": 115,
+        "lowAgeSeconds": 117,
         "rawSpread": 5,
         "geTaxAtHigh": 6,
         "afterTaxSpread": -1,
@@ -39,10 +39,10 @@
       },
       "averages": {
         "5m": {
-          "avgHighPrice": 339,
-          "highPriceVolume": 178,
-          "avgLowPrice": 340,
-          "lowPriceVolume": 1805
+          "avgHighPrice": 340,
+          "highPriceVolume": 27717,
+          "avgLowPrice": 338,
+          "lowPriceVolume": 4785
         },
         "1h": {
           "avgHighPrice": 342,
@@ -97,11 +97,11 @@
       "liquidity": "LIQUID",
       "history_complete": true,
       "previousRelaySnapshot": {
-        "generatedAt": "2026-09-04T00:44:37.033777Z",
-        "high": 339,
-        "low": 339,
-        "highTime": 1788482620,
-        "lowTime": 1788482587
+        "generatedAt": "2026-09-04T00:49:36.295789Z",
+        "high": 348,
+        "low": 343,
+        "highTime": 1788482916,
+        "lowTime": 1788482914
       }
     },
     "21079": {
@@ -114,8 +114,8 @@
         "low": 5212652,
         "highTime": 1788481793,
         "lowTime": 1788482922,
-        "highAgeSeconds": 1183,
-        "lowAgeSeconds": 54,
+        "highAgeSeconds": 1238,
+        "lowAgeSeconds": 109,
         "rawSpread": 124731,
         "geTaxAtHigh": 106747,
         "afterTaxSpread": 17984,
@@ -176,11 +176,11 @@
       "liquidity": "MODERATE",
       "history_complete": true,
       "previousRelaySnapshot": {
-        "generatedAt": "2026-09-04T00:44:37.033777Z",
+        "generatedAt": "2026-09-04T00:49:36.295789Z",
         "high": 5337383,
-        "low": 5120116,
+        "low": 5212652,
         "highTime": 1788481793,
-        "lowTime": 1788481886
+        "lowTime": 1788482922
       }
     },
     "21034": {
@@ -193,20 +193,15 @@
         "low": 16804825,
         "highTime": 1788482332,
         "lowTime": 1788482305,
-        "highAgeSeconds": 644,
-        "lowAgeSeconds": 671,
+        "highAgeSeconds": 699,
+        "lowAgeSeconds": 726,
         "rawSpread": 488874,
         "geTaxAtHigh": 345873,
         "afterTaxSpread": 143001,
         "afterTaxSpreadRoiPct": 0.851
       },
       "averages": {
-        "5m": {
-          "avgHighPrice": 17296850,
-          "highPriceVolume": 2,
-          "avgLowPrice": 16804825,
-          "lowPriceVolume": 1
-        },
+        "5m": {},
         "1h": {
           "avgHighPrice": 16764424,
           "highPriceVolume": 14,
@@ -260,7 +255,7 @@
       "liquidity": "LIQUID",
       "history_complete": true,
       "previousRelaySnapshot": {
-        "generatedAt": "2026-09-04T00:44:37.033777Z",
+        "generatedAt": "2026-09-04T00:49:36.295789Z",
         "high": 17293699,
         "low": 16804825,
         "highTime": 1788482332,
@@ -277,8 +272,8 @@
         "low": 71942814,
         "highTime": 1788482412,
         "lowTime": 1788482810,
-        "highAgeSeconds": 564,
-        "lowAgeSeconds": 166,
+        "highAgeSeconds": 619,
+        "lowAgeSeconds": 221,
         "rawSpread": 1557185,
         "geTaxAtHigh": 1469999,
         "afterTaxSpread": 87186,
@@ -286,10 +281,10 @@
       },
       "averages": {
         "5m": {
-          "avgHighPrice": null,
-          "highPriceVolume": 0,
-          "avgLowPrice": 71897393,
-          "lowPriceVolume": 1
+          "avgHighPrice": 73499999,
+          "highPriceVolume": 1,
+          "avgLowPrice": null,
+          "lowPriceVolume": 0
         },
         "1h": {
           "avgHighPrice": 73366359,
@@ -344,11 +339,11 @@
       "liquidity": "VERY LIQUID",
       "history_complete": true,
       "previousRelaySnapshot": {
-        "generatedAt": "2026-09-04T00:44:37.033777Z",
+        "generatedAt": "2026-09-04T00:49:36.295789Z",
         "high": 73499999,
-        "low": 71897393,
+        "low": 71942814,
         "highTime": 1788482412,
-        "lowTime": 1788482215
+        "lowTime": 1788482810
       }
     },
     "24420": {
@@ -361,8 +356,8 @@
         "low": 118046928,
         "highTime": 1788480986,
         "lowTime": 1788482624,
-        "highAgeSeconds": 1990,
-        "lowAgeSeconds": 352,
+        "highAgeSeconds": 2045,
+        "lowAgeSeconds": 407,
         "rawSpread": 3403628,
         "geTaxAtHigh": 2429011,
         "afterTaxSpread": 974617,
@@ -372,7 +367,7 @@
         "5m": {
           "avgHighPrice": null,
           "highPriceVolume": 0,
-          "avgLowPrice": 117138058,
+          "avgLowPrice": 118046928,
           "lowPriceVolume": 1
         },
         "1h": {
@@ -428,7 +423,7 @@
       "liquidity": "LIQUID",
       "history_complete": true,
       "previousRelaySnapshot": {
-        "generatedAt": "2026-09-04T00:44:37.033777Z",
+        "generatedAt": "2026-09-04T00:49:36.295789Z",
         "high": 121450556,
         "low": 118046928,
         "highTime": 1788480986,
@@ -445,15 +440,20 @@
         "low": 117426874,
         "highTime": 1788480992,
         "lowTime": 1788482634,
-        "highAgeSeconds": 1984,
-        "lowAgeSeconds": 342,
+        "highAgeSeconds": 2039,
+        "lowAgeSeconds": 397,
         "rawSpread": 1378429,
         "geTaxAtHigh": 2376106,
         "afterTaxSpread": -997677,
         "afterTaxSpreadRoiPct": -0.85
       },
       "averages": {
-        "5m": {},
+        "5m": {
+          "avgHighPrice": null,
+          "highPriceVolume": 0,
+          "avgLowPrice": 116713440,
+          "lowPriceVolume": 2
+        },
         "1h": {
           "avgHighPrice": 118200000,
           "highPriceVolume": 2,
@@ -507,7 +507,7 @@
       "liquidity": "VERY LIQUID",
       "history_complete": true,
       "previousRelaySnapshot": {
-        "generatedAt": "2026-09-04T00:44:37.033777Z",
+        "generatedAt": "2026-09-04T00:49:36.295789Z",
         "high": 118805303,
         "low": 117426874,
         "highTime": 1788480992,
@@ -524,20 +524,15 @@
         "low": 308899127,
         "highTime": 1788482697,
         "lowTime": 1788482824,
-        "highAgeSeconds": 279,
-        "lowAgeSeconds": 152,
+        "highAgeSeconds": 334,
+        "lowAgeSeconds": 207,
         "rawSpread": 3967159,
         "geTaxAtHigh": 5000000,
         "afterTaxSpread": -1032841,
         "afterTaxSpreadRoiPct": -0.334
       },
       "averages": {
-        "5m": {
-          "avgHighPrice": null,
-          "highPriceVolume": 0,
-          "avgLowPrice": 306793538,
-          "lowPriceVolume": 2
-        },
+        "5m": {},
         "1h": {
           "avgHighPrice": 308000000,
           "highPriceVolume": 1,
@@ -591,11 +586,11 @@
       "liquidity": "VERY LIQUID",
       "history_complete": true,
       "previousRelaySnapshot": {
-        "generatedAt": "2026-09-04T00:44:37.033777Z",
-        "high": 307000000,
-        "low": 306507500,
-        "highTime": 1788482008,
-        "lowTime": 1788482268
+        "generatedAt": "2026-09-04T00:49:36.295789Z",
+        "high": 312866286,
+        "low": 308899127,
+        "highTime": 1788482697,
+        "lowTime": 1788482824
       }
     },
     "1727": {
@@ -608,8 +603,8 @@
         "low": 586,
         "highTime": 1788482926,
         "lowTime": 1788482874,
-        "highAgeSeconds": 50,
-        "lowAgeSeconds": 102,
+        "highAgeSeconds": 105,
+        "lowAgeSeconds": 157,
         "rawSpread": 28,
         "geTaxAtHigh": 12,
         "afterTaxSpread": 16,
@@ -617,10 +612,10 @@
       },
       "averages": {
         "5m": {
-          "avgHighPrice": 614,
-          "highPriceVolume": 7,
-          "avgLowPrice": 602,
-          "lowPriceVolume": 18
+          "avgHighPrice": 603,
+          "highPriceVolume": 21,
+          "avgLowPrice": 586,
+          "lowPriceVolume": 5
         },
         "1h": {
           "avgHighPrice": 820,
@@ -675,11 +670,11 @@
       "liquidity": "VERY THIN",
       "history_complete": true,
       "previousRelaySnapshot": {
-        "generatedAt": "2026-09-04T00:44:37.033777Z",
-        "high": 600,
+        "generatedAt": "2026-09-04T00:49:36.295789Z",
+        "high": 614,
         "low": 586,
-        "highTime": 1788482501,
-        "lowTime": 1788482622
+        "highTime": 1788482926,
+        "lowTime": 1788482874
       }
     },
     "21024": {
@@ -692,20 +687,15 @@
         "low": 61333824,
         "highTime": 1788482101,
         "lowTime": 1788482018,
-        "highAgeSeconds": 875,
-        "lowAgeSeconds": 958,
+        "highAgeSeconds": 930,
+        "lowAgeSeconds": 1013,
         "rawSpread": 666176,
         "geTaxAtHigh": 1240000,
         "afterTaxSpread": -573824,
         "afterTaxSpreadRoiPct": -0.936
       },
       "averages": {
-        "5m": {
-          "avgHighPrice": 62000000,
-          "highPriceVolume": 1,
-          "avgLowPrice": null,
-          "lowPriceVolume": 0
-        },
+        "5m": {},
         "1h": {
           "avgHighPrice": 62498048,
           "highPriceVolume": 6,
@@ -759,7 +749,7 @@
       "liquidity": "VERY LIQUID",
       "history_complete": true,
       "previousRelaySnapshot": {
-        "generatedAt": "2026-09-04T00:44:37.033777Z",
+        "generatedAt": "2026-09-04T00:49:36.295789Z",
         "high": 62000000,
         "low": 61333824,
         "highTime": 1788482101,
@@ -776,8 +766,8 @@
         "low": 3330,
         "highTime": 1788482911,
         "lowTime": 1788482930,
-        "highAgeSeconds": 65,
-        "lowAgeSeconds": 46,
+        "highAgeSeconds": 120,
+        "lowAgeSeconds": 101,
         "rawSpread": 43,
         "geTaxAtHigh": 67,
         "afterTaxSpread": -24,
@@ -786,9 +776,9 @@
       "averages": {
         "5m": {
           "avgHighPrice": 3374,
-          "highPriceVolume": 7537,
-          "avgLowPrice": 3293,
-          "lowPriceVolume": 2080
+          "highPriceVolume": 5116,
+          "avgLowPrice": 3300,
+          "lowPriceVolume": 4943
         },
         "1h": {
           "avgHighPrice": 3360,
@@ -843,11 +833,11 @@
       "liquidity": "LIQUID",
       "history_complete": true,
       "previousRelaySnapshot": {
-        "generatedAt": "2026-09-04T00:44:37.033777Z",
-        "high": 3330,
+        "generatedAt": "2026-09-04T00:49:36.295789Z",
+        "high": 3373,
         "low": 3330,
-        "highTime": 1788482583,
-        "lowTime": 1788482615
+        "highTime": 1788482911,
+        "lowTime": 1788482930
       }
     },
     "25576": {
@@ -860,15 +850,20 @@
         "low": 717877,
         "highTime": 1788482909,
         "lowTime": 1788482408,
-        "highAgeSeconds": 67,
-        "lowAgeSeconds": 568,
+        "highAgeSeconds": 122,
+        "lowAgeSeconds": 623,
         "rawSpread": 32123,
         "geTaxAtHigh": 15000,
         "afterTaxSpread": 17123,
         "afterTaxSpreadRoiPct": 2.385
       },
       "averages": {
-        "5m": {},
+        "5m": {
+          "avgHighPrice": null,
+          "highPriceVolume": 0,
+          "avgLowPrice": 717877,
+          "lowPriceVolume": 1
+        },
         "1h": {
           "avgHighPrice": 712519,
           "highPriceVolume": 3,
@@ -922,10 +917,10 @@
       "liquidity": "THIN",
       "history_complete": true,
       "previousRelaySnapshot": {
-        "generatedAt": "2026-09-04T00:44:37.033777Z",
-        "high": 717877,
+        "generatedAt": "2026-09-04T00:49:36.295789Z",
+        "high": 750000,
         "low": 717877,
-        "highTime": 1788480969,
+        "highTime": 1788482909,
         "lowTime": 1788482408
       }
     },
@@ -939,8 +934,8 @@
         "low": 770000,
         "highTime": 1788482788,
         "lowTime": 1788482412,
-        "highAgeSeconds": 188,
-        "lowAgeSeconds": 564,
+        "highAgeSeconds": 243,
+        "lowAgeSeconds": 619,
         "rawSpread": 3042,
         "geTaxAtHigh": 15460,
         "afterTaxSpread": -12418,
@@ -948,10 +943,10 @@
       },
       "averages": {
         "5m": {
-          "avgHighPrice": 773042,
-          "highPriceVolume": 1,
-          "avgLowPrice": null,
-          "lowPriceVolume": 0
+          "avgHighPrice": 762521,
+          "highPriceVolume": 4,
+          "avgLowPrice": 770000,
+          "lowPriceVolume": 1
         },
         "1h": {
           "avgHighPrice": 758836,
@@ -1006,10 +1001,10 @@
       "liquidity": "THIN",
       "history_complete": true,
       "previousRelaySnapshot": {
-        "generatedAt": "2026-09-04T00:44:37.033777Z",
+        "generatedAt": "2026-09-04T00:49:36.295789Z",
         "high": 773042,
         "low": 770000,
-        "highTime": 1788482622,
+        "highTime": 1788482788,
         "lowTime": 1788482412
       }
     }
@@ -1033,7 +1028,7 @@
         "liquidity": "LIQUID",
         "afterTaxSpreadGp": 41286,
         "afterTaxSpreadRoiPct": 6.87,
-        "fiveMinVsOneHourPct": -1.549,
+        "fiveMinVsOneHourPct": -3.123,
         "oneHourVs24hPct": -6.254,
         "screenScore": 92.12
       },
@@ -1053,7 +1048,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": 184098,
         "afterTaxSpreadRoiPct": 16.891,
-        "fiveMinVsOneHourPct": -2.421,
+        "fiveMinVsOneHourPct": 5.415,
         "oneHourVs24hPct": 9.993,
         "screenScore": 91.91
       },
@@ -1093,7 +1088,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": 980817,
         "afterTaxSpreadRoiPct": 14.749,
-        "fiveMinVsOneHourPct": -5.668,
+        "fiveMinVsOneHourPct": 1.678,
         "oneHourVs24hPct": -4.813,
         "screenScore": 91.54
       },
@@ -1113,7 +1108,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": 127,
         "afterTaxSpreadRoiPct": 7.623,
-        "fiveMinVsOneHourPct": 1.865,
+        "fiveMinVsOneHourPct": 6.616,
         "oneHourVs24hPct": -4.456,
         "screenScore": 90.73
       },
@@ -1133,7 +1128,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": 12,
         "afterTaxSpreadRoiPct": 10.345,
-        "fiveMinVsOneHourPct": -2.083,
+        "fiveMinVsOneHourPct": 3.75,
         "oneHourVs24hPct": 1.266,
         "screenScore": 89.35
       },
@@ -1153,7 +1148,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": 318137,
         "afterTaxSpreadRoiPct": 9.911,
-        "fiveMinVsOneHourPct": null,
+        "fiveMinVsOneHourPct": -2.282,
         "oneHourVs24hPct": -5.298,
         "screenScore": 89.34
       },
@@ -1173,7 +1168,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": 7,
         "afterTaxSpreadRoiPct": 10.0,
-        "fiveMinVsOneHourPct": -6.41,
+        "fiveMinVsOneHourPct": 0.0,
         "oneHourVs24hPct": -6.587,
         "screenScore": 89.25
       },
@@ -1193,7 +1188,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 27525,
         "afterTaxSpreadRoiPct": 6.23,
-        "fiveMinVsOneHourPct": 4.794,
+        "fiveMinVsOneHourPct": 3.022,
         "oneHourVs24hPct": 0.348,
         "screenScore": 88.58
       },
@@ -1213,7 +1208,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 21962,
         "afterTaxSpreadRoiPct": 8.48,
-        "fiveMinVsOneHourPct": 12.459,
+        "fiveMinVsOneHourPct": 13.238,
         "oneHourVs24hPct": -31.264,
         "screenScore": 88.58
       },
@@ -1233,7 +1228,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 14504,
         "afterTaxSpreadRoiPct": 6.689,
-        "fiveMinVsOneHourPct": 2.375,
+        "fiveMinVsOneHourPct": -7.007,
         "oneHourVs24hPct": 6.952,
         "screenScore": 88.4
       },
@@ -1253,7 +1248,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 8,
         "afterTaxSpreadRoiPct": 6.107,
-        "fiveMinVsOneHourPct": -0.365,
+        "fiveMinVsOneHourPct": -0.73,
         "oneHourVs24hPct": 8.3,
         "screenScore": 88.37
       },
@@ -1313,7 +1308,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 13,
         "afterTaxSpreadRoiPct": 18.056,
-        "fiveMinVsOneHourPct": null,
+        "fiveMinVsOneHourPct": -2.825,
         "oneHourVs24hPct": -1.117,
         "screenScore": 88.33
       },
@@ -1333,7 +1328,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 22369,
         "afterTaxSpreadRoiPct": 14.426,
-        "fiveMinVsOneHourPct": 7.692,
+        "fiveMinVsOneHourPct": 5.588,
         "oneHourVs24hPct": -23.159,
         "screenScore": 88.24
       },
@@ -1353,7 +1348,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 30368,
         "afterTaxSpreadRoiPct": 13.033,
-        "fiveMinVsOneHourPct": null,
+        "fiveMinVsOneHourPct": 33.275,
         "oneHourVs24hPct": -25.721,
         "screenScore": 88.18
       },
@@ -1373,7 +1368,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 55769,
         "afterTaxSpreadRoiPct": 6.939,
-        "fiveMinVsOneHourPct": null,
+        "fiveMinVsOneHourPct": 5.202,
         "oneHourVs24hPct": 4.376,
         "screenScore": 88.14
       },
@@ -1393,7 +1388,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 376,
         "afterTaxSpreadRoiPct": 7.231,
-        "fiveMinVsOneHourPct": -3.252,
+        "fiveMinVsOneHourPct": 1.093,
         "oneHourVs24hPct": -0.968,
         "screenScore": 87.89
       },
@@ -1413,7 +1408,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 418726,
         "afterTaxSpreadRoiPct": 10.506,
-        "fiveMinVsOneHourPct": null,
+        "fiveMinVsOneHourPct": 0.86,
         "oneHourVs24hPct": 5.281,
         "screenScore": 87.8
       },
@@ -1433,7 +1428,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 12,
         "afterTaxSpreadRoiPct": 34.286,
-        "fiveMinVsOneHourPct": 5.0,
+        "fiveMinVsOneHourPct": 3.75,
         "oneHourVs24hPct": -25.926,
         "screenScore": 87.77
       },
@@ -1453,7 +1448,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 2109,
         "afterTaxSpreadRoiPct": 8.391,
-        "fiveMinVsOneHourPct": 5.492,
+        "fiveMinVsOneHourPct": 0.181,
         "oneHourVs24hPct": -0.45,
         "screenScore": 87.75
       },
@@ -1473,7 +1468,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 5,
         "afterTaxSpreadRoiPct": 7.463,
-        "fiveMinVsOneHourPct": null,
+        "fiveMinVsOneHourPct": -0.699,
         "oneHourVs24hPct": 2.878,
         "screenScore": 87.71
       },
@@ -1493,7 +1488,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 27715,
         "afterTaxSpreadRoiPct": 7.502,
-        "fiveMinVsOneHourPct": 0.782,
+        "fiveMinVsOneHourPct": 5.442,
         "oneHourVs24hPct": 0.954,
         "screenScore": 87.63
       },
@@ -1533,7 +1528,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 57645,
         "afterTaxSpreadRoiPct": 7.984,
-        "fiveMinVsOneHourPct": 6.255,
+        "fiveMinVsOneHourPct": 0.911,
         "oneHourVs24hPct": 3.122,
         "screenScore": 87.42
       },
@@ -1573,7 +1568,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 17,
         "afterTaxSpreadRoiPct": 7.834,
-        "fiveMinVsOneHourPct": -1.04,
+        "fiveMinVsOneHourPct": null,
         "oneHourVs24hPct": 5.714,
         "screenScore": 87.33
       },
@@ -1593,7 +1588,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 4,
         "afterTaxSpreadRoiPct": 10.811,
-        "fiveMinVsOneHourPct": 0.0,
+        "fiveMinVsOneHourPct": 2.632,
         "oneHourVs24hPct": 1.333,
         "screenScore": 87.24
       },
@@ -1613,7 +1608,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 120,
         "afterTaxSpreadRoiPct": 121.212,
-        "fiveMinVsOneHourPct": -8.197,
+        "fiveMinVsOneHourPct": -53.63,
         "oneHourVs24hPct": 5.432,
         "screenScore": 87.21
       },
@@ -1673,7 +1668,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 4237,
         "afterTaxSpreadRoiPct": 9.9,
-        "fiveMinVsOneHourPct": -2.318,
+        "fiveMinVsOneHourPct": -0.313,
         "oneHourVs24hPct": -0.543,
         "screenScore": 87.01
       },
@@ -1693,7 +1688,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 2815,
         "afterTaxSpreadRoiPct": 7.341,
-        "fiveMinVsOneHourPct": -3.85,
+        "fiveMinVsOneHourPct": -6.996,
         "oneHourVs24hPct": 3.553,
         "screenScore": 86.99
       },
@@ -1713,7 +1708,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 5,
         "afterTaxSpreadRoiPct": 5.952,
-        "fiveMinVsOneHourPct": -1.695,
+        "fiveMinVsOneHourPct": 1.695,
         "oneHourVs24hPct": 2.312,
         "screenScore": 86.95
       },
@@ -1833,7 +1828,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 16526,
         "afterTaxSpreadRoiPct": 8.698,
-        "fiveMinVsOneHourPct": -1.853,
+        "fiveMinVsOneHourPct": 3.504,
         "oneHourVs24hPct": 1.348,
         "screenScore": 86.81
       },
@@ -1853,7 +1848,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 21256,
         "afterTaxSpreadRoiPct": 7.617,
-        "fiveMinVsOneHourPct": 4.416,
+        "fiveMinVsOneHourPct": -1.252,
         "oneHourVs24hPct": 3.497,
         "screenScore": 86.78
       },
@@ -1873,7 +1868,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 5,
         "afterTaxSpreadRoiPct": 12.821,
-        "fiveMinVsOneHourPct": 2.439,
+        "fiveMinVsOneHourPct": 7.317,
         "oneHourVs24hPct": -2.381,
         "screenScore": 86.78
       },
@@ -1893,7 +1888,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 1,
         "afterTaxSpreadRoiPct": 10.0,
-        "fiveMinVsOneHourPct": 4.762,
+        "fiveMinVsOneHourPct": 0.0,
         "oneHourVs24hPct": -4.545,
         "screenScore": 86.73
       },
@@ -1913,7 +1908,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 2713,
         "afterTaxSpreadRoiPct": 11.616,
-        "fiveMinVsOneHourPct": null,
+        "fiveMinVsOneHourPct": -9.227,
         "oneHourVs24hPct": 9.227,
         "screenScore": 86.73
       },
@@ -1973,7 +1968,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 134365,
         "afterTaxSpreadRoiPct": 6.373,
-        "fiveMinVsOneHourPct": -4.026,
+        "fiveMinVsOneHourPct": 3.5,
         "oneHourVs24hPct": 3.559,
         "screenScore": 86.58
       },
@@ -1993,7 +1988,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 56,
         "afterTaxSpreadRoiPct": 6.854,
-        "fiveMinVsOneHourPct": -2.513,
+        "fiveMinVsOneHourPct": 1.656,
         "oneHourVs24hPct": -21.691,
         "screenScore": 86.58
       },
@@ -2013,7 +2008,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 13049,
         "afterTaxSpreadRoiPct": 6.249,
-        "fiveMinVsOneHourPct": null,
+        "fiveMinVsOneHourPct": -2.524,
         "oneHourVs24hPct": 1.98,
         "screenScore": 86.42
       },
@@ -2093,7 +2088,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 8390,
         "afterTaxSpreadRoiPct": 6.781,
-        "fiveMinVsOneHourPct": -0.391,
+        "fiveMinVsOneHourPct": null,
         "oneHourVs24hPct": -11.021,
         "screenScore": 86.31
       },
@@ -2113,7 +2108,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 1,
         "afterTaxSpreadRoiPct": 50.0,
-        "fiveMinVsOneHourPct": 40.0,
+        "fiveMinVsOneHourPct": 0.0,
         "oneHourVs24hPct": 0.0,
         "screenScore": 86.28
       },
@@ -2133,7 +2128,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 5046,
         "afterTaxSpreadRoiPct": 45.873,
-        "fiveMinVsOneHourPct": -13.768,
+        "fiveMinVsOneHourPct": -11.527,
         "oneHourVs24hPct": -1.025,
         "screenScore": 86.27
       },
@@ -2173,7 +2168,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 77718,
         "afterTaxSpreadRoiPct": 7.091,
-        "fiveMinVsOneHourPct": -1.251,
+        "fiveMinVsOneHourPct": -1.349,
         "oneHourVs24hPct": 5.827,
         "screenScore": 86.25
       },
@@ -2193,7 +2188,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 27461,
         "afterTaxSpreadRoiPct": 18.438,
-        "fiveMinVsOneHourPct": -10.821,
+        "fiveMinVsOneHourPct": 1.477,
         "oneHourVs24hPct": 4.239,
         "screenScore": 86.2
       },
@@ -2213,12 +2208,32 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 908,
         "afterTaxSpreadRoiPct": 9.198,
-        "fiveMinVsOneHourPct": 13.355,
+        "fiveMinVsOneHourPct": 7.07,
         "oneHourVs24hPct": 2.447,
         "screenScore": 86.2
       }
     ],
     "short_term_momentum": [
+      {
+        "id": 9336,
+        "name": "Topaz bolts",
+        "high": 223,
+        "low": 99,
+        "highTime": 1788480604,
+        "lowTime": 1788482404,
+        "buyLimit": 11000,
+        "oneHourVolume": 29639,
+        "highPriceVolume": 16199,
+        "lowPriceVolume": 13440,
+        "highSideShare": 0.5465,
+        "estimatedGpTraded1h": 6327926,
+        "liquidity": "THIN",
+        "afterTaxSpreadGp": 120,
+        "afterTaxSpreadRoiPct": 121.212,
+        "fiveMinVsOneHourPct": -53.63,
+        "oneHourVs24hPct": 5.432,
+        "screenScore": 87.21
+      },
       {
         "id": 22780,
         "name": "Wyrm bones",
@@ -2240,23 +2255,43 @@
         "screenScore": 48.15
       },
       {
-        "id": 555,
-        "name": "Water rune",
+        "id": 554,
+        "name": "Fire rune",
         "high": 5,
         "low": 5,
-        "highTime": 1788482934,
-        "lowTime": 1788481868,
+        "highTime": 1788482924,
+        "lowTime": 1788482857,
         "buyLimit": 50000,
-        "oneHourVolume": 3128208,
-        "highPriceVolume": 2829044,
-        "lowPriceVolume": 299164,
-        "highSideShare": 0.9044,
-        "estimatedGpTraded1h": 14076936,
+        "oneHourVolume": 4081677,
+        "highPriceVolume": 3681102,
+        "lowPriceVolume": 400575,
+        "highSideShare": 0.9019,
+        "estimatedGpTraded1h": 18367546,
         "liquidity": "THIN",
         "afterTaxSpreadGp": 0,
         "afterTaxSpreadRoiPct": 0.0,
         "fiveMinVsOneHourPct": 33.333,
         "oneHourVs24hPct": -10.0
+      },
+      {
+        "id": 4884,
+        "name": "Dharok's helm 0",
+        "high": 268751,
+        "low": 233008,
+        "highTime": 1788482645,
+        "lowTime": 1788480726,
+        "buyLimit": 15,
+        "oneHourVolume": 55,
+        "highPriceVolume": 1,
+        "lowPriceVolume": 54,
+        "highSideShare": 0.0182,
+        "estimatedGpTraded1h": 11065312,
+        "liquidity": "THIN",
+        "afterTaxSpreadGp": 30368,
+        "afterTaxSpreadRoiPct": 13.033,
+        "fiveMinVsOneHourPct": 33.275,
+        "oneHourVs24hPct": -25.721,
+        "screenScore": 88.18
       },
       {
         "id": 22856,
@@ -2293,7 +2328,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": -817,
         "afterTaxSpreadRoiPct": -1.002,
-        "fiveMinVsOneHourPct": 27.81,
+        "fiveMinVsOneHourPct": 29.6,
         "oneHourVs24hPct": -25.441
       },
       {
@@ -2312,66 +2347,67 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": -4000,
         "afterTaxSpreadRoiPct": -2.0,
-        "fiveMinVsOneHourPct": -27.228,
+        "fiveMinVsOneHourPct": -27.543,
         "oneHourVs24hPct": 99.311
       },
       {
-        "id": 554,
-        "name": "Fire rune",
-        "high": 5,
-        "low": 5,
-        "highTime": 1788482924,
-        "lowTime": 1788482857,
-        "buyLimit": 50000,
-        "oneHourVolume": 4081677,
-        "highPriceVolume": 3681102,
-        "lowPriceVolume": 400575,
-        "highSideShare": 0.9019,
-        "estimatedGpTraded1h": 18367546,
+        "id": 442,
+        "name": "Silver ore",
+        "high": 61,
+        "low": 60,
+        "highTime": 1788482810,
+        "lowTime": 1788482897,
+        "buyLimit": 13000,
+        "oneHourVolume": 143531,
+        "highPriceVolume": 28398,
+        "lowPriceVolume": 115133,
+        "highSideShare": 0.1979,
+        "estimatedGpTraded1h": 9616577,
         "liquidity": "THIN",
         "afterTaxSpreadGp": 0,
         "afterTaxSpreadRoiPct": 0.0,
-        "fiveMinVsOneHourPct": 22.222,
-        "oneHourVs24hPct": -10.0
+        "fiveMinVsOneHourPct": -23.881,
+        "oneHourVs24hPct": 0.752
       },
       {
-        "id": 32077,
-        "name": "Large ironwood hull parts",
-        "high": 60002,
-        "low": 57975,
-        "highTime": 1788482427,
-        "lowTime": 1788482373,
-        "buyLimit": 100,
-        "oneHourVolume": 116,
-        "highPriceVolume": 116,
-        "lowPriceVolume": 0,
-        "highSideShare": 1.0,
-        "estimatedGpTraded1h": 7857608,
-        "liquidity": "THIN",
-        "afterTaxSpreadGp": 827,
-        "afterTaxSpreadRoiPct": 1.426,
-        "fiveMinVsOneHourPct": -14.413,
-        "oneHourVs24hPct": 2.627,
-        "screenScore": 41.85
+        "id": 5502,
+        "name": "Palm sapling",
+        "high": 16887,
+        "low": 16220,
+        "highTime": 1788482737,
+        "lowTime": 1788482147,
+        "buyLimit": 200,
+        "oneHourVolume": 3513,
+        "highPriceVolume": 3103,
+        "lowPriceVolume": 410,
+        "highSideShare": 0.8833,
+        "estimatedGpTraded1h": 51451398,
+        "liquidity": "MODERATE",
+        "afterTaxSpreadGp": 330,
+        "afterTaxSpreadRoiPct": 2.035,
+        "fiveMinVsOneHourPct": 15.301,
+        "oneHourVs24hPct": -14.15,
+        "screenScore": 51.19
       },
       {
-        "id": 34401,
-        "name": "Necklace of fangs",
-        "high": 121000,
-        "low": 121128,
-        "highTime": 1788482785,
-        "lowTime": 1788482913,
+        "id": 34416,
+        "name": "Earth emerald",
+        "high": 286695,
+        "low": 259000,
+        "highTime": 1788482516,
+        "lowTime": 1788482919,
         "buyLimit": null,
-        "oneHourVolume": 68,
-        "highPriceVolume": 5,
-        "lowPriceVolume": 63,
-        "highSideShare": 0.0735,
-        "estimatedGpTraded1h": 8293382,
+        "oneHourVolume": 58,
+        "highPriceVolume": 6,
+        "lowPriceVolume": 52,
+        "highSideShare": 0.1034,
+        "estimatedGpTraded1h": 13975187,
         "liquidity": "THIN",
-        "afterTaxSpreadGp": -2548,
-        "afterTaxSpreadRoiPct": -2.104,
-        "fiveMinVsOneHourPct": -12.628,
-        "oneHourVs24hPct": -63.974
+        "afterTaxSpreadGp": 21962,
+        "afterTaxSpreadRoiPct": 8.48,
+        "fiveMinVsOneHourPct": 13.238,
+        "oneHourVs24hPct": -31.264,
+        "screenScore": 88.58
       },
       {
         "id": 30822,
@@ -2394,63 +2430,101 @@
         "screenScore": 67.42
       },
       {
-        "id": 34416,
-        "name": "Earth emerald",
-        "high": 286695,
-        "low": 259000,
-        "highTime": 1788482516,
-        "lowTime": 1788482919,
+        "id": 34401,
+        "name": "Necklace of fangs",
+        "high": 121000,
+        "low": 121128,
+        "highTime": 1788482785,
+        "lowTime": 1788482913,
         "buyLimit": null,
-        "oneHourVolume": 58,
-        "highPriceVolume": 6,
-        "lowPriceVolume": 52,
-        "highSideShare": 0.1034,
-        "estimatedGpTraded1h": 13975187,
+        "oneHourVolume": 68,
+        "highPriceVolume": 5,
+        "lowPriceVolume": 63,
+        "highSideShare": 0.0735,
+        "estimatedGpTraded1h": 8293382,
         "liquidity": "THIN",
-        "afterTaxSpreadGp": 21962,
-        "afterTaxSpreadRoiPct": 8.48,
-        "fiveMinVsOneHourPct": 12.459,
-        "oneHourVs24hPct": -31.264,
-        "screenScore": 88.58
+        "afterTaxSpreadGp": -2548,
+        "afterTaxSpreadRoiPct": -2.104,
+        "fiveMinVsOneHourPct": -12.251,
+        "oneHourVs24hPct": -63.974
       },
       {
-        "id": 5502,
-        "name": "Palm sapling",
-        "high": 16887,
-        "low": 16220,
-        "highTime": 1788482737,
-        "lowTime": 1788482147,
-        "buyLimit": 200,
-        "oneHourVolume": 3513,
-        "highPriceVolume": 3103,
-        "lowPriceVolume": 410,
-        "highSideShare": 0.8833,
-        "estimatedGpTraded1h": 51451398,
-        "liquidity": "MODERATE",
-        "afterTaxSpreadGp": 330,
-        "afterTaxSpreadRoiPct": 2.035,
-        "fiveMinVsOneHourPct": 12.382,
-        "oneHourVs24hPct": -14.15,
-        "screenScore": 51.19
+        "id": 32077,
+        "name": "Large ironwood hull parts",
+        "high": 60002,
+        "low": 57975,
+        "highTime": 1788482427,
+        "lowTime": 1788482373,
+        "buyLimit": 100,
+        "oneHourVolume": 116,
+        "highPriceVolume": 116,
+        "lowPriceVolume": 0,
+        "highSideShare": 1.0,
+        "estimatedGpTraded1h": 7857608,
+        "liquidity": "THIN",
+        "afterTaxSpreadGp": 827,
+        "afterTaxSpreadRoiPct": 1.426,
+        "fiveMinVsOneHourPct": -11.42,
+        "oneHourVs24hPct": 2.627,
+        "screenScore": 41.85
       },
       {
-        "id": 442,
-        "name": "Silver ore",
-        "high": 61,
-        "low": 60,
-        "highTime": 1788482810,
-        "lowTime": 1788482897,
-        "buyLimit": 13000,
-        "oneHourVolume": 143531,
-        "highPriceVolume": 28398,
-        "lowPriceVolume": 115133,
-        "highSideShare": 0.1979,
-        "estimatedGpTraded1h": 9616577,
+        "id": 30819,
+        "name": "Contract of Divine Severance",
+        "high": 37776,
+        "low": 37000,
+        "highTime": 1788482599,
+        "lowTime": 1788481926,
+        "buyLimit": 50,
+        "oneHourVolume": 146,
+        "highPriceVolume": 34,
+        "lowPriceVolume": 112,
+        "highSideShare": 0.2329,
+        "estimatedGpTraded1h": 6217775,
+        "liquidity": "THIN",
+        "afterTaxSpreadGp": 21,
+        "afterTaxSpreadRoiPct": 0.057,
+        "fiveMinVsOneHourPct": -11.298,
+        "oneHourVs24hPct": 4.735
+      },
+      {
+        "id": 555,
+        "name": "Water rune",
+        "high": 5,
+        "low": 5,
+        "highTime": 1788482934,
+        "lowTime": 1788481868,
+        "buyLimit": 50000,
+        "oneHourVolume": 3128208,
+        "highPriceVolume": 2829044,
+        "lowPriceVolume": 299164,
+        "highSideShare": 0.9044,
+        "estimatedGpTraded1h": 14076936,
         "liquidity": "THIN",
         "afterTaxSpreadGp": 0,
         "afterTaxSpreadRoiPct": 0.0,
-        "fiveMinVsOneHourPct": -10.448,
-        "oneHourVs24hPct": 0.752
+        "fiveMinVsOneHourPct": 11.111,
+        "oneHourVs24hPct": -10.0
+      },
+      {
+        "id": 31910,
+        "name": "Mithril cannonball",
+        "high": 155,
+        "low": 148,
+        "highTime": 1788482357,
+        "lowTime": 1788482928,
+        "buyLimit": 11000,
+        "oneHourVolume": 37144,
+        "highPriceVolume": 15113,
+        "lowPriceVolume": 22031,
+        "highSideShare": 0.4069,
+        "estimatedGpTraded1h": 6091616,
+        "liquidity": "THIN",
+        "afterTaxSpreadGp": 4,
+        "afterTaxSpreadRoiPct": 2.703,
+        "fiveMinVsOneHourPct": -9.756,
+        "oneHourVs24hPct": 7.19,
+        "screenScore": 54.17
       },
       {
         "id": 556,
@@ -2488,8 +2562,48 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": -1,
         "afterTaxSpreadRoiPct": -16.667,
-        "fiveMinVsOneHourPct": -9.091,
+        "fiveMinVsOneHourPct": 9.091,
         "oneHourVs24hPct": 10.0
+      },
+      {
+        "id": 9381,
+        "name": "Runite bolts (unf)",
+        "high": 130,
+        "low": 126,
+        "highTime": 1788480584,
+        "lowTime": 1788482687,
+        "buyLimit": 13000,
+        "oneHourVolume": 56258,
+        "highPriceVolume": 15958,
+        "lowPriceVolume": 40300,
+        "highSideShare": 0.2837,
+        "estimatedGpTraded1h": 7876120,
+        "liquidity": "THIN",
+        "afterTaxSpreadGp": 2,
+        "afterTaxSpreadRoiPct": 1.587,
+        "fiveMinVsOneHourPct": -8.571,
+        "oneHourVs24hPct": 6.061,
+        "screenScore": 43.46
+      },
+      {
+        "id": 29110,
+        "name": "Raw pyre fox",
+        "high": 1154,
+        "low": 1101,
+        "highTime": 1788482098,
+        "lowTime": 1788482755,
+        "buyLimit": 13000,
+        "oneHourVolume": 8485,
+        "highPriceVolume": 5380,
+        "lowPriceVolume": 3105,
+        "highSideShare": 0.6341,
+        "estimatedGpTraded1h": 10186242,
+        "liquidity": "THIN",
+        "afterTaxSpreadGp": 30,
+        "afterTaxSpreadRoiPct": 2.725,
+        "fiveMinVsOneHourPct": -8.288,
+        "oneHourVs24hPct": 6.711,
+        "screenScore": 55.28
       },
       {
         "id": 1761,
@@ -2507,67 +2621,8 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": -1,
         "afterTaxSpreadRoiPct": -0.704,
-        "fiveMinVsOneHourPct": 8.397,
+        "fiveMinVsOneHourPct": 7.634,
         "oneHourVs24hPct": -10.274
-      },
-      {
-        "id": 9336,
-        "name": "Topaz bolts",
-        "high": 223,
-        "low": 99,
-        "highTime": 1788480604,
-        "lowTime": 1788482404,
-        "buyLimit": 11000,
-        "oneHourVolume": 29639,
-        "highPriceVolume": 16199,
-        "lowPriceVolume": 13440,
-        "highSideShare": 0.5465,
-        "estimatedGpTraded1h": 6327926,
-        "liquidity": "THIN",
-        "afterTaxSpreadGp": 120,
-        "afterTaxSpreadRoiPct": 121.212,
-        "fiveMinVsOneHourPct": -8.197,
-        "oneHourVs24hPct": 5.432,
-        "screenScore": 87.21
-      },
-      {
-        "id": 34422,
-        "name": "Fire ruby",
-        "high": 181050,
-        "low": 155060,
-        "highTime": 1788482531,
-        "lowTime": 1788482902,
-        "buyLimit": null,
-        "oneHourVolume": 72,
-        "highPriceVolume": 5,
-        "lowPriceVolume": 67,
-        "highSideShare": 0.0694,
-        "estimatedGpTraded1h": 11498472,
-        "liquidity": "THIN",
-        "afterTaxSpreadGp": 22369,
-        "afterTaxSpreadRoiPct": 14.426,
-        "fiveMinVsOneHourPct": 7.692,
-        "oneHourVs24hPct": -23.159,
-        "screenScore": 88.24
-      },
-      {
-        "id": 5952,
-        "name": "Antidote++(4)",
-        "high": 11057,
-        "low": 10860,
-        "highTime": 1788482851,
-        "lowTime": 1788482919,
-        "buyLimit": 4000,
-        "oneHourVolume": 2640,
-        "highPriceVolume": 582,
-        "lowPriceVolume": 2058,
-        "highSideShare": 0.2205,
-        "estimatedGpTraded1h": 27382080,
-        "liquidity": "MODERATE",
-        "afterTaxSpreadGp": -24,
-        "afterTaxSpreadRoiPct": -0.221,
-        "fiveMinVsOneHourPct": 7.636,
-        "oneHourVs24hPct": -2.367
       },
       {
         "id": 34419,
@@ -2608,23 +2663,24 @@
         "oneHourVs24hPct": 4.262
       },
       {
-        "id": 868,
-        "name": "Rune knife",
-        "high": 119,
-        "low": 119,
-        "highTime": 1788482891,
-        "lowTime": 1788482802,
-        "buyLimit": 11000,
-        "oneHourVolume": 59488,
-        "highPriceVolume": 14181,
-        "lowPriceVolume": 45307,
-        "highSideShare": 0.2384,
-        "estimatedGpTraded1h": 6900608,
+        "id": 25416,
+        "name": "Bloodbark legs",
+        "high": 236054,
+        "low": 216829,
+        "highTime": 1788481137,
+        "lowTime": 1788482898,
+        "buyLimit": 70,
+        "oneHourVolume": 52,
+        "highPriceVolume": 28,
+        "lowPriceVolume": 24,
+        "highSideShare": 0.5385,
+        "estimatedGpTraded1h": 12597676,
         "liquidity": "THIN",
-        "afterTaxSpreadGp": -2,
-        "afterTaxSpreadRoiPct": -1.681,
-        "fiveMinVsOneHourPct": 6.897,
-        "oneHourVs24hPct": -2.11
+        "afterTaxSpreadGp": 14504,
+        "afterTaxSpreadRoiPct": 6.689,
+        "fiveMinVsOneHourPct": -7.007,
+        "oneHourVs24hPct": 6.952,
+        "screenScore": 88.4
       },
       {
         "id": 21483,
@@ -2642,49 +2698,167 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 9,
         "afterTaxSpreadRoiPct": 2.055,
-        "fiveMinVsOneHourPct": 6.546,
+        "fiveMinVsOneHourPct": 6.998,
         "oneHourVs24hPct": -9.221,
         "screenScore": 49.26
       },
       {
-        "id": 2357,
-        "name": "Gold bar",
-        "high": 78,
-        "low": 70,
-        "highTime": 1788482930,
-        "lowTime": 1788482197,
-        "buyLimit": 10000,
-        "oneHourVolume": 263153,
-        "highPriceVolume": 196760,
-        "lowPriceVolume": 66393,
-        "highSideShare": 0.7477,
-        "estimatedGpTraded1h": 20525934,
-        "liquidity": "MODERATE",
-        "afterTaxSpreadGp": 7,
-        "afterTaxSpreadRoiPct": 10.0,
-        "fiveMinVsOneHourPct": -6.41,
-        "oneHourVs24hPct": -6.587,
-        "screenScore": 89.25
+        "id": 1249,
+        "name": "Dragon spear",
+        "high": 41999,
+        "low": 38345,
+        "highTime": 1788482747,
+        "lowTime": 1788482785,
+        "buyLimit": 70,
+        "oneHourVolume": 136,
+        "highPriceVolume": 23,
+        "lowPriceVolume": 113,
+        "highSideShare": 0.1691,
+        "estimatedGpTraded1h": 5607212,
+        "liquidity": "THIN",
+        "afterTaxSpreadGp": 2815,
+        "afterTaxSpreadRoiPct": 7.341,
+        "fiveMinVsOneHourPct": -6.996,
+        "oneHourVs24hPct": 3.553,
+        "screenScore": 86.99
       },
       {
-        "id": 29019,
-        "name": "Blue moon helm",
-        "high": 795531,
-        "low": 721976,
-        "highTime": 1788482820,
-        "lowTime": 1788482676,
-        "buyLimit": 15,
-        "oneHourVolume": 10,
-        "highPriceVolume": 0,
-        "lowPriceVolume": 10,
-        "highSideShare": 0.0,
-        "estimatedGpTraded1h": 7154610,
+        "id": 1775,
+        "name": "Molten glass",
+        "high": 92,
+        "low": 89,
+        "highTime": 1788482934,
+        "lowTime": 1788482370,
+        "buyLimit": 13000,
+        "oneHourVolume": 137083,
+        "highPriceVolume": 47960,
+        "lowPriceVolume": 89123,
+        "highSideShare": 0.3499,
+        "estimatedGpTraded1h": 11789138,
         "liquidity": "THIN",
-        "afterTaxSpreadGp": 57645,
-        "afterTaxSpreadRoiPct": 7.984,
-        "fiveMinVsOneHourPct": 6.255,
-        "oneHourVs24hPct": 3.122,
-        "screenScore": 87.42
+        "afterTaxSpreadGp": 2,
+        "afterTaxSpreadRoiPct": 2.247,
+        "fiveMinVsOneHourPct": 6.977,
+        "oneHourVs24hPct": 0.585,
+        "screenScore": 50.76
+      },
+      {
+        "id": 21140,
+        "name": "Efaritay's aid",
+        "high": 1829,
+        "low": 1666,
+        "highTime": 1788482906,
+        "lowTime": 1788482151,
+        "buyLimit": 15000,
+        "oneHourVolume": 28011,
+        "highPriceVolume": 27628,
+        "lowPriceVolume": 383,
+        "highSideShare": 0.9863,
+        "estimatedGpTraded1h": 48052870,
+        "liquidity": "MODERATE",
+        "afterTaxSpreadGp": 127,
+        "afterTaxSpreadRoiPct": 7.623,
+        "fiveMinVsOneHourPct": 6.616,
+        "oneHourVs24hPct": -4.456,
+        "screenScore": 90.73
+      },
+      {
+        "id": 1658,
+        "name": "Emerald necklace",
+        "high": 766,
+        "low": 735,
+        "highTime": 1788482468,
+        "lowTime": 1788482634,
+        "buyLimit": 18000,
+        "oneHourVolume": 12563,
+        "highPriceVolume": 3,
+        "lowPriceVolume": 12560,
+        "highSideShare": 0.0002,
+        "estimatedGpTraded1h": 10088089,
+        "liquidity": "THIN",
+        "afterTaxSpreadGp": 16,
+        "afterTaxSpreadRoiPct": 2.177,
+        "fiveMinVsOneHourPct": -6.538,
+        "oneHourVs24hPct": 13.019,
+        "screenScore": 49.78
+      },
+      {
+        "id": 13431,
+        "name": "Sandworms",
+        "high": 106,
+        "low": 103,
+        "highTime": 1788482798,
+        "lowTime": 1788482352,
+        "buyLimit": 8000,
+        "oneHourVolume": 274234,
+        "highPriceVolume": 106646,
+        "lowPriceVolume": 167588,
+        "highSideShare": 0.3889,
+        "estimatedGpTraded1h": 27286283,
+        "liquidity": "MODERATE",
+        "afterTaxSpreadGp": 1,
+        "afterTaxSpreadRoiPct": 0.971,
+        "fiveMinVsOneHourPct": 6.533,
+        "oneHourVs24hPct": -2.927,
+        "screenScore": 39.45
+      },
+      {
+        "id": 5952,
+        "name": "Antidote++(4)",
+        "high": 11057,
+        "low": 10860,
+        "highTime": 1788482851,
+        "lowTime": 1788482919,
+        "buyLimit": 4000,
+        "oneHourVolume": 2640,
+        "highPriceVolume": 582,
+        "lowPriceVolume": 2058,
+        "highSideShare": 0.2205,
+        "estimatedGpTraded1h": 27382080,
+        "liquidity": "MODERATE",
+        "afterTaxSpreadGp": -24,
+        "afterTaxSpreadRoiPct": -0.221,
+        "fiveMinVsOneHourPct": 6.421,
+        "oneHourVs24hPct": -2.367
+      },
+      {
+        "id": 1213,
+        "name": "Rune dagger",
+        "high": 4281,
+        "low": 4239,
+        "highTime": 1788482907,
+        "lowTime": 1788482925,
+        "buyLimit": 70,
+        "oneHourVolume": 2645,
+        "highPriceVolume": 1479,
+        "lowPriceVolume": 1166,
+        "highSideShare": 0.5592,
+        "estimatedGpTraded1h": 10496682,
+        "liquidity": "THIN",
+        "afterTaxSpreadGp": -43,
+        "afterTaxSpreadRoiPct": -1.014,
+        "fiveMinVsOneHourPct": 6.388,
+        "oneHourVs24hPct": -6.082
+      },
+      {
+        "id": 4896,
+        "name": "Dharok's platebody 0",
+        "high": 805226,
+        "low": 760027,
+        "highTime": 1788482351,
+        "lowTime": 1788482862,
+        "buyLimit": 15,
+        "oneHourVolume": 22,
+        "highPriceVolume": 15,
+        "lowPriceVolume": 7,
+        "highSideShare": 0.6818,
+        "estimatedGpTraded1h": 16631208,
+        "liquidity": "THIN",
+        "afterTaxSpreadGp": 29095,
+        "afterTaxSpreadRoiPct": 3.828,
+        "fiveMinVsOneHourPct": 6.301,
+        "oneHourVs24hPct": -8.974,
+        "screenScore": 67.17
       },
       {
         "id": 4696,
@@ -2707,82 +2881,23 @@
         "screenScore": 86.89
       },
       {
-        "id": 32071,
-        "name": "Large mahogany hull parts",
-        "high": 37474,
-        "low": 36827,
-        "highTime": 1788482856,
-        "lowTime": 1788482694,
-        "buyLimit": 100,
-        "oneHourVolume": 263,
-        "highPriceVolume": 126,
-        "lowPriceVolume": 137,
-        "highSideShare": 0.4791,
-        "estimatedGpTraded1h": 9664724,
+        "id": 868,
+        "name": "Rune knife",
+        "high": 119,
+        "low": 119,
+        "highTime": 1788482891,
+        "lowTime": 1788482802,
+        "buyLimit": 11000,
+        "oneHourVolume": 59488,
+        "highPriceVolume": 14181,
+        "lowPriceVolume": 45307,
+        "highSideShare": 0.2384,
+        "estimatedGpTraded1h": 6900608,
         "liquidity": "THIN",
-        "afterTaxSpreadGp": -102,
-        "afterTaxSpreadRoiPct": -0.277,
-        "fiveMinVsOneHourPct": 6.243,
-        "oneHourVs24hPct": 3.922
-      },
-      {
-        "id": 29110,
-        "name": "Raw pyre fox",
-        "high": 1154,
-        "low": 1101,
-        "highTime": 1788482098,
-        "lowTime": 1788482755,
-        "buyLimit": 13000,
-        "oneHourVolume": 8485,
-        "highPriceVolume": 5380,
-        "lowPriceVolume": 3105,
-        "highSideShare": 0.6341,
-        "estimatedGpTraded1h": 10186242,
-        "liquidity": "THIN",
-        "afterTaxSpreadGp": 30,
-        "afterTaxSpreadRoiPct": 2.725,
-        "fiveMinVsOneHourPct": -6.081,
-        "oneHourVs24hPct": 6.711,
-        "screenScore": 55.28
-      },
-      {
-        "id": 1213,
-        "name": "Rune dagger",
-        "high": 4281,
-        "low": 4239,
-        "highTime": 1788482907,
-        "lowTime": 1788482925,
-        "buyLimit": 70,
-        "oneHourVolume": 2645,
-        "highPriceVolume": 1479,
-        "lowPriceVolume": 1166,
-        "highSideShare": 0.5592,
-        "estimatedGpTraded1h": 10496682,
-        "liquidity": "THIN",
-        "afterTaxSpreadGp": -43,
-        "afterTaxSpreadRoiPct": -1.014,
-        "fiveMinVsOneHourPct": 5.985,
-        "oneHourVs24hPct": -6.082
-      },
-      {
-        "id": 4902,
-        "name": "Dharok's platelegs 0",
-        "high": 916488,
-        "low": 875007,
-        "highTime": 1788482359,
-        "lowTime": 1788482871,
-        "buyLimit": 15,
-        "oneHourVolume": 26,
-        "highPriceVolume": 13,
-        "lowPriceVolume": 13,
-        "highSideShare": 0.5,
-        "estimatedGpTraded1h": 21989097,
-        "liquidity": "MODERATE",
-        "afterTaxSpreadGp": 23152,
-        "afterTaxSpreadRoiPct": 2.646,
-        "fiveMinVsOneHourPct": 5.9,
-        "oneHourVs24hPct": -9.605,
-        "screenScore": 55.83
+        "afterTaxSpreadGp": -2,
+        "afterTaxSpreadRoiPct": -1.681,
+        "fiveMinVsOneHourPct": 6.034,
+        "oneHourVs24hPct": -2.11
       },
       {
         "id": 9244,
@@ -2805,64 +2920,23 @@
         "screenScore": 45.46
       },
       {
-        "id": 4699,
-        "name": "Lava rune",
-        "high": 24,
-        "low": 23,
-        "highTime": 1788482772,
-        "lowTime": 1788482839,
-        "buyLimit": 18000,
-        "oneHourVolume": 271330,
-        "highPriceVolume": 119834,
-        "lowPriceVolume": 151496,
-        "highSideShare": 0.4417,
-        "estimatedGpTraded1h": 6918915,
-        "liquidity": "THIN",
-        "afterTaxSpreadGp": 1,
-        "afterTaxSpreadRoiPct": 4.348,
-        "fiveMinVsOneHourPct": 5.882,
-        "oneHourVs24hPct": 6.25,
-        "screenScore": 70.84
-      },
-      {
-        "id": 4896,
-        "name": "Dharok's platebody 0",
-        "high": 805226,
-        "low": 760027,
-        "highTime": 1788482351,
-        "lowTime": 1788482862,
-        "buyLimit": 15,
-        "oneHourVolume": 22,
-        "highPriceVolume": 15,
-        "lowPriceVolume": 7,
-        "highSideShare": 0.6818,
-        "estimatedGpTraded1h": 16631208,
-        "liquidity": "THIN",
-        "afterTaxSpreadGp": 29095,
-        "afterTaxSpreadRoiPct": 3.828,
-        "fiveMinVsOneHourPct": 5.722,
-        "oneHourVs24hPct": -8.974,
-        "screenScore": 67.17
-      },
-      {
-        "id": 26945,
-        "name": "Pharaoh's sceptre (uncharged)",
-        "high": 7786548,
-        "low": 6650001,
-        "highTime": 1788482506,
-        "lowTime": 1788482172,
+        "id": 34413,
+        "name": "Amulet of water",
+        "high": 250000,
+        "low": 250000,
+        "highTime": 1788482678,
+        "lowTime": 1788482915,
         "buyLimit": null,
-        "oneHourVolume": 10,
-        "highPriceVolume": 5,
-        "lowPriceVolume": 5,
-        "highSideShare": 0.5,
-        "estimatedGpTraded1h": 76580675,
-        "liquidity": "MODERATE",
-        "afterTaxSpreadGp": 980817,
-        "afterTaxSpreadRoiPct": 14.749,
-        "fiveMinVsOneHourPct": -5.668,
-        "oneHourVs24hPct": -4.813,
-        "screenScore": 91.54
+        "oneHourVolume": 19,
+        "highPriceVolume": 16,
+        "lowPriceVolume": 3,
+        "highSideShare": 0.8421,
+        "estimatedGpTraded1h": 5385284,
+        "liquidity": "THIN",
+        "afterTaxSpreadGp": -5000,
+        "afterTaxSpreadRoiPct": -2.0,
+        "fiveMinVsOneHourPct": -5.887,
+        "oneHourVs24hPct": 50.796
       },
       {
         "id": 33625,
@@ -2884,124 +2958,44 @@
         "oneHourVs24hPct": 1.729
       },
       {
-        "id": 13431,
-        "name": "Sandworms",
-        "high": 106,
-        "low": 103,
-        "highTime": 1788482798,
-        "lowTime": 1788482352,
-        "buyLimit": 8000,
-        "oneHourVolume": 274234,
-        "highPriceVolume": 106646,
-        "lowPriceVolume": 167588,
-        "highSideShare": 0.3889,
-        "estimatedGpTraded1h": 27286283,
-        "liquidity": "MODERATE",
-        "afterTaxSpreadGp": 1,
-        "afterTaxSpreadRoiPct": 0.971,
-        "fiveMinVsOneHourPct": 5.528,
-        "oneHourVs24hPct": -2.927,
-        "screenScore": 39.45
+        "id": 34422,
+        "name": "Fire ruby",
+        "high": 181050,
+        "low": 155060,
+        "highTime": 1788482531,
+        "lowTime": 1788482902,
+        "buyLimit": null,
+        "oneHourVolume": 72,
+        "highPriceVolume": 5,
+        "lowPriceVolume": 67,
+        "highSideShare": 0.0694,
+        "estimatedGpTraded1h": 11498472,
+        "liquidity": "THIN",
+        "afterTaxSpreadGp": 22369,
+        "afterTaxSpreadRoiPct": 14.426,
+        "fiveMinVsOneHourPct": 5.588,
+        "oneHourVs24hPct": -23.159,
+        "screenScore": 88.24
       },
       {
-        "id": 1403,
-        "name": "Mystic water staff",
-        "high": 27800,
-        "low": 25135,
-        "highTime": 1788482390,
-        "lowTime": 1788482881,
-        "buyLimit": 18000,
-        "oneHourVolume": 345,
-        "highPriceVolume": 82,
-        "lowPriceVolume": 263,
-        "highSideShare": 0.2377,
-        "estimatedGpTraded1h": 8655877,
+        "id": 11037,
+        "name": "Brine sabre",
+        "high": 405266,
+        "low": 369446,
+        "highTime": 1788482666,
+        "lowTime": 1788482120,
+        "buyLimit": 8,
+        "oneHourVolume": 21,
+        "highPriceVolume": 5,
+        "lowPriceVolume": 16,
+        "highSideShare": 0.2381,
+        "estimatedGpTraded1h": 8071329,
         "liquidity": "THIN",
-        "afterTaxSpreadGp": 2109,
-        "afterTaxSpreadRoiPct": 8.391,
-        "fiveMinVsOneHourPct": 5.492,
-        "oneHourVs24hPct": -0.45,
-        "screenScore": 87.75
-      },
-      {
-        "id": 31910,
-        "name": "Mithril cannonball",
-        "high": 155,
-        "low": 148,
-        "highTime": 1788482357,
-        "lowTime": 1788482928,
-        "buyLimit": 11000,
-        "oneHourVolume": 37144,
-        "highPriceVolume": 15113,
-        "lowPriceVolume": 22031,
-        "highSideShare": 0.4069,
-        "estimatedGpTraded1h": 6091616,
-        "liquidity": "THIN",
-        "afterTaxSpreadGp": 4,
-        "afterTaxSpreadRoiPct": 2.703,
-        "fiveMinVsOneHourPct": -5.488,
-        "oneHourVs24hPct": 7.19,
-        "screenScore": 54.17
-      },
-      {
-        "id": 29286,
-        "name": "Mixed hide boots",
-        "high": 18840,
-        "low": 18000,
-        "highTime": 1788482713,
-        "lowTime": 1788482878,
-        "buyLimit": 100,
-        "oneHourVolume": 339,
-        "highPriceVolume": 256,
-        "lowPriceVolume": 83,
-        "highSideShare": 0.7552,
-        "estimatedGpTraded1h": 5920465,
-        "liquidity": "THIN",
-        "afterTaxSpreadGp": 464,
-        "afterTaxSpreadRoiPct": 2.578,
-        "fiveMinVsOneHourPct": 5.471,
-        "oneHourVs24hPct": 0.735,
-        "screenScore": 52.87
-      },
-      {
-        "id": 28988,
-        "name": "Blue moon spear",
-        "high": 344000,
-        "low": 334399,
-        "highTime": 1788481884,
-        "lowTime": 1788482893,
-        "buyLimit": 15,
-        "oneHourVolume": 23,
-        "highPriceVolume": 6,
-        "lowPriceVolume": 17,
-        "highSideShare": 0.2609,
-        "estimatedGpTraded1h": 7901949,
-        "liquidity": "THIN",
-        "afterTaxSpreadGp": 2721,
-        "afterTaxSpreadRoiPct": 0.814,
-        "fiveMinVsOneHourPct": -5.112,
-        "oneHourVs24hPct": -3.462,
-        "screenScore": 35.73
-      },
-      {
-        "id": 1963,
-        "name": "Banana",
-        "high": 47,
-        "low": 35,
-        "highTime": 1788482577,
-        "lowTime": 1788482642,
-        "buyLimit": 13000,
-        "oneHourVolume": 218394,
-        "highPriceVolume": 39823,
-        "lowPriceVolume": 178571,
-        "highSideShare": 0.1823,
-        "estimatedGpTraded1h": 8735760,
-        "liquidity": "THIN",
-        "afterTaxSpreadGp": 12,
-        "afterTaxSpreadRoiPct": 34.286,
-        "fiveMinVsOneHourPct": 5.0,
-        "oneHourVs24hPct": -25.926,
-        "screenScore": 87.77
+        "afterTaxSpreadGp": 27715,
+        "afterTaxSpreadRoiPct": 7.502,
+        "fiveMinVsOneHourPct": 5.442,
+        "oneHourVs24hPct": 0.954,
+        "screenScore": 87.63
       }
     ],
     "oversold_candidates": [
@@ -3021,7 +3015,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": -2548,
         "afterTaxSpreadRoiPct": -2.104,
-        "fiveMinVsOneHourPct": -12.628,
+        "fiveMinVsOneHourPct": -12.251,
         "oneHourVs24hPct": -63.974
       },
       {
@@ -3040,7 +3034,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 21962,
         "afterTaxSpreadRoiPct": 8.48,
-        "fiveMinVsOneHourPct": 12.459,
+        "fiveMinVsOneHourPct": 13.238,
         "oneHourVs24hPct": -31.264,
         "screenScore": 88.58
       },
@@ -3060,7 +3054,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 12,
         "afterTaxSpreadRoiPct": 34.286,
-        "fiveMinVsOneHourPct": 5.0,
+        "fiveMinVsOneHourPct": 3.75,
         "oneHourVs24hPct": -25.926,
         "screenScore": 87.77
       },
@@ -3080,7 +3074,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 30368,
         "afterTaxSpreadRoiPct": 13.033,
-        "fiveMinVsOneHourPct": null,
+        "fiveMinVsOneHourPct": 33.275,
         "oneHourVs24hPct": -25.721,
         "screenScore": 88.18
       },
@@ -3100,7 +3094,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": -817,
         "afterTaxSpreadRoiPct": -1.002,
-        "fiveMinVsOneHourPct": 27.81,
+        "fiveMinVsOneHourPct": 29.6,
         "oneHourVs24hPct": -25.441
       },
       {
@@ -3119,7 +3113,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 22369,
         "afterTaxSpreadRoiPct": 14.426,
-        "fiveMinVsOneHourPct": 7.692,
+        "fiveMinVsOneHourPct": 5.588,
         "oneHourVs24hPct": -23.159,
         "screenScore": 88.24
       },
@@ -3139,7 +3133,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 6600,
         "afterTaxSpreadRoiPct": 4.125,
-        "fiveMinVsOneHourPct": 0.569,
+        "fiveMinVsOneHourPct": -5.018,
         "oneHourVs24hPct": -22.933,
         "screenScore": 68.39
       },
@@ -3217,7 +3211,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": 330,
         "afterTaxSpreadRoiPct": 2.035,
-        "fiveMinVsOneHourPct": 12.382,
+        "fiveMinVsOneHourPct": 15.301,
         "oneHourVs24hPct": -14.15,
         "screenScore": 51.19
       },
@@ -3237,7 +3231,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": -1822,
         "afterTaxSpreadRoiPct": -0.84,
-        "fiveMinVsOneHourPct": 1.332,
+        "fiveMinVsOneHourPct": -0.37,
         "oneHourVs24hPct": -13.998
       },
       {
@@ -3256,7 +3250,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": -10,
         "afterTaxSpreadRoiPct": -1.01,
-        "fiveMinVsOneHourPct": null,
+        "fiveMinVsOneHourPct": -1.0,
         "oneHourVs24hPct": -12.816
       },
       {
@@ -3294,7 +3288,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": 37561,
         "afterTaxSpreadRoiPct": 0.465,
-        "fiveMinVsOneHourPct": 3.389,
+        "fiveMinVsOneHourPct": 3.324,
         "oneHourVs24hPct": -11.448,
         "screenScore": 36.56
       },
@@ -3314,7 +3308,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 16,
         "afterTaxSpreadRoiPct": 5.281,
-        "fiveMinVsOneHourPct": -4.401,
+        "fiveMinVsOneHourPct": -1.366,
         "oneHourVs24hPct": -11.306,
         "screenScore": 79.92
       },
@@ -3334,7 +3328,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": 9411,
         "afterTaxSpreadRoiPct": 4.487,
-        "fiveMinVsOneHourPct": null,
+        "fiveMinVsOneHourPct": -1.143,
         "oneHourVs24hPct": -11.139,
         "screenScore": 74.73
       },
@@ -3394,7 +3388,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": -1,
         "afterTaxSpreadRoiPct": -0.704,
-        "fiveMinVsOneHourPct": 8.397,
+        "fiveMinVsOneHourPct": 7.634,
         "oneHourVs24hPct": -10.274
       },
       {
@@ -3413,7 +3407,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 0,
         "afterTaxSpreadRoiPct": 0.0,
-        "fiveMinVsOneHourPct": 22.222,
+        "fiveMinVsOneHourPct": 33.333,
         "oneHourVs24hPct": -10.0
       },
       {
@@ -3432,7 +3426,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 0,
         "afterTaxSpreadRoiPct": 0.0,
-        "fiveMinVsOneHourPct": 33.333,
+        "fiveMinVsOneHourPct": 11.111,
         "oneHourVs24hPct": -10.0
       },
       {
@@ -3470,7 +3464,7 @@
         "liquidity": "LIQUID",
         "afterTaxSpreadGp": 5,
         "afterTaxSpreadRoiPct": 2.092,
-        "fiveMinVsOneHourPct": 2.941,
+        "fiveMinVsOneHourPct": 0.84,
         "oneHourVs24hPct": -9.677,
         "screenScore": 53.46
       },
@@ -3490,7 +3484,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": 23152,
         "afterTaxSpreadRoiPct": 2.646,
-        "fiveMinVsOneHourPct": 5.9,
+        "fiveMinVsOneHourPct": 3.461,
         "oneHourVs24hPct": -9.605,
         "screenScore": 55.83
       },
@@ -3530,7 +3524,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 9,
         "afterTaxSpreadRoiPct": 2.055,
-        "fiveMinVsOneHourPct": 6.546,
+        "fiveMinVsOneHourPct": 6.998,
         "oneHourVs24hPct": -9.221,
         "screenScore": 49.26
       },
@@ -3550,7 +3544,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": 60393,
         "afterTaxSpreadRoiPct": 2.575,
-        "fiveMinVsOneHourPct": null,
+        "fiveMinVsOneHourPct": -0.888,
         "oneHourVs24hPct": -9.137,
         "screenScore": 55.46
       },
@@ -3570,7 +3564,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": 22,
         "afterTaxSpreadRoiPct": 3.63,
-        "fiveMinVsOneHourPct": 2.106,
+        "fiveMinVsOneHourPct": 4.886,
         "oneHourVs24hPct": -9.112,
         "screenScore": 66.51
       },
@@ -3590,7 +3584,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": -24000,
         "afterTaxSpreadRoiPct": -0.666,
-        "fiveMinVsOneHourPct": null,
+        "fiveMinVsOneHourPct": -0.513,
         "oneHourVs24hPct": -8.979
       },
       {
@@ -3609,7 +3603,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 29095,
         "afterTaxSpreadRoiPct": 3.828,
-        "fiveMinVsOneHourPct": 5.722,
+        "fiveMinVsOneHourPct": 6.301,
         "oneHourVs24hPct": -8.974,
         "screenScore": 67.17
       },
@@ -3629,7 +3623,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": 17400,
         "afterTaxSpreadRoiPct": 1.298,
-        "fiveMinVsOneHourPct": null,
+        "fiveMinVsOneHourPct": -0.53,
         "oneHourVs24hPct": -8.869,
         "screenScore": 44.07
       },
@@ -3649,7 +3643,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": -20,
         "afterTaxSpreadRoiPct": -1.594,
-        "fiveMinVsOneHourPct": -0.789,
+        "fiveMinVsOneHourPct": -1.026,
         "oneHourVs24hPct": -8.816
       },
       {
@@ -3688,7 +3682,7 @@
         "liquidity": "LIQUID",
         "afterTaxSpreadGp": -65,
         "afterTaxSpreadRoiPct": -0.361,
-        "fiveMinVsOneHourPct": 2.707,
+        "fiveMinVsOneHourPct": 1.255,
         "oneHourVs24hPct": -8.681
       },
       {
@@ -3707,7 +3701,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": 1500,
         "afterTaxSpreadRoiPct": 3.787,
-        "fiveMinVsOneHourPct": null,
+        "fiveMinVsOneHourPct": 1.55,
         "oneHourVs24hPct": -8.293,
         "screenScore": 65.25
       },
@@ -3747,7 +3741,7 @@
         "liquidity": "LIQUID",
         "afterTaxSpreadGp": -184000,
         "afterTaxSpreadRoiPct": -2.0,
-        "fiveMinVsOneHourPct": 1.28,
+        "fiveMinVsOneHourPct": 2.314,
         "oneHourVs24hPct": -7.803
       },
       {
@@ -3766,7 +3760,7 @@
         "liquidity": "THIN",
         "afterTaxSpreadGp": -9,
         "afterTaxSpreadRoiPct": -0.779,
-        "fiveMinVsOneHourPct": 0.565,
+        "fiveMinVsOneHourPct": -0.261,
         "oneHourVs24hPct": -7.476
       },
       {
@@ -3785,7 +3779,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": 43000,
         "afterTaxSpreadRoiPct": 2.499,
-        "fiveMinVsOneHourPct": 3.533,
+        "fiveMinVsOneHourPct": 5.378,
         "oneHourVs24hPct": -7.469,
         "screenScore": 56.38
       }
@@ -3827,7 +3821,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": 150862,
         "afterTaxSpreadRoiPct": 1.933,
-        "fiveMinVsOneHourPct": null,
+        "fiveMinVsOneHourPct": -3.656,
         "oneHourVs24hPct": 4.984,
         "screenScore": 48.88
       },
@@ -3847,7 +3841,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": -40911,
         "afterTaxSpreadRoiPct": -0.408,
-        "fiveMinVsOneHourPct": -3.193,
+        "fiveMinVsOneHourPct": 0.357,
         "oneHourVs24hPct": -0.369
       },
       {
@@ -3885,7 +3879,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": 334000,
         "afterTaxSpreadRoiPct": 1.149,
-        "fiveMinVsOneHourPct": 0.274,
+        "fiveMinVsOneHourPct": -0.957,
         "oneHourVs24hPct": -1.246,
         "screenScore": 42.59
       },
@@ -3943,7 +3937,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": -1135,
         "afterTaxSpreadRoiPct": -2.071,
-        "fiveMinVsOneHourPct": 0.029,
+        "fiveMinVsOneHourPct": 0.184,
         "oneHourVs24hPct": -2.859
       },
       {
@@ -3962,7 +3956,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": -21,
         "afterTaxSpreadRoiPct": -1.217,
-        "fiveMinVsOneHourPct": -0.375,
+        "fiveMinVsOneHourPct": null,
         "oneHourVs24hPct": -2.12
       },
       {
@@ -3981,7 +3975,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": 196,
         "afterTaxSpreadRoiPct": 1.065,
-        "fiveMinVsOneHourPct": 0.075,
+        "fiveMinVsOneHourPct": -1.259,
         "oneHourVs24hPct": 1.289,
         "screenScore": 40.6
       },
@@ -4001,7 +3995,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": -37,
         "afterTaxSpreadRoiPct": -1.431,
-        "fiveMinVsOneHourPct": -0.116,
+        "fiveMinVsOneHourPct": null,
         "oneHourVs24hPct": 0.368
       },
       {
@@ -4020,7 +4014,7 @@
         "liquidity": "LIQUID",
         "afterTaxSpreadGp": 2,
         "afterTaxSpreadRoiPct": 0.049,
-        "fiveMinVsOneHourPct": 1.013,
+        "fiveMinVsOneHourPct": null,
         "oneHourVs24hPct": -3.859
       },
       {
@@ -4039,7 +4033,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": -357,
         "afterTaxSpreadRoiPct": -1.481,
-        "fiveMinVsOneHourPct": 0.822,
+        "fiveMinVsOneHourPct": 0.775,
         "oneHourVs24hPct": 1.285
       },
       {
@@ -4058,7 +4052,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": -30,
         "afterTaxSpreadRoiPct": -1.198,
-        "fiveMinVsOneHourPct": 0.18,
+        "fiveMinVsOneHourPct": null,
         "oneHourVs24hPct": 0.2
       },
       {
@@ -4077,7 +4071,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": 127,
         "afterTaxSpreadRoiPct": 7.623,
-        "fiveMinVsOneHourPct": 1.865,
+        "fiveMinVsOneHourPct": 6.616,
         "oneHourVs24hPct": -4.456,
         "screenScore": 90.73
       },
@@ -4116,7 +4110,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": -490,
         "afterTaxSpreadRoiPct": -0.69,
-        "fiveMinVsOneHourPct": 1.226,
+        "fiveMinVsOneHourPct": 0.814,
         "oneHourVs24hPct": -1.11
       },
       {
@@ -4175,7 +4169,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": 12,
         "afterTaxSpreadRoiPct": 0.913,
-        "fiveMinVsOneHourPct": -0.927,
+        "fiveMinVsOneHourPct": -0.853,
         "oneHourVs24hPct": -0.773,
         "screenScore": 39.21
       },
@@ -4195,7 +4189,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": -4063,
         "afterTaxSpreadRoiPct": -1.216,
-        "fiveMinVsOneHourPct": null,
+        "fiveMinVsOneHourPct": 0.649,
         "oneHourVs24hPct": -1.247
       },
       {
@@ -4252,7 +4246,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": -1198,
         "afterTaxSpreadRoiPct": -2.026,
-        "fiveMinVsOneHourPct": 0.143,
+        "fiveMinVsOneHourPct": 0.075,
         "oneHourVs24hPct": 0.044
       },
       {
@@ -4271,7 +4265,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": -652,
         "afterTaxSpreadRoiPct": -0.893,
-        "fiveMinVsOneHourPct": 0.763,
+        "fiveMinVsOneHourPct": 1.923,
         "oneHourVs24hPct": 0.088
       },
       {
@@ -4290,7 +4284,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": -79,
         "afterTaxSpreadRoiPct": -1.99,
-        "fiveMinVsOneHourPct": 0.34,
+        "fiveMinVsOneHourPct": 0.0,
         "oneHourVs24hPct": -3.383
       },
       {
@@ -4309,7 +4303,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": -30,
         "afterTaxSpreadRoiPct": -1.432,
-        "fiveMinVsOneHourPct": -0.987,
+        "fiveMinVsOneHourPct": -1.551,
         "oneHourVs24hPct": 0.543
       },
       {
@@ -4328,7 +4322,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": -55,
         "afterTaxSpreadRoiPct": -2.381,
-        "fiveMinVsOneHourPct": 1.524,
+        "fiveMinVsOneHourPct": 1.089,
         "oneHourVs24hPct": 1.079
       },
       {
@@ -4367,7 +4361,7 @@
         "liquidity": "LIQUID",
         "afterTaxSpreadGp": 47,
         "afterTaxSpreadRoiPct": 0.691,
-        "fiveMinVsOneHourPct": -0.263,
+        "fiveMinVsOneHourPct": 0.753,
         "oneHourVs24hPct": 2.548,
         "screenScore": 39.04
       },
@@ -4387,7 +4381,7 @@
         "liquidity": "LIQUID",
         "afterTaxSpreadGp": -159,
         "afterTaxSpreadRoiPct": -1.871,
-        "fiveMinVsOneHourPct": -0.252,
+        "fiveMinVsOneHourPct": -0.176,
         "oneHourVs24hPct": 0.165
       },
       {
@@ -4406,7 +4400,7 @@
         "liquidity": "LIQUID",
         "afterTaxSpreadGp": 36,
         "afterTaxSpreadRoiPct": 0.954,
-        "fiveMinVsOneHourPct": 0.948,
+        "fiveMinVsOneHourPct": -0.519,
         "oneHourVs24hPct": 0.208,
         "screenScore": 41.96
       },
@@ -4426,7 +4420,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": -21747,
         "afterTaxSpreadRoiPct": -1.266,
-        "fiveMinVsOneHourPct": -3.423,
+        "fiveMinVsOneHourPct": -3.929,
         "oneHourVs24hPct": 7.131
       },
       {
@@ -4445,7 +4439,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": 50,
         "afterTaxSpreadRoiPct": 2.618,
-        "fiveMinVsOneHourPct": -2.299,
+        "fiveMinVsOneHourPct": -2.402,
         "oneHourVs24hPct": 1.346,
         "screenScore": 56.31
       },
@@ -4465,7 +4459,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": 23,
         "afterTaxSpreadRoiPct": 2.18,
-        "fiveMinVsOneHourPct": 3.774,
+        "fiveMinVsOneHourPct": 1.604,
         "oneHourVs24hPct": 3.667,
         "screenScore": 51.48
       },
@@ -4485,7 +4479,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": 13,
         "afterTaxSpreadRoiPct": 0.657,
-        "fiveMinVsOneHourPct": -1.117,
+        "fiveMinVsOneHourPct": -1.688,
         "oneHourVs24hPct": -0.788,
         "screenScore": 36.72
       },
@@ -4505,7 +4499,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": 126,
         "afterTaxSpreadRoiPct": 0.818,
-        "fiveMinVsOneHourPct": 0.967,
+        "fiveMinVsOneHourPct": 1.064,
         "oneHourVs24hPct": -1.772,
         "screenScore": 39.43
       },
@@ -4525,7 +4519,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": -1674,
         "afterTaxSpreadRoiPct": -1.41,
-        "fiveMinVsOneHourPct": -0.005,
+        "fiveMinVsOneHourPct": 0.132,
         "oneHourVs24hPct": -0.076
       },
       {
@@ -4563,7 +4557,7 @@
         "liquidity": "MODERATE",
         "afterTaxSpreadGp": -1632,
         "afterTaxSpreadRoiPct": -2.771,
-        "fiveMinVsOneHourPct": -0.013,
+        "fiveMinVsOneHourPct": 0.204,
         "oneHourVs24hPct": -0.003
       }
     ]
