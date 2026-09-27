@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-09-27T00:03:29.510582Z",
+  "checked_at": "2026-09-27T00:06:43.035369Z",
   "source": "prices.runescape.wiki OSRS RuneLite real-time API",
   "success": true,
   "error": null,
-  "snapshot_generated_at": "2026-09-27T00:02:17.288705Z",
+  "snapshot_generated_at": "2026-09-27T00:06:41.981832Z",
   "critical_endpoints": [
     "mapping",
     "latest",
@@ -38,12 +38,12 @@
   },
   "timeseries_status": {
     "1h": {
-      "success": 11,
-      "failed": 1
+      "success": 12,
+      "failed": 0
     },
     "6h": {
-      "success": 11,
-      "failed": 1
+      "success": 12,
+      "failed": 0
     }
   },
   "note": "Only mapping/latest/1h are allowed to block the core snapshot. 5m/6h/24h/timeseries are fail-soft."
