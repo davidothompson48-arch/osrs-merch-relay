@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-15T23:44:10.922649Z",
-  "generated_unix": 1792107850,
+  "generated_at": "2026-10-15T23:50:56.157675Z",
+  "generated_unix": 1792108256,
   "source": "prices.runescape.wiki OSRS RuneLite real-time API",
   "source_policy": "All market and static metadata fields in this file originate only from prices.runescape.wiki.",
   "freshness_policy": "mapping/latest/1h are required; 5m/24h are fail-soft.",
@@ -19,16 +19,16 @@
       "current": {
         "high": 1964,
         "low": 1900,
-        "highTime": 1792107723,
+        "highTime": 1792108047,
         "lowTime": 1792107635,
-        "highAgeSeconds": 127,
-        "lowAgeSeconds": 215
+        "highAgeSeconds": 209,
+        "lowAgeSeconds": 621
       },
       "5m": {
         "avgHighPrice": 1964,
-        "avgLowPrice": 1900,
-        "highPriceVolume": 40,
-        "lowPriceVolume": 29
+        "avgLowPrice": null,
+        "highPriceVolume": 80,
+        "lowPriceVolume": 0
       },
       "1h": {
         "avgHighPrice": 2769,
