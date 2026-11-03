@@ -1,11 +1,11 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-03T12:04:35.119310Z",
-  "generated_unix": 1793707475,
+  "generated_at": "2026-11-03T15:02:17.380523Z",
+  "generated_unix": 1793718137,
   "source": "prices.runescape.wiki OSRS RuneLite real-time API",
   "source_policy": "All market and static metadata fields in the universe shards originate only from prices.runescape.wiki.",
   "freshness_policy": "mapping/latest/1h are required; 5m/24h are fail-soft.",
-  "item_count": 4674,
+  "item_count": 4675,
   "shards": [
     {
       "shard": "0-9",
@@ -15,7 +15,7 @@
     {
       "shard": "A",
       "file": "market_universe/A.json",
-      "item_count": 397
+      "item_count": 398
     },
     {
       "shard": "B",
