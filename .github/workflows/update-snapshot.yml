@@ -60,7 +60,7 @@ permissions:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 350
+    timeout-minutes: 45
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -124,7 +124,7 @@ jobs:
             python build_swing_trade_gate.py || true
             python build_tfa_unique_economics.py || true
           }
-          for cycle in $(seq 1 66); do
+          for cycle in $(seq 1 6); do
             cycle_started=$(date +%s)
             git reset --hard HEAD
             git pull --rebase origin main
