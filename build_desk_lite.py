@@ -171,7 +171,32 @@ def compact_performance_dashboard(row):
     )}
 
 
+def compact_market_radar(row):
+    if not isinstance(row, dict):
+        return {"status": "MISSING"}
+    return {
+        "status": row.get("status"),
+        "generated_at": row.get("generated_at"),
+        "market_universe_unix": row.get("market_universe_unix"),
+        "data_age_seconds": row.get("data_age_seconds"),
+        "items_with_fresh_two_sided_prints": row.get("items_with_fresh_two_sided_prints"),
+        "sectors": row.get("sectors") or [],
+        "multi_day_selected_basket": row.get("multi_day_selected_basket") or [],
+        "unusual_moves": (row.get("unusual_moves") or [])[:12],
+        "notes": row.get("notes") or [],
+    }
+
+
 def main():
+    try:
+        radar = load("market_radar.json")
+    except (OSError, ValueError):
+        radar = {}
+    try:
+        ledger = load("project/portfolio_ledger.json")
+    except (OSError, ValueError):
+        ledger = {}
+    context = ledger.get("account_context") or {}
     p=load(SRC); tax=p.get("tax_policy") or {}; engines=p.get("engines") or {}; catalyst=p.get("catalyst_state") or {}; sectors=p.get("sectors") or {}; profit=p.get("profit_layer") or {}
     lite={
         "schema_version":8,"generated_at":p.get("generated_at"),"generated_unix":p.get("generated_unix"),"source":p.get("source"),"quality":p.get("quality"),
@@ -183,7 +208,13 @@ def main():
         "sectors":{key:compact_sector(sectors.get(key) or []) for key in ("breaker_competing_runes","fractured_archive_ranged","prayer","cox_rewards","crush_inquisitor","elemental_magic") if sectors.get(key)},
         "previous_runtime":p.get("previous_runtime"),
         "catalyst_state":{"watch_last_checked_utc":catalyst.get("watch_last_checked_utc"),"watch_last_material_change_utc":catalyst.get("watch_last_material_change_utc"),"watch_status":catalyst.get("watch_status"),"database_updated_at_utc":catalyst.get("database_updated_at_utc"),"records":catalyst.get("records") or [],"probability_models":catalyst.get("probability_models") or []},
-        "deep_packet":"desk_packet.json","rule":"Routine desk runs should use this lite packet only. Check portfolio_exit_engine before all new deployment analysis. If action_required=true, report the exit as a MATERIAL CHANGE with its exact staged execution plan; its dynamic rating overrides any static runtime HOLD label. Thin tape changes execution style and sizing, not the existence of a validated sell signal. Then use the marginal-capital ladder for incremental GP, the absolute-velocity frontier for total GP/hour, the GE-slot-hour frontier for scarce slot allocation, and the balanced frontier for final risk-adjusted ranking. Fast flips require spread persistence before allocation. Profit hurdles, repeatability, attention modes and capital rotation remain staged unless their allocation_authoritative field is true. Fetch the deep packet solely for missing fields or a user-requested deep dive."
+        "market_radar": compact_market_radar(radar),
+        "portfolio_reconciliation": {
+            "required": context.get("reconciliation_required", True),
+            "last_confirmed_utc": context.get("ledger_last_position_confirmation_utc") or ledger.get("updated_at_utc"),
+            "note": context.get("reconciliation_note") or "Confirm cash and positions before interpreting modeled P&L or placing a trade."
+        },
+        "deep_packet":"desk_packet.json","rule":"Routine desk runs should use this lite packet only. Check portfolio_exit_engine before all new deployment analysis. If action_required=true, report the exit as a MATERIAL CHANGE with its exact staged execution plan; its dynamic rating overrides any static runtime HOLD label. Thin tape changes execution style and sizing, not the existence of a validated sell signal. Then use the marginal-capital ladder for incremental GP, the absolute-velocity frontier for total GP/hour, the GE-slot-hour frontier for scarce slot allocation, and the balanced frontier for final risk-adjusted ranking. Fast flips require spread persistence before allocation. Profit hurdles, repeatability, attention modes and capital rotation remain staged unless their allocation_authoritative field is true. Market radar is advisory, and the multi-day index must have enough historical samples to be meaningful. Never present an unreconciled ledger's model P&L as current realized profit or loss. Fetch the deep packet solely for missing fields or a user-requested deep dive."
     }
     with open(OUT,"w",encoding="utf-8") as f:
         json.dump(lite,f,separators=(",",":")); f.write("\n")
