@@ -165,6 +165,7 @@ def main():
                 "balance_change_pending": True,
                 "groups": output.get("groups") or [],
                 "rewards": output.get("rewards") or [],
+                "proxy_quote_items": output.get("proxy_quote_items") or [],
                 "full_report": OUT,
                 "notes": output["notes"],
             }
