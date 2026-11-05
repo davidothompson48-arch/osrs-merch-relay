@@ -22,6 +22,7 @@ on:
       - 'update_opportunity_book.py'
       - 'build_speculative_parks.py'
       - 'build_market_radar.py'
+      - 'build_desk_lite.py'
       - 'inject_speculative_parks.py'
       - 'shadow_book.py'
       - 'sanitize_shadow_book.py'
@@ -114,10 +115,10 @@ jobs:
             python optimize_allocation.py || true
             python update_opportunity_book.py || true
             python portfolio_exit_engine.py || return 1
+            python build_market_radar.py || true
             python build_desk_lite.py || true
             python build_speculative_parks.py || true
             python inject_speculative_parks.py || true
-            python build_market_radar.py || true
           }
           for cycle in $(seq 1 66); do
             cycle_started=$(date +%s)
