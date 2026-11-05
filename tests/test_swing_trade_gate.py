@@ -21,7 +21,7 @@ class SwingTradeGateTests(unittest.TestCase):
 
     def test_exact_after_tax_breakeven(self):
         price = g.minimum_exit(10_000_000, "Test blade", TAX, 0)
-        self.assertEqual(price, 10_204_082)
+        self.assertEqual(price, 10_204_081)  # 2% GE tax rounds DOWN to the nearest GP
         self.assertGreaterEqual(g.net_sale(price, "Test blade", TAX), 10_000_000)
         self.assertLess(g.net_sale(price-1, "Test blade", TAX), 10_000_000)
 
