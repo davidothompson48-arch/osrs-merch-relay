@@ -1,33 +1,61 @@
 {
   "schema_version": 1,
-  "updated_at_utc": "2026-09-03T16:15:00Z",
+  "updated_at_utc": "2026-11-05T18:00:00Z",
   "purpose": "Structured register of material OSRS market catalysts so hourly runs distinguish genuinely new evidence from recycled information.",
-  "status_values": ["NEW", "DEVELOPING", "CONFIRMED", "WEAKENING", "DISPROVEN", "UNCHANGED"],
-  "credibility_values": ["CONFIRMED", "STRONG EVIDENCE", "PLAUSIBLE SPECULATION", "WEAK SPECULATION", "RUMOR"],
+  "status_values": [
+    "NEW",
+    "DEVELOPING",
+    "CONFIRMED",
+    "WEAKENING",
+    "DISPROVEN",
+    "UNCHANGED"
+  ],
+  "credibility_values": [
+    "CONFIRMED",
+    "STRONG EVIDENCE",
+    "PLAUSIBLE SPECULATION",
+    "WEAK SPECULATION",
+    "RUMOR"
+  ],
   "records": [
     {
       "id": "fractured_archive_breaker_unspecified_rune",
       "first_seen": "2026-07-30",
-      "latest_evidence_date": "2026-07-30",
-      "source_attribution": "Jagex Fractured Archive rewards proposal",
-      "affected_theses": ["breaker_charge_rune"],
-      "affected_items": ["Wrath rune", "Nature rune", "Soul rune", "Blood rune", "Death rune", "Chaos rune"],
+      "latest_evidence_date": "2026-10-20",
+      "source_attribution": "https://oldschool.runescape.wiki/w/Obligator (live-game charging mechanic; released 20 Oct 2026)",
+      "affected_theses": [
+        "breaker_charge_rune"
+      ],
+      "affected_items": [
+        "Wrath rune",
+        "Nature rune",
+        "Death rune",
+        "Ascension shards"
+      ],
       "credibility": "CONFIRMED",
-      "status": "UNCHANGED",
+      "status": "DISPROVEN",
       "confidence_0_100": 95,
       "impact": "High",
       "direction": "Mixed",
-      "summary": "Breaker requires Ascension Shards plus a rune of some kind; the specific rune was not decided in the cited proposal.",
-      "market_pricing_assessment": "Treat all rune-specific beneficiary calls as speculation until narrowed or confirmed.",
-      "what_changed_since_prior": "Baseline record only."
+      "summary": "Historical pre-release uncertainty is resolved: the Obligator requires 1 Ascension shard plus 20 Nature and 20 Death runes per 10 charges. Wrath rune is NOT a charge ingredient.",
+      "market_pricing_assessment": "REMOVE all Obligator-driven Wrath beneficiary probabilities and speculative buy calls. Nature/Death demand is confirmed, but rune supply and total Obligator usage remain uncertain.",
+      "what_changed_since_prior": "The live raid and released weapon invalidated the unspecific rune candidate model."
     },
     {
       "id": "cox_scroll_supply_reduction_aug12",
       "first_seen": "2026-08-12",
       "latest_evidence_date": "2026-08-12",
       "source_attribution": "Jagex implemented CoX reward weighting changes",
-      "affected_theses": ["cox_scroll_recovery"],
-      "affected_items": ["Arcane prayer scroll", "Dexterous prayer scroll", "Ancestral hat", "Ancestral robe top", "Ancestral robe bottom"],
+      "affected_theses": [
+        "cox_scroll_recovery"
+      ],
+      "affected_items": [
+        "Arcane prayer scroll",
+        "Dexterous prayer scroll",
+        "Ancestral hat",
+        "Ancestral robe top",
+        "Ancestral robe bottom"
+      ],
       "credibility": "CONFIRMED",
       "status": "CONFIRMED",
       "confidence_0_100": 100,
@@ -40,19 +68,50 @@
     {
       "id": "fractured_archive_rewards_poll_passed_aug10",
       "first_seen": "2026-08-27",
-      "latest_evidence_date": "2026-08-10",
+      "latest_evidence_date": "2026-10-20",
       "source_attribution": "Official Old School RuneScape poll result: The Fractured Archive - Rewards Lock-in Poll (03 Aug 2026 - 10 Aug 2026), https://oldschool.runescape.com/polls/2026/1762",
       "evidence_class": "CONFIRMED poll result",
-      "affected_theses": ["breaker_charge_rune", "legacy_elemental_hardware", "inquisitor_crush_demand"],
-      "affected_items": ["Breaker", "Elemental Fragments", "Rondache", "Zorya's Tome", "Zeal", "Ascension Crossbows", "Wrath rune", "Nature rune", "Soul rune", "Blood rune", "Death rune", "Chaos rune", "Staff of the dead", "Toxic staff of the dead", "Nightmare staff", "Harmonised nightmare staff", "Tome of fire", "Water tome", "Earth tome", "Searing page", "Burnt page", "Inquisitor's great helm", "Inquisitor's hauberk", "Inquisitor's plateskirt", "Inquisitor's mace", "Elder maul"],
+      "affected_theses": [
+        "breaker_charge_rune",
+        "legacy_elemental_hardware",
+        "inquisitor_crush_demand"
+      ],
+      "affected_items": [
+        "Breaker",
+        "Elemental Fragments",
+        "Rondache",
+        "Zorya's Tome",
+        "Zeal",
+        "Ascension Crossbows",
+        "Wrath rune",
+        "Nature rune",
+        "Soul rune",
+        "Blood rune",
+        "Death rune",
+        "Chaos rune",
+        "Staff of the dead",
+        "Toxic staff of the dead",
+        "Nightmare staff",
+        "Harmonised nightmare staff",
+        "Tome of fire",
+        "Water tome",
+        "Earth tome",
+        "Searing page",
+        "Burnt page",
+        "Inquisitor's great helm",
+        "Inquisitor's hauberk",
+        "Inquisitor's plateskirt",
+        "Inquisitor's mace",
+        "Elder maul"
+      ],
       "credibility": "CONFIRMED",
-      "status": "NEW",
+      "status": "CONFIRMED",
       "confidence_0_100": 100,
       "impact": "High",
       "direction": "Mixed but materially de-risks Raid 4 reward existence",
-      "summary": "All six proposed Fractured Archive rewards passed: Elemental Fragments 85.8%, Rondache 80.7%, Zorya's Tome 90.4%, Zeal 86.1%, Ascension Crossbows 85.6%, Breaker 88.4%. The Obligator won the Breaker visual poll.",
-      "market_pricing_assessment": "Existence risk for the proposed reward set is sharply reduced. Legacy elemental and Crush beneficiaries gain catalyst credibility, but exact encounter utility is still unconfirmed. Breaker's specific charge rune remains unknown, so Wrath-specific conviction should not be upgraded on beneficiary selection alone.",
-      "what_changed_since_prior": "Previously the repository treated individual reward passage as unverified. The official result page now verifies passage of every proposed reward."
+      "summary": "The Fractured Archive and its rewards released 20 October 2026. Poll-passage and prospective release should no longer be treated as pending catalysts.",
+      "market_pricing_assessment": "Do not rank raid items on release probability. Score actual post-release mechanics, supply, demand and balance risk instead.",
+      "what_changed_since_prior": "The raid is live; this historical pre-release record is retained for provenance."
     },
     {
       "id": "jewellers_chisel_bolt_tip_supply_aug19",
@@ -60,8 +119,18 @@
       "latest_evidence_date": "2026-08-19",
       "source_attribution": "Jagex Summer Sweep Up - Hunter & Skilling, 19 Aug 2026, https://secure.runescape.com/m=news/summer-sweep-up---hunter--skilling?oldschool=1",
       "evidence_class": "CONFIRMED implemented processing change",
-      "affected_theses": ["ascension_bolt_legacy_tip_speculation", "diamond_bolt_tip_processing"],
-      "affected_items": ["Diamond", "Uncut diamond", "Diamond bolt tips", "Onyx", "Onyx bolt tips", "Jeweller's Chisel"],
+      "affected_theses": [
+        "ascension_bolt_legacy_tip_speculation",
+        "diamond_bolt_tip_processing"
+      ],
+      "affected_items": [
+        "Diamond",
+        "Uncut diamond",
+        "Diamond bolt tips",
+        "Onyx",
+        "Onyx bolt tips",
+        "Jeweller's Chisel"
+      ],
       "credibility": "CONFIRMED",
       "status": "NEW",
       "confidence_0_100": 100,
@@ -77,8 +146,19 @@
       "latest_evidence_date": "2026-08-19",
       "source_attribution": "Jagex Summer Sweep Up - Hunter & Skilling, 19 Aug 2026, https://secure.runescape.com/m=news/summer-sweep-up---hunter--skilling?oldschool=1",
       "evidence_class": "CONFIRMED implemented Runecrafting system change",
-      "affected_theses": ["breaker_charge_rune", "high_level_rune_supply"],
-      "affected_items": ["Wrath rune", "Nature rune", "Soul rune", "Blood rune", "Death rune", "Chaos rune", "Abyssal lantern"],
+      "affected_theses": [
+        "breaker_charge_rune",
+        "high_level_rune_supply"
+      ],
+      "affected_items": [
+        "Wrath rune",
+        "Nature rune",
+        "Soul rune",
+        "Blood rune",
+        "Death rune",
+        "Chaos rune",
+        "Abyssal lantern"
+      ],
       "credibility": "CONFIRMED",
       "status": "NEW",
       "confidence_0_100": 95,
@@ -94,8 +174,23 @@
       "latest_evidence_date": "2026-08-26",
       "source_attribution": "Jagex Mad Angel Combat Achievements / Sailing changes, 26 Aug 2026, https://secure.runescape.com/m=news/mad-angel-combat-achievements?oldschool=1",
       "evidence_class": "CONFIRMED implemented repeatable loot-source change",
-      "affected_theses": ["diamond_supply", "evergreen_consumable_supply", "bone_supply"],
-      "affected_items": ["Uncut diamond", "Diamond", "Bones", "Astral rune", "Zulrah's scales", "Crystal shard", "Cannonballs", "Bars", "Ores", "Planks"],
+      "affected_theses": [
+        "diamond_supply",
+        "evergreen_consumable_supply",
+        "bone_supply"
+      ],
+      "affected_items": [
+        "Uncut diamond",
+        "Diamond",
+        "Bones",
+        "Astral rune",
+        "Zulrah's scales",
+        "Crystal shard",
+        "Cannonballs",
+        "Bars",
+        "Ores",
+        "Planks"
+      ],
       "credibility": "CONFIRMED",
       "status": "NEW",
       "confidence_0_100": 100,
@@ -111,8 +206,14 @@
       "latest_evidence_date": "2026-08-21",
       "source_attribution": "Official Old School RuneScape poll result: A Ruff Situation, Crab Quest & Bronzeman Mode (14 Aug 2026 - 21 Aug 2026), https://oldschool.runescape.com/polls/2026/1764",
       "evidence_class": "CONFIRMED passed lock-in poll; future content source, not yet an implemented supply source",
-      "affected_theses": ["breaker_charge_rune", "high_level_rune_supply", "blood_rune_supply"],
-      "affected_items": ["Blood rune"],
+      "affected_theses": [
+        "breaker_charge_rune",
+        "high_level_rune_supply",
+        "blood_rune_supply"
+      ],
+      "affected_items": [
+        "Blood rune"
+      ],
       "credibility": "CONFIRMED",
       "status": "NEW",
       "confidence_0_100": 100,
@@ -128,8 +229,24 @@
       "latest_evidence_date": "2026-09-02",
       "source_attribution": "Jagex Summer Sweep Up Miscellaneous, 2 Sep 2026, https://secure.runescape.com/m=news/summer-sweep-up-miscellaneous?oldschool=1",
       "evidence_class": "CONFIRMED implemented correction",
-      "affected_theses": ["diamond_supply", "evergreen_consumable_supply", "bone_supply"],
-      "affected_items": ["Uncut diamond", "Diamond", "Bones", "Astral rune", "Zulrah's scales", "Crystal shard", "Cannonballs", "Bars", "Ores", "Planks", "Loot Sack"],
+      "affected_theses": [
+        "diamond_supply",
+        "evergreen_consumable_supply",
+        "bone_supply"
+      ],
+      "affected_items": [
+        "Uncut diamond",
+        "Diamond",
+        "Bones",
+        "Astral rune",
+        "Zulrah's scales",
+        "Crystal shard",
+        "Cannonballs",
+        "Bars",
+        "Ores",
+        "Planks",
+        "Loot Sack"
+      ],
       "credibility": "CONFIRMED",
       "status": "CONFIRMED",
       "confidence_0_100": 100,
@@ -145,8 +262,28 @@
       "latest_evidence_date": "2026-09-02",
       "source_attribution": "Jagex Summer Sweep Up Miscellaneous, 2 Sep 2026, https://secure.runescape.com/m=news/summer-sweep-up-miscellaneous?oldschool=1",
       "evidence_class": "CONFIRMED implemented item sink and elemental-Magic system",
-      "affected_theses": ["legacy_elemental_hardware", "elemental_magic_demand", "amulet_of_magic_sink"],
-      "affected_items": ["Amulet of magic", "Air rune", "Water rune", "Earth rune", "Fire rune", "Amulet of Air", "Amulet of Water", "Amulet of Earth", "Amulet of Fire", "Elemental Amulet", "Harmonised nightmare staff", "Tome of fire", "Water tome", "Earth tome", "elemental spells"],
+      "affected_theses": [
+        "legacy_elemental_hardware",
+        "elemental_magic_demand",
+        "amulet_of_magic_sink"
+      ],
+      "affected_items": [
+        "Amulet of magic",
+        "Air rune",
+        "Water rune",
+        "Earth rune",
+        "Fire rune",
+        "Amulet of Air",
+        "Amulet of Water",
+        "Amulet of Earth",
+        "Amulet of Fire",
+        "Elemental Amulet",
+        "Harmonised nightmare staff",
+        "Tome of fire",
+        "Water tome",
+        "Earth tome",
+        "elemental spells"
+      ],
       "credibility": "CONFIRMED",
       "status": "NEW",
       "confidence_0_100": 100,
@@ -162,8 +299,15 @@
       "latest_evidence_date": "2026-09-02",
       "source_attribution": "Jagex Summer Sweep Up Miscellaneous, 2 Sep 2026, https://secure.runescape.com/m=news/summer-sweep-up-miscellaneous?oldschool=1",
       "evidence_class": "CONFIRMED implemented charge-consumption change",
-      "affected_theses": ["evergreen_consumable_demand", "blood_fury_consumption"],
-      "affected_items": ["Amulet of blood fury", "Blood shard", "Ghommal's Lucky Penny"],
+      "affected_theses": [
+        "evergreen_consumable_demand",
+        "blood_fury_consumption"
+      ],
+      "affected_items": [
+        "Amulet of blood fury",
+        "Blood shard",
+        "Ghommal's Lucky Penny"
+      ],
       "credibility": "CONFIRMED",
       "status": "NEW",
       "confidence_0_100": 100,
@@ -179,8 +323,27 @@
       "latest_evidence_date": "2026-09-03",
       "source_attribution": "Jagex blog update added 3 Sep 2026 to Summer Sweep Up Miscellaneous, https://secure.runescape.com/m=news/summer-sweep-up-miscellaneous?oldschool=1",
       "evidence_class": "JMOD_INTENT announced next-week balance change",
-      "affected_theses": ["legacy_elemental_hardware", "elemental_magic_demand", "amulet_of_magic_sink"],
-      "affected_items": ["Amulet of Air", "Amulet of Water", "Amulet of Earth", "Amulet of Fire", "Elemental Amulet", "Harmonised nightmare staff", "Staff of the dead", "Toxic staff of the dead", "Nightmare staff", "Tome of fire", "Water tome", "Earth tome", "Elemental Fragments", "Occult necklace"],
+      "affected_theses": [
+        "legacy_elemental_hardware",
+        "elemental_magic_demand",
+        "amulet_of_magic_sink"
+      ],
+      "affected_items": [
+        "Amulet of Air",
+        "Amulet of Water",
+        "Amulet of Earth",
+        "Amulet of Fire",
+        "Elemental Amulet",
+        "Harmonised nightmare staff",
+        "Staff of the dead",
+        "Toxic staff of the dead",
+        "Nightmare staff",
+        "Tome of fire",
+        "Water tome",
+        "Earth tome",
+        "Elemental Fragments",
+        "Occult necklace"
+      ],
       "credibility": "STRONG EVIDENCE",
       "status": "NEW",
       "confidence_0_100": 95,
@@ -189,6 +352,153 @@
       "summary": "Jagex says it intends next week to make the elemental amulets' +2 max hit apply after Elemental Weakness and Magic Damage bonuses instead of being added to base damage before those multipliers. Jagex explicitly cited overly broad endgame strength, upcoming Fractured Archive Elemental Fragments, and the Harmonised-orb interaction as balance concerns.",
       "market_pricing_assessment": "This materially reduces the multiplicative endgame synergy that drove the strongest Harmonised/legacy elemental hardware thesis after the September 2 implementation. The amulets still consume Amulets of magic and elemental runes, so the direct crafting sink remains. Elemental Fragments remain a confirmed future Raid 4 reward, but the expected upside should be treated as more selective rather than a blanket multiplier-driven legacy gear rerating.",
       "what_changed_since_prior": "The Sep 2 baseline treated the live +2 effect as potentially supportive for elemental hardware. The Sep 3 official blog update now states Jagex intends to change the calculation order next week specifically to taper endgame power, directly weakening that beneficiary mechanism while leaving the sink unchanged."
+    },
+    {
+      "id": "obligator_live_charge_recipe_oct20",
+      "first_seen": "2026-10-20",
+      "latest_evidence_date": "2026-11-05",
+      "source_attribution": "https://oldschool.runescape.wiki/w/Obligator",
+      "affected_theses": [
+        "breaker_charge_rune",
+        "live_rune_sinks"
+      ],
+      "affected_items": [
+        "Nature rune",
+        "Death rune",
+        "Ascension shards",
+        "Wrath rune"
+      ],
+      "credibility": "CONFIRMED",
+      "status": "CONFIRMED",
+      "confidence_0_100": 100,
+      "impact": "High",
+      "direction": "Mixed",
+      "summary": "One Ascension shard and 20 Nature plus 20 Death runes provide ten Obligator charges. Wrath runes are not used.",
+      "market_pricing_assessment": "Confirmed repeated sink for Nature/Death/shards, but do not assume a price increase: supply elasticity and weapon usage still govern outcomes.",
+      "what_changed_since_prior": "Live charging mechanics resolve the pre-release rune rumor."
+    },
+    {
+      "id": "fractured_archive_live_supply_oct20",
+      "first_seen": "2026-10-20",
+      "latest_evidence_date": "2026-11-05",
+      "source_attribution": "https://oldschool.runescape.wiki/w/Update:The_Fractured_Archive_-_Out_Today",
+      "affected_theses": [
+        "legacy_elemental_hardware",
+        "inquisitor_crush_demand",
+        "post_raid_supply"
+      ],
+      "affected_items": [
+        "Obligator (uncharged)",
+        "Rondache",
+        "Zorya's tome (uncharged)",
+        "Ascension crossbows",
+        "Horn of Bran",
+        "Inquisitor's mace",
+        "Inquisitor's great helm"
+      ],
+      "credibility": "CONFIRMED",
+      "status": "CONFIRMED",
+      "confidence_0_100": 100,
+      "impact": "High",
+      "direction": "Mixed",
+      "summary": "The Fractured Archive launched on 20 October 2026. Pre-launch benefit probabilities cannot stand in for live encounter utility or demand.",
+      "market_pricing_assessment": "Evaluate actual equipment substitution, drops, unique supply and post-launch sale pressure. Freeze pre-release scenario models pending post-release re-estimation.",
+      "what_changed_since_prior": "Launch and subsequent balance updates supersede all unverified pre-release benefit theses."
+    },
+    {
+      "id": "ascension_shard_balance_nov3",
+      "first_seen": "2026-11-03",
+      "latest_evidence_date": "2026-11-03",
+      "source_attribution": "https://www.gielinorgains.com/game-updates/2026-11-03-quest-month-kick-off-tfa-tweaks-and-more (link to official Jagex announcement); https://oldschool.runescape.wiki/w/Ascension_shards",
+      "affected_theses": [
+        "live_rune_sinks",
+        "post_raid_supply"
+      ],
+      "affected_items": [
+        "Ascension shards",
+        "Ascension bolts",
+        "Obligator (uncharged)"
+      ],
+      "credibility": "STRONG EVIDENCE",
+      "status": "NEW",
+      "confidence_0_100": 90,
+      "impact": "High",
+      "direction": "Mixed",
+      "summary": "November 3 announcement discusses upcoming adjustments to Ascension shard availability and use-rate; these proposed changes are not assumed implemented as of November 5.",
+      "market_pricing_assessment": "Do not buy shard weakness solely on a bounce thesis before actual patch notes. Track transaction volume, exact revised recipe/rates, and reaction.",
+      "what_changed_since_prior": "Post-release balance risk replaces pre-release scarcity speculation."
+    },
+    {
+      "id": "gemstone_dragons_2027",
+      "first_seen": "2026-10-05",
+      "latest_evidence_date": "2026-11-05",
+      "source_attribution": "https://oldschool.runescape.wiki/w/Upcoming_updates ; https://www.jagex.com/news/runefest-2026-jagex-unveils-fourth-mmo-in-the-runescape-franchise-plus-runescape-reignited-old-school-menaphos-and-more-at-biggest-runefest-ever",
+      "affected_theses": [
+        "gemstone_dragonbane"
+      ],
+      "affected_items": [
+        "Dragon hunter lance",
+        "Dragon hunter crossbow",
+        "Dragon hunter wand",
+        "Dragonfire ward"
+      ],
+      "credibility": "CONFIRMED",
+      "status": "NEW",
+      "confidence_0_100": 95,
+      "impact": "High",
+      "direction": "Potentially bullish for established dragonbane weapons",
+      "summary": "Spring 2027 Dungeons of Gielinor roadmap includes Gemstone Dragons and Diamond Dragon. Exact stats, weaknesses, drop-value and optimal weapons remain unknown.",
+      "market_pricing_assessment": "A forward-looking dragonbane catalyst exists, but community positions are already crowded. Sell-the-news risk; do not assert that all three combat styles will be BIS.",
+      "what_changed_since_prior": "New roadmap investment thesis absent from September database."
+    },
+    {
+      "id": "deep_sea_diving_gem_supply_proposal_oct29",
+      "first_seen": "2026-10-29",
+      "latest_evidence_date": "2026-10-29",
+      "source_attribution": "https://beta.osrs.cloud/news/deep-sea-diving-expansion (archived copy of Jagex proposal); https://www.mmobserver.com/2026/10/29/old-school-runescape-proposes-burial-at-sea-quest-and-deep-sea-diving/",
+      "affected_theses": [
+        "gem_supply",
+        "jewellery_processing"
+      ],
+      "affected_items": [
+        "Uncut diamond",
+        "Diamond",
+        "Uncut ruby",
+        "Ruby",
+        "Uncut red topaz",
+        "Celastrus seed",
+        "Silver bar",
+        "Gold bar"
+      ],
+      "credibility": "STRONG EVIDENCE",
+      "status": "NEW",
+      "confidence_0_100": 95,
+      "impact": "Medium",
+      "direction": "Potential future supply increase",
+      "summary": "Deep Sea Diving proposal includes precious and exotic gem rocks, improved jewellery production, and farming features. Not yet treated as live or guaranteed.",
+      "market_pricing_assessment": "Avoid scarcity-only gem longs; monitor poll outcome, harvesting efficiency and actual post-release net supply. Farming effects should be treated as conditional.",
+      "what_changed_since_prior": "Proposed new gem supply and jewellery-processing capacity."
+    },
+    {
+      "id": "menaphos_true_soul_altar_2027",
+      "first_seen": "2026-10-05",
+      "latest_evidence_date": "2026-11-05",
+      "source_attribution": "https://oldschool.runescape.wiki/w/Upcoming_updates",
+      "affected_theses": [
+        "soul_rune_supply"
+      ],
+      "affected_items": [
+        "Soul rune",
+        "Soul talisman"
+      ],
+      "credibility": "CONFIRMED",
+      "status": "NEW",
+      "confidence_0_100": 95,
+      "impact": "Medium",
+      "direction": "Potentially bearish Soul rune supply",
+      "summary": "Menaphos roadmap includes true Soul Altar and craftable Soul runes at 90 Runecraft; actual production rates and timing remain to be seen.",
+      "market_pricing_assessment": "Do not mistake an oversold Soul rune chart for a guaranteed multi-month mean reversion; new prospective supply is material.",
+      "what_changed_since_prior": "Long-term supply risk is now explicit."
     }
   ],
   "record_rules": {

@@ -1,34 +1,91 @@
 {
   "schema_version": 1,
-  "updated_at_utc": "2026-08-18T04:48:00Z",
+  "updated_at_utc": "2026-11-05",
   "purpose": "Known official/community catalyst baseline so hourly runs do not repeat old information as NEW. This is not a market-price source.",
   "known_official_items": [
     {
       "date": "2026-08-12",
       "topic": "Summer Sweep-Up - Agility & Chambers of Xeric Changes",
       "status": "CONFIRMED_IMPLEMENTED",
-      "key_market_points": ["Arcane and Dexterous prayer scrolls made less common in CoX", "Ancestral pieces made more common in CoX"],
+      "key_market_points": [
+        "Arcane and Dexterous prayer scrolls made less common in CoX",
+        "Ancestral pieces made more common in CoX"
+      ],
       "source": "https://secure.runescape.com/m=news/summer-sweep-up---agility--chambers-of-xeric-changes?oldschool=1"
     },
     {
       "date": "2026-07-30",
       "topic": "The Fractured Archive - Rewards Poll Blog",
       "status": "OFFICIAL_PROPOSAL",
-      "key_market_points": ["Breaker proposed as Crush megarare", "Breaker proposed to require Ascension Shards plus a rune of some kind", "specific rune not chosen in the blog", "Elemental Fragments proposed", "Rondache proposed", "Zorya's Tome proposed", "Zeal proposed", "Ascension Crossbows and bolt variants proposed"],
+      "key_market_points": [
+        "Breaker proposed as Crush megarare",
+        "Breaker proposed to require Ascension Shards plus a rune of some kind",
+        "specific rune not chosen in the blog",
+        "Elemental Fragments proposed",
+        "Rondache proposed",
+        "Zorya's Tome proposed",
+        "Zeal proposed",
+        "Ascension Crossbows and bolt variants proposed"
+      ],
       "source": "https://secure.runescape.com/m=news/the-fractured-archive---rewards-poll-blog?oldschool=1"
     },
     {
       "date": "2026-02-02",
       "topic": "Winter Summit 2026 poll - The Fractured Archive raid lock-in",
       "status": "CONFIRMED_PASSED",
-      "key_market_points": ["Raid itself passed", "individual reward passage must be verified separately"],
+      "key_market_points": [
+        "Raid itself passed",
+        "individual reward passage must be verified separately"
+      ],
       "source": "https://oldschool.runescape.com/polls/2026/1717"
+    },
+    {
+      "date": "2026-10-20",
+      "topic": "The Fractured Archive released",
+      "status": "CONFIRMED_IMPLEMENTED",
+      "key_market_points": [
+        "Raid 4 now live; stop using future-launch probability models",
+        "Obligator charges use 1 Ascension shard + 20 Nature and 20 Death runes per 10 charges; not Wrath"
+      ],
+      "source": "https://oldschool.runescape.wiki/w/Obligator"
+    },
+    {
+      "date": "2026-10-29",
+      "topic": "Deep Sea Diving Expansion proposal",
+      "status": "OFFICIAL_PROPOSAL_NOT_LIVE",
+      "key_market_points": [
+        "Proposed precious gem and exotic gem mining",
+        "Potential higher jewelry production throughput, subject to poll and rates"
+      ],
+      "source": "https://beta.osrs.cloud/news/deep-sea-diving-expansion"
+    },
+    {
+      "date": "2026-11-03",
+      "topic": "Fractured Archive balance plans",
+      "status": "ANNOUNCED_NOT_YET_LIVE",
+      "key_market_points": [
+        "Further tuning of Ascension shard availability and use-rate planned",
+        "Exact changes require checking next official patch notes"
+      ],
+      "source": "https://www.gielinorgains.com/game-updates/2026-11-03-quest-month-kick-off-tfa-tweaks-and-more"
+    },
+    {
+      "date": "2026-10-05",
+      "topic": "Dungeons of Gielinor and Menaphos roadmap",
+      "status": "ROADMAP_FOR_SPRING_2027",
+      "key_market_points": [
+        "Gemstone Dragons and Diamond Dragon planned; existing dragonbane gear benefits are not BIS-confirmed",
+        "True Soul Altar planned, potentially increasing Soul rune supply"
+      ],
+      "source": "https://oldschool.runescape.wiki/w/Upcoming_updates"
     }
   ],
   "known_community_theories_do_not_repeat_as_new": [
     "Wrath rune as the specific Breaker charge rune",
     "Existing Diamond/Onyx bolt tips being required for Ascension bolt recipes",
-    "Raids 4 hybrid/progression armor devaluing existing legacy armor unless a fresh official update develops the idea"
+    "Raids 4 hybrid/progression armor devaluing existing legacy armor unless a fresh official update develops the idea",
+    "Spring 2027 Gemstone Dragons forcing all three dragon hunter weapons to new BIS status; weapon-specific use unconfirmed",
+    "Deep Sea Diving gem supply guaranteeing permanent diamond crash; rates and poll outcomes unknown"
   ],
   "freshness_rule": "A future desk run should call an item NEW only if published or materially clarified after this baseline or if a previously unverified fact becomes officially confirmed/disproved. Otherwise use UNCHANGED/DEVELOPING as appropriate."
 }
