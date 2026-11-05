@@ -46,6 +46,24 @@ class TfaEconomicsTests(unittest.TestCase):
         self.assertGreater(prices["Obligator (uncharged)"]["share_of_total_expected_unique_gp_pct"],60)
         self.assertEqual(len(result["groups"]),4)
 
+    def test_crossed_prints_can_use_explicit_1h_research_proxy(self):
+        now=18000000
+        rows=self.market(now)
+        rows["4"]["current"]["high"]=280_000_000
+        rows["4"]["1h"]={
+            "avgHighPrice":284_000_000,
+            "avgLowPrice":279_000_000,
+            "highPriceVolume":10,
+            "lowPriceVolume":7,
+        }
+        result=m.analyze(CFG,TAX,rows,now)
+        self.assertEqual(result["status"],"ESTIMATED_WITH_PROXY_QUOTES")
+        self.assertEqual(result["proxy_quote_items"],["Ascension crossbows"])
+        crossbow=next(x for x in result["rewards"] if x["item"]=="Ascension crossbows")
+        self.assertIsNone(crossbow["latest_instant_sell_gp"])
+        self.assertEqual(crossbow["reference_valuation_price_gp"],279_000_000)
+        self.assertEqual(crossbow["price_basis"],"ONE_HOUR_AVERAGE_LOW_PROXY_NOT_EXECUTABLE")
+
     def test_missing_price_refuses_full_ev(self):
         now=18000000
         rows=self.market(now)
