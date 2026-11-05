@@ -48,7 +48,7 @@ class SwingTradeGateTests(unittest.TestCase):
         self.assertIn("CROSSED_OR_ASYNCHRONOUS_QUOTES", row["rejection_reasons"])
 
     def test_patient_bid_price_ceiling_blocks_instant_buy(self):
-        row = g.evaluate(self.candidate(), TAX)
+        row = g.evaluate(self.candidate(), TAX, radar_status="READY")
         self.assertEqual(row["execution_action"], "WAIT_OR_RESEARCH_ONLY")
         self.assertIn("INSTANT_BUY_ABOVE_PATIENT_ENTRY_CEILING", row["rejection_reasons"])
         self.assertIn("HOLDINGS_AND_CASH_UNRECONCILED", row["rejection_reasons"])
@@ -56,7 +56,7 @@ class SwingTradeGateTests(unittest.TestCase):
         self.assertFalse(row["cash_sizing_authorized"])
 
     def test_no_unconfirmed_fill_claim(self):
-        row = g.evaluate(self.candidate(high=9_700_000), TAX, ledger_stale=False)
+        row = g.evaluate(self.candidate(high=9_700_000), TAX, ledger_stale=False, radar_status="READY")
         self.assertFalse(row["cash_sizing_authorized"])
         self.assertEqual(row["execution_action"], "RESEARCH_ONLY_NO_CASH_AUTHORITY")
         self.assertFalse(any("filled" in str(v).lower() for v in row.values()))
