@@ -50,6 +50,7 @@ def analyze(config, tax_config, item_rows, now):
     assert unique_items and sum(x["weight"] for x in unique_items) == 15, "Unexpected TFA unique weightings"
     values = []
     incomplete = []
+    proxy_items = []
     for item in unique_items:
         row = item_rows.get(str(item["id"])) or {}
         cur = row.get("current") or {}
@@ -61,16 +62,40 @@ def analyze(config, tax_config, item_rows, now):
             and isinstance(when_low, int) and isinstance(when_high, int)
             and 0 <= now - when_low <= 7200 and 0 <= now - when_high <= 7200
         )
+        price_basis = "LATEST_LOW_PRINT"
+        valuation_price = int(low) if is_valid else None
         if not is_valid:
-            incomplete.append(item["name"])
-            continue
-        after_tax_low = int(low) - tax(int(low), item["name"], tax_config)
+            # Most recent high and low RuneLite prints are asynchronous.
+            # An internally consistent one-hour average may support a
+            # clearly marked RESEARCH proxy, but never a tradable quote.
+            one = row.get("1h") or {}
+            avg_high, avg_low = one.get("avgHighPrice"), one.get("avgLowPrice")
+            good_1h = (
+                isinstance(high, (int, float)) and isinstance(low, (int, float))
+                and high > 0 and low > 0 and high < low
+                and isinstance(when_low, int) and isinstance(when_high, int)
+                and 0 <= now - when_low <= 7200 and 0 <= now - when_high <= 7200
+                and isinstance(avg_high, (int, float)) and isinstance(avg_low, (int, float))
+                and 0 < avg_low <= avg_high
+                and (one.get("lowPriceVolume") or 0) > 0
+                and (one.get("highPriceVolume") or 0) > 0
+            )
+            if good_1h:
+                price_basis = "ONE_HOUR_AVERAGE_LOW_PROXY_NOT_EXECUTABLE"
+                valuation_price = int(round(avg_low))
+                proxy_items.append(item["name"])
+            else:
+                incomplete.append(item["name"])
+                continue
+        after_tax_low = valuation_price - tax(valuation_price, item["name"], tax_config)
         values.append({
             "item": item["name"],
             "item_id": item["id"],
             "unique_weight": item["weight"],
             "weight_share_pct": round(item["weight"] / 15 * 100, 3),
-            "latest_instant_sell_gp": int(low),
+            "latest_instant_sell_gp": int(low) if is_valid else None,
+            "reference_valuation_price_gp": valuation_price,
+            "price_basis": price_basis,
             "net_after_tax_sell_gp": after_tax_low,
             "quote_low_age_seconds": now - when_low,
             "total_24h_transactions_both_sides": int(((row.get("24h") or {}).get("highPriceVolume") or 0)+((row.get("24h") or {}).get("lowPriceVolume") or 0)),
@@ -96,11 +121,12 @@ def analyze(config, tax_config, item_rows, now):
             x["unique_weight"] * x["net_after_tax_sell_gp"] / total_weighted_value * 100, 2
         ) if total_weighted_value else 0
     return {
-        "status": "READY",
+        "status": "ESTIMATED_WITH_PROXY_QUOTES" if proxy_items else "READY",
         "missing_or_stale": [],
         "weighted_unique_net_value_gp": round(ev_weighted),
         "rewards": values,
         "groups": groups,
+        "proxy_quote_items": proxy_items,
     }
 
 
@@ -125,7 +151,7 @@ def main():
         "mechanics_as_of": config["mechanics_as_of"],
         "balance_change_pending": True,
         "not_trade_advice": True,
-        "notes": config["assumptions"],
+        "notes": config["assumptions"] + ["A proxy uses a one-hour average LOW only when recent prints are crossed and both hourly sides have volume. It is not an executable quote or a fill."],
         **analyzed,
     }
     write_json(OUT, output)
