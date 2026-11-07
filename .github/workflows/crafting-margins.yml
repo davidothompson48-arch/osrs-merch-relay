@@ -1,0 +1,31 @@
+name: Crafting Margin Scanner
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 * * * *'
+permissions:
+  contents: write
+concurrency:
+  group: crafting-margin-scanner
+  cancel-in-progress: false
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Calculate live crafting margins
+        env:
+          OSRS_USER_AGENT: osrs-merch-relay/1.0 (github.com/davidothompson48-arch/osrs-merch-relay)
+        run: python scripts/crafting_margins.py
+      - name: Publish snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add crafting_margins.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Update crafting margin snapshot"
+            git push
+          fi
