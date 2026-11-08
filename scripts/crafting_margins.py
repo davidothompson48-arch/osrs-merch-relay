@@ -62,6 +62,22 @@ def main():
                 "actions89To99":actions,"projectedNetGp89To99":net*actions,
                 "projectedInputGp89To99":spend*actions,
                 "pricingMode":"instant-buy inputs / instant-sell outputs; not guaranteed fills"})
+        if not missing:
+            # Patient limit orders: buy inputs at low, sell output at high.
+            # This is a theoretical spread capture, not an executable quote.
+            patient_spend=sum(components[n]["low"]*q for n,q in recipe["inputs"].items())
+            patient_gross=sum(components[n]["high"]*q for n,q in recipe["outputs"].items())
+            patient_tax=sum(tax(components[n]["high"])*q for n,q in recipe["outputs"].items())
+            patient_net=patient_gross-patient_tax-patient_spend
+            result["patientOrders"]={
+                "inputGpPerAction":patient_spend,
+                "outputGpPerAction":patient_gross,
+                "taxGpPerAction":patient_tax,
+                "netGpPerAction":patient_net,
+                "netGpPerXp":round(patient_net/recipe["xp"],4),
+                "projectedNetGp89To99":patient_net*result["actions89To99"],
+                "pricingMode":"buy inputs at observed low / sell outputs at observed high; hypothetical limit-order fills"
+            }
         output.append(result)
     output.sort(key=lambda x:(bool(x["missing"]),-x.get("netGpPerXp",-1e12)))
     payload={"generated_at":datetime.now(timezone.utc).isoformat(),"source":BASE,
