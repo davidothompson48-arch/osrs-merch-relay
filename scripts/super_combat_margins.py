@@ -7,8 +7,8 @@ from pathlib import Path
 BASE="https://prices.runescape.wiki/api/v2/osrs"
 UA=os.environ.get("OSRS_USER_AGENT","osrs-merch-relay/1.0 (github.com/davidothompson48-arch/osrs-merch-relay)")
 RECIPES=[
- {"name":"Super combat (torstol)","inputs":{"Super attack(4)":1,"Super strength(4)":1,"Super defence(4)":1,"Torstol":1},"outputs":{"Super combat potion(4)":1}},
- {"name":"Super combat (torstol unf)","inputs":{"Super attack(4)":1,"Super strength(4)":1,"Super defence(4)":1,"Torstol potion (unf)":1},"outputs":{"Super combat potion(4)":1}},
+ {"name":"Super combat (torstol)","inputs":{"Super attack(4)":1,"Super strength(4)":1,"Super defence(4)":1,"Torstol":1},"outputs":{"Super combat potion(4)":1,"Vial":2}},
+ {"name":"Super combat (torstol unf)","inputs":{"Super attack(4)":1,"Super strength(4)":1,"Super defence(4)":1,"Torstol potion (unf)":1},"outputs":{"Super combat potion(4)":1,"Vial":2}},
 ]
 def fetch(endpoint):
  req=urllib.request.Request(BASE+"/"+endpoint,headers={"User-Agent":UA,"Accept":"application/json"})
@@ -46,6 +46,7 @@ def main():
   "notes":["Instant = buy materials at high, sell finished potion at low, after 2% GE tax.",
            "Patient = buy materials at low, sell finished potion at high; hypothetical limit fills.",
            "Goggles: expected 10% secondary savings; does not guarantee any specific batch outcome.",
+           "Each super combat creation returns two empty vials; scanner credits their sale value.",
            "Prices and GE volumes are point-in-time observations, not guaranteed executable size."]}
  Path("super_combat_margins.json").write_text(json.dumps(payload,indent=2)+"\n")
  for r in results:
