@@ -32,6 +32,7 @@ on:
       - 'freshness_guard.py'
       - 'project/**'
       - 'tests/**'
+      - 'trigger2.txt'
       - '.github/workflows/update-snapshot.yml'
 
 concurrency:
