@@ -1,15 +1,12 @@
-name: Update OSRS market snapshot
+name: Build OSRS merch analytics
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '2,17,32,47 * * * *'
   push:
     branches: [main]
     paths:
-      - 'collect.py'
-      - 'collect_related.py'
-      - 'collect_staples.py'
-      - 'collect_portfolio_history.py'
-      - 'collect_universe.py'
       - 'build_desk_packet.py'
       - 'augment_desk_packet.py'
       - 'augment_profit_packet.py'
@@ -29,38 +26,25 @@ on:
       - 'shadow_book.py'
       - 'sanitize_shadow_book.py'
       - 'archive_snapshot.py'
-      - 'project/related_items.json'
-      - 'project/evergreen_staples.json'
-      - 'project/portfolio_ledger.json'
-      - 'project/execution_ledger.json'
-      - 'project/known_conversions.json'
-      - 'project/tax_policy.json'
-      - 'project/profit_engine.json'
-      - 'project/profit_engine_roadmap.json'
-      - 'project/speculative_parks.json'
-      - 'project/tfa_unique_mechanics.json'
-      - 'project/position_lifecycle.json'
-      - 'project/desk_runtime_state.json'
-      - 'project/catalyst_database.json'
-      - 'project/probability_models.json'
-      - 'project/news_baseline.json'
-      - 'project/catalyst_watch_state.json'
+      - 'collect_related.py'
+      - 'collect_staples.py'
+      - 'collect_portfolio_history.py'
+      - 'freshness_guard.py'
+      - 'project/**'
       - 'tests/**'
       - '.github/workflows/update-snapshot.yml'
-  schedule:
-    - cron: '7,37 * * * *'
 
 concurrency:
-  group: osrs-market-relay
+  group: osrs-analytics
   cancel-in-progress: true
 
 permissions:
   contents: write
 
 jobs:
-  update:
+  build:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 20
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -72,73 +56,61 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Run profit-engine tests
-        run: python -m unittest discover -s tests -p 'test_*.py'
-
       - name: Configure relay bot
         run: |
           git config user.name "osrs-merch-relay-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-      - name: Maintain five-minute RuneLite relay
+      - name: Require fresh live tape
+        run: |
+          git pull --rebase origin main
+          python freshness_guard.py --max-age-seconds 600 --require-fresh
+
+      - name: Run profit-engine tests
+        run: python -m unittest discover -s tests -p 'test_*.py'
+
+      - name: Refresh derived inputs
+        run: |
+          python collect_related.py || true
+          python collect_staples.py || true
+          python collect_portfolio_history.py || true
+
+      - name: Build analytics
+        run: |
+          python build_desk_packet.py
+          python augment_desk_packet.py || true
+          python sanitize_shadow_book.py || true
+          python shadow_book.py || true
+          python real_execution_learning.py || true
+          python update_spread_persistence.py || true
+          python augment_profit_packet.py || true
+          python augment_execution_features.py || true
+          python optimize_execution_prices.py || true
+          python optimize_allocation.py || true
+          python update_opportunity_book.py || true
+          python portfolio_exit_engine.py
+          python build_market_radar.py
+          python build_desk_lite.py
+          python build_speculative_parks.py || true
+          python inject_speculative_parks.py || true
+          python build_swing_trade_gate.py || true
+          python build_tfa_unique_economics.py || true
+          python archive_snapshot.py || true
+          python freshness_guard.py --max-age-seconds 600 --require-fresh
+
+      - name: Commit analytics
         shell: bash
         run: |
-          set -u
-          retry() {
-            local attempts="$1"; shift; local n=1
-            while ! "$@"; do
-              if [ "$n" -ge "$attempts" ]; then return 1; fi
-              sleep $((n * 6)); n=$((n + 1))
-            done
-          }
-          commit_and_push() {
-            local message="$1"; shift; local added=0
-            for path in "$@"; do
-              if [ -e "$path" ]; then git add -- "$path"; added=1; fi
-            done
-            if [ "$added" -eq 0 ] || git diff --cached --quiet; then return 0; fi
-            git commit -m "$message"
-            for push_attempt in 1 2 3; do
-              if git push origin HEAD:main; then return 0; fi
-              git pull --rebase origin main; sleep $((push_attempt * 4))
-            done
-            return 1
-          }
-          build_packet() {
-            python build_desk_packet.py || return 1
-            python augment_desk_packet.py || true
-            python sanitize_shadow_book.py || true
-            python shadow_book.py || true
-            python real_execution_learning.py || true
-            python update_spread_persistence.py || true
-            python augment_profit_packet.py || true
-            python augment_execution_features.py || true
-            python optimize_execution_prices.py || true
-            python optimize_allocation.py || true
-            python update_opportunity_book.py || true
-            python portfolio_exit_engine.py || return 1
-            python build_market_radar.py || true
-            python build_desk_lite.py || true
-            python build_speculative_parks.py || true
-            python inject_speculative_parks.py || true
-            python build_swing_trade_gate.py || true
-            python build_tfa_unique_economics.py || true
-          }
-          for cycle in $(seq 1 6); do
-            cycle_started=$(date +%s)
-            git reset --hard HEAD
+          set -euo pipefail
+          git add desk_packet.json desk_packet_lite.json related_watch.json staples_watch.json portfolio_history.json \
+            speculative_park_snapshot.json market_radar.json swing_trade_gate.json tfa_unique_economics.json \
+            profit_snapshot.json shadow_book.json shadow_book_summary.json real_execution_summary.json \
+            spread_persistence.json opportunity_book.json market_freshness.json history/ || true
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Update OSRS merch analytics"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then exit 0; fi
             git pull --rebase origin main
-            retry 4 python collect.py || true
-            retry 3 python collect_related.py || true
-            build_packet || true
-            commit_and_push "Update fast OSRS profit desk packet" snapshot.json relay_health.json related_watch.json desk_packet.json desk_packet_lite.json speculative_park_snapshot.json market_radar.json swing_trade_gate.json tfa_unique_economics.json profit_snapshot.json shadow_book.json shadow_book_summary.json real_execution_summary.json spread_persistence.json opportunity_book.json || true
-            if [ "$cycle" -eq 1 ] || [ $((cycle % 12)) -eq 0 ]; then
-              retry 2 python collect_staples.py || true
-              retry 2 python collect_portfolio_history.py || true
-            fi
-            if [ "$cycle" -eq 1 ] || [ $((cycle % 3)) -eq 0 ]; then retry 3 python collect_universe.py || true; fi
-            python archive_snapshot.py || true
-            build_packet || true
-            commit_and_push "Update OSRS profit research packet and history" staples_watch.json portfolio_history.json market_universe/ desk_packet.json desk_packet_lite.json speculative_park_snapshot.json market_radar.json swing_trade_gate.json tfa_unique_economics.json profit_snapshot.json shadow_book.json shadow_book_summary.json real_execution_summary.json spread_persistence.json opportunity_book.json history/market_history.jsonl history/recent_history.json history/market_regime_daily.jsonl || true
-            elapsed=$(($(date +%s) - cycle_started)); sleep_for=$((300 - elapsed)); if [ "$sleep_for" -gt 0 ]; then sleep "$sleep_for"; fi
+            sleep $((attempt * 3))
           done
+          exit 1
