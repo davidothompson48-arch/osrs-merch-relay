@@ -21,14 +21,20 @@ def main():
  results=[]
  for recipe in RECIPES:
   names=set(recipe["inputs"])|set(recipe["outputs"])
-  components={};missing=[]
+  components={};missing=[];stale_quotes=[]
   for name in names:
    item=mapping.get(name.casefold())
    quote=latest.get(str(item["id"]),{}) if item else {}
    vol=hourly.get(str(item["id"]),{}) if item else {}
    if not item or quote.get("high") is None or quote.get("low") is None:missing.append(name);continue
-   components[name]={"id":item["id"],"high":quote["high"],"low":quote["low"],"highTime":quote.get("highTime"),"lowTime":quote.get("lowTime"),"buyLimit":item.get("limit"),"hourlyHighVolume":vol.get("highPriceVolume"),"hourlyLowVolume":vol.get("lowPriceVolume")}
-  out={"name":recipe["name"],"xpPerPotion":150,"requiredHerblore":90,"inputs":recipe["inputs"],"outputs":recipe["outputs"],"components":components,"missing":missing}
+   now=int(datetime.now(timezone.utc).timestamp())
+   ages={"highAgeSeconds":now-quote["highTime"] if quote.get("highTime") else None,
+         "lowAgeSeconds":now-quote["lowTime"] if quote.get("lowTime") else None}
+   if any(v is None or v>900 for v in ages.values()):stale_quotes.append(name)
+   components[name]={"id":item["id"],"high":quote["high"],"low":quote["low"],"highTime":quote.get("highTime"),"lowTime":quote.get("lowTime"),
+       **ages,"buyLimit":item.get("limit"),"hourlyHighVolume":vol.get("highPriceVolume"),"hourlyLowVolume":vol.get("lowPriceVolume")}
+  out={"name":recipe["name"],"xpPerPotion":150,"requiredHerblore":90,"inputs":recipe["inputs"],"outputs":recipe["outputs"],
+       "components":components,"missing":missing,"staleQuotes":stale_quotes,"allQuotesUnder15Minutes":not bool(stale_quotes) and not bool(missing)}
   if not missing:
    for label,buy,sell in [("instant","high","low"),("patient","low","high")]:
     input_cost=sum(components[n][buy]*q for n,q in recipe["inputs"].items())
@@ -41,13 +47,28 @@ def main():
    for label,buy in [("instant","high"),("patient","low")]:
     out[label]["expectedNetWithGogglesGpPerPotion"]=round(out[label]["netGpPerPotion"]+.1*components[secondary][buy],2)
     out[label]["expectedNetWithGogglesGpPer2100"]=round(2100*(out[label]["netGpPerPotion"]+.1*components[secondary][buy]))
+    out[label]["expectedNetWithGogglesGpPer1000"]=round(1000*(out[label]["netGpPerPotion"]+.1*components[secondary][buy]))
+    out[label]["expectedNetWithGogglesGpPer500"]=round(500*(out[label]["netGpPerPotion"]+.1*components[secondary][buy]))
+    out[label]["expectedGpPerXpWithGoggles"]=round((out[label]["netGpPerPotion"]+.1*components[secondary][buy])/150,4)
+    # 4-dose outputs include the two empty vials. A 2% fee applies to finished potions.
+    # Solve the minimum finished-potion sale price, after tax, to break even.
+    effective_cost=out[label]["inputCostGp"]-0.1*components[secondary][buy]
+    vial_sell="low" if label=="instant" else "high"
+    vial_revenue=2*components["Vial"][vial_sell]
+    target=1
+    while target-tax(target)+vial_revenue<effective_cost:
+     target+=1
+    out[label]["minSuperCombatSalePriceToBreakEvenWithGoggles"]=target
+    out[label]["tradeSignal"]="STALE_QUOTES" if stale_quotes else ("PROFIT_POSSIBLE" if out[label]["expectedNetWithGogglesGpPerPotion"]>0 else "NEGATIVE_MARGIN")
   results.append(out)
  payload={"generated_at":datetime.now(timezone.utc).isoformat(),"source":BASE,"recipes":results,
   "notes":["Instant = buy materials at high, sell finished potion at low, after 2% GE tax.",
            "Patient = buy materials at low, sell finished potion at high; hypothetical limit fills.",
            "Goggles: expected 10% secondary savings; does not guarantee any specific batch outcome.",
            "Each super combat creation returns two empty vials; scanner credits their sale value.",
-           "Prices and GE volumes are point-in-time observations, not guaranteed executable size."]}
+           "Prices and GE volumes are point-in-time observations, not guaranteed executable size.",
+           "Trade signals are flagged stale if any input or output side quote is older than 15 minutes.",
+           "Minimum break-even output sale price includes GE tax, goggles and returned vials."]}
  Path("super_combat_margins.json").write_text(json.dumps(payload,indent=2)+"\n")
  for r in results:
   print(r["name"],"MISSING "+",".join(r["missing"]) if r["missing"] else f'instant {r["instant"]["netGpPerPotion"]:+,} gp/pot | patient {r["patient"]["netGpPerPotion"]:+,} gp/pot')
