@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-11-12T15:20:04.279585Z",
+  "checked_unix": 1794496804,
+  "source": "prices.runescape.wiki OSRS RuneLite relay",
+  "snapshot_generated_unix": 1794496801,
+  "market_universe_generated_unix": 1794496803,
+  "snapshot_age_seconds": 3,
+  "market_universe_age_seconds": 1,
+  "oldest_market_data_age_seconds": 3,
+  "snapshot_universe_drift_seconds": 2,
+  "max_execution_age_seconds": 600,
+  "status": "LIVE",
+  "execution_allowed": true,
+  "reasons": [],
+  "policy": {
+    "LIVE": "0-120 seconds",
+    "USABLE": "121-300 seconds",
+    "STALE_WARNING": "301-600 seconds",
+    "STALE": ">600 seconds",
+    "rule": "No trade recommendation or automated allocation may be published when execution_allowed is false."
+  }
+}
