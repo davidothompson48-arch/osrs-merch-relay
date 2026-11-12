@@ -1,8 +1,12 @@
 name: Super Combat Margin Scanner
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/super_combat_margins.py'
+      - '.github/workflows/super-combat-margins.yml'
   schedule:
-    - cron: '22 * * * *'
+    - cron: '*/5 * * * *'
 permissions:
   contents: write
 concurrency:
