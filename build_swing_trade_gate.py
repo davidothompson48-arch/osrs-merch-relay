@@ -95,8 +95,8 @@ def evaluate(candidate, tax_config, ledger_stale=True, snapshot_age_seconds=0, r
         errors.append("CROSSED_OR_ASYNCHRONOUS_QUOTES")
     if freshness not in ("FRESH", "USABLE"):
         errors.append("QUOTES_NOT_FRESH_ENOUGH")
-    if isinstance(snapshot_age_seconds, (int, float)) and snapshot_age_seconds > 1800:
-        errors.append("SNAPSHOT_OVER_30_MINUTES")
+    if isinstance(snapshot_age_seconds, (int, float)) and snapshot_age_seconds > 600:
+        errors.append("SNAPSHOT_OVER_10_MINUTES")
     if status not in ("PARK_NOW", "DEEP_BID"):
         errors.append("NOT_AN_ENTRY_CANDIDATE")
     if gate in ("REJECT_ASYNC_CROSSED_PRINTS", "WATCH_ONLY"):
@@ -198,7 +198,7 @@ def main():
         "schema_version": 1,
         "generated_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
         "source": "OSRS Wiki RuneLite-derived GitHub relay; official GE tax config",
-        "status": "READY" if isinstance(age, int) and age <= 1800 and radar_status == "READY" else "STALE_OR_PARTIAL",
+        "status": "READY" if isinstance(age, int) and age <= 600 and radar_status == "READY" else "STALE_OR_PARTIAL",
         "snapshot_age_seconds": age,
         "portfolio_reconciliation_required": stale,
         "cash_sizing_authorized": False,
