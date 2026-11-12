@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T03:55:03.503826+00:00",
+  "generated_at": "2026-11-12T08:01:47.108468+00:00",
   "source": "https://prices.runescape.wiki/api/v2/osrs",
   "recipes": [
     {
@@ -17,89 +17,113 @@
         "Vial": 2
       },
       "components": {
-        "Super strength(4)": {
-          "id": 2440,
-          "high": 2830,
-          "low": 2829,
-          "highTime": 1794455618,
-          "lowTime": 1794455530,
-          "buyLimit": 2000,
-          "hourlyHighVolume": 7115,
-          "hourlyLowVolume": 4701
-        },
-        "Super combat potion(4)": {
-          "id": 12695,
-          "high": 11235,
-          "low": 11100,
-          "highTime": 1794455627,
-          "lowTime": 1794455550,
-          "buyLimit": 2000,
-          "hourlyHighVolume": 18755,
-          "hourlyLowVolume": 5778
-        },
         "Super defence(4)": {
           "id": 2442,
-          "high": 3299,
+          "high": 3235,
           "low": 3228,
-          "highTime": 1794455549,
-          "lowTime": 1794455557,
+          "highTime": 1794470291,
+          "lowTime": 1794469831,
+          "highAgeSeconds": 216,
+          "lowAgeSeconds": 676,
           "buyLimit": 2000,
-          "hourlyHighVolume": 12039,
-          "hourlyLowVolume": 6815
+          "hourlyHighVolume": 9329,
+          "hourlyLowVolume": 58
         },
         "Super attack(4)": {
           "id": 2436,
-          "high": 1680,
-          "low": 1680,
-          "highTime": 1794455482,
-          "lowTime": 1794455542,
+          "high": 1625,
+          "low": 1595,
+          "highTime": 1794470302,
+          "lowTime": 1794470188,
+          "highAgeSeconds": 205,
+          "lowAgeSeconds": 319,
           "buyLimit": 2000,
-          "hourlyHighVolume": 8969,
-          "hourlyLowVolume": 4573
+          "hourlyHighVolume": 4839,
+          "hourlyLowVolume": 307
+        },
+        "Super strength(4)": {
+          "id": 2440,
+          "high": 2845,
+          "low": 2829,
+          "highTime": 1794470458,
+          "lowTime": 1794470011,
+          "highAgeSeconds": 49,
+          "lowAgeSeconds": 496,
+          "buyLimit": 2000,
+          "hourlyHighVolume": 5836,
+          "hourlyLowVolume": 5305
         },
         "Vial": {
           "id": 229,
           "high": 4,
           "low": 3,
-          "highTime": 1794455428,
-          "lowTime": 1794455633,
+          "highTime": 1794470340,
+          "lowTime": 1794470416,
+          "highAgeSeconds": 167,
+          "lowAgeSeconds": 91,
           "buyLimit": 13000,
-          "hourlyHighVolume": 46904,
-          "hourlyLowVolume": 44146
+          "hourlyHighVolume": 54041,
+          "hourlyLowVolume": 117133
         },
         "Torstol": {
           "id": 269,
-          "high": 3488,
-          "low": 3480,
-          "highTime": 1794455440,
-          "lowTime": 1794455533,
+          "high": 3520,
+          "low": 3459,
+          "highTime": 1794470264,
+          "lowTime": 1794470415,
+          "highAgeSeconds": 243,
+          "lowAgeSeconds": 92,
           "buyLimit": 11000,
-          "hourlyHighVolume": 11640,
-          "hourlyLowVolume": 6592
+          "hourlyHighVolume": 6451,
+          "hourlyLowVolume": 3755
+        },
+        "Super combat potion(4)": {
+          "id": 12695,
+          "high": 11529,
+          "low": 11327,
+          "highTime": 1794470362,
+          "lowTime": 1794470319,
+          "highAgeSeconds": 145,
+          "lowAgeSeconds": 188,
+          "buyLimit": 2000,
+          "hourlyHighVolume": 12665,
+          "hourlyLowVolume": 6848
         }
       },
       "missing": [],
+      "staleQuotes": [],
+      "allQuotesUnder15Minutes": true,
       "instant": {
-        "inputCostGp": 11297,
-        "saleRevenueGp": 11106,
-        "geTaxGp": 222,
-        "netGpPerPotion": -413,
-        "netGpPerXp": -2.7533,
-        "netGpPer1000": -413000,
-        "netGpPer2100": -867300,
-        "expectedNetWithGogglesGpPerPotion": -64.2,
-        "expectedNetWithGogglesGpPer2100": -134820
+        "inputCostGp": 11225,
+        "saleRevenueGp": 11333,
+        "geTaxGp": 226,
+        "netGpPerPotion": -118,
+        "netGpPerXp": -0.7867,
+        "netGpPer1000": -118000,
+        "netGpPer2100": -247800,
+        "expectedNetWithGogglesGpPerPotion": 234.0,
+        "expectedNetWithGogglesGpPer2100": 491400,
+        "expectedNetWithGogglesGpPer1000": 234000,
+        "expectedNetWithGogglesGpPer500": 117000,
+        "expectedGpPerXpWithGoggles": 1.56,
+        "minSuperCombatSalePriceToBreakEvenWithGoggles": 11088,
+        "tradeSignal": "PROFIT_POSSIBLE"
       },
       "patient": {
-        "inputCostGp": 11217,
-        "saleRevenueGp": 11243,
-        "geTaxGp": 224,
-        "netGpPerPotion": -198,
-        "netGpPerXp": -1.32,
-        "netGpPer1000": -198000,
-        "netGpPer2100": -415800,
-        "expectedNetWithGogglesGpPerPotion": 150.0,
-        "expectedNetWithGogglesGpPer2100": 315000
+        "inputCostGp": 11111,
+        "saleRevenueGp": 11537,
+        "geTaxGp": 230,
+        "netGpPerPotion": 196,
+        "netGpPerXp": 1.3067,
+        "netGpPer1000": 196000,
+        "netGpPer2100": 411600,
+        "expectedNetWithGogglesGpPerPotion": 541.9,
+        "expectedNetWithGogglesGpPer2100": 1137990,
+        "expectedNetWithGogglesGpPer1000": 541900,
+        "expectedNetWithGogglesGpPer500": 270950,
+        "expectedGpPerXpWithGoggles": 3.6127,
+        "minSuperCombatSalePriceToBreakEvenWithGoggles": 10977,
+        "tradeSignal": "PROFIT_POSSIBLE"
       }
     },
     {
@@ -117,89 +141,115 @@
         "Vial": 2
       },
       "components": {
-        "Torstol potion (unf)": {
-          "id": 111,
-          "high": 3798,
-          "low": 3750,
-          "highTime": 1794455081,
-          "lowTime": 1794453152,
-          "buyLimit": 10000,
-          "hourlyHighVolume": 2574,
-          "hourlyLowVolume": 2328
-        },
-        "Super strength(4)": {
-          "id": 2440,
-          "high": 2830,
-          "low": 2829,
-          "highTime": 1794455618,
-          "lowTime": 1794455530,
-          "buyLimit": 2000,
-          "hourlyHighVolume": 7115,
-          "hourlyLowVolume": 4701
-        },
-        "Super combat potion(4)": {
-          "id": 12695,
-          "high": 11235,
-          "low": 11100,
-          "highTime": 1794455627,
-          "lowTime": 1794455550,
-          "buyLimit": 2000,
-          "hourlyHighVolume": 18755,
-          "hourlyLowVolume": 5778
-        },
         "Super defence(4)": {
           "id": 2442,
-          "high": 3299,
+          "high": 3235,
           "low": 3228,
-          "highTime": 1794455549,
-          "lowTime": 1794455557,
+          "highTime": 1794470291,
+          "lowTime": 1794469831,
+          "highAgeSeconds": 216,
+          "lowAgeSeconds": 676,
           "buyLimit": 2000,
-          "hourlyHighVolume": 12039,
-          "hourlyLowVolume": 6815
+          "hourlyHighVolume": 9329,
+          "hourlyLowVolume": 58
         },
         "Super attack(4)": {
           "id": 2436,
-          "high": 1680,
-          "low": 1680,
-          "highTime": 1794455482,
-          "lowTime": 1794455542,
+          "high": 1625,
+          "low": 1595,
+          "highTime": 1794470302,
+          "lowTime": 1794470188,
+          "highAgeSeconds": 205,
+          "lowAgeSeconds": 319,
           "buyLimit": 2000,
-          "hourlyHighVolume": 8969,
-          "hourlyLowVolume": 4573
+          "hourlyHighVolume": 4839,
+          "hourlyLowVolume": 307
+        },
+        "Super strength(4)": {
+          "id": 2440,
+          "high": 2845,
+          "low": 2829,
+          "highTime": 1794470458,
+          "lowTime": 1794470011,
+          "highAgeSeconds": 49,
+          "lowAgeSeconds": 496,
+          "buyLimit": 2000,
+          "hourlyHighVolume": 5836,
+          "hourlyLowVolume": 5305
+        },
+        "Torstol potion (unf)": {
+          "id": 111,
+          "high": 3839,
+          "low": 3750,
+          "highTime": 1794469716,
+          "lowTime": 1794469277,
+          "highAgeSeconds": 791,
+          "lowAgeSeconds": 1230,
+          "buyLimit": 10000,
+          "hourlyHighVolume": 315,
+          "hourlyLowVolume": 0
         },
         "Vial": {
           "id": 229,
           "high": 4,
           "low": 3,
-          "highTime": 1794455428,
-          "lowTime": 1794455633,
+          "highTime": 1794470340,
+          "lowTime": 1794470416,
+          "highAgeSeconds": 167,
+          "lowAgeSeconds": 91,
           "buyLimit": 13000,
-          "hourlyHighVolume": 46904,
-          "hourlyLowVolume": 44146
+          "hourlyHighVolume": 54041,
+          "hourlyLowVolume": 117133
+        },
+        "Super combat potion(4)": {
+          "id": 12695,
+          "high": 11529,
+          "low": 11327,
+          "highTime": 1794470362,
+          "lowTime": 1794470319,
+          "highAgeSeconds": 145,
+          "lowAgeSeconds": 188,
+          "buyLimit": 2000,
+          "hourlyHighVolume": 12665,
+          "hourlyLowVolume": 6848
         }
       },
       "missing": [],
+      "staleQuotes": [
+        "Torstol potion (unf)"
+      ],
+      "allQuotesUnder15Minutes": false,
       "instant": {
-        "inputCostGp": 11607,
-        "saleRevenueGp": 11106,
-        "geTaxGp": 222,
-        "netGpPerPotion": -723,
-        "netGpPerXp": -4.82,
-        "netGpPer1000": -723000,
-        "netGpPer2100": -1518300,
-        "expectedNetWithGogglesGpPerPotion": -343.2,
-        "expectedNetWithGogglesGpPer2100": -720720
+        "inputCostGp": 11544,
+        "saleRevenueGp": 11333,
+        "geTaxGp": 226,
+        "netGpPerPotion": -437,
+        "netGpPerXp": -2.9133,
+        "netGpPer1000": -437000,
+        "netGpPer2100": -917700,
+        "expectedNetWithGogglesGpPerPotion": -53.1,
+        "expectedNetWithGogglesGpPer2100": -111510,
+        "expectedNetWithGogglesGpPer1000": -53100,
+        "expectedNetWithGogglesGpPer500": -26550,
+        "expectedGpPerXpWithGoggles": -0.354,
+        "minSuperCombatSalePriceToBreakEvenWithGoggles": 11382,
+        "tradeSignal": "STALE_QUOTES"
       },
       "patient": {
-        "inputCostGp": 11487,
-        "saleRevenueGp": 11243,
-        "geTaxGp": 224,
-        "netGpPerPotion": -468,
-        "netGpPerXp": -3.12,
-        "netGpPer1000": -468000,
-        "netGpPer2100": -982800,
-        "expectedNetWithGogglesGpPerPotion": -93.0,
-        "expectedNetWithGogglesGpPer2100": -195300
+        "inputCostGp": 11402,
+        "saleRevenueGp": 11537,
+        "geTaxGp": 230,
+        "netGpPerPotion": -95,
+        "netGpPerXp": -0.6333,
+        "netGpPer1000": -95000,
+        "netGpPer2100": -199500,
+        "expectedNetWithGogglesGpPerPotion": 280.0,
+        "expectedNetWithGogglesGpPer2100": 588000,
+        "expectedNetWithGogglesGpPer1000": 280000,
+        "expectedNetWithGogglesGpPer500": 140000,
+        "expectedGpPerXpWithGoggles": 1.8667,
+        "minSuperCombatSalePriceToBreakEvenWithGoggles": 11243,
+        "tradeSignal": "STALE_QUOTES"
       }
     }
   ],
@@ -208,6 +258,8 @@
     "Patient = buy materials at low, sell finished potion at high; hypothetical limit fills.",
     "Goggles: expected 10% secondary savings; does not guarantee any specific batch outcome.",
     "Each super combat creation returns two empty vials; scanner credits their sale value.",
-    "Prices and GE volumes are point-in-time observations, not guaranteed executable size."
+    "Prices and GE volumes are point-in-time observations, not guaranteed executable size.",
+    "Trade signals are flagged stale if any input or output side quote is older than 15 minutes.",
+    "Minimum break-even output sale price includes GE tax, goggles and returned vials."
   ]
 }
