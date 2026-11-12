@@ -1,0 +1,61 @@
+name: Refresh OSRS live tape
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/5 * * * *'
+  push:
+    branches: [main]
+    paths:
+      - 'collect.py'
+      - 'collect_universe.py'
+      - 'freshness_guard.py'
+      - 'trigger.txt'
+      - '.github/workflows/live-tape.yml'
+
+concurrency:
+  group: osrs-live-tape
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Configure relay bot
+        run: |
+          git config user.name "osrs-merch-relay-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Refresh live Wiki tape
+        run: |
+          python collect.py
+          python collect_universe.py
+          python freshness_guard.py --max-age-seconds 600 --require-fresh
+
+      - name: Commit live tape
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add snapshot.json relay_health.json market_universe/ market_freshness.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Refresh OSRS live tape"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then exit 0; fi
+            git pull --rebase origin main
+            sleep $((attempt * 3))
+          done
+          exit 1
