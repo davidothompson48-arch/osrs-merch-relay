@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T17:46:14.738480+00:00",
+  "generated_at": "2026-11-13T23:35:36.875933+00:00",
   "source": "https://prices.runescape.wiki/api/v2/osrs",
   "levelStart": 89,
   "xpStart": 4842295,
@@ -7,64 +7,53 @@
   "remainingXp": 8192136,
   "recipes": [
     {
-      "name": "Earth battlestaves",
-      "xpPerAction": 112.5,
+      "name": "Amethyst arrowtips",
+      "xpPerAction": 60,
       "inputs": {
-        "Battlestaff": 1,
-        "Earth orb": 1
+        "Amethyst": 1
       },
       "outputs": {
-        "Earth battlestaff": 1
+        "Amethyst arrowtips": 15
       },
       "components": {
-        "Earth orb": {
-          "id": 575,
-          "high": 698,
-          "low": 684,
-          "highTime": 1794591741,
-          "lowTime": 1794591877,
-          "buyLimit": 11000,
-          "hourlyHighVolume": 7516,
-          "hourlyLowVolume": 35170
+        "Amethyst arrowtips": {
+          "id": 21350,
+          "high": 190,
+          "low": 182,
+          "highTime": 1794612817,
+          "lowTime": 1794612450,
+          "buyLimit": 10000,
+          "hourlyHighVolume": 56000,
+          "hourlyLowVolume": 189200
         },
-        "Battlestaff": {
-          "id": 1391,
-          "high": 7853,
-          "low": 7810,
-          "highTime": 1794591892,
-          "lowTime": 1794591897,
-          "buyLimit": 11000,
-          "hourlyHighVolume": 25990,
-          "hourlyLowVolume": 44413
-        },
-        "Earth battlestaff": {
-          "id": 1399,
-          "high": 8710,
-          "low": 8700,
-          "highTime": 1794591782,
-          "lowTime": 1794591890,
-          "buyLimit": 18000,
-          "hourlyHighVolume": 7689,
-          "hourlyLowVolume": 5742
+        "Amethyst": {
+          "id": 21347,
+          "high": 2631,
+          "low": 2624,
+          "highTime": 1794612825,
+          "lowTime": 1794612736,
+          "buyLimit": 13000,
+          "hourlyHighVolume": 3701,
+          "hourlyLowVolume": 10897
         }
       },
       "missing": [],
-      "inputGpPerAction": 8551,
-      "outputGpPerAction": 8700,
-      "taxGpPerAction": 174,
-      "netGpPerAction": -25,
-      "netGpPerXp": -0.2222,
-      "actions89To99": 72819,
-      "projectedNetGp89To99": -1820475,
-      "projectedInputGp89To99": 622675269,
+      "inputGpPerAction": 2631,
+      "outputGpPerAction": 2730,
+      "taxGpPerAction": 45,
+      "netGpPerAction": 54,
+      "netGpPerXp": 0.9,
+      "actions89To99": 136536,
+      "projectedNetGp89To99": 7372944,
+      "projectedInputGp89To99": 359226216,
       "pricingMode": "instant-buy inputs / instant-sell outputs; not guaranteed fills",
       "patientOrders": {
-        "inputGpPerAction": 8494,
-        "outputGpPerAction": 8710,
-        "taxGpPerAction": 174,
-        "netGpPerAction": 42,
-        "netGpPerXp": 0.3733,
-        "projectedNetGp89To99": 3058398,
+        "inputGpPerAction": 2624,
+        "outputGpPerAction": 2850,
+        "taxGpPerAction": 45,
+        "netGpPerAction": 181,
+        "netGpPerXp": 3.0167,
+        "projectedNetGp89To99": 24713016,
         "pricingMode": "buy inputs at observed low / sell outputs at observed high; hypothetical limit-order fills"
       }
     },
@@ -79,105 +68,54 @@
         "Water battlestaff": 1
       },
       "components": {
-        "Battlestaff": {
-          "id": 1391,
-          "high": 7853,
-          "low": 7810,
-          "highTime": 1794591892,
-          "lowTime": 1794591897,
-          "buyLimit": 11000,
-          "hourlyHighVolume": 25990,
-          "hourlyLowVolume": 44413
+        "Water battlestaff": {
+          "id": 1395,
+          "high": 8734,
+          "low": 8694,
+          "highTime": 1794612852,
+          "lowTime": 1794612822,
+          "buyLimit": 18000,
+          "hourlyHighVolume": 1032,
+          "hourlyLowVolume": 5167
         },
         "Water orb": {
           "id": 571,
-          "high": 711,
-          "low": 693,
-          "highTime": 1794591831,
-          "lowTime": 1794591884,
+          "high": 688,
+          "low": 656,
+          "highTime": 1794612587,
+          "lowTime": 1794612876,
           "buyLimit": 11000,
-          "hourlyHighVolume": 3146,
-          "hourlyLowVolume": 8304
+          "hourlyHighVolume": 12179,
+          "hourlyLowVolume": 19151
         },
-        "Water battlestaff": {
-          "id": 1395,
-          "high": 8739,
-          "low": 8715,
-          "highTime": 1794591700,
-          "lowTime": 1794591810,
-          "buyLimit": 18000,
-          "hourlyHighVolume": 305,
-          "hourlyLowVolume": 8047
+        "Battlestaff": {
+          "id": 1391,
+          "high": 7884,
+          "low": 7850,
+          "highTime": 1794612884,
+          "lowTime": 1794612882,
+          "buyLimit": 11000,
+          "hourlyHighVolume": 36249,
+          "hourlyLowVolume": 91098
         }
       },
       "missing": [],
-      "inputGpPerAction": 8564,
-      "outputGpPerAction": 8715,
-      "taxGpPerAction": 174,
-      "netGpPerAction": -23,
-      "netGpPerXp": -0.23,
+      "inputGpPerAction": 8572,
+      "outputGpPerAction": 8694,
+      "taxGpPerAction": 173,
+      "netGpPerAction": -51,
+      "netGpPerXp": -0.51,
       "actions89To99": 81922,
-      "projectedNetGp89To99": -1884206,
-      "projectedInputGp89To99": 701580008,
+      "projectedNetGp89To99": -4178022,
+      "projectedInputGp89To99": 702235384,
       "pricingMode": "instant-buy inputs / instant-sell outputs; not guaranteed fills",
       "patientOrders": {
-        "inputGpPerAction": 8503,
-        "outputGpPerAction": 8739,
+        "inputGpPerAction": 8506,
+        "outputGpPerAction": 8734,
         "taxGpPerAction": 174,
-        "netGpPerAction": 62,
-        "netGpPerXp": 0.62,
-        "projectedNetGp89To99": 5079164,
-        "pricingMode": "buy inputs at observed low / sell outputs at observed high; hypothetical limit-order fills"
-      }
-    },
-    {
-      "name": "Amethyst arrowtips",
-      "xpPerAction": 60,
-      "inputs": {
-        "Amethyst": 1
-      },
-      "outputs": {
-        "Amethyst arrowtips": 15
-      },
-      "components": {
-        "Amethyst arrowtips": {
-          "id": 21350,
-          "high": 185,
-          "low": 175,
-          "highTime": 1794591860,
-          "lowTime": 1794591847,
-          "buyLimit": 10000,
-          "hourlyHighVolume": 47335,
-          "hourlyLowVolume": 37604
-        },
-        "Amethyst": {
-          "id": 21347,
-          "high": 2620,
-          "low": 2618,
-          "highTime": 1794591886,
-          "lowTime": 1794591614,
-          "buyLimit": 13000,
-          "hourlyHighVolume": 12205,
-          "hourlyLowVolume": 3189
-        }
-      },
-      "missing": [],
-      "inputGpPerAction": 2620,
-      "outputGpPerAction": 2625,
-      "taxGpPerAction": 45,
-      "netGpPerAction": -40,
-      "netGpPerXp": -0.6667,
-      "actions89To99": 136536,
-      "projectedNetGp89To99": -5461440,
-      "projectedInputGp89To99": 357724320,
-      "pricingMode": "instant-buy inputs / instant-sell outputs; not guaranteed fills",
-      "patientOrders": {
-        "inputGpPerAction": 2618,
-        "outputGpPerAction": 2775,
-        "taxGpPerAction": 45,
-        "netGpPerAction": 112,
-        "netGpPerXp": 1.8667,
-        "projectedNetGp89To99": 15292032,
+        "netGpPerAction": 54,
+        "netGpPerXp": 0.54,
+        "projectedNetGp89To99": 4423788,
         "pricingMode": "buy inputs at observed low / sell outputs at observed high; hypothetical limit-order fills"
       }
     },
@@ -193,42 +131,104 @@
       "components": {
         "Amethyst dart tip": {
           "id": 25853,
-          "high": 330,
-          "low": 325,
-          "highTime": 1794591441,
-          "lowTime": 1794591835,
+          "high": 345,
+          "low": 330,
+          "highTime": 1794612771,
+          "lowTime": 1794612830,
           "buyLimit": 11000,
-          "hourlyHighVolume": 98000,
-          "hourlyLowVolume": 59697
+          "hourlyHighVolume": 180900,
+          "hourlyLowVolume": 109730
         },
         "Amethyst": {
           "id": 21347,
-          "high": 2620,
-          "low": 2618,
-          "highTime": 1794591886,
-          "lowTime": 1794591614,
+          "high": 2631,
+          "low": 2624,
+          "highTime": 1794612825,
+          "lowTime": 1794612736,
           "buyLimit": 13000,
-          "hourlyHighVolume": 12205,
-          "hourlyLowVolume": 3189
+          "hourlyHighVolume": 3701,
+          "hourlyLowVolume": 10897
         }
       },
       "missing": [],
-      "inputGpPerAction": 2620,
-      "outputGpPerAction": 2600,
+      "inputGpPerAction": 2631,
+      "outputGpPerAction": 2640,
       "taxGpPerAction": 48,
-      "netGpPerAction": -68,
-      "netGpPerXp": -1.1333,
+      "netGpPerAction": -39,
+      "netGpPerXp": -0.65,
       "actions89To99": 136536,
-      "projectedNetGp89To99": -9284448,
-      "projectedInputGp89To99": 357724320,
+      "projectedNetGp89To99": -5324904,
+      "projectedInputGp89To99": 359226216,
       "pricingMode": "instant-buy inputs / instant-sell outputs; not guaranteed fills",
       "patientOrders": {
-        "inputGpPerAction": 2618,
-        "outputGpPerAction": 2640,
+        "inputGpPerAction": 2624,
+        "outputGpPerAction": 2760,
         "taxGpPerAction": 48,
-        "netGpPerAction": -26,
-        "netGpPerXp": -0.4333,
-        "projectedNetGp89To99": -3549936,
+        "netGpPerAction": 88,
+        "netGpPerXp": 1.4667,
+        "projectedNetGp89To99": 12015168,
+        "pricingMode": "buy inputs at observed low / sell outputs at observed high; hypothetical limit-order fills"
+      }
+    },
+    {
+      "name": "Earth battlestaves",
+      "xpPerAction": 112.5,
+      "inputs": {
+        "Battlestaff": 1,
+        "Earth orb": 1
+      },
+      "outputs": {
+        "Earth battlestaff": 1
+      },
+      "components": {
+        "Earth orb": {
+          "id": 575,
+          "high": 720,
+          "low": 700,
+          "highTime": 1794612862,
+          "lowTime": 1794612898,
+          "buyLimit": 11000,
+          "hourlyHighVolume": 14613,
+          "hourlyLowVolume": 52830
+        },
+        "Earth battlestaff": {
+          "id": 1399,
+          "high": 8693,
+          "low": 8665,
+          "highTime": 1794612804,
+          "lowTime": 1794612855,
+          "buyLimit": 18000,
+          "hourlyHighVolume": 24008,
+          "hourlyLowVolume": 15042
+        },
+        "Battlestaff": {
+          "id": 1391,
+          "high": 7884,
+          "low": 7850,
+          "highTime": 1794612884,
+          "lowTime": 1794612882,
+          "buyLimit": 11000,
+          "hourlyHighVolume": 36249,
+          "hourlyLowVolume": 91098
+        }
+      },
+      "missing": [],
+      "inputGpPerAction": 8604,
+      "outputGpPerAction": 8665,
+      "taxGpPerAction": 173,
+      "netGpPerAction": -112,
+      "netGpPerXp": -0.9956,
+      "actions89To99": 72819,
+      "projectedNetGp89To99": -8155728,
+      "projectedInputGp89To99": 626534676,
+      "pricingMode": "instant-buy inputs / instant-sell outputs; not guaranteed fills",
+      "patientOrders": {
+        "inputGpPerAction": 8550,
+        "outputGpPerAction": 8693,
+        "taxGpPerAction": 173,
+        "netGpPerAction": -30,
+        "netGpPerXp": -0.2667,
+        "projectedNetGp89To99": -2184570,
         "pricingMode": "buy inputs at observed low / sell outputs at observed high; hypothetical limit-order fills"
       }
     },
@@ -243,54 +243,54 @@
         "Fire battlestaff": 1
       },
       "components": {
-        "Battlestaff": {
-          "id": 1391,
-          "high": 7853,
-          "low": 7810,
-          "highTime": 1794591892,
-          "lowTime": 1794591897,
-          "buyLimit": 11000,
-          "hourlyHighVolume": 25990,
-          "hourlyLowVolume": 44413
-        },
         "Fire battlestaff": {
           "id": 1393,
-          "high": 8990,
-          "low": 8862,
-          "highTime": 1794590933,
-          "lowTime": 1794591872,
+          "high": 8749,
+          "low": 8661,
+          "highTime": 1794612631,
+          "lowTime": 1794612835,
           "buyLimit": 18000,
-          "hourlyHighVolume": 58,
-          "hourlyLowVolume": 1320
+          "hourlyHighVolume": 597,
+          "hourlyLowVolume": 4424
+        },
+        "Battlestaff": {
+          "id": 1391,
+          "high": 7884,
+          "low": 7850,
+          "highTime": 1794612884,
+          "lowTime": 1794612882,
+          "buyLimit": 11000,
+          "hourlyHighVolume": 36249,
+          "hourlyLowVolume": 91098
         },
         "Fire orb": {
           "id": 569,
-          "high": 1154,
-          "low": 1114,
-          "highTime": 1794590679,
-          "lowTime": 1794591888,
+          "high": 1160,
+          "low": 1113,
+          "highTime": 1794612881,
+          "lowTime": 1794612879,
           "buyLimit": 11000,
-          "hourlyHighVolume": 6610,
-          "hourlyLowVolume": 3879
+          "hourlyHighVolume": 4687,
+          "hourlyLowVolume": 1900
         }
       },
       "missing": [],
-      "inputGpPerAction": 9007,
-      "outputGpPerAction": 8862,
-      "taxGpPerAction": 177,
-      "netGpPerAction": -322,
-      "netGpPerXp": -2.576,
+      "inputGpPerAction": 9044,
+      "outputGpPerAction": 8661,
+      "taxGpPerAction": 173,
+      "netGpPerAction": -556,
+      "netGpPerXp": -4.448,
       "actions89To99": 65538,
-      "projectedNetGp89To99": -21103236,
-      "projectedInputGp89To99": 590300766,
+      "projectedNetGp89To99": -36439128,
+      "projectedInputGp89To99": 592725672,
       "pricingMode": "instant-buy inputs / instant-sell outputs; not guaranteed fills",
       "patientOrders": {
-        "inputGpPerAction": 8924,
-        "outputGpPerAction": 8990,
-        "taxGpPerAction": 179,
-        "netGpPerAction": -113,
-        "netGpPerXp": -0.904,
-        "projectedNetGp89To99": -7405794,
+        "inputGpPerAction": 8963,
+        "outputGpPerAction": 8749,
+        "taxGpPerAction": 174,
+        "netGpPerAction": -388,
+        "netGpPerXp": -3.104,
+        "projectedNetGp89To99": -25428744,
         "pricingMode": "buy inputs at observed low / sell outputs at observed high; hypothetical limit-order fills"
       }
     },
@@ -305,54 +305,54 @@
         "Air battlestaff": 1
       },
       "components": {
+        "Air battlestaff": {
+          "id": 1397,
+          "high": 8730,
+          "low": 8720,
+          "highTime": 1794612815,
+          "lowTime": 1794612897,
+          "buyLimit": 18000,
+          "hourlyHighVolume": 30049,
+          "hourlyLowVolume": 42192
+        },
         "Battlestaff": {
           "id": 1391,
-          "high": 7853,
-          "low": 7810,
-          "highTime": 1794591892,
-          "lowTime": 1794591897,
+          "high": 7884,
+          "low": 7850,
+          "highTime": 1794612884,
+          "lowTime": 1794612882,
           "buyLimit": 11000,
-          "hourlyHighVolume": 25990,
-          "hourlyLowVolume": 44413
+          "hourlyHighVolume": 36249,
+          "hourlyLowVolume": 91098
         },
         "Air orb": {
           "id": 573,
-          "high": 1239,
-          "low": 1237,
-          "highTime": 1794591550,
-          "lowTime": 1794591896,
+          "high": 1286,
+          "low": 1275,
+          "highTime": 1794612893,
+          "lowTime": 1794612830,
           "buyLimit": 11000,
-          "hourlyHighVolume": 8085,
-          "hourlyLowVolume": 19434
-        },
-        "Air battlestaff": {
-          "id": 1397,
-          "high": 8733,
-          "low": 8725,
-          "highTime": 1794591754,
-          "lowTime": 1794591875,
-          "buyLimit": 18000,
-          "hourlyHighVolume": 10986,
-          "hourlyLowVolume": 7891
+          "hourlyHighVolume": 27309,
+          "hourlyLowVolume": 30585
         }
       },
       "missing": [],
-      "inputGpPerAction": 9092,
-      "outputGpPerAction": 8725,
+      "inputGpPerAction": 9170,
+      "outputGpPerAction": 8720,
       "taxGpPerAction": 174,
-      "netGpPerAction": -541,
-      "netGpPerXp": -3.9345,
+      "netGpPerAction": -624,
+      "netGpPerXp": -4.5382,
       "actions89To99": 59580,
-      "projectedNetGp89To99": -32232780,
-      "projectedInputGp89To99": 541701360,
+      "projectedNetGp89To99": -37177920,
+      "projectedInputGp89To99": 546348600,
       "pricingMode": "instant-buy inputs / instant-sell outputs; not guaranteed fills",
       "patientOrders": {
-        "inputGpPerAction": 9047,
-        "outputGpPerAction": 8733,
+        "inputGpPerAction": 9125,
+        "outputGpPerAction": 8730,
         "taxGpPerAction": 174,
-        "netGpPerAction": -488,
-        "netGpPerXp": -3.5491,
-        "projectedNetGp89To99": -29075040,
+        "netGpPerAction": -569,
+        "netGpPerXp": -4.1382,
+        "projectedNetGp89To99": -33901020,
         "pricingMode": "buy inputs at observed low / sell outputs at observed high; hypothetical limit-order fills"
       }
     },
@@ -368,42 +368,42 @@
       "components": {
         "Green d'hide body": {
           "id": 1135,
-          "high": 4230,
-          "low": 4200,
-          "highTime": 1794591786,
-          "lowTime": 1794591884,
+          "high": 4249,
+          "low": 4165,
+          "highTime": 1794612812,
+          "lowTime": 1794612841,
           "buyLimit": 125,
-          "hourlyHighVolume": 2915,
-          "hourlyLowVolume": 1323
+          "hourlyHighVolume": 2042,
+          "hourlyLowVolume": 2261
         },
         "Green dragon leather": {
           "id": 1745,
-          "high": 1715,
-          "low": 1695,
-          "highTime": 1794591830,
-          "lowTime": 1794591669,
+          "high": 1685,
+          "low": 1651,
+          "highTime": 1794612472,
+          "lowTime": 1794612013,
           "buyLimit": 13000,
-          "hourlyHighVolume": 4185,
-          "hourlyLowVolume": 6316
+          "hourlyHighVolume": 20337,
+          "hourlyLowVolume": 5870
         }
       },
       "missing": [],
-      "inputGpPerAction": 5145,
-      "outputGpPerAction": 4200,
-      "taxGpPerAction": 84,
-      "netGpPerAction": -1029,
-      "netGpPerXp": -5.5323,
+      "inputGpPerAction": 5055,
+      "outputGpPerAction": 4165,
+      "taxGpPerAction": 83,
+      "netGpPerAction": -973,
+      "netGpPerXp": -5.2312,
       "actions89To99": 44044,
-      "projectedNetGp89To99": -45321276,
-      "projectedInputGp89To99": 226606380,
+      "projectedNetGp89To99": -42854812,
+      "projectedInputGp89To99": 222642420,
       "pricingMode": "instant-buy inputs / instant-sell outputs; not guaranteed fills",
       "patientOrders": {
-        "inputGpPerAction": 5085,
-        "outputGpPerAction": 4230,
+        "inputGpPerAction": 4953,
+        "outputGpPerAction": 4249,
         "taxGpPerAction": 84,
-        "netGpPerAction": -939,
-        "netGpPerXp": -5.0484,
-        "projectedNetGp89To99": -41357316,
+        "netGpPerAction": -788,
+        "netGpPerXp": -4.2366,
+        "projectedNetGp89To99": -34706672,
         "pricingMode": "buy inputs at observed low / sell outputs at observed high; hypothetical limit-order fills"
       }
     },
@@ -419,42 +419,42 @@
       "components": {
         "Blue dragon leather": {
           "id": 2505,
-          "high": 1988,
-          "low": 1982,
-          "highTime": 1794591546,
-          "lowTime": 1794590604,
+          "high": 2000,
+          "low": 1988,
+          "highTime": 1794612391,
+          "lowTime": 1794612834,
           "buyLimit": 13000,
-          "hourlyHighVolume": 9413,
-          "hourlyLowVolume": 10713
+          "hourlyHighVolume": 9200,
+          "hourlyLowVolume": 14480
         },
         "Blue d'hide body": {
           "id": 2499,
-          "high": 4899,
-          "low": 4891,
-          "highTime": 1794591832,
-          "lowTime": 1794591885,
+          "high": 4889,
+          "low": 4885,
+          "highTime": 1794612865,
+          "lowTime": 1794612842,
           "buyLimit": 125,
-          "hourlyHighVolume": 1756,
-          "hourlyLowVolume": 3784
+          "hourlyHighVolume": 4229,
+          "hourlyLowVolume": 4001
         }
       },
       "missing": [],
-      "inputGpPerAction": 5964,
-      "outputGpPerAction": 4891,
+      "inputGpPerAction": 6000,
+      "outputGpPerAction": 4885,
       "taxGpPerAction": 97,
-      "netGpPerAction": -1170,
-      "netGpPerXp": -5.5714,
+      "netGpPerAction": -1212,
+      "netGpPerXp": -5.7714,
       "actions89To99": 39011,
-      "projectedNetGp89To99": -45642870,
-      "projectedInputGp89To99": 232661604,
+      "projectedNetGp89To99": -47281332,
+      "projectedInputGp89To99": 234066000,
       "pricingMode": "instant-buy inputs / instant-sell outputs; not guaranteed fills",
       "patientOrders": {
-        "inputGpPerAction": 5946,
-        "outputGpPerAction": 4899,
+        "inputGpPerAction": 5964,
+        "outputGpPerAction": 4889,
         "taxGpPerAction": 97,
-        "netGpPerAction": -1144,
-        "netGpPerXp": -5.4476,
-        "projectedNetGp89To99": -44628584,
+        "netGpPerAction": -1172,
+        "netGpPerXp": -5.581,
+        "projectedNetGp89To99": -45720892,
         "pricingMode": "buy inputs at observed low / sell outputs at observed high; hypothetical limit-order fills"
       }
     },
@@ -470,42 +470,42 @@
       "components": {
         "Red d'hide body": {
           "id": 2501,
-          "high": 5461,
-          "low": 5429,
-          "highTime": 1794591891,
-          "lowTime": 1794591882,
+          "high": 5750,
+          "low": 5679,
+          "highTime": 1794612892,
+          "lowTime": 1794612857,
           "buyLimit": 70,
-          "hourlyHighVolume": 5009,
-          "hourlyLowVolume": 3768
+          "hourlyHighVolume": 8710,
+          "hourlyLowVolume": 8602
         },
         "Red dragon leather": {
           "id": 2507,
-          "high": 2480,
-          "low": 2435,
-          "highTime": 1794591865,
-          "lowTime": 1794591668,
+          "high": 2494,
+          "low": 2490,
+          "highTime": 1794612895,
+          "lowTime": 1794612726,
           "buyLimit": 11000,
-          "hourlyHighVolume": 33570,
-          "hourlyLowVolume": 1788
+          "hourlyHighVolume": 29606,
+          "hourlyLowVolume": 28950
         }
       },
       "missing": [],
-      "inputGpPerAction": 7440,
-      "outputGpPerAction": 5429,
-      "taxGpPerAction": 108,
-      "netGpPerAction": -2119,
-      "netGpPerXp": -9.0556,
+      "inputGpPerAction": 7482,
+      "outputGpPerAction": 5679,
+      "taxGpPerAction": 113,
+      "netGpPerAction": -1916,
+      "netGpPerXp": -8.188,
       "actions89To99": 35010,
-      "projectedNetGp89To99": -74186190,
-      "projectedInputGp89To99": 260474400,
+      "projectedNetGp89To99": -67079160,
+      "projectedInputGp89To99": 261944820,
       "pricingMode": "instant-buy inputs / instant-sell outputs; not guaranteed fills",
       "patientOrders": {
-        "inputGpPerAction": 7305,
-        "outputGpPerAction": 5461,
-        "taxGpPerAction": 109,
-        "netGpPerAction": -1953,
-        "netGpPerXp": -8.3462,
-        "projectedNetGp89To99": -68374530,
+        "inputGpPerAction": 7470,
+        "outputGpPerAction": 5750,
+        "taxGpPerAction": 115,
+        "netGpPerAction": -1835,
+        "netGpPerXp": -7.8419,
+        "projectedNetGp89To99": -64243350,
         "pricingMode": "buy inputs at observed low / sell outputs at observed high; hypothetical limit-order fills"
       }
     },
@@ -519,44 +519,44 @@
         "Black d'hide body": 1
       },
       "components": {
-        "Black dragon leather": {
-          "id": 2509,
-          "high": 3664,
-          "low": 3706,
-          "highTime": 1794591562,
-          "lowTime": 1794591400,
-          "buyLimit": 11000,
-          "hourlyHighVolume": 18778,
-          "hourlyLowVolume": 1456
-        },
         "Black d'hide body": {
           "id": 2503,
-          "high": 6898,
-          "low": 6822,
-          "highTime": 1794591837,
-          "lowTime": 1794591891,
+          "high": 7450,
+          "low": 7411,
+          "highTime": 1794612868,
+          "lowTime": 1794612861,
           "buyLimit": 70,
-          "hourlyHighVolume": 8673,
-          "hourlyLowVolume": 5596
+          "hourlyHighVolume": 851,
+          "hourlyLowVolume": 5158
+        },
+        "Black dragon leather": {
+          "id": 2509,
+          "high": 3749,
+          "low": 3637,
+          "highTime": 1794612749,
+          "lowTime": 1794612829,
+          "buyLimit": 11000,
+          "hourlyHighVolume": 11879,
+          "hourlyLowVolume": 18027
         }
       },
       "missing": [],
-      "inputGpPerAction": 10992,
-      "outputGpPerAction": 6822,
-      "taxGpPerAction": 136,
-      "netGpPerAction": -4306,
-      "netGpPerXp": -16.6899,
+      "inputGpPerAction": 11247,
+      "outputGpPerAction": 7411,
+      "taxGpPerAction": 148,
+      "netGpPerAction": -3984,
+      "netGpPerXp": -15.4419,
       "actions89To99": 31753,
-      "projectedNetGp89To99": -136728418,
-      "projectedInputGp89To99": 349028976,
+      "projectedNetGp89To99": -126503952,
+      "projectedInputGp89To99": 357125991,
       "pricingMode": "instant-buy inputs / instant-sell outputs; not guaranteed fills",
       "patientOrders": {
-        "inputGpPerAction": 11118,
-        "outputGpPerAction": 6898,
-        "taxGpPerAction": 137,
-        "netGpPerAction": -4357,
-        "netGpPerXp": -16.8876,
-        "projectedNetGp89To99": -138347821,
+        "inputGpPerAction": 10911,
+        "outputGpPerAction": 7450,
+        "taxGpPerAction": 149,
+        "netGpPerAction": -3610,
+        "netGpPerXp": -13.9922,
+        "projectedNetGp89To99": -114628330,
         "pricingMode": "buy inputs at observed low / sell outputs at observed high; hypothetical limit-order fills"
       }
     }
